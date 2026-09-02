@@ -68,6 +68,15 @@
   tr:last-child td { border-bottom: none; }
   .pct-on_time { color: var(--on-time); font-weight: 600; }
   .pct-late { color: var(--late); }
+
+  .table-toolbar { padding: 10px 12px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+  .table-toolbar input {
+    flex: 1; max-width: 280px; padding: 6px 10px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px;
+  }
+  .table-toolbar .count { font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .scroll-body { max-height: 480px; overflow-y: auto; }
+  .scroll-body thead th { position: sticky; top: 0; background: var(--card); }
+  td.route-name { color: var(--muted); font-size: 12px; }
 </style>
 </head>
 <body>
@@ -93,10 +102,19 @@
     <span><i class="dot unknown"></i>no prediction</span>
   </div>
 
-  <h2>Today's on-time performance</h2>
+  <h2>Today's on-time performance by route</h2>
   <div id="today-perf" class="card"><div class="empty">Loading…</div></div>
 
-  <h2>Last 7 service days</h2>
+  <h2>Today's on-time performance by stop</h2>
+  <div id="stop-perf" class="card">
+    <div class="table-toolbar">
+      <input id="stop-filter" type="text" placeholder="Filter by stop or route name…">
+      <span class="count" id="stop-count"></span>
+    </div>
+    <div class="scroll-body"><div id="stop-table"><div class="empty">Loading…</div></div></div>
+  </div>
+
+  <h2>Last 7 service days (system-wide)</h2>
   <div id="trend-perf" class="card"><div class="empty">Loading…</div></div>
 </main>
 
@@ -232,6 +250,59 @@ function renderPerfTable(el, rollup) {
   `;
 }
 
+let allStopRows = [];
+
+function renderStopTable() {
+  const el = document.getElementById('stop-table');
+  const countEl = document.getElementById('stop-count');
+  const q = document.getElementById('stop-filter').value.trim().toLowerCase();
+
+  let rows = allStopRows;
+  if (q) {
+    rows = rows.filter(r =>
+      r.stop_name.toLowerCase().includes(q) ||
+      r.route_names.toLowerCase().includes(q)
+    );
+  }
+  // Worst on-time% first, so an ops reviewer sees the problem stops without scrolling.
+  rows = rows.slice().sort((a, b) => (a.on_time / a.total) - (b.on_time / b.total) || b.total - a.total);
+  countEl.textContent = `${rows.length} of ${allStopRows.length} stops`;
+
+  if (!rows.length) {
+    el.innerHTML = '<div class="empty">No stops finalized yet today.</div>';
+    return;
+  }
+  el.innerHTML = `
+    <table>
+      <thead><tr>
+        <th>Stop</th><th>Route(s)</th><th class="num">On time</th><th class="num">Early</th><th class="num">Late</th><th class="num">Sample</th>
+      </tr></thead>
+      <tbody>
+        ${rows.map(r => `
+          <tr>
+            <td>${esc(r.stop_name)}</td>
+            <td class="route-name">${esc(r.route_names)}</td>
+            <td class="num pct-on_time">${pct(r.on_time, r.total)}</td>
+            <td class="num">${pct(r.early, r.total)}</td>
+            <td class="num pct-late">${pct(r.late, r.total)}</td>
+            <td class="num">${r.total}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function loadStopTable(rollup) {
+  const stops = rollup?.stops || {};
+  allStopRows = Object.values(stops).map(s => ({
+    stop_name: s.stop_name,
+    route_names: Object.values(s.routes || {}).map(r => r.route_short_name).join(', '),
+    on_time: s.on_time, early: s.early, late: s.late, total: s.total,
+  }));
+  renderStopTable();
+}
+
 function renderTrend(el, days) {
   const withData = days.filter(d => d && d.system && d.system.total);
   if (!withData.length) {
@@ -285,10 +356,12 @@ async function loadToday() {
   const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
   const rollup = await fetchJson(`docs/data/performance/${today}.json`, `data/performance/${today}.json`);
   renderPerfTable(document.getElementById('today-perf'), rollup);
+  loadStopTable(rollup);
 }
 
 (async () => {
   initMap();
+  document.getElementById('stop-filter').addEventListener('input', renderStopTable);
   await refreshLive();
   await Promise.all([loadToday(), loadTrend()]);
   setInterval(refreshLive, 60000);

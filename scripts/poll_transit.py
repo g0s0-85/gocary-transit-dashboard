@@ -51,6 +51,7 @@ DATA_DIR = ROOT / "docs" / "data"
 LIVE_DIR = DATA_DIR / "live"
 PERF_DIR = DATA_DIR / "performance"
 ROUTES_FILE = DATA_DIR / "routes.json"
+STOPS_FILE = DATA_DIR / "stops.json"
 STATUS_FILE = DATA_DIR / "status.json"
 PENDING_FILE = LIVE_DIR / "pending_stops.json"
 
@@ -84,24 +85,28 @@ def fetch_feed(url):
     return feed
 
 
-def ensure_routes():
-    """Refresh docs/data/routes.json from GoCary's static GTFS if it's
-    missing or older than a week. Route/stop metadata barely ever changes,
-    so this doesn't need to run every poll -- and if the refresh fails we
-    just keep whatever we already had rather than failing the whole run."""
-    existing = load_json(ROUTES_FILE, None)
-    if existing is not None:
-        fetched_at = existing.get("_fetched_at")
+def ensure_static_gtfs():
+    """Refresh docs/data/routes.json and docs/data/stops.json from GoCary's
+    static GTFS if routes.json is missing or older than a week. Route/stop
+    metadata barely ever changes, so this doesn't need to run every poll --
+    and if the refresh fails we just keep whatever we already had rather
+    than failing the whole run."""
+    existing_routes = load_json(ROUTES_FILE, None)
+    existing_stops = load_json(STOPS_FILE, None)
+    if existing_routes is not None:
+        fetched_at = existing_routes.get("_fetched_at")
         if fetched_at:
             age = time.time() - datetime.fromisoformat(fetched_at).timestamp()
             if age < ROUTES_MAX_AGE_S:
-                return existing
+                return existing_routes, (existing_stops or {})
 
     try:
         resp = requests.get(STATIC_GTFS_URL, timeout=60)
         resp.raise_for_status()
         zf = zipfile.ZipFile(io.BytesIO(resp.content))
-        routes = {"_fetched_at": now_iso()}
+
+        fetched_at = now_iso()
+        routes = {"_fetched_at": fetched_at}
         with zf.open("routes.txt") as f:
             reader = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig"))
             for row in reader:
@@ -110,11 +115,23 @@ def ensure_routes():
                     "long_name": row.get("route_long_name") or "",
                     "color": row.get("route_color") or "2563eb",
                 }
+
+        stops = {"_fetched_at": fetched_at}
+        with zf.open("stops.txt") as f:
+            reader = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig"))
+            for row in reader:
+                stops[row["stop_id"]] = {
+                    "name": row.get("stop_name") or row["stop_id"],
+                    "lat": float(row["stop_lat"]) if row.get("stop_lat") else None,
+                    "lon": float(row["stop_lon"]) if row.get("stop_lon") else None,
+                }
+
         save_json(ROUTES_FILE, routes)
-        return routes
+        save_json(STOPS_FILE, stops)
+        return routes, stops
     except Exception as exc:
-        print(f"Warning: failed to refresh routes.json ({exc}); keeping existing copy")
-        return existing or {"_fetched_at": None}
+        print(f"Warning: failed to refresh routes.json/stops.json ({exc}); keeping existing copy")
+        return existing_routes or {"_fetched_at": None}, existing_stops or {"_fetched_at": None}
 
 
 def classify(delay_s):
@@ -135,7 +152,7 @@ def stop_delay(stop_time_update):
     return None
 
 
-def process_trip_updates(feed, routes):
+def process_trip_updates(feed, routes, stops):
     pending = load_json(PENDING_FILE, {})
     current_keys = set()
     live_trip_summaries = []
@@ -158,6 +175,7 @@ def process_trip_updates(feed, routes):
                 "route_id": route_id,
                 "trip_id": trip_id,
                 "stop_sequence": stu.stop_sequence,
+                "stop_id": stu.stop_id if stu.HasField("stop_id") else None,
                 "delay": delay,
             }
             trip_pending.append((stu.stop_sequence, delay))
@@ -183,34 +201,50 @@ def process_trip_updates(feed, routes):
     })
 
     if finalized:
-        apply_rollup(finalized, routes)
+        apply_rollup(finalized, routes, stops)
 
     trip_delay_by_id = {t["trip_id"]: t["delay_seconds"] for t in live_trip_summaries}
     stats = {"trip_updates_seen": len(live_trip_summaries), "stops_finalized": len(finalized)}
     return stats, trip_delay_by_id
 
 
-def apply_rollup(finalized, routes):
+def _blank_counts():
+    return {"on_time": 0, "early": 0, "late": 0, "total": 0}
+
+
+def apply_rollup(finalized, routes, stops):
+    """Roll each finalized stop-time event into three views for the day:
+    system-wide, per-route, and per-stop (with a per-route breakdown nested
+    inside each stop, since a stop can be served by more than one route)."""
     date = service_date()
     path = PERF_DIR / f"{date}.json"
     rollup = load_json(path, {
         "date": date,
-        "system": {"on_time": 0, "early": 0, "late": 0, "total": 0},
+        "system": _blank_counts(),
         "routes": {},
+        "stops": {},
     })
 
     for entry in finalized:
         bucket = classify(entry["delay"])
+        route_id = entry["route_id"]
+        stop_id = entry["stop_id"] or f"seq:{entry['stop_sequence']}"
+        route_name = routes.get(route_id, {}).get("short_name", route_id)
+        stop_name = stops.get(entry["stop_id"], {}).get("name", stop_id) if entry["stop_id"] else f"Stop sequence {entry['stop_sequence']}"
+
         rollup["system"][bucket] += 1
         rollup["system"]["total"] += 1
 
-        route_id = entry["route_id"]
-        r = rollup["routes"].setdefault(route_id, {
-            "route_short_name": routes.get(route_id, {}).get("short_name", route_id),
-            "on_time": 0, "early": 0, "late": 0, "total": 0,
-        })
+        r = rollup["routes"].setdefault(route_id, {"route_short_name": route_name, **_blank_counts()})
         r[bucket] += 1
         r["total"] += 1
+
+        s = rollup["stops"].setdefault(stop_id, {"stop_name": stop_name, "routes": {}, **_blank_counts()})
+        s[bucket] += 1
+        s["total"] += 1
+        sr = s["routes"].setdefault(route_id, {"route_short_name": route_name, **_blank_counts()})
+        sr[bucket] += 1
+        sr["total"] += 1
 
     rollup["last_updated"] = now_iso()
     save_json(path, rollup)
@@ -274,12 +308,12 @@ def main():
     })
 
     try:
-        routes = ensure_routes()
+        routes, stops = ensure_static_gtfs()
         vp_feed = fetch_feed(VEHICLE_POSITIONS_URL)
         tu_feed = fetch_feed(TRIP_UPDATES_URL)
         alerts_feed = fetch_feed(SERVICE_ALERTS_URL)
 
-        tu_stats, trip_delay_by_id = process_trip_updates(tu_feed, routes)
+        tu_stats, trip_delay_by_id = process_trip_updates(tu_feed, routes, stops)
         vehicle_count = process_vehicle_positions(vp_feed, routes, trip_delay_by_id)
         alert_count = process_alerts(alerts_feed, routes)
 

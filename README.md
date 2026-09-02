@@ -19,11 +19,15 @@ GitHub Actions poller commits JSON under `docs/data/`, and a static
   - `docs/data/live/alerts.json` — currently active service alerts.
   - `docs/data/live/trip_updates.json` — current per-trip delay snapshot.
   - `docs/data/performance/YYYY-MM-DD.json` — one file per service day
-    (America/New_York), with on-time/early/late counts system-wide and per
-    route.
-  - `docs/data/routes.json` — route id → short name / color, refreshed
-    weekly from GoCary's static GTFS zip (only needed for display; delay
-    data comes straight from the RT feed).
+    (America/New_York), with on-time/early/late counts three ways:
+    system-wide, per route, and **per stop** (each stop entry also breaks
+    its counts down by the route(s) that serve it, since a stop can be
+    shared). This file *is* the schedule-adherence history — see "On
+    historical data" below.
+  - `docs/data/routes.json` / `docs/data/stops.json` — route id → short
+    name/color and stop id → name/lat/lon, refreshed weekly from GoCary's
+    static GTFS zip (only needed for display; delay data comes straight
+    from the RT feed).
   - `docs/data/status.json` — last poll time, error (if any), poll count.
 
   **On dedup:** TripUpdates repeats the same upcoming stop's predicted delay
@@ -52,13 +56,28 @@ GitHub Actions poller commits JSON under `docs/data/`, and a static
   that.
 - **`docs/index.html`** — a static dashboard (no backend): a live Leaflet
   map of vehicles color-coded by on-time status, active alerts, today's
-  on-time performance by route, and the last 7 service days' trend. Reads
-  data via the GitHub Contents API rather than fetching `data/*.json`
-  directly, for the same CDN-caching reason documented in the news monitor
-  (GitHub Pages caches for 10 minutes and ignores query strings; the
-  Contents API caches for only 60 seconds and is used first, falling back to
-  the Pages-served copy if that call fails, e.g. its 60-requests/hour
-  unauthenticated rate limit).
+  on-time performance by route, a filterable **by-stop** table (worst
+  on-time% first, so problem stops surface without scrolling), and the last
+  7 service days' system-wide trend. Reads data via the GitHub Contents API
+  rather than fetching `data/*.json` directly, for the same CDN-caching
+  reason documented in the news monitor (GitHub Pages caches for 10 minutes
+  and ignores query strings; the Contents API caches for only 60 seconds and
+  is used first, falling back to the Pages-served copy if that call fails,
+  e.g. its 60-requests/hour unauthenticated rate limit).
+
+## On historical data
+
+There's no existing archive of GoCary's GTFS-RT feed anywhere — I checked
+Transitland and Bus Observatory (the two major public GTFS-RT archives) and
+neither has ever collected GoCary/Cary Transit; GTFS-RT is inherently
+ephemeral (it only ever describes "right now"), so if nobody was polling it,
+that history simply doesn't exist to retrieve. The `docs/data/performance/`
+files this script writes, from the day you start running it forward, **are**
+the historical archive — that's why the rollup is stop-level from day one
+rather than just a route summary: whatever granularity isn't captured now is
+gone for good. The dashboard's 7-day trend and by-stop table will fill in
+day by day as `docs/data/performance/*.json` accumulates; there's nothing to
+backfill.
 
 ## One-time setup
 
