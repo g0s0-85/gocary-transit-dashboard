@@ -1,10 +1,10 @@
 {
   "date": "2026-09-02",
   "system": {
-    "on_time": 18,
+    "on_time": 28,
     "early": 0,
-    "late": 0,
-    "total": 18
+    "late": 1,
+    "total": 29
   },
   "routes": {
     "6": {
@@ -23,10 +23,10 @@
     },
     "4": {
       "route_short_name": "4",
-      "on_time": 5,
+      "on_time": 10,
       "early": 0,
       "late": 0,
-      "total": 5
+      "total": 10
     },
     "2": {
       "route_short_name": "2",
@@ -34,6 +34,13 @@
       "early": 0,
       "late": 0,
       "total": 4
+    },
+    "GA1": {
+      "route_short_name": "GA1",
+      "on_time": 5,
+      "early": 0,
+      "late": 1,
+      "total": 6
     }
   },
   "stops": {
@@ -261,12 +268,19 @@
           "early": 0,
           "late": 0,
           "total": 1
+        },
+        "4": {
+          "route_short_name": "4",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
         }
       },
-      "on_time": 1,
+      "on_time": 2,
       "early": 0,
       "late": 0,
-      "total": 1
+      "total": 2
     },
     "11209": {
       "stop_name": "11209",
@@ -315,7 +329,167 @@
       "early": 0,
       "late": 0,
       "total": 1
+    },
+    "16031": {
+      "stop_name": "16031",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "16045": {
+      "stop_name": "16045",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "16049": {
+      "stop_name": "16049",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "16061": {
+      "stop_name": "16061",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "16077": {
+      "stop_name": "16077",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "16085": {
+      "stop_name": "16085",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 0,
+          "early": 0,
+          "late": 1,
+          "total": 1
+        }
+      },
+      "on_time": 0,
+      "early": 0,
+      "late": 1,
+      "total": 1
+    },
+    "11397": {
+      "stop_name": "11397",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "11401": {
+      "stop_name": "11401",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "11150": {
+      "stop_name": "11150",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "1441": {
+      "stop_name": "1441",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
     }
   },
-  "last_updated": "2026-09-02T12:55:13.344976+00:00"
+  "last_updated": "2026-09-02T12:56:18.219517+00:00"
 }
