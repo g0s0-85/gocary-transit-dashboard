@@ -82,20 +82,14 @@
   <div id="status">loading status…</div>
 </header>
 <main>
-  <h2>Live vehicles &amp; stops</h2>
+  <h2>Live vehicles</h2>
   <div id="map" class="card"></div>
   <div class="legend">
-    <span><i class="dot on_time"></i>vehicle on time</span>
+    <span><i class="dot on_time"></i>on time</span>
     <span><i class="dot early"></i>early (&gt;1 min)</span>
     <span><i class="dot late"></i>late (&gt;5 min)</span>
     <span><i class="dot unknown"></i>no live data</span>
-    <span style="margin-left:auto"><label><input type="checkbox" id="toggle-stops" checked> show stops (colored by today's on-time %)</label></span>
   </div>
-  <p style="font-size:12px; color:var(--muted); margin:6px 2px 0;">
-    Most gray stops will stay gray: GoCary's real-time feed only reports live delay predictions at
-    schedule-checkpoint ("timepoint") stops — a subset of each route's full stop list. A gray dot
-    here usually means this stop never gets live data at all, not that it's still waiting on one.
-  </p>
 
   <h2>Stop schedule adherence (rolling average)</h2>
   <div id="adherence-map" class="card"></div>
@@ -104,15 +98,20 @@
     <span><i class="dot early"></i>trending early</span>
     <span><i class="dot late"></i>trending late</span>
     <span><i class="dot unknown"></i>not enough data yet</span>
-    <span id="adherence-window-note" style="margin-left:auto"></span>
+    <span style="margin-left:auto"><label><input type="checkbox" id="toggle-all-stops"> show all stops</label></span>
   </div>
+  <p style="font-size:12px; color:var(--muted); margin:6px 2px 0;" id="adherence-window-note"></p>
   <p style="font-size:12px; color:var(--muted); margin:6px 2px 0;">
-    Each stop's color is based on its on-time / early / late counts across every visit in the
-    window above. <b>On time</b> means at least 85% of those visits landed within GoCary's
+    Each colored stop's shade is based on its on-time / early / late counts across every visit in
+    the window above. <b>On time</b> means at least 85% of those visits landed within GoCary's
     on-time definition (1 min early to 5 min late). Below that, the stop is colored by which way
     it's skewing: <b>trending late</b> if more visits were late than early, <b>trending early</b>
     otherwise. <b>Not enough data</b> means fewer than 5 visits have been recorded yet — too small
-    a sample to call either way.
+    a sample to call either way. "Show all stops" adds every other known stop in gray, with no
+    color logic applied — most of those will stay gray permanently, since GoCary's real-time feed
+    only reports live delay predictions at schedule-checkpoint ("timepoint") stops, a subset of
+    each route's full stop list; a gray dot there usually means this stop never gets live data at
+    all, not that it's still waiting on one.
   </p>
 
   <h2>Today's on-time performance by route</h2>
@@ -211,15 +210,13 @@ function renderStatus(status) {
   }
 }
 
-let map, stopsLayer, markersLayer;
+let map, markersLayer;
 function initMap() {
   map = L.map('map').setView([35.7915, -78.7811], 12);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
     maxZoom: 19,
   }).addTo(map);
-  // Stops first so vehicle markers draw on top of them when they overlap.
-  stopsLayer = L.layerGroup().addTo(map);
   markersLayer = L.layerGroup().addTo(map);
 }
 
@@ -230,34 +227,6 @@ async function loadStops() {
   for (const [id, s] of Object.entries(data || {})) {
     if (id === '_fetched_at') continue;
     stopsById[id] = s;
-  }
-}
-
-function stopPerfColor(perf) {
-  // Most stops with no rollup entry aren't "pending" -- GoCary's RT feed only
-  // publishes predictions for timepoint stops, so a non-timepoint stop will
-  // simply never get one, no matter how long this runs.
-  if (!perf || !perf.total) return '#c8ccd4';
-  const onTimeFrac = perf.on_time / perf.total;
-  if (onTimeFrac >= 0.8) return STATUS_COLOR.on_time;
-  if (onTimeFrac >= 0.5) return '#d97706'; // amber: mediocre, not yet "late"-dominated
-  return STATUS_COLOR.late;
-}
-
-function renderStopMarkers(rollup) {
-  stopsLayer.clearLayers();
-  const stopPerf = rollup?.stops || {};
-  for (const [stopId, s] of Object.entries(stopsById)) {
-    if (s.lat == null || s.lon == null) continue;
-    const perf = stopPerf[stopId];
-    const color = stopPerfColor(perf);
-    const marker = L.circleMarker([s.lat, s.lon], {
-      radius: 5, weight: 1, color: '#fff', fillColor: color, fillOpacity: 0.9,
-    });
-    const routes = perf ? Object.values(perf.routes || {}).map(r => r.route_short_name).join(', ') : '';
-    const perfTxt = perf ? `${pct(perf.on_time, perf.total)} on time (${perf.total} stop${perf.total === 1 ? '' : 's'} today)` : 'no live data (not a timepoint stop, most likely)';
-    marker.bindPopup(`<b>${esc(s.name)}</b>${routes ? `<br>Routes: ${esc(routes)}` : ''}<br>${esc(perfTxt)}`);
-    marker.addTo(stopsLayer);
   }
 }
 
@@ -277,6 +246,11 @@ const STATUS_COLOR = { on_time: '#1a7f37', early: '#2563eb', late: '#c62828', un
 // bus would swing the color -- show it as "not enough data" instead.
 const ADHERENCE_MIN_SAMPLE = 5;
 const ADHERENCE_ON_TIME_THRESHOLD = 0.85;
+
+// Off by default: most stops in the full roster never get live data at all
+// (see the "show all stops" explanation in the page), so defaulting to "on"
+// would clutter the map with mostly-permanent gray dots.
+let showAllStops = false;
 
 function renderAdherenceMap(days) {
   adherenceLayer.clearLayers();
@@ -321,6 +295,17 @@ function renderAdherenceMap(days) {
     const sampleTxt = `${pct(a.on_time, a.total)} on time · ${a.total} stop${a.total === 1 ? '' : 's'} over ${days.length} day${days.length === 1 ? '' : 's'}`;
     marker.bindPopup(`<b>${esc(a.name)}</b>${routesTxt ? `<br>Routes: ${esc(routesTxt)}` : ''}<br>${esc(label)} — ${esc(sampleTxt)}`);
     marker.addTo(adherenceLayer);
+  }
+
+  if (showAllStops) {
+    for (const [stopId, s] of Object.entries(stopsById)) {
+      if (agg[stopId] || s.lat == null || s.lon == null) continue;
+      const marker = L.circleMarker([s.lat, s.lon], {
+        radius: 5, weight: 1, color: '#fff', fillColor: STATUS_COLOR.unknown, fillOpacity: 0.9,
+      });
+      marker.bindPopup(`<b>${esc(s.name)}</b><br>no live data (not a timepoint stop, most likely)`);
+      marker.addTo(adherenceLayer);
+    }
   }
 
   document.getElementById('adherence-window-note').textContent =
@@ -556,7 +541,6 @@ async function loadToday() {
   const rollup = await fetchJson(`docs/data/performance/${today}.json`, `data/performance/${today}.json`);
   renderPerfTable(document.getElementById('today-perf'), rollup);
   loadStopTable(rollup);
-  renderStopMarkers(rollup);
 }
 
 document.querySelector('main').addEventListener('click', e => {
@@ -575,9 +559,9 @@ document.querySelector('main').addEventListener('click', e => {
   initMap();
   initAdherenceMap();
   document.getElementById('stop-filter').addEventListener('input', renderStopTable);
-  document.getElementById('toggle-stops').addEventListener('change', e => {
-    if (e.target.checked) map.addLayer(stopsLayer);
-    else map.removeLayer(stopsLayer);
+  document.getElementById('toggle-all-stops').addEventListener('change', e => {
+    showAllStops = e.target.checked;
+    renderAdherenceMap(lastTrendDays);
   });
   await Promise.all([refreshLive(), loadStops()]);
   await Promise.all([loadToday(), loadTrend()]);
