@@ -442,20 +442,41 @@ function renderTrend(el, days) {
   `;
 }
 
+// Every day's rollup file is immutable once that service day is over (the
+// poller only ever writes to *today's* file), so past days can be cached in
+// the browser indefinitely -- only today's file needs a fresh fetch every
+// time. That's what makes it safe to look back further than a handful of
+// days without linearly increasing GitHub Contents API calls (60/hour,
+// unauthenticated) on repeat visits.
+const TREND_WINDOW_DAYS = 30;
+const CACHE_PREFIX = 'gocary-rollup:';
+
+async function fetchRollupCached(date, todayStr) {
+  if (date !== todayStr) {
+    try {
+      const cached = localStorage.getItem(CACHE_PREFIX + date);
+      if (cached) return JSON.parse(cached);
+    } catch {}
+  }
+  const data = await fetchJson(`docs/data/performance/${date}.json`, `data/performance/${date}.json`);
+  if (data && date !== todayStr) {
+    try { localStorage.setItem(CACHE_PREFIX + date, JSON.stringify(data)); } catch {}
+  }
+  return data;
+}
+
 async function loadTrend() {
+  const todayStr = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
   const files = await listDir('docs/data/performance');
   const dates = files
     .map(f => f.name)
     .filter(n => /^\d{4}-\d{2}-\d{2}\.json$/.test(n))
+    .map(n => n.replace('.json', ''))
     .sort()
     .reverse()
-    .slice(0, 7);
-  const days = await Promise.all(dates.map(name =>
-    fetchJson(`docs/data/performance/${name}`, `data/performance/${name}`)
-  ));
+    .slice(0, TREND_WINDOW_DAYS);
+  const days = await Promise.all(dates.map(date => fetchRollupCached(date, todayStr)));
   renderTrend(document.getElementById('trend-perf'), days);
-  // Same last-7-days fetch feeds the stop adherence map, so it doesn't cost
-  // extra API calls against the Contents API's 60/hour unauthenticated limit.
   renderAdherenceMap(days.filter(Boolean));
 }
 
