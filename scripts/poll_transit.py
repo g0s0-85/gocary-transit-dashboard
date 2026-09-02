@@ -120,8 +120,16 @@ def ensure_static_gtfs():
         with zf.open("stops.txt") as f:
             reader = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig"))
             for row in reader:
-                stops[row["stop_id"]] = {
-                    "name": row.get("stop_name") or row["stop_id"],
+                # GoCary's RT feed identifies stops by stop_code (a short
+                # rider-facing number, e.g. "9322"), not the static GTFS's
+                # internal stop_id (e.g. "778286") -- confirmed by
+                # cross-checking a stop_id showing up unresolved in the RT
+                # feed against this file. Key on stop_code so StopTimeUpdate
+                # lookups actually resolve to a name; fall back to stop_id
+                # for the rare row missing a stop_code.
+                key = row.get("stop_code") or row["stop_id"]
+                stops[key] = {
+                    "name": row.get("stop_name") or key,
                     "lat": float(row["stop_lat"]) if row.get("stop_lat") else None,
                     "lon": float(row["stop_lon"]) if row.get("stop_lon") else None,
                 }

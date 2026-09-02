@@ -267,7 +267,9 @@ function renderPerfTable(el, rollup) {
     el.innerHTML = '<div class="empty">No stops finalized yet today.</div>';
     return;
   }
-  const routeRows = Object.values(rollup.routes || {}).sort((a, b) => b.total - a.total);
+  const routeRows = Object.values(rollup.routes || {}).sort((a, b) =>
+    a.route_short_name.localeCompare(b.route_short_name, undefined, { numeric: true, sensitivity: 'base' })
+  );
   const rows = [{ route_short_name: 'System-wide', ...rollup.system }, ...routeRows];
   el.innerHTML = `
     <table>
