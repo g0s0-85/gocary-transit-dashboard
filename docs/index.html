@@ -56,6 +56,8 @@
   table { border-collapse: collapse; width: 100%; font-size: 13px; }
   th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border); }
   th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; }
+  th.sortable { cursor: pointer; user-select: none; white-space: nowrap; }
+  th.sortable:hover { color: var(--text); }
   td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
   tr:last-child td { border-bottom: none; }
   .pct-on_time { color: var(--on-time); font-weight: 600; }
@@ -130,6 +132,33 @@ function esc(s) {
 function pct(n, total) {
   if (!total) return '—';
   return (100 * n / total).toFixed(0) + '%';
+}
+
+// Shared click-to-sort support for the three data tables. Each table keeps
+// its own entry in sortState (or null to mean "use that table's built-in
+// default order" -- e.g. the route table pins System-wide first and orders
+// the rest numerically until a header is clicked).
+const sortState = { route: null, stop: { key: 'on_time', dir: 'asc' }, trend: null };
+
+function compareValues(av, bv) {
+  if (typeof av === 'string' && typeof bv === 'string') {
+    return av.localeCompare(bv, undefined, { numeric: true, sensitivity: 'base' });
+  }
+  return av < bv ? -1 : av > bv ? 1 : 0;
+}
+
+function sortRows(rows, key, dir, accessors) {
+  const acc = accessors[key];
+  const sorted = rows.slice().sort((a, b) => compareValues(acc(a), acc(b)));
+  if (dir === 'desc') sorted.reverse();
+  return sorted;
+}
+
+function sortTh(tableKey, colKey, label, numeric) {
+  const state = sortState[tableKey];
+  const active = state && state.key === colKey;
+  const arrow = active ? (state.dir === 'asc' ? ' ▲' : ' ▼') : '';
+  return `<th class="sortable${numeric ? ' num' : ''}" data-table="${tableKey}" data-key="${colKey}">${esc(label)}${arrow}</th>`;
 }
 
 // GitHub Pages fronts docs/data/*.json through a CDN that caches for up to
@@ -306,19 +335,39 @@ function renderVehicles(vehiclesData) {
   }
 }
 
+const routeAccessors = {
+  route: r => r.route_short_name,
+  on_time: r => (r.total ? r.on_time / r.total : -1),
+  early: r => (r.total ? r.early / r.total : -1),
+  late: r => (r.total ? r.late / r.total : -1),
+  total: r => r.total,
+};
+
+let lastRouteRollup = null;
+
 function renderPerfTable(el, rollup) {
+  lastRouteRollup = rollup;
   if (!rollup || !rollup.system || !rollup.system.total) {
     el.innerHTML = '<div class="empty">No stops finalized yet today.</div>';
     return;
   }
-  const routeRows = Object.values(rollup.routes || {}).sort((a, b) =>
-    a.route_short_name.localeCompare(b.route_short_name, undefined, { numeric: true, sensitivity: 'base' })
-  );
+  let routeRows = Object.values(rollup.routes || {});
+  const state = sortState.route;
+  routeRows = state
+    ? sortRows(routeRows, state.key, state.dir, routeAccessors)
+    : routeRows.sort((a, b) => compareValues(routeAccessors.route(a), routeAccessors.route(b)));
+  // System-wide is a total row, not a route -- always pinned first regardless
+  // of sort column, same way a "Total" row usually stays put in this kind of
+  // table.
   const rows = [{ route_short_name: 'System-wide', ...rollup.system }, ...routeRows];
   el.innerHTML = `
     <table>
       <thead><tr>
-        <th>Route</th><th class="num">On time</th><th class="num">Early</th><th class="num">Late</th><th class="num">Sample</th>
+        ${sortTh('route', 'route', 'Route')}
+        ${sortTh('route', 'on_time', 'On time', true)}
+        ${sortTh('route', 'early', 'Early', true)}
+        ${sortTh('route', 'late', 'Late', true)}
+        ${sortTh('route', 'total', 'Sample', true)}
       </tr></thead>
       <tbody>
         ${rows.map(r => `
@@ -335,6 +384,15 @@ function renderPerfTable(el, rollup) {
   `;
 }
 
+const stopAccessors = {
+  stop_name: r => r.stop_name,
+  route_names: r => r.route_names,
+  on_time: r => (r.total ? r.on_time / r.total : -1),
+  early: r => (r.total ? r.early / r.total : -1),
+  late: r => (r.total ? r.late / r.total : -1),
+  total: r => r.total,
+};
+
 let allStopRows = [];
 
 function renderStopTable() {
@@ -349,8 +407,10 @@ function renderStopTable() {
       r.route_names.toLowerCase().includes(q)
     );
   }
-  // Worst on-time% first, so an ops reviewer sees the problem stops without scrolling.
-  rows = rows.slice().sort((a, b) => (a.on_time / a.total) - (b.on_time / b.total) || b.total - a.total);
+  // Default is worst on-time% first, so an ops reviewer sees the problem
+  // stops without scrolling; clicking a header overrides it.
+  const state = sortState.stop;
+  rows = sortRows(rows, state.key, state.dir, stopAccessors);
   countEl.textContent = `${rows.length} of ${allStopRows.length} stops`;
 
   if (!rows.length) {
@@ -360,7 +420,12 @@ function renderStopTable() {
   el.innerHTML = `
     <table>
       <thead><tr>
-        <th>Stop</th><th>Route(s)</th><th class="num">On time</th><th class="num">Early</th><th class="num">Late</th><th class="num">Sample</th>
+        ${sortTh('stop', 'stop_name', 'Stop')}
+        ${sortTh('stop', 'route_names', 'Route(s)')}
+        ${sortTh('stop', 'on_time', 'On time', true)}
+        ${sortTh('stop', 'early', 'Early', true)}
+        ${sortTh('stop', 'late', 'Late', true)}
+        ${sortTh('stop', 'total', 'Sample', true)}
       </tr></thead>
       <tbody>
         ${rows.map(r => `
@@ -388,15 +453,36 @@ function loadStopTable(rollup) {
   renderStopTable();
 }
 
+const trendAccessors = {
+  date: r => r.date,
+  on_time: r => (r.system.total ? r.system.on_time / r.system.total : -1),
+  early: r => (r.system.total ? r.system.early / r.system.total : -1),
+  late: r => (r.system.total ? r.system.late / r.system.total : -1),
+  total: r => r.system.total,
+};
+
+let lastTrendDays = [];
+
 function renderTrend(el, days) {
-  const withData = days.filter(d => d && d.system && d.system.total);
+  let withData = days.filter(d => d && d.system && d.system.total);
+  lastTrendDays = withData;
   if (!withData.length) {
     el.innerHTML = '<div class="empty">Not enough history yet.</div>';
     return;
   }
+  const state = sortState.trend;
+  withData = state
+    ? sortRows(withData, state.key, state.dir, trendAccessors)
+    : withData.slice().sort((a, b) => compareValues(trendAccessors.date(b), trendAccessors.date(a))); // newest first by default
   el.innerHTML = `
     <table>
-      <thead><tr><th>Date</th><th class="num">On time</th><th class="num">Early</th><th class="num">Late</th><th class="num">Sample</th></tr></thead>
+      <thead><tr>
+        ${sortTh('trend', 'date', 'Date')}
+        ${sortTh('trend', 'on_time', 'On time', true)}
+        ${sortTh('trend', 'early', 'Early', true)}
+        ${sortTh('trend', 'late', 'Late', true)}
+        ${sortTh('trend', 'total', 'Sample', true)}
+      </tr></thead>
       <tbody>
         ${withData.map(d => `
           <tr>
@@ -464,6 +550,18 @@ async function loadToday() {
   loadStopTable(rollup);
   renderStopMarkers(rollup);
 }
+
+document.querySelector('main').addEventListener('click', e => {
+  const th = e.target.closest('th[data-key]');
+  if (!th) return;
+  const tableKey = th.dataset.table;
+  const colKey = th.dataset.key;
+  const cur = sortState[tableKey];
+  sortState[tableKey] = (cur && cur.key === colKey) ? { key: colKey, dir: cur.dir === 'asc' ? 'desc' : 'asc' } : { key: colKey, dir: 'asc' };
+  if (tableKey === 'route') renderPerfTable(document.getElementById('today-perf'), lastRouteRollup);
+  else if (tableKey === 'stop') renderStopTable();
+  else if (tableKey === 'trend') renderTrend(document.getElementById('trend-perf'), lastTrendDays);
+});
 
 (async () => {
   initMap();
