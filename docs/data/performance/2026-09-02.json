@@ -1,10 +1,10 @@
 {
   "date": "2026-09-02",
   "system": {
-    "on_time": 47,
+    "on_time": 52,
     "early": 8,
     "late": 2,
-    "total": 57
+    "total": 62
   },
   "routes": {
     "6": {
@@ -58,10 +58,10 @@
     },
     "7": {
       "route_short_name": "7",
-      "on_time": 4,
+      "on_time": 9,
       "early": 0,
       "late": 0,
-      "total": 4
+      "total": 9
     }
   },
   "stops": {
@@ -338,12 +338,19 @@
           "early": 1,
           "late": 0,
           "total": 1
+        },
+        "7": {
+          "route_short_name": "7",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
         }
       },
-      "on_time": 3,
+      "on_time": 4,
       "early": 2,
       "late": 0,
-      "total": 5
+      "total": 6
     },
     "11209": {
       "stop_name": "11209",
@@ -668,16 +675,16 @@
         },
         "7": {
           "route_short_name": "7",
-          "on_time": 1,
+          "on_time": 2,
           "early": 0,
           "late": 0,
-          "total": 1
+          "total": 2
         }
       },
-      "on_time": 3,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 3
+      "total": 4
     },
     "1367": {
       "stop_name": "1367",
@@ -790,7 +797,55 @@
       "early": 0,
       "late": 0,
       "total": 1
+    },
+    "11301": {
+      "stop_name": "11301",
+      "routes": {
+        "7": {
+          "route_short_name": "7",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "11307": {
+      "stop_name": "11307",
+      "routes": {
+        "7": {
+          "route_short_name": "7",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "11320": {
+      "stop_name": "11320",
+      "routes": {
+        "7": {
+          "route_short_name": "7",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
     }
   },
-  "last_updated": "2026-09-02T13:08:19.571409+00:00"
+  "last_updated": "2026-09-02T13:12:15.011522+00:00"
 }
