@@ -1,0 +1,110 @@
+# GoCary Transit Ops Dashboard
+
+Polls GoCary's GTFS-RT feeds (vehicle positions, trip updates, service
+alerts) and turns them into a live vehicle map, active alerts list, and
+on-time performance rollup by route — hosted entirely on GitHub, no server
+to run or pay for. Same shape as
+[gocary-news-monitor](https://github.com/g0s0-85/gocary-news-monitor): a
+GitHub Actions poller commits JSON under `docs/data/`, and a static
+`docs/index.html` on GitHub Pages reads it.
+
+## How it works
+
+- **`scripts/poll_transit.py`** — fetches GoCary's three `.pb` feeds
+  (`GTFS_VehiclePositions.pb`, `GTFS_TripUpdates.pb`,
+  `GTFS_ServiceAlerts.pb`, all under `gocarylive.org/GTFS/Realtime/`),
+  decodes them with `gtfs-realtime-bindings`, and writes:
+  - `docs/data/live/vehicles.json` — current vehicle positions, each tagged
+    on_time / early / late from its trip's next predicted stop.
+  - `docs/data/live/alerts.json` — currently active service alerts.
+  - `docs/data/live/trip_updates.json` — current per-trip delay snapshot.
+  - `docs/data/performance/YYYY-MM-DD.json` — one file per service day
+    (America/New_York), with on-time/early/late counts system-wide and per
+    route.
+  - `docs/data/routes.json` — route id → short name / color, refreshed
+    weekly from GoCary's static GTFS zip (only needed for display; delay
+    data comes straight from the RT feed).
+  - `docs/data/status.json` — last poll time, error (if any), poll count.
+
+  **On dedup:** TripUpdates repeats the same upcoming stop's predicted delay
+  on every poll until the vehicle actually passes it, so counting every poll
+  would count one real arrival dozens of times. The script instead tracks
+  each `(trip_id, stop_sequence)` pair in `docs/data/live/pending_stops.json`
+  with its most-recently-seen delay, and only rolls it into that day's
+  performance file the moment it stops appearing in the feed — i.e. once,
+  using the delay value closest to when the vehicle actually served that
+  stop. A feed outage that empties TripUpdates will flush everything pending
+  at once when it recovers; that's expected, not a bug.
+
+  On-time is defined as delay between -60s (1 min early) and +300s (5 min
+  late) — see `EARLY_THRESHOLD_S` / `LATE_THRESHOLD_S` in the script if
+  GoCary uses a different standard.
+
+- **`.github/workflows/poll-transit.yml`** — runs the script and commits
+  `docs/data` if anything changed. Only triggered by `workflow_dispatch`
+  (see the external trigger below) — the same reasoning as the news monitor
+  applies: GitHub's own `schedule:` trigger is unreliable and can race an
+  external trigger landing at the same moment.
+- **A [cron-job.org](https://cron-job.org) job** (set up separately, not
+  part of this repo) calls GitHub's API on an interval to fire
+  `workflow_dispatch`. This is what actually controls polling frequency.
+  Every 1–2 minutes is reasonable; GoCary's feeds don't update faster than
+  that.
+- **`docs/index.html`** — a static dashboard (no backend): a live Leaflet
+  map of vehicles color-coded by on-time status, active alerts, today's
+  on-time performance by route, and the last 7 service days' trend. Reads
+  data via the GitHub Contents API rather than fetching `data/*.json`
+  directly, for the same CDN-caching reason documented in the news monitor
+  (GitHub Pages caches for 10 minutes and ignores query strings; the
+  Contents API caches for only 60 seconds and is used first, falling back to
+  the Pages-served copy if that call fails, e.g. its 60-requests/hour
+  unauthenticated rate limit).
+
+## One-time setup
+
+1. **Create a GitHub repo** and push this folder to it:
+   ```bash
+   git init
+   git add .
+   git commit -m "Set up GoCary transit ops dashboard"
+   git branch -M main
+   git remote add origin https://github.com/<you>/gocary-transit-dashboard.git
+   git push -u origin main
+   ```
+   If you use a different GitHub username/org or repo name than
+   `g0s0-85/gocary-transit-dashboard`, update the `REPO` constant near the
+   top of the `<script>` block in `docs/index.html` to match — otherwise the
+   dashboard will fetch a repo that doesn't exist and show empty states.
+
+2. **Let the workflow push commits.**
+   `Settings → Actions → General → Workflow permissions` → select
+   **"Read and write permissions"** → Save.
+
+3. **Turn on GitHub Pages.**
+   `Settings → Pages` → **Source**: "Deploy from a branch", **Branch**:
+   `main`, folder **`/docs`** → Save. GitHub gives you a URL like
+   `https://<you>.github.io/gocary-transit-dashboard/`.
+
+4. **Kick off the first poll**: Actions tab → "Poll GoCary Transit" → **Run
+   workflow**. It'll take a few minutes of polling (and, if it's a weekday
+   during service hours, a few stops actually being passed) before the
+   on-time table has any data — the map and alerts should populate
+   immediately if service is running.
+
+5. **Set up the external trigger**: a fine-grained GitHub token scoped to
+   this repo with "Actions: Read and write" permission, and a free
+   cron-job.org job that POSTs to
+   `https://api.github.com/repos/<you>/gocary-transit-dashboard/actions/workflows/poll-transit.yml/dispatches`
+   with that token in an `Authorization: Bearer <token>` header and body
+   `{"ref":"main"}`.
+
+## Adjusting things
+
+- **Poll frequency**: change the cron-job.org schedule (not the `cron:`
+  line in the workflow — see above).
+- **On-time thresholds**: `EARLY_THRESHOLD_S` / `LATE_THRESHOLD_S` in
+  `scripts/poll_transit.py`.
+- **Map center/zoom**: the `setView([lat, lon], zoom)` call in
+  `docs/index.html`.
+- **Route colors**: pulled from GoCary's static GTFS `route_color`; falls
+  back to a default blue if a route doesn't set one.

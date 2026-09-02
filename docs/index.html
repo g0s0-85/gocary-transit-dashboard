@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GoCary Transit Ops Dashboard</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --card: #ffffff;
+    --border: #e2e4e9;
+    --text: #1c1e21;
+    --muted: #6b7280;
+    --on-time: #1a7f37;
+    --early: #2563eb;
+    --late: #c62828;
+    --unknown: #9ca3af;
+    --accent: #2563eb;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+  }
+  header {
+    padding: 20px 24px;
+    background: var(--card);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  header h1 { font-size: 18px; margin: 0; }
+  header p { margin: 4px 0 0; color: var(--muted); font-size: 13px; }
+  #status { font-size: 13px; color: var(--muted); text-align: right; }
+  main { max-width: 1000px; margin: 24px auto; padding: 0 16px 60px; }
+  h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 28px 0 12px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; }
+  .empty { text-align: center; color: var(--muted); padding: 40px 20px; }
+
+  #alerts .alert {
+    padding: 12px 16px; border-bottom: 1px solid var(--border);
+  }
+  #alerts .alert:last-child { border-bottom: none; }
+  #alerts .alert .h { font-weight: 600; font-size: 13px; }
+  #alerts .alert .d { font-size: 12px; color: var(--muted); margin-top: 3px; }
+  #alerts .alert .r { font-size: 11px; color: var(--accent); margin-top: 4px; }
+
+  #map { height: 420px; border-radius: 10px; }
+
+  .legend { display: flex; gap: 16px; font-size: 12px; color: var(--muted); margin: 10px 2px 0; }
+  .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
+  .dot.on_time { background: var(--on-time); }
+  .dot.early { background: var(--early); }
+  .dot.late { background: var(--late); }
+  .dot.unknown { background: var(--unknown); }
+
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border); }
+  th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; }
+  td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
+  tr:last-child td { border-bottom: none; }
+  .pct-on_time { color: var(--on-time); font-weight: 600; }
+  .pct-late { color: var(--late); }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <h1>GoCary Transit Ops Dashboard</h1>
+    <p>Live GTFS-RT feed from <a href="https://www.gocarylive.org/" target="_blank" rel="noopener">gocarylive.org</a></p>
+  </div>
+  <div id="status">loading status…</div>
+</header>
+<main>
+  <div id="alerts-section" style="display:none">
+    <h2>Active service alerts</h2>
+    <div id="alerts" class="card"></div>
+  </div>
+
+  <h2>Live vehicles</h2>
+  <div id="map" class="card"></div>
+  <div class="legend">
+    <span><i class="dot on_time"></i>on time</span>
+    <span><i class="dot early"></i>early (&gt;1 min)</span>
+    <span><i class="dot late"></i>late (&gt;5 min)</span>
+    <span><i class="dot unknown"></i>no prediction</span>
+  </div>
+
+  <h2>Today's on-time performance</h2>
+  <div id="today-perf" class="card"><div class="empty">Loading…</div></div>
+
+  <h2>Last 7 service days</h2>
+  <div id="trend-perf" class="card"><div class="empty">Loading…</div></div>
+</main>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+function esc(s) {
+  if (s === null || s === undefined) return '';
+  return String(s).replace(/[&<>]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+}
+function pct(n, total) {
+  if (!total) return '—';
+  return (100 * n / total).toFixed(0) + '%';
+}
+
+// GitHub Pages fronts docs/data/*.json through a CDN that caches for up to
+// 10 minutes and doesn't vary by query string, so a plain fetch can silently
+// serve stale data. The GitHub Contents API caches for only 60 seconds, so
+// we hit that first and only fall back to the Pages-served copy (which can
+// lag) if the API call fails, e.g. due to its unauthenticated rate limit
+// (60 requests/hour per visitor IP).
+const REPO = 'g0s0-85/gocary-transit-dashboard';
+const BRANCH = 'main';
+
+async function fetchText(apiPath, pagesPath) {
+  try {
+    const url = `https://api.github.com/repos/${REPO}/contents/${apiPath}?ref=${BRANCH}`;
+    const res = await fetch(url, { headers: { Accept: 'application/vnd.github.raw' } });
+    if (res.ok) return await res.text();
+  } catch {}
+  try {
+    const res = await fetch(pagesPath + '?t=' + Date.now());
+    if (res.ok) return await res.text();
+  } catch {}
+  return null;
+}
+
+async function fetchJson(apiPath, pagesPath) {
+  const text = await fetchText(apiPath, pagesPath);
+  if (text === null) return null;
+  try { return JSON.parse(text); } catch { return null; }
+}
+
+async function listDir(apiPath) {
+  try {
+    const url = `https://api.github.com/repos/${REPO}/contents/${apiPath}?ref=${BRANCH}`;
+    const res = await fetch(url);
+    if (res.ok) return await res.json();
+  } catch {}
+  return [];
+}
+
+function renderStatus(status) {
+  const el = document.getElementById('status');
+  if (!status || !status.last_polled) {
+    el.textContent = 'not polled yet';
+    return;
+  }
+  if (status.last_error) {
+    el.innerHTML = `<span style="color:#c62828">last poll errored: ${esc(status.last_error)}</span>`;
+  } else {
+    el.textContent = `last polled ${new Date(status.last_polled).toLocaleString()} · ` +
+      `${status.vehicles_seen ?? 0} vehicles · ${status.alerts_active ?? 0} alert(s) · ${status.polls_run} polls run`;
+  }
+}
+
+function renderAlerts(alertsData) {
+  const section = document.getElementById('alerts-section');
+  const el = document.getElementById('alerts');
+  const alerts = alertsData?.alerts || [];
+  if (!alerts.length) { section.style.display = 'none'; return; }
+  section.style.display = '';
+  el.innerHTML = alerts.map(a => `
+    <div class="alert">
+      <div class="h">${esc(a.header)}</div>
+      ${a.description ? `<div class="d">${esc(a.description)}</div>` : ''}
+      ${a.routes && a.routes.length ? `<div class="r">Routes: ${esc(a.routes.join(', '))}</div>` : ''}
+    </div>
+  `).join('');
+}
+
+let map, markersLayer;
+function initMap() {
+  map = L.map('map').setView([35.7915, -78.7811], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 19,
+  }).addTo(map);
+  markersLayer = L.layerGroup().addTo(map);
+}
+
+const STATUS_COLOR = { on_time: '#1a7f37', early: '#2563eb', late: '#c62828', unknown: '#9ca3af' };
+
+function renderVehicles(vehiclesData) {
+  markersLayer.clearLayers();
+  const vehicles = vehiclesData?.vehicles || [];
+  for (const v of vehicles) {
+    if (!v.lat || !v.lon) continue;
+    const color = STATUS_COLOR[v.status] || STATUS_COLOR.unknown;
+    const marker = L.circleMarker([v.lat, v.lon], {
+      radius: 7, color: '#fff', weight: 2, fillColor: color, fillOpacity: 1,
+    });
+    const delayTxt = v.delay_seconds == null ? 'no prediction' :
+      (v.delay_seconds >= 0 ? `${Math.round(v.delay_seconds / 60)} min late` : `${Math.round(-v.delay_seconds / 60)} min early`);
+    marker.bindPopup(`<b>Route ${esc(v.route_short_name)}</b><br>Vehicle ${esc(v.vehicle_id)}<br>${esc(delayTxt)}`);
+    marker.addTo(markersLayer);
+  }
+}
+
+function renderPerfTable(el, rollup) {
+  if (!rollup || !rollup.system || !rollup.system.total) {
+    el.innerHTML = '<div class="empty">No stops finalized yet today.</div>';
+    return;
+  }
+  const routeRows = Object.values(rollup.routes || {}).sort((a, b) => b.total - a.total);
+  const rows = [{ route_short_name: 'System-wide', ...rollup.system }, ...routeRows];
+  el.innerHTML = `
+    <table>
+      <thead><tr>
+        <th>Route</th><th class="num">On time</th><th class="num">Early</th><th class="num">Late</th><th class="num">Sample</th>
+      </tr></thead>
+      <tbody>
+        ${rows.map(r => `
+          <tr>
+            <td>${esc(r.route_short_name)}</td>
+            <td class="num pct-on_time">${pct(r.on_time, r.total)}</td>
+            <td class="num">${pct(r.early, r.total)}</td>
+            <td class="num pct-late">${pct(r.late, r.total)}</td>
+            <td class="num">${r.total}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+function renderTrend(el, days) {
+  const withData = days.filter(d => d && d.system && d.system.total);
+  if (!withData.length) {
+    el.innerHTML = '<div class="empty">Not enough history yet.</div>';
+    return;
+  }
+  el.innerHTML = `
+    <table>
+      <thead><tr><th>Date</th><th class="num">On time</th><th class="num">Early</th><th class="num">Late</th><th class="num">Sample</th></tr></thead>
+      <tbody>
+        ${withData.map(d => `
+          <tr>
+            <td>${esc(d.date)}</td>
+            <td class="num pct-on_time">${pct(d.system.on_time, d.system.total)}</td>
+            <td class="num">${pct(d.system.early, d.system.total)}</td>
+            <td class="num pct-late">${pct(d.system.late, d.system.total)}</td>
+            <td class="num">${d.system.total}</td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>
+  `;
+}
+
+async function loadTrend() {
+  const files = await listDir('docs/data/performance');
+  const dates = files
+    .map(f => f.name)
+    .filter(n => /^\d{4}-\d{2}-\d{2}\.json$/.test(n))
+    .sort()
+    .reverse()
+    .slice(0, 7);
+  const days = await Promise.all(dates.map(name =>
+    fetchJson(`docs/data/performance/${name}`, `data/performance/${name}`)
+  ));
+  renderTrend(document.getElementById('trend-perf'), days);
+}
+
+async function refreshLive() {
+  const [status, alerts, vehicles] = await Promise.all([
+    fetchJson('docs/data/status.json', 'data/status.json'),
+    fetchJson('docs/data/live/alerts.json', 'data/live/alerts.json'),
+    fetchJson('docs/data/live/vehicles.json', 'data/live/vehicles.json'),
+  ]);
+  renderStatus(status);
+  renderAlerts(alerts);
+  renderVehicles(vehicles);
+}
+
+async function loadToday() {
+  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+  const rollup = await fetchJson(`docs/data/performance/${today}.json`, `data/performance/${today}.json`);
+  renderPerfTable(document.getElementById('today-perf'), rollup);
+}
+
+(async () => {
+  initMap();
+  await refreshLive();
+  await Promise.all([loadToday(), loadTrend()]);
+  setInterval(refreshLive, 60000);
+})();
+</script>
+</body>
+</html>
