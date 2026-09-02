@@ -1,18 +1,18 @@
 {
   "date": "2026-09-02",
   "system": {
-    "on_time": 6,
+    "on_time": 9,
     "early": 0,
     "late": 0,
-    "total": 6
+    "total": 9
   },
   "routes": {
     "6": {
       "route_short_name": "6",
-      "on_time": 3,
+      "on_time": 6,
       "early": 0,
       "late": 0,
-      "total": 3
+      "total": 6
     },
     "9": {
       "route_short_name": "9",
@@ -80,12 +80,19 @@
           "early": 0,
           "late": 0,
           "total": 1
+        },
+        "6": {
+          "route_short_name": "6",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
         }
       },
-      "on_time": 1,
+      "on_time": 2,
       "early": 0,
       "late": 0,
-      "total": 1
+      "total": 2
     },
     "11700": {
       "stop_name": "11700",
@@ -118,7 +125,39 @@
       "early": 0,
       "late": 0,
       "total": 1
+    },
+    "1375": {
+      "stop_name": "1375",
+      "routes": {
+        "6": {
+          "route_short_name": "6",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "1379": {
+      "stop_name": "1379",
+      "routes": {
+        "6": {
+          "route_short_name": "6",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
     }
   },
-  "last_updated": "2026-09-02T12:52:12.869275+00:00"
+  "last_updated": "2026-09-02T12:52:54.628672+00:00"
 }
