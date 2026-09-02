@@ -1,10 +1,10 @@
 {
   "date": "2026-09-02",
   "system": {
-    "on_time": 28,
+    "on_time": 36,
     "early": 0,
-    "late": 1,
-    "total": 29
+    "late": 2,
+    "total": 38
   },
   "routes": {
     "6": {
@@ -16,10 +16,10 @@
     },
     "9": {
       "route_short_name": "9",
-      "on_time": 3,
+      "on_time": 6,
       "early": 0,
       "late": 0,
-      "total": 3
+      "total": 6
     },
     "4": {
       "route_short_name": "4",
@@ -37,10 +37,17 @@
     },
     "GA1": {
       "route_short_name": "GA1",
-      "on_time": 5,
+      "on_time": 8,
       "early": 0,
-      "late": 1,
-      "total": 6
+      "late": 2,
+      "total": 10
+    },
+    "3": {
+      "route_short_name": "3",
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2
     }
   },
   "stops": {
@@ -275,12 +282,19 @@
           "early": 0,
           "late": 0,
           "total": 1
+        },
+        "3": {
+          "route_short_name": "3",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
         }
       },
-      "on_time": 2,
+      "on_time": 3,
       "early": 0,
       "late": 0,
-      "total": 2
+      "total": 3
     },
     "11209": {
       "stop_name": "11209",
@@ -337,14 +351,14 @@
           "route_short_name": "GA1",
           "on_time": 1,
           "early": 0,
-          "late": 0,
-          "total": 1
+          "late": 1,
+          "total": 2
         }
       },
       "on_time": 1,
       "early": 0,
-      "late": 0,
-      "total": 1
+      "late": 1,
+      "total": 2
     },
     "16045": {
       "stop_name": "16045",
@@ -489,7 +503,110 @@
       "early": 0,
       "late": 0,
       "total": 1
+    },
+    "1452": {
+      "stop_name": "1452",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        },
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2
+    },
+    "11753": {
+      "stop_name": "11753",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "11393": {
+      "stop_name": "11393",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "11095": {
+      "stop_name": "11095",
+      "routes": {
+        "3": {
+          "route_short_name": "3",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "16093": {
+      "stop_name": "16093",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
+    },
+    "16021": {
+      "stop_name": "16021",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1
     }
   },
-  "last_updated": "2026-09-02T12:56:18.219517+00:00"
+  "last_updated": "2026-09-02T12:58:15.835006+00:00"
 }
