@@ -21,6 +21,7 @@ once when the feed comes back -- expected, not a bug.
 import csv
 import io
 import json
+import re
 import time
 import zipfile
 from datetime import datetime, timezone
@@ -308,6 +309,19 @@ def process_alerts(feed, routes):
     return len(alerts)
 
 
+def write_performance_index():
+    """GitHub Pages doesn't serve a directory listing, so the dashboard has
+    no static fallback for discovering which performance/*.json files exist
+    -- it has to ask the GitHub Contents API, which is capped at 60
+    unauthenticated requests/hour per IP and silently returns nothing useful
+    once that's exhausted. Write the list ourselves instead, so the
+    dashboard can fetch this one JSON file the same resilient way it fetches
+    any other (Contents API first, falling back to the Pages-served copy)."""
+    date_pattern = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+    dates = sorted(p.stem for p in PERF_DIR.glob("*.json") if date_pattern.match(p.stem))
+    save_json(PERF_DIR / "index.json", {"dates": dates})
+
+
 def main():
     status = load_json(STATUS_FILE, {
         "last_polled": None,
@@ -324,6 +338,7 @@ def main():
         tu_stats, trip_delay_by_id = process_trip_updates(tu_feed, routes, stops)
         vehicle_count = process_vehicle_positions(vp_feed, routes, trip_delay_by_id)
         alert_count = process_alerts(alerts_feed, routes)
+        write_performance_index()
 
         status["last_error"] = None
         status["vehicles_seen"] = vehicle_count

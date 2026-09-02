@@ -155,15 +155,6 @@ async function fetchJson(apiPath, pagesPath) {
   try { return JSON.parse(text); } catch { return null; }
 }
 
-async function listDir(apiPath) {
-  try {
-    const url = `https://api.github.com/repos/${REPO}/contents/${apiPath}?ref=${BRANCH}`;
-    const res = await fetch(url);
-    if (res.ok) return await res.json();
-  } catch {}
-  return [];
-}
-
 function renderStatus(status) {
   const el = document.getElementById('status');
   if (!status || !status.last_polled) {
@@ -438,11 +429,9 @@ async function fetchRollupCached(date, todayStr) {
 
 async function loadTrend() {
   const todayStr = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
-  const files = await listDir('docs/data/performance');
-  const dates = files
-    .map(f => f.name)
-    .filter(n => /^\d{4}-\d{2}-\d{2}\.json$/.test(n))
-    .map(n => n.replace('.json', ''))
+  const index = await fetchJson('docs/data/performance/index.json', 'data/performance/index.json');
+  const dates = (index?.dates || [])
+    .slice()
     .sort()
     .reverse()
     .slice(0, TREND_WINDOW_DAYS);
