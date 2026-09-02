@@ -16,7 +16,6 @@
     --early: #2563eb;
     --late: #c62828;
     --unknown: #9ca3af;
-    --accent: #2563eb;
   }
   * { box-sizing: border-box; }
   body {
@@ -42,14 +41,6 @@
   h2 { font-size: 14px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); margin: 28px 0 12px; }
   .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; }
   .empty { text-align: center; color: var(--muted); padding: 40px 20px; }
-
-  #alerts .alert {
-    padding: 12px 16px; border-bottom: 1px solid var(--border);
-  }
-  #alerts .alert:last-child { border-bottom: none; }
-  #alerts .alert .h { font-weight: 600; font-size: 13px; }
-  #alerts .alert .d { font-size: 12px; color: var(--muted); margin-top: 3px; }
-  #alerts .alert .r { font-size: 11px; color: var(--accent); margin-top: 4px; }
 
   #map, #adherence-map { height: 420px; border-radius: 10px; }
 
@@ -89,11 +80,6 @@
   <div id="status">loading status…</div>
 </header>
 <main>
-  <div id="alerts-section" style="display:none">
-    <h2>Active service alerts</h2>
-    <div id="alerts" class="card"></div>
-  </div>
-
   <h2>Live vehicles &amp; stops</h2>
   <div id="map" class="card"></div>
   <div class="legend">
@@ -188,23 +174,8 @@ function renderStatus(status) {
     el.innerHTML = `<span style="color:#c62828">last poll errored: ${esc(status.last_error)}</span>`;
   } else {
     el.textContent = `last polled ${new Date(status.last_polled).toLocaleString()} · ` +
-      `${status.vehicles_seen ?? 0} vehicles · ${status.alerts_active ?? 0} alert(s) · ${status.polls_run} polls run`;
+      `${status.vehicles_seen ?? 0} vehicles · ${status.polls_run} polls run`;
   }
-}
-
-function renderAlerts(alertsData) {
-  const section = document.getElementById('alerts-section');
-  const el = document.getElementById('alerts');
-  const alerts = alertsData?.alerts || [];
-  if (!alerts.length) { section.style.display = 'none'; return; }
-  section.style.display = '';
-  el.innerHTML = alerts.map(a => `
-    <div class="alert">
-      <div class="h">${esc(a.header)}</div>
-      ${a.description ? `<div class="d">${esc(a.description)}</div>` : ''}
-      ${a.routes && a.routes.length ? `<div class="r">Routes: ${esc(a.routes.join(', '))}</div>` : ''}
-    </div>
-  `).join('');
 }
 
 let map, stopsLayer, markersLayer;
@@ -481,13 +452,11 @@ async function loadTrend() {
 }
 
 async function refreshLive() {
-  const [status, alerts, vehicles] = await Promise.all([
+  const [status, vehicles] = await Promise.all([
     fetchJson('docs/data/status.json', 'data/status.json'),
-    fetchJson('docs/data/live/alerts.json', 'data/live/alerts.json'),
     fetchJson('docs/data/live/vehicles.json', 'data/live/vehicles.json'),
   ]);
   renderStatus(status);
-  renderAlerts(alerts);
   renderVehicles(vehicles);
 }
 
