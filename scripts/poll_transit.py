@@ -40,10 +40,10 @@ SERVICE_TZ = ZoneInfo("America/New_York")
 
 # A stop-time prediction counts as "on time" if its delay (seconds, GTFS-RT
 # StopTimeEvent.delay: positive = late, negative = early) falls in this
-# window. Outside it, it's bucketed as early or late. This 1-min-early /
-# 5-min-late window is a common transit-industry on-time definition (used by,
-# e.g., many TCRP-derived agency standards); adjust here if GoCary uses a
-# different one.
+# window. Outside it, it's bucketed as early or late. This is GoCary's own
+# on-time definition (confirmed directly, not just a generic default): more
+# than 1 minute ahead of schedule is early, more than 5 minutes behind is
+# late.
 EARLY_THRESHOLD_S = -60
 LATE_THRESHOLD_S = 300
 

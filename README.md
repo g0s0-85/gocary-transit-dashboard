@@ -41,8 +41,8 @@ GitHub Actions poller commits JSON under `docs/data/`, and a static
   at once when it recovers; that's expected, not a bug.
 
   On-time is defined as delay between -60s (1 min early) and +300s (5 min
-  late) — see `EARLY_THRESHOLD_S` / `LATE_THRESHOLD_S` in the script if
-  GoCary uses a different standard.
+  late) — this is GoCary's own on-time standard, confirmed directly. See
+  `EARLY_THRESHOLD_S` / `LATE_THRESHOLD_S` in the script to change it.
 
 - **`.github/workflows/poll-transit.yml`** — runs the script and commits
   `docs/data` if anything changed. Only triggered by `workflow_dispatch`
