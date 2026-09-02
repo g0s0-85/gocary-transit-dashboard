@@ -44,6 +44,20 @@ GitHub Actions poller commits JSON under `docs/data/`, and a static
   late) — this is GoCary's own on-time standard, confirmed directly. See
   `EARLY_THRESHOLD_S` / `LATE_THRESHOLD_S` in the script to change it.
 
+  **On stop coverage:** don't expect the unique-stop count to climb toward
+  the full ~277-stop roster, or even the ~258 stops actually scheduled
+  somewhere in the static GTFS. GoCary's RT feed only publishes
+  StopTimeUpdate predictions for **timepoint stops** — the schedule-checkpoint
+  subset of each route (confirmed directly: a Route 1 trip's static schedule
+  has 27+ stops but only ~6 are flagged `timepoint=1` in `stop_times.txt`,
+  and the live feed reports exactly that many, spanning the full route rather
+  than clustering near the vehicle's position). Non-timepoint stops simply
+  never appear in the feed, so once every active route has completed one
+  full trip, the unique-stop count plateaus near (active routes) × (average
+  timepoints per route) — around 54 for GoCary's ~9 routes as observed on
+  2026-09-02 — and stays there. This is a structural property of the data
+  source, not a bug to chase.
+
 - **`.github/workflows/poll-transit.yml`** — runs the script and commits
   `docs/data` if anything changed. Only triggered by `workflow_dispatch`
   (see the external trigger below) — the same reasoning as the news monitor
