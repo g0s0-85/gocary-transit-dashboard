@@ -527,13 +527,22 @@ async function loadTrend() {
   renderAdherenceMap(days.filter(Boolean));
 }
 
-async function refreshLive() {
-  const [status, vehicles] = await Promise.all([
-    fetchJson('docs/data/status.json', 'data/status.json'),
-    fetchJson('docs/data/live/vehicles.json', 'data/live/vehicles.json'),
-  ]);
-  renderStatus(status);
+// Split so vehicles.json (what actually needs to feel live) doesn't share
+// its Contents API budget with status.json (poll bookkeeping, doesn't need
+// anywhere near the same freshness). The Contents API is capped at 60
+// unauthenticated requests/hour per IP -- one file polled every 60s already
+// uses the *entire* budget, so refreshing two files on the same 60s cycle
+// (as this used to) silently blew past it and fell back to the 10-minute
+// Pages-cached copy periodically. Splitting them means vehicles can
+// sustainably use the full budget on its own.
+async function refreshVehicles() {
+  const vehicles = await fetchJson('docs/data/live/vehicles.json', 'data/live/vehicles.json');
   renderVehicles(vehicles);
+}
+
+async function refreshStatus() {
+  const status = await fetchJson('docs/data/status.json', 'data/status.json');
+  renderStatus(status);
 }
 
 async function loadToday() {
@@ -563,9 +572,10 @@ document.querySelector('main').addEventListener('click', e => {
     showAllStops = e.target.checked;
     renderAdherenceMap(lastTrendDays);
   });
-  await Promise.all([refreshLive(), loadStops()]);
+  await Promise.all([refreshVehicles(), refreshStatus(), loadStops()]);
   await Promise.all([loadToday(), loadTrend()]);
-  setInterval(refreshLive, 60000);
+  setInterval(refreshVehicles, 60000);
+  setInterval(refreshStatus, 300000);
 })();
 </script>
 </body>
