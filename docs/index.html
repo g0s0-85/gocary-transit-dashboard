@@ -51,7 +51,7 @@
   #alerts .alert .d { font-size: 12px; color: var(--muted); margin-top: 3px; }
   #alerts .alert .r { font-size: 11px; color: var(--accent); margin-top: 4px; }
 
-  #map { height: 420px; border-radius: 10px; }
+  #map, #adherence-map { height: 420px; border-radius: 10px; }
 
   .legend { display: flex; gap: 16px; font-size: 12px; color: var(--muted); margin: 10px 2px 0; flex-wrap: wrap; }
   .legend span { display: inline-flex; align-items: center; gap: 5px; }
@@ -102,6 +102,16 @@
     <span><i class="dot late"></i>late (&gt;5 min)</span>
     <span><i class="dot unknown"></i>no prediction</span>
     <span style="margin-left:auto"><label><input type="checkbox" id="toggle-stops" checked> show stops (colored by today's on-time %)</label></span>
+  </div>
+
+  <h2>Stop schedule adherence (rolling average)</h2>
+  <div id="adherence-map" class="card"></div>
+  <div class="legend">
+    <span><i class="dot on_time"></i>on time</span>
+    <span><i class="dot early"></i>trending early</span>
+    <span><i class="dot late"></i>trending late</span>
+    <span><i class="dot unknown"></i>not enough data yet</span>
+    <span id="adherence-window-note" style="margin-left:auto"></span>
   </div>
 
   <h2>Today's on-time performance by route</h2>
@@ -244,7 +254,71 @@ function renderStopMarkers(rollup) {
   }
 }
 
+let adherenceMap, adherenceLayer;
+function initAdherenceMap() {
+  adherenceMap = L.map('adherence-map').setView([35.7915, -78.7811], 12);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; OpenStreetMap contributors',
+    maxZoom: 19,
+  }).addTo(adherenceMap);
+  adherenceLayer = L.layerGroup().addTo(adherenceMap);
+}
+
 const STATUS_COLOR = { on_time: '#1a7f37', early: '#2563eb', late: '#c62828', unknown: '#9ca3af' };
+
+// Below this many finalized stop-events in the window, a single lucky/unlucky
+// bus would swing the color -- show it as "not enough data" instead.
+const ADHERENCE_MIN_SAMPLE = 5;
+const ADHERENCE_ON_TIME_THRESHOLD = 0.7;
+
+function renderAdherenceMap(days) {
+  adherenceLayer.clearLayers();
+  // Aggregate each stop's on_time/early/late/total across every fetched day
+  // (newest first), so this is a rolling average over however much history
+  // exists so far -- not just today.
+  const agg = {};
+  for (const day of days) {
+    for (const [stopId, s] of Object.entries(day?.stops || {})) {
+      if (!agg[stopId]) {
+        agg[stopId] = { on_time: 0, early: 0, late: 0, total: 0, routes: new Set(), name: s.stop_name };
+      }
+      const a = agg[stopId];
+      a.on_time += s.on_time; a.early += s.early; a.late += s.late; a.total += s.total;
+      for (const r of Object.values(s.routes || {})) a.routes.add(r.route_short_name);
+    }
+  }
+
+  for (const [stopId, a] of Object.entries(agg)) {
+    const coords = stopsById[stopId];
+    if (!coords || coords.lat == null || coords.lon == null) continue;
+
+    let color, label;
+    if (a.total < ADHERENCE_MIN_SAMPLE) {
+      color = STATUS_COLOR.unknown;
+      label = 'not enough data yet';
+    } else if (a.on_time / a.total >= ADHERENCE_ON_TIME_THRESHOLD) {
+      color = STATUS_COLOR.on_time;
+      label = 'on time';
+    } else if (a.late > a.early) {
+      color = STATUS_COLOR.late;
+      label = 'trending late';
+    } else {
+      color = STATUS_COLOR.early;
+      label = 'trending early';
+    }
+
+    const marker = L.circleMarker([coords.lat, coords.lon], {
+      radius: 5, weight: 1, color: '#fff', fillColor: color, fillOpacity: 0.9,
+    });
+    const routesTxt = [...a.routes].join(', ');
+    const sampleTxt = `${pct(a.on_time, a.total)} on time · ${a.total} stop${a.total === 1 ? '' : 's'} over ${days.length} day${days.length === 1 ? '' : 's'}`;
+    marker.bindPopup(`<b>${esc(a.name)}</b>${routesTxt ? `<br>Routes: ${esc(routesTxt)}` : ''}<br>${esc(label)} — ${esc(sampleTxt)}`);
+    marker.addTo(adherenceLayer);
+  }
+
+  document.getElementById('adherence-window-note').textContent =
+    `based on the last ${days.length} available service day${days.length === 1 ? '' : 's'}`;
+}
 
 function renderVehicles(vehiclesData) {
   markersLayer.clearLayers();
@@ -380,6 +454,9 @@ async function loadTrend() {
     fetchJson(`docs/data/performance/${name}`, `data/performance/${name}`)
   ));
   renderTrend(document.getElementById('trend-perf'), days);
+  // Same last-7-days fetch feeds the stop adherence map, so it doesn't cost
+  // extra API calls against the Contents API's 60/hour unauthenticated limit.
+  renderAdherenceMap(days.filter(Boolean));
 }
 
 async function refreshLive() {
@@ -403,6 +480,7 @@ async function loadToday() {
 
 (async () => {
   initMap();
+  initAdherenceMap();
   document.getElementById('stop-filter').addEventListener('input', renderStopTable);
   document.getElementById('toggle-stops').addEventListener('change', e => {
     if (e.target.checked) map.addLayer(stopsLayer);
