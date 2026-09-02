@@ -53,8 +53,9 @@
 
   #map { height: 420px; border-radius: 10px; }
 
-  .legend { display: flex; gap: 16px; font-size: 12px; color: var(--muted); margin: 10px 2px 0; }
+  .legend { display: flex; gap: 16px; font-size: 12px; color: var(--muted); margin: 10px 2px 0; flex-wrap: wrap; }
   .legend span { display: inline-flex; align-items: center; gap: 5px; }
+  .legend label { display: inline-flex; align-items: center; gap: 5px; cursor: pointer; }
   .dot { width: 9px; height: 9px; border-radius: 50%; display: inline-block; }
   .dot.on_time { background: var(--on-time); }
   .dot.early { background: var(--early); }
@@ -93,13 +94,14 @@
     <div id="alerts" class="card"></div>
   </div>
 
-  <h2>Live vehicles</h2>
+  <h2>Live vehicles &amp; stops</h2>
   <div id="map" class="card"></div>
   <div class="legend">
-    <span><i class="dot on_time"></i>on time</span>
+    <span><i class="dot on_time"></i>vehicle on time</span>
     <span><i class="dot early"></i>early (&gt;1 min)</span>
     <span><i class="dot late"></i>late (&gt;5 min)</span>
     <span><i class="dot unknown"></i>no prediction</span>
+    <span style="margin-left:auto"><label><input type="checkbox" id="toggle-stops" checked> show stops (colored by today's on-time %)</label></span>
   </div>
 
   <h2>Today's on-time performance by route</h2>
@@ -195,14 +197,51 @@ function renderAlerts(alertsData) {
   `).join('');
 }
 
-let map, markersLayer;
+let map, stopsLayer, markersLayer;
 function initMap() {
   map = L.map('map').setView([35.7915, -78.7811], 12);
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; OpenStreetMap contributors',
     maxZoom: 19,
   }).addTo(map);
+  // Stops first so vehicle markers draw on top of them when they overlap.
+  stopsLayer = L.layerGroup().addTo(map);
   markersLayer = L.layerGroup().addTo(map);
+}
+
+let stopsById = {};
+async function loadStops() {
+  const data = await fetchJson('docs/data/stops.json', 'data/stops.json');
+  stopsById = {};
+  for (const [id, s] of Object.entries(data || {})) {
+    if (id === '_fetched_at') continue;
+    stopsById[id] = s;
+  }
+}
+
+function stopPerfColor(perf) {
+  if (!perf || !perf.total) return '#c8ccd4'; // no data yet today
+  const onTimeFrac = perf.on_time / perf.total;
+  if (onTimeFrac >= 0.8) return STATUS_COLOR.on_time;
+  if (onTimeFrac >= 0.5) return '#d97706'; // amber: mediocre, not yet "late"-dominated
+  return STATUS_COLOR.late;
+}
+
+function renderStopMarkers(rollup) {
+  stopsLayer.clearLayers();
+  const stopPerf = rollup?.stops || {};
+  for (const [stopId, s] of Object.entries(stopsById)) {
+    if (s.lat == null || s.lon == null) continue;
+    const perf = stopPerf[stopId];
+    const color = stopPerfColor(perf);
+    const marker = L.circleMarker([s.lat, s.lon], {
+      radius: 5, weight: 1, color: '#fff', fillColor: color, fillOpacity: 0.9,
+    });
+    const routes = perf ? Object.values(perf.routes || {}).map(r => r.route_short_name).join(', ') : '';
+    const perfTxt = perf ? `${pct(perf.on_time, perf.total)} on time (${perf.total} stop${perf.total === 1 ? '' : 's'} today)` : 'no data yet today';
+    marker.bindPopup(`<b>${esc(s.name)}</b>${routes ? `<br>Routes: ${esc(routes)}` : ''}<br>${esc(perfTxt)}`);
+    marker.addTo(stopsLayer);
+  }
 }
 
 const STATUS_COLOR = { on_time: '#1a7f37', early: '#2563eb', late: '#c62828', unknown: '#9ca3af' };
@@ -357,12 +396,17 @@ async function loadToday() {
   const rollup = await fetchJson(`docs/data/performance/${today}.json`, `data/performance/${today}.json`);
   renderPerfTable(document.getElementById('today-perf'), rollup);
   loadStopTable(rollup);
+  renderStopMarkers(rollup);
 }
 
 (async () => {
   initMap();
   document.getElementById('stop-filter').addEventListener('input', renderStopTable);
-  await refreshLive();
+  document.getElementById('toggle-stops').addEventListener('change', e => {
+    if (e.target.checked) map.addLayer(stopsLayer);
+    else map.removeLayer(stopsLayer);
+  });
+  await Promise.all([refreshLive(), loadStops()]);
   await Promise.all([loadToday(), loadTrend()]);
   setInterval(refreshLive, 60000);
 })();
