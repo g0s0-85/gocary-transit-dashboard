@@ -252,6 +252,17 @@ const ADHERENCE_ON_TIME_THRESHOLD = 0.85;
 // would clutter the map with mostly-permanent gray dots.
 let showAllStops = false;
 
+function formatAvgDelay(delaySum, sampleCount) {
+  if (!sampleCount) return null; // no post-upgrade samples in this window
+  const avg = delaySum / sampleCount;
+  const abs = Math.abs(avg);
+  const mins = Math.floor(abs / 60);
+  const secs = Math.round(abs % 60);
+  const mag = mins ? `${mins}m ${secs}s` : `${secs}s`;
+  if (Math.round(avg) === 0) return 'on schedule on average';
+  return `avg ${mag} ${avg > 0 ? 'late' : 'early'}`;
+}
+
 function renderAdherenceMap(days) {
   adherenceLayer.clearLayers();
   // Aggregate each stop's on_time/early/late/total across every fetched day
@@ -261,10 +272,18 @@ function renderAdherenceMap(days) {
   for (const day of days) {
     for (const [stopId, s] of Object.entries(day?.stops || {})) {
       if (!agg[stopId]) {
-        agg[stopId] = { on_time: 0, early: 0, late: 0, total: 0, routes: new Set(), name: s.stop_name };
+        agg[stopId] = { on_time: 0, early: 0, late: 0, total: 0, delaySum: 0, delaySampleCount: 0, routes: new Set(), name: s.stop_name };
       }
       const a = agg[stopId];
       a.on_time += s.on_time; a.early += s.early; a.late += s.late; a.total += s.total;
+      // delay_sum/delay_sample_count are absent on rollup days written
+      // before this field existed -- skip those days for the average
+      // rather than treating the missing sum as a real zero, which would
+      // silently understate it.
+      if (s.delay_sum !== undefined && s.delay_sample_count !== undefined) {
+        a.delaySum += s.delay_sum;
+        a.delaySampleCount += s.delay_sample_count;
+      }
       for (const r of Object.values(s.routes || {})) a.routes.add(r.route_short_name);
     }
   }
@@ -293,7 +312,8 @@ function renderAdherenceMap(days) {
     });
     const routesTxt = [...a.routes].join(', ');
     const sampleTxt = `${pct(a.on_time, a.total)} on time · ${a.total} stop${a.total === 1 ? '' : 's'} over ${days.length} day${days.length === 1 ? '' : 's'}`;
-    marker.bindPopup(`<b>${esc(a.name)}</b>${routesTxt ? `<br>Routes: ${esc(routesTxt)}` : ''}<br>${esc(label)} — ${esc(sampleTxt)}`);
+    const avgTxt = formatAvgDelay(a.delaySum, a.delaySampleCount);
+    marker.bindPopup(`<b>${esc(a.name)}</b>${routesTxt ? `<br>Routes: ${esc(routesTxt)}` : ''}<br>${esc(label)} — ${esc(sampleTxt)}${avgTxt ? `<br>${esc(avgTxt)}` : ''}`);
     marker.addTo(adherenceLayer);
   }
 

@@ -218,7 +218,27 @@ def process_trip_updates(feed, routes, stops):
 
 
 def _blank_counts():
-    return {"on_time": 0, "early": 0, "late": 0, "total": 0}
+    # delay_sum/delay_sample_count let the dashboard compute an average
+    # signed delay (seconds, +late/-early). delay_sample_count is tracked
+    # separately from "total" rather than reused, because a day's rollup
+    # file can already exist on disk from before these two fields existed --
+    # "total" on such a file already includes events whose raw delay was
+    # never recorded (lost; not recoverable), so dividing by "total" would
+    # silently understate the true average. delay_sample_count only counts
+    # events that actually contributed to delay_sum, so delay_sum /
+    # delay_sample_count stays accurate through that transition, and the two
+    # simply converge with total once a rollup file is entirely post-upgrade.
+    return {"on_time": 0, "early": 0, "late": 0, "total": 0, "delay_sum": 0, "delay_sample_count": 0}
+
+
+def _bump(d, bucket, delay):
+    d[bucket] += 1
+    d["total"] += 1
+    # get(..., 0), not += : `d` may be an entry loaded from a rollup file
+    # written before these two fields existed, in which case the keys are
+    # simply absent rather than zero.
+    d["delay_sum"] = d.get("delay_sum", 0) + delay
+    d["delay_sample_count"] = d.get("delay_sample_count", 0) + 1
 
 
 def apply_rollup(finalized, routes, stops):
@@ -241,19 +261,15 @@ def apply_rollup(finalized, routes, stops):
         route_name = routes.get(route_id, {}).get("short_name", route_id)
         stop_name = stops.get(entry["stop_id"], {}).get("name", stop_id) if entry["stop_id"] else f"Stop sequence {entry['stop_sequence']}"
 
-        rollup["system"][bucket] += 1
-        rollup["system"]["total"] += 1
+        _bump(rollup["system"], bucket, entry["delay"])
 
         r = rollup["routes"].setdefault(route_id, {"route_short_name": route_name, **_blank_counts()})
-        r[bucket] += 1
-        r["total"] += 1
+        _bump(r, bucket, entry["delay"])
 
         s = rollup["stops"].setdefault(stop_id, {"stop_name": stop_name, "routes": {}, **_blank_counts()})
-        s[bucket] += 1
-        s["total"] += 1
+        _bump(s, bucket, entry["delay"])
         sr = s["routes"].setdefault(route_id, {"route_short_name": route_name, **_blank_counts()})
-        sr[bucket] += 1
-        sr["total"] += 1
+        _bump(sr, bucket, entry["delay"])
 
     rollup["last_updated"] = now_iso()
     save_json(path, rollup)
