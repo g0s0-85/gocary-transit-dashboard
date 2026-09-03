@@ -1,10 +1,12 @@
 {
   "date": "2026-09-03",
   "system": {
-    "on_time": 625,
+    "on_time": 628,
     "early": 45,
     "late": 35,
-    "total": 705
+    "total": 708,
+    "delay_sum": 461,
+    "delay_sample_count": 3
   },
   "routes": {
     "GA1": {
@@ -37,10 +39,12 @@
     },
     "2": {
       "route_short_name": "2",
-      "on_time": 63,
+      "on_time": 66,
       "early": 3,
       "late": 6,
-      "total": 72
+      "total": 75,
+      "delay_sum": 461,
+      "delay_sample_count": 3
     },
     "1": {
       "route_short_name": "1",
@@ -557,48 +561,60 @@
       "routes": {
         "2": {
           "route_short_name": "2",
-          "on_time": 15,
+          "on_time": 16,
           "early": 0,
           "late": 3,
-          "total": 18
+          "total": 19,
+          "delay_sum": 264,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 15,
+      "on_time": 16,
       "early": 0,
       "late": 3,
-      "total": 18
+      "total": 19,
+      "delay_sum": 264,
+      "delay_sample_count": 1
     },
     "11655": {
       "stop_name": "11655",
       "routes": {
         "2": {
           "route_short_name": "2",
-          "on_time": 7,
+          "on_time": 8,
           "early": 0,
           "late": 1,
-          "total": 8
+          "total": 9,
+          "delay_sum": 122,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 7,
+      "on_time": 8,
       "early": 0,
       "late": 1,
-      "total": 8
+      "total": 9,
+      "delay_sum": 122,
+      "delay_sample_count": 1
     },
     "11112": {
       "stop_name": "11112",
       "routes": {
         "2": {
           "route_short_name": "2",
-          "on_time": 8,
+          "on_time": 9,
           "early": 0,
           "late": 0,
-          "total": 8
+          "total": 9,
+          "delay_sum": 75,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 8,
+      "on_time": 9,
       "early": 0,
       "late": 0,
-      "total": 8
+      "total": 9,
+      "delay_sum": 75,
+      "delay_sample_count": 1
     },
     "11151": {
       "stop_name": "High House Rd at Davis Dr (EB)",
@@ -1063,5 +1079,5 @@
       "total": 6
     }
   },
-  "last_updated": "2026-09-03T12:15:18.474978+00:00"
+  "last_updated": "2026-09-03T12:19:22.979577+00:00"
 }
