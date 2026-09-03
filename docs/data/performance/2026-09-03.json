@@ -1,10 +1,10 @@
 {
   "date": "2026-09-03",
   "system": {
-    "on_time": 26,
+    "on_time": 116,
     "early": 0,
     "late": 0,
-    "total": 26
+    "total": 116
   },
   "routes": {
     "GA1": {
@@ -13,6 +13,34 @@
       "early": 0,
       "late": 0,
       "total": 26
+    },
+    "9": {
+      "route_short_name": "9",
+      "on_time": 20,
+      "early": 0,
+      "late": 0,
+      "total": 20
+    },
+    "6": {
+      "route_short_name": "6",
+      "on_time": 20,
+      "early": 0,
+      "late": 0,
+      "total": 20
+    },
+    "4": {
+      "route_short_name": "4",
+      "on_time": 30,
+      "early": 0,
+      "late": 0,
+      "total": 30
+    },
+    "2": {
+      "route_short_name": "2",
+      "on_time": 20,
+      "early": 0,
+      "late": 0,
+      "total": 20
     }
   },
   "stops": {
@@ -25,12 +53,19 @@
           "early": 0,
           "late": 0,
           "total": 5
+        },
+        "9": {
+          "route_short_name": "9",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5
         }
       },
-      "on_time": 5,
+      "on_time": 10,
       "early": 0,
       "late": 0,
-      "total": 5
+      "total": 10
     },
     "16093": {
       "stop_name": "16093",
@@ -159,7 +194,449 @@
       "early": 0,
       "late": 0,
       "total": 2
+    },
+    "1398": {
+      "stop_name": "Cary Depot (South Platform)",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        },
+        "6": {
+          "route_short_name": "6",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        },
+        "2": {
+          "route_short_name": "2",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        },
+        "4": {
+          "route_short_name": "4",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        }
+      },
+      "on_time": 10,
+      "early": 0,
+      "late": 0,
+      "total": 10
+    },
+    "11700": {
+      "stop_name": "11700",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3
+    },
+    "11704": {
+      "stop_name": "11704",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3
+    },
+    "1375": {
+      "stop_name": "Walnut St at Cary Towne Centre OB",
+      "routes": {
+        "6": {
+          "route_short_name": "6",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3
+    },
+    "1379": {
+      "stop_name": "Buck Jones Rd at Nottingham Dr (EB)",
+      "routes": {
+        "6": {
+          "route_short_name": "6",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3
+    },
+    "9322": {
+      "stop_name": "Western Blvd at Hunt Club Ln",
+      "routes": {
+        "6": {
+          "route_short_name": "6",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5
+        }
+      },
+      "on_time": 5,
+      "early": 0,
+      "late": 0,
+      "total": 5
+    },
+    "11440": {
+      "stop_name": "Cary Depot (North Platform)",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        },
+        "2": {
+          "route_short_name": "2",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        },
+        "6": {
+          "route_short_name": "6",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        },
+        "9": {
+          "route_short_name": "9",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        }
+      },
+      "on_time": 10,
+      "early": 0,
+      "late": 0,
+      "total": 10
+    },
+    "11397": {
+      "stop_name": "Highland Village (OB)",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3
+    },
+    "11401": {
+      "stop_name": "High House Rd at Maynard Crossing",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3
+    },
+    "11150": {
+      "stop_name": "High House Rd at Davis Dr (OB)",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3
+    },
+    "1441": {
+      "stop_name": "NC 55 at Green Level West Rd",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3
+    },
+    "11161": {
+      "stop_name": "NC Highway 55 at Wal-Mart",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5
+        }
+      },
+      "on_time": 5,
+      "early": 0,
+      "late": 0,
+      "total": 5
+    },
+    "11209": {
+      "stop_name": "11209",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3
+    },
+    "11605": {
+      "stop_name": "11605",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3
+    },
+    "101": {
+      "stop_name": "101",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5
+        }
+      },
+      "on_time": 5,
+      "early": 0,
+      "late": 0,
+      "total": 5
+    },
+    "11655": {
+      "stop_name": "11655",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2
+    },
+    "11112": {
+      "stop_name": "11112",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2
+    },
+    "11151": {
+      "stop_name": "High House Rd at Davis Dr (EB)",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2
+    },
+    "11022": {
+      "stop_name": "Bond Park at Cary Senior Center",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2
+    },
+    "11400": {
+      "stop_name": "High House Rd at NW Maynard Rd (IB)",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2
+    },
+    "11163": {
+      "stop_name": "Highland Village",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2
+    },
+    "1380": {
+      "stop_name": "Buck Jones Rd at Nottingham Dr (WB)",
+      "routes": {
+        "6": {
+          "route_short_name": "6",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2
+    },
+    "1587": {
+      "stop_name": "Walnut St at Cary Towne Center",
+      "routes": {
+        "6": {
+          "route_short_name": "6",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2
+    },
+    "11753": {
+      "stop_name": "11753",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2
+    },
+    "11393": {
+      "stop_name": "High House Rd at Highland Village Dr (IB)",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2
     }
   },
-  "last_updated": "2026-09-03T09:40:19.832488+00:00"
+  "last_updated": "2026-09-03T09:52:14.159142+00:00"
 }
