@@ -1,20 +1,22 @@
 {
   "date": "2026-09-03",
   "system": {
-    "on_time": 653,
+    "on_time": 657,
     "early": 45,
     "late": 35,
-    "total": 733,
-    "delay_sum": 903,
-    "delay_sample_count": 28
+    "total": 737,
+    "delay_sum": 1387,
+    "delay_sample_count": 32
   },
   "routes": {
     "GA1": {
       "route_short_name": "GA1",
-      "on_time": 74,
+      "on_time": 78,
       "early": 3,
       "late": 12,
-      "total": 89
+      "total": 93,
+      "delay_sum": 484,
+      "delay_sample_count": 4
     },
     "9": {
       "route_short_name": "9",
@@ -85,10 +87,12 @@
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 12,
+          "on_time": 13,
           "early": 3,
           "late": 2,
-          "total": 17
+          "total": 18,
+          "delay_sum": 84,
+          "delay_sample_count": 1
         },
         "9": {
           "route_short_name": "9",
@@ -100,60 +104,72 @@
           "delay_sample_count": 2
         }
       },
-      "on_time": 29,
+      "on_time": 30,
       "early": 7,
       "late": 2,
-      "total": 38,
-      "delay_sum": 0,
-      "delay_sample_count": 2
+      "total": 39,
+      "delay_sum": 84,
+      "delay_sample_count": 3
     },
     "16093": {
       "stop_name": "16093",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 9,
+          "on_time": 10,
           "early": 0,
           "late": 1,
-          "total": 10
+          "total": 11,
+          "delay_sum": 42,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 9,
+      "on_time": 10,
       "early": 0,
       "late": 1,
-      "total": 10
+      "total": 11,
+      "delay_sum": 42,
+      "delay_sample_count": 1
     },
     "16021": {
       "stop_name": "Beaver Creek Commons Dr at Chick-fil-A (WB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 9,
+          "on_time": 10,
           "early": 0,
           "late": 1,
-          "total": 10
+          "total": 11,
+          "delay_sum": 148,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 9,
+      "on_time": 10,
       "early": 0,
       "late": 1,
-      "total": 10
+      "total": 11,
+      "delay_sum": 148,
+      "delay_sample_count": 1
     },
     "16031": {
       "stop_name": "Chapel Ridge Rd at Olive Chapel Professional Park (SB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 14,
+          "on_time": 15,
           "early": 0,
           "late": 3,
-          "total": 17
+          "total": 18,
+          "delay_sum": 210,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 14,
+      "on_time": 15,
       "early": 0,
       "late": 3,
-      "total": 17
+      "total": 18,
+      "delay_sum": 210,
+      "delay_sample_count": 1
     },
     "16045": {
       "stop_name": "Beaver Creek Commons Dr at Lowe's (EB)",
@@ -1145,5 +1161,5 @@
       "total": 6
     }
   },
-  "last_updated": "2026-09-03T12:22:20.236946+00:00"
+  "last_updated": "2026-09-03T12:24:15.208303+00:00"
 }
