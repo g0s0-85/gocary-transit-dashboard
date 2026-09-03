@@ -92,7 +92,7 @@
   <div id="status">loading status…</div>
 </header>
 <main>
-  <h2>Live vehicles</h2>
+  <h2>Live vehicles <span id="vehicles-refresh-note" style="text-transform:none; font-weight:400;"></span></h2>
   <div id="map" class="card"></div>
   <div class="legend">
     <span><i class="dot on_time"></i>on time</span>
@@ -579,9 +579,25 @@ async function loadTrend() {
 // (as this used to) silently blew past it and fell back to the 10-minute
 // Pages-cached copy periodically. Splitting them means vehicles can
 // sustainably use the full budget on its own.
+const VEHICLE_REFRESH_MS = 60000;
+let lastVehicleRefreshAt = null;
+
 async function refreshVehicles() {
   const vehicles = await fetchJson('docs/data/live/vehicles.json', 'data/live/vehicles.json');
   renderVehicles(vehicles);
+  lastVehicleRefreshAt = Date.now();
+  updateVehicleRefreshNote();
+}
+
+// Ticks every second so the countdown actually counts down, independent of
+// the 60s refresh cycle itself.
+function updateVehicleRefreshNote() {
+  const el = document.getElementById('vehicles-refresh-note');
+  if (!el || !lastVehicleRefreshAt) return;
+  const elapsedMs = Date.now() - lastVehicleRefreshAt;
+  const secsUntilNext = Math.max(0, Math.round((VEHICLE_REFRESH_MS - elapsedMs) / 1000));
+  const updatedAt = new Date(lastVehicleRefreshAt).toLocaleTimeString();
+  el.textContent = `· updated ${updatedAt} · next in ${secsUntilNext}s`;
 }
 
 async function refreshStatus() {
@@ -633,8 +649,9 @@ document.querySelector('main').addEventListener('click', e => {
   await Promise.all([refreshVehicles(), refreshStatus(), loadStops(), loadAvailableDates()]);
   if (availableDates.length) dateInput.min = availableDates[0];
   await Promise.all([loadPerfForDate(today), loadTrend()]);
-  setInterval(refreshVehicles, 60000);
+  setInterval(refreshVehicles, VEHICLE_REFRESH_MS);
   setInterval(refreshStatus, 300000);
+  setInterval(updateVehicleRefreshNote, 1000);
 })();
 </script>
 </body>
