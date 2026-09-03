@@ -26,8 +26,15 @@ GitHub Actions poller commits JSON under `docs/data/`, and a static
     historical data" below.
   - `docs/data/routes.json` / `docs/data/stops.json` — route id → short
     name/color and stop id → name/lat/lon, refreshed weekly from GoCary's
-    static GTFS zip (only needed for display; delay data comes straight
-    from the RT feed).
+    own static GTFS feed (`gocarylive.org/GTFS/google_transit.zip` — only
+    needed for display; delay data comes straight from the RT feed).
+    Switched here from the Trillium-mirrored copy after finding it was
+    dated 2023-12-18 and missing routes "2"/"9" plus at least 12 stops
+    that already had live activity; GoCary's own feed (dated 2026-01-23
+    as of this writing) has all of them, and conveniently its `route_id`
+    already matches the short display code the RT feed uses, fixing a
+    second, quieter bug where route names/colors never resolved for
+    those two routes either.
   - `docs/data/status.json` — last poll time, error (if any), poll count.
 
   **On dedup:** TripUpdates repeats the same upcoming stop's predicted delay
@@ -45,18 +52,20 @@ GitHub Actions poller commits JSON under `docs/data/`, and a static
   `EARLY_THRESHOLD_S` / `LATE_THRESHOLD_S` in the script to change it.
 
   **On stop coverage:** don't expect the unique-stop count to climb toward
-  the full ~277-stop roster, or even the ~258 stops actually scheduled
-  somewhere in the static GTFS. GoCary's RT feed only publishes
-  StopTimeUpdate predictions for **timepoint stops** — the schedule-checkpoint
-  subset of each route (confirmed directly: a Route 1 trip's static schedule
-  has 27+ stops but only ~6 are flagged `timepoint=1` in `stop_times.txt`,
-  and the live feed reports exactly that many, spanning the full route rather
-  than clustering near the vehicle's position). Non-timepoint stops simply
-  never appear in the feed, so once every active route has completed one
-  full trip, the unique-stop count plateaus near (active routes) × (average
-  timepoints per route) — around 54 for GoCary's ~9 routes as observed on
-  2026-09-02 — and stays there. This is a structural property of the data
-  source, not a bug to chase.
+  the full stop roster in `docs/data/stops.json`. GoCary's RT feed only
+  publishes StopTimeUpdate predictions for **timepoint stops** — the
+  schedule-checkpoint subset of each route (confirmed directly: a Route 1
+  trip's static schedule has 27+ stops but only ~6 are flagged
+  `timepoint=1` in `stop_times.txt`, and the live feed reports exactly
+  that many, spanning the full route rather than clustering near the
+  vehicle's position). Non-timepoint stops simply never appear in the
+  feed, so once every active route has completed one full trip, the
+  unique-stop count plateaus near (active routes) × (average timepoints
+  per route) and stays there — this is a structural property of the data
+  source, not a bug to chase. (On 2026-09-02, with the then-current static
+  feed, that was ~54 unique stops across ~9 routes; expect a different
+  number now that routes "2"/"9" and their timepoints are actually counted
+  too.)
 
 - **`.github/workflows/poll-transit.yml`** — runs the script and commits
   `docs/data` if anything changed. Only triggered by `workflow_dispatch`

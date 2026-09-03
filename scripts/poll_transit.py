@@ -34,7 +34,18 @@ from google.transit import gtfs_realtime_pb2
 VEHICLE_POSITIONS_URL = "https://www.gocarylive.org/GTFS/Realtime/GTFS_VehiclePositions.pb"
 TRIP_UPDATES_URL = "https://www.gocarylive.org/GTFS/Realtime/GTFS_TripUpdates.pb"
 SERVICE_ALERTS_URL = "https://www.gocarylive.org/GTFS/Realtime/GTFS_ServiceAlerts.pb"
-STATIC_GTFS_URL = "http://data.trilliumtransit.com/gtfs/cary-transit-nc-us/cary-transit-nc-us.zip"
+# GoCary hosts this static feed themselves, dated 2026-01-23 as of this
+# writing -- switched from the Trillium-mirrored copy
+# (data.trilliumtransit.com/gtfs/cary-transit-nc-us/), which was dated
+# 2023-12-18 and consequently missing routes "2"/"9" and at least 12 stops
+# that already had real RT activity (e.g. stop_code 11700, 101, 1913).
+# Confirmed this feed's route_id already equals the short display code
+# (e.g. route_id "2" -> route_short_name "2"), matching what GoCary's RT
+# feed uses directly, and stop_id/stop_code are identical throughout --
+# fixes both the stale-route and missing-stop problems in one swap, no
+# other code changes needed since the column names line up with what's
+# already parsed below.
+STATIC_GTFS_URL = "https://www.gocarylive.org/GTFS/google_transit.zip"
 
 SERVICE_TZ = ZoneInfo("America/New_York")
 
