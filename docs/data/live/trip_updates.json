@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-03T17:22:21.170393+00:00",
+  "updated_at": "2026-09-03T17:23:21.159261+00:00",
   "trips": [
     {
       "trip_id": "b4669fd4-5bed-4d01-8ede-8d78591e8232",
@@ -125,6 +125,14 @@
       "trip_id": "153b6c67-46b6-4a30-bc8e-a202d9b760d6",
       "route_id": "4",
       "route_short_name": "4",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "9a3ac147-f4fa-40ee-b1e0-537ab0a15ce7",
+      "route_id": "9",
+      "route_short_name": "9",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -542,7 +550,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 105,
+      "delay_seconds": 109,
       "status": "on_time"
     },
     {
@@ -574,7 +582,7 @@
       "route_id": "4",
       "route_short_name": "4",
       "next_stop_sequence": 0,
-      "delay_seconds": 38,
+      "delay_seconds": 56,
       "status": "on_time"
     },
     {
@@ -662,7 +670,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 34,
+      "delay_seconds": 39,
       "status": "on_time"
     },
     {
@@ -670,7 +678,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 365,
+      "delay_seconds": 361,
       "status": "late"
     },
     {
@@ -701,9 +709,9 @@
       "trip_id": "c85d00cb-2942-43f8-ac6a-00843f9b11f3",
       "route_id": "2",
       "route_short_name": "2",
-      "next_stop_sequence": 0,
-      "delay_seconds": 571,
-      "status": "late"
+      "next_stop_sequence": 41,
+      "delay_seconds": -441,
+      "status": "early"
     },
     {
       "trip_id": "1f881eb5-ca82-4b1f-b47d-cb30d94cd697",
@@ -773,9 +781,9 @@
       "trip_id": "c046cca7-a04e-4e93-85fb-fc17748c2bc0",
       "route_id": "2",
       "route_short_name": "2",
-      "next_stop_sequence": 0,
-      "delay_seconds": 31,
-      "status": "on_time"
+      "next_stop_sequence": 36,
+      "delay_seconds": -64,
+      "status": "early"
     }
   ]
 }
