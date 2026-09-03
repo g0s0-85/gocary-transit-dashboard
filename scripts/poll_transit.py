@@ -295,8 +295,16 @@ def process_vehicle_positions(feed, routes, trip_delay_by_id):
         route_id = v.trip.route_id if v.HasField("trip") else ""
         trip_id = v.trip.trip_id if v.HasField("trip") else ""
         delay = trip_delay_by_id.get(trip_id)
+        # VehicleDescriptor.id is a random UUID (same scheme as trip_id), not
+        # a rider-facing fleet number -- confirmed against the live feed
+        # while building the sibling gocary-service-loss-monitor project.
+        # VehicleDescriptor.label holds GoCary's actual bus number (e.g.
+        # "1531"), so prefer it and only fall back to id if label is empty.
+        vehicle_id = entity.id
+        if v.HasField("vehicle"):
+            vehicle_id = v.vehicle.label if v.vehicle.label else v.vehicle.id
         vehicles.append({
-            "vehicle_id": v.vehicle.id if v.HasField("vehicle") else entity.id,
+            "vehicle_id": vehicle_id,
             "trip_id": trip_id,
             "route_id": route_id,
             "route_short_name": routes.get(route_id, {}).get("short_name", route_id),
