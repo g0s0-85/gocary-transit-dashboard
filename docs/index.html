@@ -71,6 +71,16 @@
   .scroll-body { max-height: 480px; overflow-y: auto; }
   .scroll-body thead th { position: sticky; top: 0; background: var(--card); }
   td.route-name { color: var(--muted); font-size: 12px; }
+
+  .date-row { display: flex; align-items: center; gap: 10px; margin: 10px 2px 12px; flex-wrap: wrap; }
+  .date-row label { font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; gap: 6px; }
+  .date-row input[type="date"] { padding: 5px 8px; border: 1px solid var(--border); border-radius: 6px; font-size: 13px; }
+  .date-row button {
+    font-size: 12px; padding: 5px 10px; border: 1px solid var(--border); border-radius: 6px;
+    background: var(--card); cursor: pointer; color: var(--text);
+  }
+  .date-row button:hover { background: var(--bg); }
+  .date-row .count { font-size: 12px; color: var(--muted); margin-left: auto; }
 </style>
 </head>
 <body>
@@ -114,10 +124,15 @@
     all, not that it's still waiting on one.
   </p>
 
-  <h2>Today's on-time performance by route</h2>
+  <h2>On-time performance by route</h2>
+  <div class="date-row">
+    <label>Date: <input type="date" id="perf-date"></label>
+    <button type="button" id="perf-date-today">Today</button>
+    <span class="count" id="perf-date-note"></span>
+  </div>
   <div id="today-perf" class="card"><div class="empty">Loading…</div></div>
 
-  <h2>Today's on-time performance by stop</h2>
+  <h2>On-time performance by stop <span style="text-transform:none; font-weight:400;">(same date as above)</span></h2>
   <div id="stop-perf" class="card">
     <div class="table-toolbar">
       <input id="stop-filter" type="text" placeholder="Filter by stop or route name…">
@@ -139,6 +154,9 @@ function esc(s) {
 function pct(n, total) {
   if (!total) return '—';
   return (100 * n / total).toFixed(0) + '%';
+}
+function todayStr() {
+  return new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
 }
 
 // Shared click-to-sort support for the three data tables. Each table keeps
@@ -361,7 +379,7 @@ let lastRouteRollup = null;
 function renderPerfTable(el, rollup) {
   lastRouteRollup = rollup;
   if (!rollup || !rollup.system || !rollup.system.total) {
-    el.innerHTML = '<div class="empty">No stops finalized yet today.</div>';
+    el.innerHTML = '<div class="empty">No stops finalized for the selected date.</div>';
     return;
   }
   let routeRows = Object.values(rollup.routes || {});
@@ -427,7 +445,7 @@ function renderStopTable() {
   countEl.textContent = `${rows.length} of ${allStopRows.length} stops`;
 
   if (!rows.length) {
-    el.innerHTML = '<div class="empty">No stops finalized yet today.</div>';
+    el.innerHTML = '<div class="empty">No stops finalized for the selected date.</div>';
     return;
   }
   el.innerHTML = `
@@ -534,15 +552,21 @@ async function fetchRollupCached(date, todayStr) {
   return data;
 }
 
-async function loadTrend() {
-  const todayStr = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
+// Populated once at startup and shared by the trend table (windowed to the
+// most recent TREND_WINDOW_DAYS) and the by-route/by-stop date picker below
+// (full range, so its min/max reflect everything actually available) --
+// avoids fetching docs/data/performance/index.json twice.
+let availableDates = []; // ascending
+
+async function loadAvailableDates() {
   const index = await fetchJson('docs/data/performance/index.json', 'data/performance/index.json');
-  const dates = (index?.dates || [])
-    .slice()
-    .sort()
-    .reverse()
-    .slice(0, TREND_WINDOW_DAYS);
-  const days = await Promise.all(dates.map(date => fetchRollupCached(date, todayStr)));
+  availableDates = (index?.dates || []).slice().sort();
+}
+
+async function loadTrend() {
+  const today = todayStr();
+  const dates = availableDates.slice().reverse().slice(0, TREND_WINDOW_DAYS);
+  const days = await Promise.all(dates.map(date => fetchRollupCached(date, today)));
   renderTrend(document.getElementById('trend-perf'), days);
   renderAdherenceMap(days.filter(Boolean));
 }
@@ -565,11 +589,12 @@ async function refreshStatus() {
   renderStatus(status);
 }
 
-async function loadToday() {
-  const today = new Date().toLocaleDateString('en-CA', { timeZone: 'America/New_York' });
-  const rollup = await fetchJson(`docs/data/performance/${today}.json`, `data/performance/${today}.json`);
+async function loadPerfForDate(date) {
+  const rollup = await fetchJson(`docs/data/performance/${date}.json`, `data/performance/${date}.json`);
   renderPerfTable(document.getElementById('today-perf'), rollup);
   loadStopTable(rollup);
+  const noteEl = document.getElementById('perf-date-note');
+  noteEl.textContent = date === todayStr() ? '' : `showing ${date}, not today`;
 }
 
 document.querySelector('main').addEventListener('click', e => {
@@ -592,8 +617,22 @@ document.querySelector('main').addEventListener('click', e => {
     showAllStops = e.target.checked;
     renderAdherenceMap(lastTrendDays);
   });
-  await Promise.all([refreshVehicles(), refreshStatus(), loadStops()]);
-  await Promise.all([loadToday(), loadTrend()]);
+
+  const today = todayStr();
+  const dateInput = document.getElementById('perf-date');
+  dateInput.value = today;
+  dateInput.max = today;
+  dateInput.addEventListener('change', e => {
+    if (e.target.value) loadPerfForDate(e.target.value);
+  });
+  document.getElementById('perf-date-today').addEventListener('click', () => {
+    dateInput.value = today;
+    loadPerfForDate(today);
+  });
+
+  await Promise.all([refreshVehicles(), refreshStatus(), loadStops(), loadAvailableDates()]);
+  if (availableDates.length) dateInput.min = availableDates[0];
+  await Promise.all([loadPerfForDate(today), loadTrend()]);
   setInterval(refreshVehicles, 60000);
   setInterval(refreshStatus, 300000);
 })();
