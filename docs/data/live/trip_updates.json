@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T16:22:13.008751+00:00",
+  "updated_at": "2026-09-04T16:23:12.370976+00:00",
   "trips": [
     {
       "trip_id": "c68ec5fd-2155-44f3-8969-23939c8c6367",
@@ -10,9 +10,25 @@
       "status": "on_time"
     },
     {
+      "trip_id": "c99c917e-a999-42d0-aef3-4958c4e319bf",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
       "trip_id": "da2958c8-e828-4ba0-9d23-3403af91329a",
       "route_id": "2",
       "route_short_name": "2",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "a8772984-df5c-4432-881d-e7ba8f830d44",
+      "route_id": "6",
+      "route_short_name": "6",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -486,7 +502,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 100,
+      "delay_seconds": 89,
       "status": "on_time"
     },
     {
@@ -606,7 +622,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 118,
+      "delay_seconds": 162,
       "status": "on_time"
     },
     {
@@ -661,9 +677,9 @@
       "trip_id": "d3300d7b-52a2-4781-988a-c30c1d5080d0",
       "route_id": "4",
       "route_short_name": "4",
-      "next_stop_sequence": 0,
-      "delay_seconds": 86,
-      "status": "on_time"
+      "next_stop_sequence": 61,
+      "delay_seconds": -440,
+      "status": "early"
     },
     {
       "trip_id": "e45b86a3-7e8d-489c-8c8a-56ef6e936ba2",
@@ -711,14 +727,6 @@
       "route_short_name": "2",
       "next_stop_sequence": 0,
       "delay_seconds": 114,
-      "status": "on_time"
-    },
-    {
-      "trip_id": "71932860-a460-4bb2-930d-57543818817b",
-      "route_id": "GA1",
-      "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 101,
       "status": "on_time"
     }
   ]
