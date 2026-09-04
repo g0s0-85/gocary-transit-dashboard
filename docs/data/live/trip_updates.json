@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-04T17:04:14.150653+00:00",
+  "updated_at": "2026-09-04T17:05:21.169705+00:00",
   "trips": [
     {
       "trip_id": "aaa7959a-4873-49e2-a880-24161208a2e0",
@@ -115,6 +115,14 @@
     },
     {
       "trip_id": "7304cc45-e236-467d-a146-58c74249706c",
+      "route_id": "1",
+      "route_short_name": "1",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "2f5afc59-70f4-45e0-a3ff-bbbd7be6549c",
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
@@ -486,15 +494,15 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 150,
-      "status": "on_time"
+      "delay_seconds": 325,
+      "status": "late"
     },
     {
       "trip_id": "5b767c10-b727-408f-8770-643a7429c881",
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 142,
+      "delay_seconds": 149,
       "status": "on_time"
     },
     {
@@ -606,7 +614,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 3,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -646,7 +654,7 @@
       "route_id": "9",
       "route_short_name": "9",
       "next_stop_sequence": 0,
-      "delay_seconds": 217,
+      "delay_seconds": 283,
       "status": "on_time"
     },
     {
@@ -710,16 +718,16 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 219,
+      "delay_seconds": 267,
       "status": "on_time"
     },
     {
       "trip_id": "de7e6c5f-7980-48ef-833b-5edbaecf61b9",
       "route_id": "7",
       "route_short_name": "7",
-      "next_stop_sequence": 0,
-      "delay_seconds": 267,
-      "status": "on_time"
+      "next_stop_sequence": 64,
+      "delay_seconds": -651,
+      "status": "early"
     },
     {
       "trip_id": "c5102637-88c8-45ab-8a6f-c90cdd5259e4",
