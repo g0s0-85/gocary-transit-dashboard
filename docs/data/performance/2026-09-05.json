@@ -1,22 +1,22 @@
 {
   "date": "2026-09-05",
   "system": {
-    "on_time": 825,
+    "on_time": 844,
     "early": 32,
     "late": 13,
-    "total": 870,
-    "delay_sum": 17291,
-    "delay_sample_count": 870
+    "total": 889,
+    "delay_sum": 17984,
+    "delay_sample_count": 889
   },
   "routes": {
     "GA1": {
       "route_short_name": "GA1",
-      "on_time": 79,
+      "on_time": 83,
       "early": 2,
       "late": 3,
-      "total": 84,
-      "delay_sum": 5500,
-      "delay_sample_count": 84
+      "total": 88,
+      "delay_sum": 5792,
+      "delay_sample_count": 88
     },
     "9": {
       "route_short_name": "9",
@@ -89,6 +89,15 @@
       "total": 120,
       "delay_sum": 595,
       "delay_sample_count": 120
+    },
+    "DL": {
+      "route_short_name": "DL",
+      "on_time": 15,
+      "early": 0,
+      "late": 0,
+      "total": 15,
+      "delay_sum": 401,
+      "delay_sample_count": 15
     }
   },
   "stops": {
@@ -97,12 +106,12 @@
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 11,
+          "on_time": 12,
           "early": 2,
           "late": 2,
-          "total": 15,
-          "delay_sum": -107,
-          "delay_sample_count": 15
+          "total": 16,
+          "delay_sum": 65,
+          "delay_sample_count": 16
         },
         "9": {
           "route_short_name": "9",
@@ -114,72 +123,72 @@
           "delay_sample_count": 21
         }
       },
-      "on_time": 30,
+      "on_time": 31,
       "early": 4,
       "late": 2,
-      "total": 36,
-      "delay_sum": -791,
-      "delay_sample_count": 36
+      "total": 37,
+      "delay_sum": -619,
+      "delay_sample_count": 37
     },
     "16093": {
       "stop_name": "Apex Senior Center Main Entrance ",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 8,
+          "on_time": 9,
           "early": 0,
           "late": 1,
-          "total": 9,
-          "delay_sum": 725,
-          "delay_sample_count": 9
+          "total": 10,
+          "delay_sum": 779,
+          "delay_sample_count": 10
         }
       },
-      "on_time": 8,
+      "on_time": 9,
       "early": 0,
       "late": 1,
-      "total": 9,
-      "delay_sum": 725,
-      "delay_sample_count": 9
+      "total": 10,
+      "delay_sum": 779,
+      "delay_sample_count": 10
     },
     "16021": {
       "stop_name": "Beaver Crk Comm Dr at Chick-fil-A (WB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 9,
+          "on_time": 10,
           "early": 0,
           "late": 0,
-          "total": 9,
-          "delay_sum": 794,
-          "delay_sample_count": 9
+          "total": 10,
+          "delay_sum": 816,
+          "delay_sample_count": 10
         }
       },
-      "on_time": 9,
+      "on_time": 10,
       "early": 0,
       "late": 0,
-      "total": 9,
-      "delay_sum": 794,
-      "delay_sample_count": 9
+      "total": 10,
+      "delay_sum": 816,
+      "delay_sample_count": 10
     },
     "16031": {
       "stop_name": "Chapel Ridge Rd at Olive Chapel Professional Park",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 16,
+          "on_time": 17,
           "early": 0,
           "late": 0,
-          "total": 16,
-          "delay_sum": 884,
-          "delay_sample_count": 16
+          "total": 17,
+          "delay_sum": 928,
+          "delay_sample_count": 17
         }
       },
-      "on_time": 16,
+      "on_time": 17,
       "early": 0,
       "late": 0,
-      "total": 16,
-      "delay_sum": 884,
-      "delay_sample_count": 16
+      "total": 17,
+      "delay_sum": 928,
+      "delay_sample_count": 17
     },
     "16045": {
       "stop_name": "Beaver Creek Commons Dr at Lowe's (EB)",
@@ -1333,7 +1342,47 @@
       "total": 10,
       "delay_sum": 334,
       "delay_sample_count": 10
+    },
+    "11502": {
+      "stop_name": "S Walker St at Downtown Park",
+      "routes": {
+        "DL": {
+          "route_short_name": "DL",
+          "on_time": 10,
+          "early": 0,
+          "late": 0,
+          "total": 10,
+          "delay_sum": 0,
+          "delay_sample_count": 10
+        }
+      },
+      "on_time": 10,
+      "early": 0,
+      "late": 0,
+      "total": 10,
+      "delay_sum": 0,
+      "delay_sample_count": 10
+    },
+    "11501": {
+      "stop_name": "Town Hall Parking Deck",
+      "routes": {
+        "DL": {
+          "route_short_name": "DL",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5,
+          "delay_sum": 401,
+          "delay_sample_count": 5
+        }
+      },
+      "on_time": 5,
+      "early": 0,
+      "late": 0,
+      "total": 5,
+      "delay_sum": 401,
+      "delay_sample_count": 5
     }
   },
-  "last_updated": "2026-09-05T11:51:12.330230+00:00"
+  "last_updated": "2026-09-05T11:52:12.871722+00:00"
 }
