@@ -1,12 +1,12 @@
 {
   "date": "2026-09-06",
   "system": {
-    "on_time": 1184,
+    "on_time": 1208,
     "early": 110,
     "late": 58,
-    "total": 1352,
-    "delay_sum": 71997,
-    "delay_sample_count": 1352
+    "total": 1376,
+    "delay_sum": 73640,
+    "delay_sample_count": 1376
   },
   "routes": {
     "1": {
@@ -29,12 +29,12 @@
     },
     "GA1": {
       "route_short_name": "GA1",
-      "on_time": 380,
+      "on_time": 404,
       "early": 8,
       "late": 36,
-      "total": 424,
-      "delay_sum": 58124,
-      "delay_sample_count": 424
+      "total": 448,
+      "delay_sum": 59767,
+      "delay_sample_count": 448
     },
     "4": {
       "route_short_name": "4",
@@ -530,12 +530,12 @@
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 64,
+          "on_time": 68,
           "early": 6,
           "late": 6,
-          "total": 76,
-          "delay_sum": 7346,
-          "delay_sample_count": 76
+          "total": 80,
+          "delay_sum": 7419,
+          "delay_sample_count": 80
         },
         "9": {
           "route_short_name": "9",
@@ -547,15 +547,75 @@
           "delay_sample_count": 26
         }
       },
-      "on_time": 82,
+      "on_time": 86,
       "early": 14,
       "late": 6,
-      "total": 102,
-      "delay_sum": 5299,
-      "delay_sample_count": 102
+      "total": 106,
+      "delay_sum": 5372,
+      "delay_sample_count": 106
     },
     "16093": {
       "stop_name": "Apex Senior Center Main Entrance ",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 37,
+          "early": 0,
+          "late": 3,
+          "total": 40,
+          "delay_sum": 4118,
+          "delay_sample_count": 40
+        }
+      },
+      "on_time": 37,
+      "early": 0,
+      "late": 3,
+      "total": 40,
+      "delay_sum": 4118,
+      "delay_sample_count": 40
+    },
+    "16021": {
+      "stop_name": "Beaver Crk Comm Dr at Chick-fil-A (WB)",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 45,
+          "early": 0,
+          "late": 5,
+          "total": 50,
+          "delay_sum": 9676,
+          "delay_sample_count": 50
+        }
+      },
+      "on_time": 45,
+      "early": 0,
+      "late": 5,
+      "total": 50,
+      "delay_sum": 9676,
+      "delay_sample_count": 50
+    },
+    "16031": {
+      "stop_name": "Chapel Ridge Rd at Olive Chapel Professional Park",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 79,
+          "early": 0,
+          "late": 9,
+          "total": 88,
+          "delay_sum": 14772,
+          "delay_sample_count": 88
+        }
+      },
+      "on_time": 79,
+      "early": 0,
+      "late": 9,
+      "total": 88,
+      "delay_sum": 14772,
+      "delay_sample_count": 88
+    },
+    "16045": {
+      "stop_name": "Beaver Creek Commons Dr at Lowe's (EB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
@@ -563,7 +623,7 @@
           "early": 0,
           "late": 3,
           "total": 38,
-          "delay_sum": 4118,
+          "delay_sum": 6210,
           "delay_sample_count": 38
         }
       },
@@ -571,148 +631,88 @@
       "early": 0,
       "late": 3,
       "total": 38,
-      "delay_sum": 4118,
+      "delay_sum": 6210,
       "delay_sample_count": 38
-    },
-    "16021": {
-      "stop_name": "Beaver Crk Comm Dr at Chick-fil-A (WB)",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 42,
-          "early": 0,
-          "late": 5,
-          "total": 47,
-          "delay_sum": 9256,
-          "delay_sample_count": 47
-        }
-      },
-      "on_time": 42,
-      "early": 0,
-      "late": 5,
-      "total": 47,
-      "delay_sum": 9256,
-      "delay_sample_count": 47
-    },
-    "16031": {
-      "stop_name": "Chapel Ridge Rd at Olive Chapel Professional Park",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 74,
-          "early": 0,
-          "late": 9,
-          "total": 83,
-          "delay_sum": 14190,
-          "delay_sample_count": 83
-        }
-      },
-      "on_time": 74,
-      "early": 0,
-      "late": 9,
-      "total": 83,
-      "delay_sum": 14190,
-      "delay_sample_count": 83
-    },
-    "16045": {
-      "stop_name": "Beaver Creek Commons Dr at Lowe's (EB)",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 33,
-          "early": 0,
-          "late": 3,
-          "total": 36,
-          "delay_sum": 5984,
-          "delay_sample_count": 36
-        }
-      },
-      "on_time": 33,
-      "early": 0,
-      "late": 3,
-      "total": 36,
-      "delay_sum": 5984,
-      "delay_sample_count": 36
     },
     "16049": {
       "stop_name": "W Williams St at Healthplex Way (SB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 32,
+          "on_time": 34,
           "early": 1,
           "late": 3,
-          "total": 36,
-          "delay_sum": 5384,
-          "delay_sample_count": 36
+          "total": 38,
+          "delay_sum": 5561,
+          "delay_sample_count": 38
         }
       },
-      "on_time": 32,
+      "on_time": 34,
       "early": 1,
       "late": 3,
-      "total": 36,
-      "delay_sum": 5384,
-      "delay_sample_count": 36
+      "total": 38,
+      "delay_sum": 5561,
+      "delay_sample_count": 38
     },
     "16061": {
       "stop_name": "E Williams St at S Hughes St (Park and Ride (SB))",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 32,
+          "on_time": 34,
           "early": 1,
           "late": 3,
-          "total": 36,
-          "delay_sum": 3461,
-          "delay_sample_count": 36
+          "total": 38,
+          "delay_sum": 3501,
+          "delay_sample_count": 38
         }
       },
-      "on_time": 32,
+      "on_time": 34,
       "early": 1,
       "late": 3,
-      "total": 36,
-      "delay_sum": 3461,
-      "delay_sample_count": 36
+      "total": 38,
+      "delay_sum": 3501,
+      "delay_sample_count": 38
     },
     "16077": {
       "stop_name": "Tingen Rd at Peace Haven Pl",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 34,
+          "on_time": 36,
           "early": 0,
           "late": 2,
-          "total": 36,
-          "delay_sum": 3928,
-          "delay_sample_count": 36
+          "total": 38,
+          "delay_sum": 3980,
+          "delay_sample_count": 38
         }
       },
-      "on_time": 34,
+      "on_time": 36,
       "early": 0,
       "late": 2,
-      "total": 36,
-      "delay_sum": 3928,
-      "delay_sample_count": 36
+      "total": 38,
+      "delay_sum": 3980,
+      "delay_sample_count": 38
     },
     "16085": {
       "stop_name": "E Williams St at S Mason St (Apex MS NB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 34,
+          "on_time": 36,
           "early": 0,
           "late": 2,
-          "total": 36,
-          "delay_sum": 4457,
-          "delay_sample_count": 36
+          "total": 38,
+          "delay_sum": 4530,
+          "delay_sample_count": 38
         }
       },
-      "on_time": 34,
+      "on_time": 36,
       "early": 0,
       "late": 2,
-      "total": 36,
-      "delay_sum": 4457,
-      "delay_sample_count": 36
+      "total": 38,
+      "delay_sum": 4530,
+      "delay_sample_count": 38
     },
     "11397": {
       "stop_name": "Highland Village (WB)",
@@ -1384,5 +1384,5 @@
       "delay_sample_count": 5
     }
   },
-  "last_updated": "2026-09-06T19:06:12.590584+00:00"
+  "last_updated": "2026-09-06T19:11:12.122934+00:00"
 }
