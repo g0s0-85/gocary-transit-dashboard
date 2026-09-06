@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-09-06T15:53:11.781768+00:00",
+  "updated_at": "2026-09-06T15:54:15.107486+00:00",
   "trips": [
     {
       "trip_id": "3101c75c-a071-4f75-86ff-ffb3968d52ca",
       "route_id": "4",
       "route_short_name": "4",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "d9b16426-32dd-4f20-a170-6a9ff8a1d365",
+      "route_id": "6",
+      "route_short_name": "6",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -146,6 +154,14 @@
       "status": "on_time"
     },
     {
+      "trip_id": "e3e81bd8-d692-4a18-b98d-73c6c50cc736",
+      "route_id": "5",
+      "route_short_name": "5",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
       "trip_id": "d9a8b7c4-928d-4e19-bb88-e243920404c5",
       "route_id": "3",
       "route_short_name": "3",
@@ -222,7 +238,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 25,
       "status": "on_time"
     },
     {
@@ -230,7 +246,7 @@
       "route_id": "6",
       "route_short_name": "6",
       "next_stop_sequence": 0,
-      "delay_seconds": 1,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -293,17 +309,17 @@
       "trip_id": "0de855ca-4a41-425d-86ed-16365254d6b4",
       "route_id": "3",
       "route_short_name": "3",
-      "next_stop_sequence": 0,
-      "delay_seconds": 124,
-      "status": "on_time"
+      "next_stop_sequence": 21,
+      "delay_seconds": -401,
+      "status": "early"
     },
     {
       "trip_id": "5da08a7e-9d07-4743-b0b7-1baeb5de933a",
       "route_id": "4",
       "route_short_name": "4",
-      "next_stop_sequence": 0,
-      "delay_seconds": 167,
-      "status": "on_time"
+      "next_stop_sequence": 61,
+      "delay_seconds": -396,
+      "status": "early"
     },
     {
       "trip_id": "2cea4c8b-69cc-42d3-8880-4301e176cd90",
