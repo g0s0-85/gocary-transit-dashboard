@@ -2,11 +2,11 @@
   "date": "2026-09-07",
   "system": {
     "on_time": 189,
-    "early": 5,
+    "early": 6,
     "late": 6,
-    "total": 200,
-    "delay_sum": 5213,
-    "delay_sample_count": 200
+    "total": 201,
+    "delay_sum": 5111,
+    "delay_sample_count": 201
   },
   "routes": {
     "2": {
@@ -75,11 +75,11 @@
     "3": {
       "route_short_name": "3",
       "on_time": 8,
-      "early": 0,
+      "early": 1,
       "late": 0,
-      "total": 8,
-      "delay_sum": 68,
-      "delay_sample_count": 8
+      "total": 9,
+      "delay_sum": -34,
+      "delay_sample_count": 9
     }
   },
   "stops": {
@@ -902,19 +902,19 @@
         "3": {
           "route_short_name": "3",
           "on_time": 2,
-          "early": 0,
+          "early": 1,
           "late": 0,
-          "total": 2,
-          "delay_sum": 0,
-          "delay_sample_count": 2
+          "total": 3,
+          "delay_sum": -102,
+          "delay_sample_count": 3
         }
       },
       "on_time": 7,
-      "early": 1,
+      "early": 2,
       "late": 0,
-      "total": 8,
-      "delay_sum": -315,
-      "delay_sample_count": 8
+      "total": 9,
+      "delay_sum": -417,
+      "delay_sample_count": 9
     },
     "11260": {
       "stop_name": "Weston Pkwy at Evans Rd (WB)",
@@ -1157,5 +1157,5 @@
       "delay_sample_count": 2
     }
   },
-  "last_updated": "2026-09-07T11:42:11.765511+00:00"
+  "last_updated": "2026-09-07T11:43:12.442726+00:00"
 }
