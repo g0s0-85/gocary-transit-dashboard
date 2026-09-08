@@ -64,6 +64,7 @@ LIVE_DIR = DATA_DIR / "live"
 PERF_DIR = DATA_DIR / "performance"
 ROUTES_FILE = DATA_DIR / "routes.json"
 STOPS_FILE = DATA_DIR / "stops.json"
+TRIP_LAST_STOPS_FILE = DATA_DIR / "trip_last_stops.json"
 STATUS_FILE = DATA_DIR / "status.json"
 PENDING_FILE = LIVE_DIR / "pending_stops.json"
 
@@ -98,19 +99,21 @@ def fetch_feed(url):
 
 
 def ensure_static_gtfs():
-    """Refresh docs/data/routes.json and docs/data/stops.json from GoCary's
-    static GTFS if routes.json is missing or older than a week. Route/stop
-    metadata barely ever changes, so this doesn't need to run every poll --
-    and if the refresh fails we just keep whatever we already had rather
-    than failing the whole run."""
+    """Refresh docs/data/routes.json, docs/data/stops.json, and
+    docs/data/trip_last_stops.json from GoCary's static GTFS if routes.json
+    is missing or older than a week. Route/stop/trip-pattern metadata barely
+    ever changes, so this doesn't need to run every poll -- and if the
+    refresh fails we just keep whatever we already had rather than failing
+    the whole run."""
     existing_routes = load_json(ROUTES_FILE, None)
     existing_stops = load_json(STOPS_FILE, None)
+    existing_trip_last_stops = load_json(TRIP_LAST_STOPS_FILE, None)
     if existing_routes is not None:
         fetched_at = existing_routes.get("_fetched_at")
         if fetched_at:
             age = time.time() - datetime.fromisoformat(fetched_at).timestamp()
             if age < ROUTES_MAX_AGE_S:
-                return existing_routes, (existing_stops or {})
+                return existing_routes, (existing_stops or {}), (existing_trip_last_stops or {})
 
     try:
         resp = requests.get(STATIC_GTFS_URL, timeout=60)
@@ -146,12 +149,34 @@ def ensure_static_gtfs():
                     "lon": float(row["stop_lon"]) if row.get("stop_lon") else None,
                 }
 
+        # trip_id -> highest stop_sequence in that trip's static pattern, so
+        # process_trip_updates can exclude a trip's final stop from the
+        # on-time rollup -- matching TripSpark's own OTP methodology
+        # ("Is Last Stop in Trip? Equal to 0"), confirmed directly from
+        # their emailed report filters. Confirmed trip_id format (a UUID)
+        # matches between this static feed and the RT feed's TripUpdate.
+        trip_last_stops = {"_fetched_at": fetched_at}
+        max_seq_by_trip = {}
+        with zf.open("stop_times.txt") as f:
+            reader = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig"))
+            for row in reader:
+                trip_id = row["trip_id"]
+                seq = int(row["stop_sequence"])
+                if seq > max_seq_by_trip.get(trip_id, -1):
+                    max_seq_by_trip[trip_id] = seq
+        trip_last_stops.update(max_seq_by_trip)
+
         save_json(ROUTES_FILE, routes)
         save_json(STOPS_FILE, stops)
-        return routes, stops
+        save_json(TRIP_LAST_STOPS_FILE, trip_last_stops)
+        return routes, stops, trip_last_stops
     except Exception as exc:
-        print(f"Warning: failed to refresh routes.json/stops.json ({exc}); keeping existing copy")
-        return existing_routes or {"_fetched_at": None}, existing_stops or {"_fetched_at": None}
+        print(f"Warning: failed to refresh routes.json/stops.json/trip_last_stops.json ({exc}); keeping existing copy")
+        return (
+            existing_routes or {"_fetched_at": None},
+            existing_stops or {"_fetched_at": None},
+            existing_trip_last_stops or {"_fetched_at": None},
+        )
 
 
 def classify(delay_s):
@@ -172,7 +197,7 @@ def stop_delay(stop_time_update):
     return None
 
 
-def process_trip_updates(feed, routes, stops):
+def process_trip_updates(feed, routes, stops, trip_last_stops):
     pending = load_json(PENDING_FILE, {})
     current_keys = set()
     live_trip_summaries = []
@@ -212,7 +237,7 @@ def process_trip_updates(feed, routes, stops):
                 "status": classify(next_delay),
             })
 
-    finalized = [v for k, v in pending.items() if k not in current_keys]
+    finalized_raw = [v for k, v in pending.items() if k not in current_keys]
     pending = {k: v for k, v in pending.items() if k in current_keys}
     save_json(PENDING_FILE, pending)
     save_json(LIVE_DIR / "trip_updates.json", {
@@ -220,11 +245,30 @@ def process_trip_updates(feed, routes, stops):
         "trips": live_trip_summaries,
     })
 
+    # Exclude each trip's final stop from the OTP rollup, matching
+    # TripSpark's own methodology: a bus doesn't meaningfully "depart" from
+    # where its trip ends, so their report filters those out entirely. If a
+    # trip_id isn't in the static lookup (e.g. an extra/unscheduled trip, or
+    # the static feed hasn't loaded yet), fail open and count it rather than
+    # risk dropping a legitimate stop.
+    finalized = []
+    eol_excluded = 0
+    for entry in finalized_raw:
+        last_seq = trip_last_stops.get(entry["trip_id"])
+        if last_seq is not None and entry["stop_sequence"] == last_seq:
+            eol_excluded += 1
+            continue
+        finalized.append(entry)
+
     if finalized:
         apply_rollup(finalized, routes, stops)
 
     trip_delay_by_id = {t["trip_id"]: t["delay_seconds"] for t in live_trip_summaries}
-    stats = {"trip_updates_seen": len(live_trip_summaries), "stops_finalized": len(finalized)}
+    stats = {
+        "trip_updates_seen": len(live_trip_summaries),
+        "stops_finalized": len(finalized),
+        "eol_stops_excluded": eol_excluded,
+    }
     return stats, trip_delay_by_id
 
 
@@ -365,12 +409,12 @@ def main():
     })
 
     try:
-        routes, stops = ensure_static_gtfs()
+        routes, stops, trip_last_stops = ensure_static_gtfs()
         vp_feed = fetch_feed(VEHICLE_POSITIONS_URL)
         tu_feed = fetch_feed(TRIP_UPDATES_URL)
         alerts_feed = fetch_feed(SERVICE_ALERTS_URL)
 
-        tu_stats, trip_delay_by_id = process_trip_updates(tu_feed, routes, stops)
+        tu_stats, trip_delay_by_id = process_trip_updates(tu_feed, routes, stops, trip_last_stops)
         vehicle_count = process_vehicle_positions(vp_feed, routes, trip_delay_by_id)
         alert_count = process_alerts(alerts_feed, routes)
         write_performance_index()

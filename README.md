@@ -35,6 +35,11 @@ GitHub Actions poller commits JSON under `docs/data/`, and a static
     already matches the short display code the RT feed uses, fixing a
     second, quieter bug where route names/colors never resolved for
     those two routes either.
+  - `docs/data/trip_last_stops.json` — trip id → highest stop_sequence in
+    that trip's static pattern, from the same static feed and refreshed on
+    the same schedule as routes.json/stops.json. Used only to exclude a
+    trip's final stop from the on-time rollup — see "On matching TripSpark's
+    own OTP numbers" below.
   - `docs/data/status.json` — last poll time, error (if any), poll count.
 
   **On dedup:** TripUpdates repeats the same upcoming stop's predicted delay
@@ -66,6 +71,29 @@ GitHub Actions poller commits JSON under `docs/data/`, and a static
   feed, that was ~54 unique stops across ~9 routes; expect a different
   number now that routes "2"/"9" and their timepoints are actually counted
   too.)
+
+  **On matching TripSpark's own OTP numbers:** our system-wide on-time %
+  runs a few points below GoCary's official TripSpark "Yesterday
+  Departure-OTP" report (e.g. 81.2% vs. 87.2% on 2026-09-04). Two things
+  contribute:
+  1. **Fixed here** — TripSpark's report filters explicitly exclude a
+     trip's final stop (`Is Last Stop in Trip? Equal to 0`), since a bus
+     doesn't meaningfully "depart" from where its trip ends. We used to
+     count it anyway (falling back to arrival delay when a final stop has
+     no departure). `trip_last_stops.json` now lets `process_trip_updates`
+     drop it, same as they do.
+  2. **Not fixed, and can't be from the public feed alone** — our daily
+     sample size runs 2-3x TripSpark's for the same day, and the ratio
+     varies by route (1.78x-3.47x checked on 2026-09-04), which rules out
+     a single missing filter as the explanation. TripSpark's OTP module
+     evidently uses a narrower, curated set of "official" timepoints per
+     route than what GTFS-RT happens to expose as `timepoint=1`. Pinning
+     this down exactly would need TripSpark's authoritative timepoint list
+     per route (via `FRWebAPI`/`StreetsWebServiceV2` direct access, not
+     the public RT feed) rather than inferring it from what gets published.
+     Like the average-delay and last-stop fixes above, item 1's effect
+     only applies to stops finalized after it shipped (2026-09-08) — days
+     before that keep whatever their original counts were.
 
 - **`.github/workflows/poll-transit.yml`** — runs the script and commits
   `docs/data` if anything changed. Only triggered by `workflow_dispatch`
