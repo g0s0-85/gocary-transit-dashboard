@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-09T17:03:14.195458+00:00",
+  "updated_at": "2026-09-09T17:04:14.658710+00:00",
   "trips": [
     {
       "trip_id": "9f5bf5ab-2bf0-46df-b91f-17983abf7787",
@@ -117,6 +117,14 @@
       "trip_id": "390c6d60-67e4-462d-85a8-6299e520e4b5",
       "route_id": "7",
       "route_short_name": "7",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "fe457a1d-a2bf-41da-9f57-f1dfaabee006",
+      "route_id": "1",
+      "route_short_name": "1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -542,7 +550,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 113,
+      "delay_seconds": 193,
       "status": "on_time"
     },
     {
@@ -622,7 +630,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 74,
+      "delay_seconds": 99,
       "status": "on_time"
     },
     {
@@ -734,7 +742,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 181,
+      "delay_seconds": 208,
       "status": "on_time"
     },
     {
@@ -742,7 +750,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 1082,
+      "delay_seconds": 1142,
       "status": "late"
     },
     {
@@ -757,9 +765,9 @@
       "trip_id": "d7702286-c341-4577-b67e-7a7dd972c8d7",
       "route_id": "7",
       "route_short_name": "7",
-      "next_stop_sequence": 0,
-      "delay_seconds": 249,
-      "status": "on_time"
+      "next_stop_sequence": 64,
+      "delay_seconds": -659,
+      "status": "early"
     },
     {
       "trip_id": "ee46cb67-ac3e-47b7-9490-0787127254b7",
@@ -790,7 +798,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 1079,
+      "delay_seconds": 1139,
       "status": "late"
     }
   ]
