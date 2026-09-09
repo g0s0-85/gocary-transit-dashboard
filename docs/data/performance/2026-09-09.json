@@ -1,22 +1,22 @@
 {
   "date": "2026-09-09",
   "system": {
-    "on_time": 1242,
+    "on_time": 1272,
     "early": 141,
-    "late": 85,
-    "total": 1468,
-    "delay_sum": 70573,
-    "delay_sample_count": 1468
+    "late": 88,
+    "total": 1501,
+    "delay_sum": 74371,
+    "delay_sample_count": 1501
   },
   "routes": {
     "GA1": {
       "route_short_name": "GA1",
-      "on_time": 139,
+      "on_time": 169,
       "early": 10,
       "late": 23,
-      "total": 172,
-      "delay_sum": 18678,
-      "delay_sample_count": 172
+      "total": 202,
+      "delay_sum": 19726,
+      "delay_sample_count": 202
     },
     "6": {
       "route_short_name": "6",
@@ -76,10 +76,10 @@
       "route_short_name": "3",
       "on_time": 80,
       "early": 12,
-      "late": 13,
-      "total": 105,
-      "delay_sum": 10777,
-      "delay_sample_count": 105
+      "late": 16,
+      "total": 108,
+      "delay_sum": 13527,
+      "delay_sample_count": 108
     },
     "5": {
       "route_short_name": "5",
@@ -97,12 +97,12 @@
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 18,
+          "on_time": 24,
           "early": 10,
           "late": 3,
-          "total": 31,
-          "delay_sum": -1694,
-          "delay_sample_count": 31
+          "total": 37,
+          "delay_sum": -1588,
+          "delay_sample_count": 37
         },
         "9": {
           "route_short_name": "9",
@@ -114,15 +114,95 @@
           "delay_sample_count": 40
         }
       },
-      "on_time": 45,
+      "on_time": 51,
       "early": 21,
       "late": 5,
-      "total": 71,
-      "delay_sum": -4430,
-      "delay_sample_count": 71
+      "total": 77,
+      "delay_sum": -4324,
+      "delay_sample_count": 77
     },
     "16093": {
       "stop_name": "Apex Senior Center Main Entrance ",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 19,
+          "early": 0,
+          "late": 2,
+          "total": 21,
+          "delay_sum": 2149,
+          "delay_sample_count": 21
+        }
+      },
+      "on_time": 19,
+      "early": 0,
+      "late": 2,
+      "total": 21,
+      "delay_sum": 2149,
+      "delay_sample_count": 21
+    },
+    "16021": {
+      "stop_name": "Beaver Crk Comm Dr at Chick-fil-A (WB)",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 21,
+          "early": 0,
+          "late": 0,
+          "total": 21,
+          "delay_sum": 2855,
+          "delay_sample_count": 21
+        }
+      },
+      "on_time": 21,
+      "early": 0,
+      "late": 0,
+      "total": 21,
+      "delay_sum": 2855,
+      "delay_sample_count": 21
+    },
+    "16031": {
+      "stop_name": "Chapel Ridge Rd at Olive Chapel Professional Park",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 28,
+          "early": 0,
+          "late": 10,
+          "total": 38,
+          "delay_sum": 7162,
+          "delay_sample_count": 38
+        }
+      },
+      "on_time": 28,
+      "early": 0,
+      "late": 10,
+      "total": 38,
+      "delay_sum": 7162,
+      "delay_sample_count": 38
+    },
+    "16045": {
+      "stop_name": "Beaver Creek Commons Dr at Lowe's (EB)",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 16,
+          "early": 0,
+          "late": 1,
+          "total": 17,
+          "delay_sum": 2167,
+          "delay_sample_count": 17
+        }
+      },
+      "on_time": 16,
+      "early": 0,
+      "late": 1,
+      "total": 17,
+      "delay_sum": 2167,
+      "delay_sample_count": 17
+    },
+    "16049": {
+      "stop_name": "W Williams St at Healthplex Way (SB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
@@ -130,7 +210,7 @@
           "early": 0,
           "late": 2,
           "total": 17,
-          "delay_sum": 2109,
+          "delay_sum": 1886,
           "delay_sample_count": 17
         }
       },
@@ -138,148 +218,68 @@
       "early": 0,
       "late": 2,
       "total": 17,
-      "delay_sum": 2109,
+      "delay_sum": 1886,
       "delay_sample_count": 17
-    },
-    "16021": {
-      "stop_name": "Beaver Crk Comm Dr at Chick-fil-A (WB)",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 17,
-          "early": 0,
-          "late": 0,
-          "total": 17,
-          "delay_sum": 2585,
-          "delay_sample_count": 17
-        }
-      },
-      "on_time": 17,
-      "early": 0,
-      "late": 0,
-      "total": 17,
-      "delay_sum": 2585,
-      "delay_sample_count": 17
-    },
-    "16031": {
-      "stop_name": "Chapel Ridge Rd at Olive Chapel Professional Park",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 22,
-          "early": 0,
-          "late": 10,
-          "total": 32,
-          "delay_sum": 6737,
-          "delay_sample_count": 32
-        }
-      },
-      "on_time": 22,
-      "early": 0,
-      "late": 10,
-      "total": 32,
-      "delay_sum": 6737,
-      "delay_sample_count": 32
-    },
-    "16045": {
-      "stop_name": "Beaver Creek Commons Dr at Lowe's (EB)",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 14,
-          "early": 0,
-          "late": 1,
-          "total": 15,
-          "delay_sum": 2125,
-          "delay_sample_count": 15
-        }
-      },
-      "on_time": 14,
-      "early": 0,
-      "late": 1,
-      "total": 15,
-      "delay_sum": 2125,
-      "delay_sample_count": 15
-    },
-    "16049": {
-      "stop_name": "W Williams St at Healthplex Way (SB)",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 13,
-          "early": 0,
-          "late": 2,
-          "total": 15,
-          "delay_sum": 1856,
-          "delay_sample_count": 15
-        }
-      },
-      "on_time": 13,
-      "early": 0,
-      "late": 2,
-      "total": 15,
-      "delay_sum": 1856,
-      "delay_sample_count": 15
     },
     "16061": {
       "stop_name": "E Williams St at S Hughes St (Park and Ride (SB))",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 13,
+          "on_time": 15,
           "early": 0,
           "late": 2,
-          "total": 15,
-          "delay_sum": 1530,
-          "delay_sample_count": 15
+          "total": 17,
+          "delay_sum": 1566,
+          "delay_sample_count": 17
         }
       },
-      "on_time": 13,
+      "on_time": 15,
       "early": 0,
       "late": 2,
-      "total": 15,
-      "delay_sum": 1530,
-      "delay_sample_count": 15
+      "total": 17,
+      "delay_sum": 1566,
+      "delay_sample_count": 17
     },
     "16077": {
       "stop_name": "Tingen Rd at Peace Haven Pl",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 14,
+          "on_time": 16,
           "early": 0,
           "late": 1,
-          "total": 15,
-          "delay_sum": 1357,
-          "delay_sample_count": 15
+          "total": 17,
+          "delay_sum": 1379,
+          "delay_sample_count": 17
         }
       },
-      "on_time": 14,
+      "on_time": 16,
       "early": 0,
       "late": 1,
-      "total": 15,
-      "delay_sum": 1357,
-      "delay_sample_count": 15
+      "total": 17,
+      "delay_sum": 1379,
+      "delay_sample_count": 17
     },
     "16085": {
       "stop_name": "E Williams St at S Mason St (Apex MS NB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 13,
+          "on_time": 15,
           "early": 0,
           "late": 2,
-          "total": 15,
-          "delay_sum": 2073,
-          "delay_sample_count": 15
+          "total": 17,
+          "delay_sum": 2150,
+          "delay_sample_count": 17
         }
       },
-      "on_time": 13,
+      "on_time": 15,
       "early": 0,
       "late": 2,
-      "total": 15,
-      "delay_sum": 2073,
-      "delay_sample_count": 15
+      "total": 17,
+      "delay_sum": 2150,
+      "delay_sample_count": 17
     },
     "1398": {
       "stop_name": "Cary Depot South Platform",
@@ -351,18 +351,18 @@
           "route_short_name": "3",
           "on_time": 6,
           "early": 9,
-          "late": 1,
-          "total": 16,
-          "delay_sum": -3067,
-          "delay_sample_count": 16
+          "late": 2,
+          "total": 17,
+          "delay_sum": -2694,
+          "delay_sample_count": 17
         }
       },
       "on_time": 99,
       "early": 39,
-      "late": 8,
-      "total": 146,
-      "delay_sum": -15368,
-      "delay_sample_count": 146
+      "late": 9,
+      "total": 147,
+      "delay_sum": -14995,
+      "delay_sample_count": 147
     },
     "1375": {
       "stop_name": "Walnut St at Cary Commons",
@@ -1001,18 +1001,18 @@
           "route_short_name": "3",
           "on_time": 28,
           "early": 3,
-          "late": 4,
-          "total": 35,
-          "delay_sum": 4844,
-          "delay_sample_count": 35
+          "late": 5,
+          "total": 36,
+          "delay_sum": 6053,
+          "delay_sample_count": 36
         }
       },
       "on_time": 52,
       "early": 12,
-      "late": 6,
-      "total": 70,
-      "delay_sum": 5284,
-      "delay_sample_count": 70
+      "late": 7,
+      "total": 71,
+      "delay_sum": 6493,
+      "delay_sample_count": 71
     },
     "11437": {
       "stop_name": "Macedonia Lake Dr at Tryon Manor Dr",
@@ -1321,19 +1321,19 @@
           "route_short_name": "3",
           "on_time": 14,
           "early": 0,
-          "late": 2,
-          "total": 16,
-          "delay_sum": 2550,
-          "delay_sample_count": 16
+          "late": 3,
+          "total": 17,
+          "delay_sum": 3718,
+          "delay_sample_count": 17
         }
       },
       "on_time": 14,
       "early": 0,
-      "late": 2,
-      "total": 16,
-      "delay_sum": 2550,
-      "delay_sample_count": 16
+      "late": 3,
+      "total": 17,
+      "delay_sum": 3718,
+      "delay_sample_count": 17
     }
   },
-  "last_updated": "2026-09-09T15:51:19.213027+00:00"
+  "last_updated": "2026-09-09T15:52:16.765756+00:00"
 }
