@@ -1,12 +1,12 @@
 {
   "date": "2026-09-09",
   "system": {
-    "on_time": 143,
+    "on_time": 159,
     "early": 0,
     "late": 0,
-    "total": 143,
-    "delay_sum": 2682,
-    "delay_sample_count": 143
+    "total": 159,
+    "delay_sum": 2741,
+    "delay_sample_count": 159
   },
   "routes": {
     "GA1": {
@@ -71,6 +71,24 @@
       "total": 12,
       "delay_sum": 172,
       "delay_sample_count": 12
+    },
+    "3": {
+      "route_short_name": "3",
+      "on_time": 9,
+      "early": 0,
+      "late": 0,
+      "total": 9,
+      "delay_sum": 19,
+      "delay_sample_count": 9
+    },
+    "5": {
+      "route_short_name": "5",
+      "on_time": 7,
+      "early": 0,
+      "late": 0,
+      "total": 7,
+      "delay_sum": 40,
+      "delay_sample_count": 7
     }
   },
   "stops": {
@@ -319,14 +337,32 @@
           "total": 1,
           "delay_sum": 0,
           "delay_sample_count": 1
+        },
+        "5": {
+          "route_short_name": "5",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 0,
+          "delay_sample_count": 1
+        },
+        "3": {
+          "route_short_name": "3",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 0,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 12,
+      "on_time": 14,
       "early": 0,
       "late": 0,
-      "total": 12,
+      "total": 14,
       "delay_sum": 0,
-      "delay_sample_count": 12
+      "delay_sample_count": 14
     },
     "1375": {
       "stop_name": "Walnut St at Cary Commons",
@@ -493,14 +529,32 @@
           "total": 1,
           "delay_sum": 0,
           "delay_sample_count": 1
+        },
+        "3": {
+          "route_short_name": "3",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 0,
+          "delay_sample_count": 2
+        },
+        "5": {
+          "route_short_name": "5",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 0,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 13,
+      "on_time": 16,
       "early": 0,
       "late": 0,
-      "total": 13,
+      "total": 16,
       "delay_sum": 0,
-      "delay_sample_count": 13
+      "delay_sample_count": 16
     },
     "11397": {
       "stop_name": "Highland Village (WB)",
@@ -942,14 +996,23 @@
           "total": 3,
           "delay_sum": 0,
           "delay_sample_count": 3
+        },
+        "3": {
+          "route_short_name": "3",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 0,
+          "delay_sample_count": 3
         }
       },
-      "on_time": 3,
+      "on_time": 6,
       "early": 0,
       "late": 0,
-      "total": 3,
+      "total": 6,
       "delay_sum": 0,
-      "delay_sample_count": 3
+      "delay_sample_count": 6
     },
     "11437": {
       "stop_name": "Macedonia Lake Dr at Tryon Manor Dr",
@@ -1150,7 +1213,127 @@
       "total": 1,
       "delay_sum": 24,
       "delay_sample_count": 1
+    },
+    "11095": {
+      "stop_name": "N Harrison Ave at St Charles Pl",
+      "routes": {
+        "3": {
+          "route_short_name": "3",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 0,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 0,
+      "delay_sample_count": 2
+    },
+    "11241": {
+      "stop_name": "Crescentcommons Dr",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 11,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 11,
+      "delay_sample_count": 2
+    },
+    "11097": {
+      "stop_name": "Kildaire Farm Rd at SE Maynard Rd",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 23,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 23,
+      "delay_sample_count": 1
+    },
+    "1367": {
+      "stop_name": "Kildaire Farm Rd at Mayfair Plaza",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 2,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 2,
+      "delay_sample_count": 1
+    },
+    "11074": {
+      "stop_name": "Kildaire Farm Rd at WakeMed Cary (SB)",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 4,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 4,
+      "delay_sample_count": 1
+    },
+    "1362": {
+      "stop_name": "N Harrison Ave at Northwoods Market",
+      "routes": {
+        "3": {
+          "route_short_name": "3",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 19,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 19,
+      "delay_sample_count": 1
     }
   },
-  "last_updated": "2026-09-09T10:02:20.187874+00:00"
+  "last_updated": "2026-09-09T10:06:26.545991+00:00"
 }
