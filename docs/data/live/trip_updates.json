@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-09T18:33:11.700501+00:00",
+  "updated_at": "2026-09-09T18:34:19.496946+00:00",
   "trips": [
     {
       "trip_id": "6da65c29-39b7-4938-91b4-e38c34490863",
@@ -61,6 +61,14 @@
       "trip_id": "0dc05c65-0a8b-4ee1-bd31-1aaa7ac2760d",
       "route_id": "2",
       "route_short_name": "2",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "5fd60777-5f11-4f93-a9cb-17a8f45ba4fd",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -350,7 +358,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 172,
       "status": "on_time"
     },
     {
@@ -462,7 +470,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 358,
+      "delay_seconds": 377,
       "status": "late"
     },
     {
@@ -478,7 +486,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 71,
+      "delay_seconds": 93,
       "status": "on_time"
     },
     {
@@ -486,7 +494,7 @@
       "route_id": "4",
       "route_short_name": "4",
       "next_stop_sequence": 0,
-      "delay_seconds": 187,
+      "delay_seconds": 239,
       "status": "on_time"
     },
     {
@@ -566,8 +574,8 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 693,
-      "status": "late"
+      "delay_seconds": 239,
+      "status": "on_time"
     },
     {
       "trip_id": "6f049327-0ceb-4f71-adde-3d9b345227b3",
@@ -616,14 +624,6 @@
       "next_stop_sequence": 0,
       "delay_seconds": 206,
       "status": "on_time"
-    },
-    {
-      "trip_id": "79f87c0a-a1b2-4655-953f-b91bc3c8aab7",
-      "route_id": "GA1",
-      "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 339,
-      "status": "late"
     }
   ]
 }
