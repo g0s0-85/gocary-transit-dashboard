@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T12:22:13.139281+00:00",
+  "updated_at": "2026-09-10T12:23:12.296662+00:00",
   "trips": [
     {
       "trip_id": "52e2096c-1cde-47d8-b5d1-fd4b65f6a5d6",
@@ -21,6 +21,14 @@
       "trip_id": "60aa0fff-16a0-4e69-b95a-6da9a78df6a2",
       "route_id": "9",
       "route_short_name": "9",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "c16ab297-dd9a-4ab5-a172-7dfacd6ae799",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -294,7 +302,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 100,
       "status": "on_time"
     },
     {
@@ -430,7 +438,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 367,
+      "delay_seconds": 364,
       "status": "late"
     },
     {
@@ -438,7 +446,7 @@
       "route_id": "4",
       "route_short_name": "4",
       "next_stop_sequence": 0,
-      "delay_seconds": 55,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -462,7 +470,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 11,
       "status": "on_time"
     },
     {
@@ -518,7 +526,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 1,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -589,9 +597,9 @@
       "trip_id": "3b327b7b-8a7c-4634-b0a5-4d8f10e18a98",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 114,
-      "status": "on_time"
+      "next_stop_sequence": 103,
+      "delay_seconds": -461,
+      "status": "early"
     },
     {
       "trip_id": "a94cc002-d8d3-41d6-9bb6-51885269e118",
