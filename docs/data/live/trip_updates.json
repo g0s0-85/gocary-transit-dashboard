@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-09-10T14:34:19.586056+00:00",
+  "updated_at": "2026-09-10T14:35:17.629098+00:00",
   "trips": [
+    {
+      "trip_id": "1215472c-6a4c-458a-8a52-7d8916350f84",
+      "route_id": "1",
+      "route_short_name": "1",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
     {
       "trip_id": "7a0f736a-0676-479e-8e78-7f50ffe632aa",
       "route_id": "9",
@@ -330,6 +338,14 @@
       "status": "on_time"
     },
     {
+      "trip_id": "0ebb908e-8796-413c-89fd-824385f920f0",
+      "route_id": "5",
+      "route_short_name": "5",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
       "trip_id": "c7a93cbf-fe64-4331-be73-c071e5f39b4b",
       "route_id": "1",
       "route_short_name": "1",
@@ -366,7 +382,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 221,
+      "delay_seconds": 192,
       "status": "on_time"
     },
     {
@@ -566,7 +582,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 147,
       "status": "on_time"
     },
     {
@@ -589,9 +605,9 @@
       "trip_id": "da59d57e-758b-4a1e-97e5-b198a245b37f",
       "route_id": "7",
       "route_short_name": "7",
-      "next_stop_sequence": 0,
-      "delay_seconds": 263,
-      "status": "on_time"
+      "next_stop_sequence": 64,
+      "delay_seconds": -659,
+      "status": "early"
     },
     {
       "trip_id": "9830d588-5895-4a09-b3f3-cf4c555cc241",
@@ -614,7 +630,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 350,
+      "delay_seconds": 405,
       "status": "late"
     },
     {
@@ -631,14 +647,6 @@
       "route_short_name": "7",
       "next_stop_sequence": 0,
       "delay_seconds": 32,
-      "status": "on_time"
-    },
-    {
-      "trip_id": "aa8671c2-193e-4a53-bd4b-89bc690dea2d",
-      "route_id": "5",
-      "route_short_name": "5",
-      "next_stop_sequence": 0,
-      "delay_seconds": 55,
       "status": "on_time"
     }
   ]
