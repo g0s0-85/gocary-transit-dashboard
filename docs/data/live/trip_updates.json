@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-10T16:54:13.108226+00:00",
+  "updated_at": "2026-09-10T16:55:18.422194+00:00",
   "trips": [
     {
       "trip_id": "3ce29829-2d02-4b7c-86c6-ce9cc01eaed3",
@@ -90,6 +90,14 @@
       "status": "on_time"
     },
     {
+      "trip_id": "e5662465-79ea-45ae-ab4d-519d14fa8262",
+      "route_id": "4",
+      "route_short_name": "4",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
       "trip_id": "669b1b3e-011f-4fb7-bdbe-7a7cf0ef8490",
       "route_id": "6",
       "route_short_name": "6",
@@ -155,14 +163,6 @@
     },
     {
       "trip_id": "e31cb5be-b0b6-4cb7-a2f8-231fbed64932",
-      "route_id": "9",
-      "route_short_name": "9",
-      "next_stop_sequence": 0,
-      "delay_seconds": 0,
-      "status": "on_time"
-    },
-    {
-      "trip_id": "962cce2b-794c-4ae6-bef3-13eb4463b65f",
       "route_id": "9",
       "route_short_name": "9",
       "next_stop_sequence": 0,
@@ -269,14 +269,6 @@
       "trip_id": "62cd5dfb-05ec-43ba-9df7-daf72c16e387",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 0,
-      "status": "on_time"
-    },
-    {
-      "trip_id": "3b20712b-7802-4365-a8ea-484f752227ff",
-      "route_id": "9",
-      "route_short_name": "9",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -402,14 +394,6 @@
       "status": "on_time"
     },
     {
-      "trip_id": "7a930ad1-fd3b-4844-ad0e-f0bc8b92396c",
-      "route_id": "2",
-      "route_short_name": "2",
-      "next_stop_sequence": 0,
-      "delay_seconds": 0,
-      "status": "on_time"
-    },
-    {
       "trip_id": "b2a116c0-d2d1-467c-8966-9c823efa4c5f",
       "route_id": "9",
       "route_short_name": "9",
@@ -510,7 +494,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 23,
+      "delay_seconds": 54,
       "status": "on_time"
     },
     {
@@ -558,7 +542,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 31,
       "status": "on_time"
     },
     {
@@ -566,7 +550,7 @@
       "route_id": "4",
       "route_short_name": "4",
       "next_stop_sequence": 0,
-      "delay_seconds": 290,
+      "delay_seconds": 288,
       "status": "on_time"
     },
     {
@@ -610,14 +594,6 @@
       "status": "on_time"
     },
     {
-      "trip_id": "5197fa38-023e-4560-9efb-1744e87b6e3a",
-      "route_id": "2",
-      "route_short_name": "2",
-      "next_stop_sequence": 0,
-      "delay_seconds": 0,
-      "status": "on_time"
-    },
-    {
       "trip_id": "4446dc30-f72f-4c9d-b203-9b1d4dd578a1",
       "route_id": "GA1",
       "route_short_name": "GA1",
@@ -646,7 +622,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 326,
+      "delay_seconds": 331,
       "status": "late"
     },
     {
@@ -677,9 +653,9 @@
       "trip_id": "7a0f736a-0676-479e-8e78-7f50ffe632aa",
       "route_id": "9",
       "route_short_name": "9",
-      "next_stop_sequence": 0,
-      "delay_seconds": 169,
-      "status": "on_time"
+      "next_stop_sequence": 45,
+      "delay_seconds": -309,
+      "status": "early"
     },
     {
       "trip_id": "f99eabae-dd13-4e6e-ad4a-cb739de25d29",
@@ -709,9 +685,9 @@
       "trip_id": "bb3943eb-79dc-4b73-8a2e-7f863ed0e405",
       "route_id": "6",
       "route_short_name": "6",
-      "next_stop_sequence": 0,
-      "delay_seconds": 98,
-      "status": "on_time"
+      "next_stop_sequence": 47,
+      "delay_seconds": -321,
+      "status": "early"
     },
     {
       "trip_id": "e3e917d8-a010-458c-83f4-de5d987af386",
@@ -744,14 +720,6 @@
       "next_stop_sequence": 0,
       "delay_seconds": 117,
       "status": "on_time"
-    },
-    {
-      "trip_id": "2228bdbd-5ca2-4e23-a015-439a857ed49e",
-      "route_id": "2",
-      "route_short_name": "2",
-      "next_stop_sequence": 36,
-      "delay_seconds": -63,
-      "status": "early"
     }
   ]
 }
