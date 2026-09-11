@@ -1,12 +1,12 @@
 {
   "date": "2026-09-11",
   "system": {
-    "on_time": 2327,
+    "on_time": 2340,
     "early": 256,
-    "late": 160,
-    "total": 2743,
-    "delay_sum": 105945,
-    "delay_sample_count": 2743
+    "late": 163,
+    "total": 2759,
+    "delay_sum": 107701,
+    "delay_sample_count": 2759
   },
   "routes": {
     "1": {
@@ -74,21 +74,21 @@
     },
     "3": {
       "route_short_name": "3",
-      "on_time": 163,
+      "on_time": 168,
       "early": 26,
-      "late": 3,
-      "total": 192,
-      "delay_sum": -777,
-      "delay_sample_count": 192
+      "late": 4,
+      "total": 198,
+      "delay_sum": 19,
+      "delay_sample_count": 198
     },
     "5": {
       "route_short_name": "5",
-      "on_time": 200,
+      "on_time": 208,
       "early": 8,
-      "late": 10,
-      "total": 218,
-      "delay_sum": 18903,
-      "delay_sample_count": 218
+      "late": 12,
+      "total": 228,
+      "delay_sum": 19863,
+      "delay_sample_count": 228
     }
   },
   "stops": {
@@ -451,27 +451,27 @@
           "route_short_name": "3",
           "on_time": 31,
           "early": 0,
-          "late": 2,
-          "total": 33,
-          "delay_sum": 2882,
-          "delay_sample_count": 33
+          "late": 3,
+          "total": 34,
+          "delay_sum": 3231,
+          "delay_sample_count": 34
         },
         "5": {
           "route_short_name": "5",
-          "on_time": 19,
+          "on_time": 20,
           "early": 8,
-          "late": 3,
-          "total": 30,
-          "delay_sum": 1273,
-          "delay_sample_count": 30
+          "late": 4,
+          "total": 32,
+          "delay_sum": 1622,
+          "delay_sample_count": 32
         }
       },
-      "on_time": 186,
+      "on_time": 187,
       "early": 52,
-      "late": 10,
-      "total": 248,
-      "delay_sum": -5627,
-      "delay_sample_count": 248
+      "late": 12,
+      "total": 251,
+      "delay_sum": -4929,
+      "delay_sample_count": 251
     },
     "11397": {
       "stop_name": "Highland Village (WB)",
@@ -632,29 +632,29 @@
         },
         "5": {
           "route_short_name": "5",
-          "on_time": 31,
+          "on_time": 32,
           "early": 0,
           "late": 1,
-          "total": 32,
+          "total": 33,
           "delay_sum": 2255,
-          "delay_sample_count": 32
+          "delay_sample_count": 33
         },
         "3": {
           "route_short_name": "3",
-          "on_time": 12,
+          "on_time": 13,
           "early": 19,
           "late": 0,
-          "total": 31,
+          "total": 32,
           "delay_sum": -7692,
-          "delay_sample_count": 31
+          "delay_sample_count": 32
         }
       },
-      "on_time": 178,
+      "on_time": 180,
       "early": 72,
       "late": 5,
-      "total": 255,
+      "total": 257,
       "delay_sum": -28142,
-      "delay_sample_count": 255
+      "delay_sample_count": 257
     },
     "1375": {
       "stop_name": "Walnut St at Cary Commons",
@@ -1139,20 +1139,20 @@
         },
         "3": {
           "route_short_name": "3",
-          "on_time": 57,
+          "on_time": 59,
           "early": 7,
           "late": 0,
-          "total": 64,
-          "delay_sum": 820,
-          "delay_sample_count": 64
+          "total": 66,
+          "delay_sum": 976,
+          "delay_sample_count": 66
         }
       },
-      "on_time": 111,
+      "on_time": 113,
       "early": 23,
       "late": 6,
-      "total": 140,
-      "delay_sum": 180,
-      "delay_sample_count": 140
+      "total": 142,
+      "delay_sum": 336,
+      "delay_sample_count": 142
     },
     "1331": {
       "stop_name": "1331",
@@ -1219,11 +1219,31 @@
       "routes": {
         "3": {
           "route_short_name": "3",
+          "on_time": 33,
+          "early": 0,
+          "late": 1,
+          "total": 34,
+          "delay_sum": 1545,
+          "delay_sample_count": 34
+        }
+      },
+      "on_time": 33,
+      "early": 0,
+      "late": 1,
+      "total": 34,
+      "delay_sum": 1545,
+      "delay_sample_count": 34
+    },
+    "1367": {
+      "stop_name": "Kildaire Farm Rd at Mayfair Plaza",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
           "on_time": 32,
           "early": 0,
           "late": 1,
           "total": 33,
-          "delay_sum": 1282,
+          "delay_sum": 3524,
           "delay_sample_count": 33
         }
       },
@@ -1231,39 +1251,79 @@
       "early": 0,
       "late": 1,
       "total": 33,
-      "delay_sum": 1282,
+      "delay_sum": 3524,
       "delay_sample_count": 33
-    },
-    "1367": {
-      "stop_name": "Kildaire Farm Rd at Mayfair Plaza",
-      "routes": {
-        "5": {
-          "route_short_name": "5",
-          "on_time": 31,
-          "early": 0,
-          "late": 1,
-          "total": 32,
-          "delay_sum": 3476,
-          "delay_sample_count": 32
-        }
-      },
-      "on_time": 31,
-      "early": 0,
-      "late": 1,
-      "total": 32,
-      "delay_sum": 3476,
-      "delay_sample_count": 32
     },
     "11074": {
       "stop_name": "Kildaire Farm Rd at WakeMed Cary (SB)",
       "routes": {
         "5": {
           "route_short_name": "5",
+          "on_time": 33,
+          "early": 0,
+          "late": 0,
+          "total": 33,
+          "delay_sum": 1883,
+          "delay_sample_count": 33
+        }
+      },
+      "on_time": 33,
+      "early": 0,
+      "late": 0,
+      "total": 33,
+      "delay_sum": 1883,
+      "delay_sample_count": 33
+    },
+    "11241": {
+      "stop_name": "Crescentcommons Dr",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 64,
+          "early": 0,
+          "late": 1,
+          "total": 65,
+          "delay_sum": 5940,
+          "delay_sample_count": 65
+        }
+      },
+      "on_time": 64,
+      "early": 0,
+      "late": 1,
+      "total": 65,
+      "delay_sum": 5940,
+      "delay_sample_count": 65
+    },
+    "11097": {
+      "stop_name": "Kildaire Farm Rd at SE Maynard Rd",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 27,
+          "early": 0,
+          "late": 5,
+          "total": 32,
+          "delay_sum": 4639,
+          "delay_sample_count": 32
+        }
+      },
+      "on_time": 27,
+      "early": 0,
+      "late": 5,
+      "total": 32,
+      "delay_sum": 4639,
+      "delay_sample_count": 32
+    },
+    "1362": {
+      "stop_name": "N Harrison Ave at Northwoods Market",
+      "routes": {
+        "3": {
+          "route_short_name": "3",
           "on_time": 32,
           "early": 0,
           "late": 0,
           "total": 32,
-          "delay_sum": 1883,
+          "delay_sum": 1959,
           "delay_sample_count": 32
         }
       },
@@ -1271,69 +1331,9 @@
       "early": 0,
       "late": 0,
       "total": 32,
-      "delay_sum": 1883,
+      "delay_sum": 1959,
       "delay_sample_count": 32
-    },
-    "11241": {
-      "stop_name": "Crescentcommons Dr",
-      "routes": {
-        "5": {
-          "route_short_name": "5",
-          "on_time": 61,
-          "early": 0,
-          "late": 1,
-          "total": 62,
-          "delay_sum": 5747,
-          "delay_sample_count": 62
-        }
-      },
-      "on_time": 61,
-      "early": 0,
-      "late": 1,
-      "total": 62,
-      "delay_sum": 5747,
-      "delay_sample_count": 62
-    },
-    "11097": {
-      "stop_name": "Kildaire Farm Rd at SE Maynard Rd",
-      "routes": {
-        "5": {
-          "route_short_name": "5",
-          "on_time": 26,
-          "early": 0,
-          "late": 4,
-          "total": 30,
-          "delay_sum": 4269,
-          "delay_sample_count": 30
-        }
-      },
-      "on_time": 26,
-      "early": 0,
-      "late": 4,
-      "total": 30,
-      "delay_sum": 4269,
-      "delay_sample_count": 30
-    },
-    "1362": {
-      "stop_name": "N Harrison Ave at Northwoods Market",
-      "routes": {
-        "3": {
-          "route_short_name": "3",
-          "on_time": 31,
-          "early": 0,
-          "late": 0,
-          "total": 31,
-          "delay_sum": 1931,
-          "delay_sample_count": 31
-        }
-      },
-      "on_time": 31,
-      "early": 0,
-      "late": 0,
-      "total": 31,
-      "delay_sum": 1931,
-      "delay_sample_count": 31
     }
   },
-  "last_updated": "2026-09-11T20:15:16.113020+00:00"
+  "last_updated": "2026-09-11T20:17:11.592440+00:00"
 }
