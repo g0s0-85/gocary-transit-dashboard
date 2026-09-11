@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-11T19:24:18.477810+00:00",
+  "updated_at": "2026-09-11T19:25:16.827231+00:00",
   "trips": [
     {
       "trip_id": "4d9c2596-ca19-43f9-bafb-9fa0b43ceb95",
@@ -21,6 +21,14 @@
       "trip_id": "02201cfa-cd1f-4cdf-9e1b-7d94cc0c7ea8",
       "route_id": "9",
       "route_short_name": "9",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "7984ce95-64d2-4da2-a804-d1047b54a90b",
+      "route_id": "4",
+      "route_short_name": "4",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -446,7 +454,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 113,
+      "delay_seconds": 183,
       "status": "on_time"
     },
     {
@@ -462,7 +470,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 253,
+      "delay_seconds": 264,
       "status": "on_time"
     },
     {
@@ -478,7 +486,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 77,
+      "delay_seconds": 83,
       "status": "on_time"
     },
     {
@@ -510,8 +518,8 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 295,
-      "status": "on_time"
+      "delay_seconds": 331,
+      "status": "late"
     },
     {
       "trip_id": "b4123ea0-d55d-4292-8cf8-76ca9d0a01be",
@@ -566,7 +574,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 221,
+      "delay_seconds": 231,
       "status": "on_time"
     },
     {
@@ -661,9 +669,9 @@
       "trip_id": "e5662465-79ea-45ae-ab4d-519d14fa8262",
       "route_id": "4",
       "route_short_name": "4",
-      "next_stop_sequence": 0,
-      "delay_seconds": 25,
-      "status": "on_time"
+      "next_stop_sequence": 49,
+      "delay_seconds": -351,
+      "status": "early"
     },
     {
       "trip_id": "eee7b846-36db-4ad3-a7d0-eb9eb7947a70",
