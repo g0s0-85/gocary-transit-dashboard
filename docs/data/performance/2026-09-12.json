@@ -1,12 +1,12 @@
 {
   "date": "2026-09-12",
   "system": {
-    "on_time": 338,
+    "on_time": 356,
     "early": 0,
     "late": 3,
-    "total": 341,
-    "delay_sum": 9930,
-    "delay_sample_count": 341
+    "total": 359,
+    "delay_sum": 10489,
+    "delay_sample_count": 359
   },
   "routes": {
     "GA1": {
@@ -56,21 +56,21 @@
     },
     "5": {
       "route_short_name": "5",
-      "on_time": 18,
+      "on_time": 29,
       "early": 0,
       "late": 0,
-      "total": 18,
-      "delay_sum": 89,
-      "delay_sample_count": 18
+      "total": 29,
+      "delay_sum": 640,
+      "delay_sample_count": 29
     },
     "3": {
       "route_short_name": "3",
-      "on_time": 17,
+      "on_time": 24,
       "early": 0,
       "late": 0,
-      "total": 17,
-      "delay_sum": 190,
-      "delay_sample_count": 17
+      "total": 24,
+      "delay_sum": 198,
+      "delay_sample_count": 24
     },
     "1": {
       "route_short_name": "1",
@@ -322,21 +322,21 @@
         },
         "5": {
           "route_short_name": "5",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5,
+          "delay_sum": 41,
+          "delay_sample_count": 5
+        },
+        "3": {
+          "route_short_name": "3",
           "on_time": 3,
           "early": 0,
           "late": 0,
           "total": 3,
           "delay_sum": 0,
           "delay_sample_count": 3
-        },
-        "3": {
-          "route_short_name": "3",
-          "on_time": 2,
-          "early": 0,
-          "late": 0,
-          "total": 2,
-          "delay_sum": 0,
-          "delay_sample_count": 2
         },
         "1": {
           "route_short_name": "1",
@@ -357,12 +357,12 @@
           "delay_sample_count": 2
         }
       },
-      "on_time": 31,
+      "on_time": 34,
       "early": 0,
       "late": 1,
-      "total": 32,
-      "delay_sum": 620,
-      "delay_sample_count": 32
+      "total": 35,
+      "delay_sum": 661,
+      "delay_sample_count": 35
     },
     "11700": {
       "stop_name": "High House Rd at Highland Village Dr (WB)",
@@ -445,21 +445,21 @@
         },
         "3": {
           "route_short_name": "3",
-          "on_time": 4,
+          "on_time": 5,
           "early": 0,
           "late": 0,
-          "total": 4,
+          "total": 5,
           "delay_sum": 36,
-          "delay_sample_count": 4
+          "delay_sample_count": 5
         },
         "5": {
           "route_short_name": "5",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
           "late": 0,
-          "total": 2,
+          "total": 3,
           "delay_sum": 0,
-          "delay_sample_count": 2
+          "delay_sample_count": 3
         },
         "7": {
           "route_short_name": "7",
@@ -480,12 +480,12 @@
           "delay_sample_count": 2
         }
       },
-      "on_time": 32,
+      "on_time": 34,
       "early": 0,
       "late": 1,
-      "total": 33,
+      "total": 35,
       "delay_sum": 708,
-      "delay_sample_count": 33
+      "delay_sample_count": 35
     },
     "11397": {
       "stop_name": "Highland Village (WB)",
@@ -930,51 +930,11 @@
       "routes": {
         "5": {
           "route_short_name": "5",
-          "on_time": 3,
-          "early": 0,
-          "late": 0,
-          "total": 3,
-          "delay_sum": 4,
-          "delay_sample_count": 3
-        }
-      },
-      "on_time": 3,
-      "early": 0,
-      "late": 0,
-      "total": 3,
-      "delay_sum": 4,
-      "delay_sample_count": 3
-    },
-    "11074": {
-      "stop_name": "Kildaire Farm Rd at WakeMed Cary (SB)",
-      "routes": {
-        "5": {
-          "route_short_name": "5",
-          "on_time": 3,
-          "early": 0,
-          "late": 0,
-          "total": 3,
-          "delay_sum": 4,
-          "delay_sample_count": 3
-        }
-      },
-      "on_time": 3,
-      "early": 0,
-      "late": 0,
-      "total": 3,
-      "delay_sum": 4,
-      "delay_sample_count": 3
-    },
-    "11241": {
-      "stop_name": "Crescentcommons Dr",
-      "routes": {
-        "5": {
-          "route_short_name": "5",
           "on_time": 5,
           "early": 0,
           "late": 0,
           "total": 5,
-          "delay_sum": 30,
+          "delay_sum": 53,
           "delay_sample_count": 5
         }
       },
@@ -982,20 +942,60 @@
       "early": 0,
       "late": 0,
       "total": 5,
-      "delay_sum": 30,
+      "delay_sum": 53,
       "delay_sample_count": 5
+    },
+    "11074": {
+      "stop_name": "Kildaire Farm Rd at WakeMed Cary (SB)",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5,
+          "delay_sum": 78,
+          "delay_sample_count": 5
+        }
+      },
+      "on_time": 5,
+      "early": 0,
+      "late": 0,
+      "total": 5,
+      "delay_sum": 78,
+      "delay_sample_count": 5
+    },
+    "11241": {
+      "stop_name": "Crescentcommons Dr",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 8,
+          "early": 0,
+          "late": 0,
+          "total": 8,
+          "delay_sum": 358,
+          "delay_sample_count": 8
+        }
+      },
+      "on_time": 8,
+      "early": 0,
+      "late": 0,
+      "total": 8,
+      "delay_sum": 358,
+      "delay_sample_count": 8
     },
     "11142": {
       "stop_name": "Harrison Oaks Blvd at N Harrison Ave",
       "routes": {
         "3": {
           "route_short_name": "3",
-          "on_time": 5,
+          "on_time": 8,
           "early": 0,
           "late": 0,
-          "total": 5,
-          "delay_sum": 0,
-          "delay_sample_count": 5
+          "total": 8,
+          "delay_sum": -31,
+          "delay_sample_count": 8
         },
         "7": {
           "route_short_name": "7",
@@ -1007,72 +1007,72 @@
           "delay_sample_count": 5
         }
       },
-      "on_time": 10,
+      "on_time": 13,
       "early": 0,
       "late": 0,
-      "total": 10,
-      "delay_sum": 0,
-      "delay_sample_count": 10
+      "total": 13,
+      "delay_sum": -31,
+      "delay_sample_count": 13
     },
     "1362": {
       "stop_name": "N Harrison Ave at Northwoods Market",
       "routes": {
         "3": {
           "route_short_name": "3",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
           "late": 0,
-          "total": 2,
-          "delay_sum": 57,
-          "delay_sample_count": 2
+          "total": 3,
+          "delay_sum": 89,
+          "delay_sample_count": 3
         }
       },
-      "on_time": 2,
+      "on_time": 3,
       "early": 0,
       "late": 0,
-      "total": 2,
-      "delay_sum": 57,
-      "delay_sample_count": 2
+      "total": 3,
+      "delay_sum": 89,
+      "delay_sample_count": 3
     },
     "11095": {
       "stop_name": "N Harrison Ave at St Charles Pl",
       "routes": {
         "3": {
           "route_short_name": "3",
-          "on_time": 4,
+          "on_time": 5,
           "early": 0,
           "late": 0,
-          "total": 4,
-          "delay_sum": 97,
-          "delay_sample_count": 4
+          "total": 5,
+          "delay_sum": 104,
+          "delay_sample_count": 5
         }
       },
-      "on_time": 4,
+      "on_time": 5,
       "early": 0,
       "late": 0,
-      "total": 4,
-      "delay_sum": 97,
-      "delay_sample_count": 4
+      "total": 5,
+      "delay_sum": 104,
+      "delay_sample_count": 5
     },
     "11097": {
       "stop_name": "Kildaire Farm Rd at SE Maynard Rd",
       "routes": {
         "5": {
           "route_short_name": "5",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
           "late": 0,
-          "total": 2,
-          "delay_sum": 51,
-          "delay_sample_count": 2
+          "total": 3,
+          "delay_sum": 110,
+          "delay_sample_count": 3
         }
       },
-      "on_time": 2,
+      "on_time": 3,
       "early": 0,
       "late": 0,
-      "total": 2,
-      "delay_sum": 51,
-      "delay_sample_count": 2
+      "total": 3,
+      "delay_sum": 110,
+      "delay_sample_count": 3
     },
     "11002": {
       "stop_name": "E Chatham St at Chatham Square (EB)",
@@ -1335,5 +1335,5 @@
       "delay_sample_count": 2
     }
   },
-  "last_updated": "2026-09-12T10:28:13.745847+00:00"
+  "last_updated": "2026-09-12T10:29:10.784334+00:00"
 }
