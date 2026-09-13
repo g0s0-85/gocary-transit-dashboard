@@ -1,12 +1,12 @@
 {
   "date": "2026-09-13",
   "system": {
-    "on_time": 466,
+    "on_time": 469,
     "early": 15,
-    "late": 6,
-    "total": 487,
-    "delay_sum": 14567,
-    "delay_sample_count": 487
+    "late": 7,
+    "total": 491,
+    "delay_sum": 15343,
+    "delay_sample_count": 491
   },
   "routes": {
     "7": {
@@ -38,12 +38,12 @@
     },
     "GA1": {
       "route_short_name": "GA1",
-      "on_time": 108,
+      "on_time": 111,
       "early": 1,
-      "late": 0,
-      "total": 109,
-      "delay_sum": 3315,
-      "delay_sample_count": 109
+      "late": 1,
+      "total": 113,
+      "delay_sum": 4091,
+      "delay_sample_count": 113
     },
     "9": {
       "route_short_name": "9",
@@ -472,12 +472,12 @@
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 18,
+          "on_time": 19,
           "early": 1,
           "late": 0,
-          "total": 19,
-          "delay_sum": -211,
-          "delay_sample_count": 19
+          "total": 20,
+          "delay_sum": -100,
+          "delay_sample_count": 20
         },
         "9": {
           "route_short_name": "9",
@@ -489,35 +489,15 @@
           "delay_sample_count": 12
         }
       },
-      "on_time": 29,
+      "on_time": 30,
       "early": 2,
       "late": 0,
-      "total": 31,
-      "delay_sum": -256,
-      "delay_sample_count": 31
+      "total": 32,
+      "delay_sum": -145,
+      "delay_sample_count": 32
     },
     "16093": {
       "stop_name": "Apex Senior Center Main Entrance ",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 9,
-          "early": 0,
-          "late": 0,
-          "total": 9,
-          "delay_sum": 63,
-          "delay_sample_count": 9
-        }
-      },
-      "on_time": 9,
-      "early": 0,
-      "late": 0,
-      "total": 9,
-      "delay_sum": 63,
-      "delay_sample_count": 9
-    },
-    "16021": {
-      "stop_name": "Beaver Crk Comm Dr at Chick-fil-A (WB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
@@ -525,7 +505,7 @@
           "early": 0,
           "late": 0,
           "total": 10,
-          "delay_sum": 584,
+          "delay_sum": 101,
           "delay_sample_count": 10
         }
       },
@@ -533,8 +513,28 @@
       "early": 0,
       "late": 0,
       "total": 10,
-      "delay_sum": 584,
+      "delay_sum": 101,
       "delay_sample_count": 10
+    },
+    "16021": {
+      "stop_name": "Beaver Crk Comm Dr at Chick-fil-A (WB)",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 11,
+          "early": 0,
+          "late": 0,
+          "total": 11,
+          "delay_sum": 613,
+          "delay_sample_count": 11
+        }
+      },
+      "on_time": 11,
+      "early": 0,
+      "late": 0,
+      "total": 11,
+      "delay_sum": 613,
+      "delay_sample_count": 11
     },
     "16031": {
       "stop_name": "Chapel Ridge Rd at Olive Chapel Professional Park",
@@ -543,18 +543,18 @@
           "route_short_name": "GA1",
           "on_time": 21,
           "early": 0,
-          "late": 0,
-          "total": 21,
-          "delay_sum": 1267,
-          "delay_sample_count": 21
+          "late": 1,
+          "total": 22,
+          "delay_sum": 1865,
+          "delay_sample_count": 22
         }
       },
       "on_time": 21,
       "early": 0,
-      "late": 0,
-      "total": 21,
-      "delay_sum": 1267,
-      "delay_sample_count": 21
+      "late": 1,
+      "total": 22,
+      "delay_sum": 1865,
+      "delay_sample_count": 22
     },
     "11753": {
       "stop_name": "SW Cary Pkwy at Laura Duncan Rd",
@@ -1335,5 +1335,5 @@
       "delay_sample_count": 2
     }
   },
-  "last_updated": "2026-09-13T21:30:17.903413+00:00"
+  "last_updated": "2026-09-13T21:31:10.366884+00:00"
 }
