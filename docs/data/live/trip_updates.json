@@ -1,10 +1,26 @@
 {
-  "updated_at": "2026-09-16T20:44:12.764239+00:00",
+  "updated_at": "2026-09-16T20:45:28.523562+00:00",
   "trips": [
     {
       "trip_id": "dccfa5c1-ee0a-4c0f-ab84-a3db0f38d0b5",
       "route_id": "6",
       "route_short_name": "6",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "dccf19c5-2546-497f-86e0-effb21ef57e8",
+      "route_id": "7",
+      "route_short_name": "7",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "bf77b1b1-6b08-4e24-8220-9e9533377fbd",
+      "route_id": "1",
+      "route_short_name": "1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -286,7 +302,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 40,
       "status": "on_time"
     },
     {
@@ -326,7 +342,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 118,
       "status": "on_time"
     },
     {
@@ -334,7 +350,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 89,
+      "delay_seconds": 103,
       "status": "on_time"
     },
     {
@@ -414,7 +430,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 270,
+      "delay_seconds": 286,
       "status": "on_time"
     },
     {
@@ -430,7 +446,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 60,
+      "delay_seconds": 102,
       "status": "on_time"
     },
     {
@@ -446,7 +462,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 14,
       "status": "on_time"
     },
     {
@@ -454,7 +470,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 475,
+      "delay_seconds": 505,
       "status": "late"
     },
     {
@@ -518,7 +534,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 20,
       "status": "on_time"
     },
     {
@@ -526,8 +542,16 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 263,
+      "delay_seconds": 266,
       "status": "on_time"
+    },
+    {
+      "trip_id": "0dc05c65-0a8b-4ee1-bd31-1aaa7ac2760d",
+      "route_id": "2",
+      "route_short_name": "2",
+      "next_stop_sequence": 36,
+      "delay_seconds": -1224,
+      "status": "early"
     },
     {
       "trip_id": "5fd60777-5f11-4f93-a9cb-17a8f45ba4fd",
@@ -536,22 +560,6 @@
       "next_stop_sequence": 0,
       "delay_seconds": 152,
       "status": "on_time"
-    },
-    {
-      "trip_id": "18b1ff16-1175-4377-8db1-17f3b74cb933",
-      "route_id": "3",
-      "route_short_name": "3",
-      "next_stop_sequence": 21,
-      "delay_seconds": -229,
-      "status": "early"
-    },
-    {
-      "trip_id": "95959f7b-f23a-45c7-872a-6a738bd94646",
-      "route_id": "7",
-      "route_short_name": "7",
-      "next_stop_sequence": 64,
-      "delay_seconds": -659,
-      "status": "early"
     },
     {
       "trip_id": "7cf0f6f1-b094-4de6-867e-5bf5d0de184f",
@@ -567,22 +575,6 @@
       "route_short_name": "1",
       "next_stop_sequence": 0,
       "delay_seconds": 199,
-      "status": "on_time"
-    },
-    {
-      "trip_id": "d75fc9bd-93e0-4a55-bdb2-8b58652b45af",
-      "route_id": "1",
-      "route_short_name": "1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 37,
-      "status": "on_time"
-    },
-    {
-      "trip_id": "8e5f4361-93f8-48bc-8404-8aeadd247eae",
-      "route_id": "7",
-      "route_short_name": "7",
-      "next_stop_sequence": 0,
-      "delay_seconds": 271,
       "status": "on_time"
     }
   ]
