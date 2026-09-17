@@ -1,12 +1,12 @@
 {
   "date": "2026-09-17",
   "system": {
-    "on_time": 335,
+    "on_time": 342,
     "early": 0,
     "late": 3,
-    "total": 338,
-    "delay_sum": 9300,
-    "delay_sample_count": 338
+    "total": 345,
+    "delay_sum": 9616,
+    "delay_sample_count": 345
   },
   "routes": {
     "GA1": {
@@ -74,21 +74,21 @@
     },
     "3": {
       "route_short_name": "3",
-      "on_time": 15,
+      "on_time": 18,
       "early": 0,
       "late": 0,
-      "total": 15,
-      "delay_sum": 44,
-      "delay_sample_count": 15
+      "total": 18,
+      "delay_sum": 191,
+      "delay_sample_count": 18
     },
     "5": {
       "route_short_name": "5",
-      "on_time": 17,
+      "on_time": 21,
       "early": 0,
       "late": 0,
-      "total": 17,
-      "delay_sum": 117,
-      "delay_sample_count": 17
+      "total": 21,
+      "delay_sum": 286,
+      "delay_sample_count": 21
     }
   },
   "stops": {
@@ -340,12 +340,12 @@
         },
         "5": {
           "route_short_name": "5",
-          "on_time": 3,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 3,
-          "delay_sum": 0,
-          "delay_sample_count": 3
+          "total": 4,
+          "delay_sum": 24,
+          "delay_sample_count": 4
         },
         "3": {
           "route_short_name": "3",
@@ -357,12 +357,12 @@
           "delay_sample_count": 2
         }
       },
-      "on_time": 31,
+      "on_time": 32,
       "early": 0,
       "late": 1,
-      "total": 32,
-      "delay_sum": 605,
-      "delay_sample_count": 32
+      "total": 33,
+      "delay_sum": 629,
+      "delay_sample_count": 33
     },
     "1375": {
       "stop_name": "Walnut St at Cary Commons",
@@ -532,12 +532,12 @@
         },
         "3": {
           "route_short_name": "3",
-          "on_time": 3,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 3,
-          "delay_sum": 0,
-          "delay_sample_count": 3
+          "total": 4,
+          "delay_sum": 60,
+          "delay_sample_count": 4
         },
         "5": {
           "route_short_name": "5",
@@ -549,12 +549,12 @@
           "delay_sample_count": 2
         }
       },
-      "on_time": 31,
+      "on_time": 32,
       "early": 0,
       "late": 1,
-      "total": 32,
-      "delay_sum": 643,
-      "delay_sample_count": 32
+      "total": 33,
+      "delay_sum": 703,
+      "delay_sample_count": 33
     },
     "11397": {
       "stop_name": "Highland Village (WB)",
@@ -1079,20 +1079,20 @@
         },
         "3": {
           "route_short_name": "3",
-          "on_time": 5,
+          "on_time": 6,
           "early": 0,
           "late": 0,
-          "total": 5,
-          "delay_sum": 0,
-          "delay_sample_count": 5
+          "total": 6,
+          "delay_sum": 24,
+          "delay_sample_count": 6
         }
       },
-      "on_time": 10,
+      "on_time": 11,
       "early": 0,
       "late": 0,
-      "total": 10,
-      "delay_sum": 0,
-      "delay_sample_count": 10
+      "total": 11,
+      "delay_sum": 24,
+      "delay_sample_count": 11
     },
     "11734": {
       "stop_name": "Crossroads Plaza (WB)",
@@ -1219,31 +1219,11 @@
       "routes": {
         "3": {
           "route_short_name": "3",
-          "on_time": 3,
-          "early": 0,
-          "late": 0,
-          "total": 3,
-          "delay_sum": 0,
-          "delay_sample_count": 3
-        }
-      },
-      "on_time": 3,
-      "early": 0,
-      "late": 0,
-      "total": 3,
-      "delay_sum": 0,
-      "delay_sample_count": 3
-    },
-    "11241": {
-      "stop_name": "Crescentcommons Dr",
-      "routes": {
-        "5": {
-          "route_short_name": "5",
           "on_time": 4,
           "early": 0,
           "late": 0,
           "total": 4,
-          "delay_sum": 50,
+          "delay_sum": 63,
           "delay_sample_count": 4
         }
       },
@@ -1251,8 +1231,28 @@
       "early": 0,
       "late": 0,
       "total": 4,
-      "delay_sum": 50,
+      "delay_sum": 63,
       "delay_sample_count": 4
+    },
+    "11241": {
+      "stop_name": "Crescentcommons Dr",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5,
+          "delay_sum": 158,
+          "delay_sample_count": 5
+        }
+      },
+      "on_time": 5,
+      "early": 0,
+      "late": 0,
+      "total": 5,
+      "delay_sum": 158,
+      "delay_sample_count": 5
     },
     "11097": {
       "stop_name": "Kildaire Farm Rd at SE Maynard Rd",
@@ -1279,40 +1279,40 @@
       "routes": {
         "5": {
           "route_short_name": "5",
-          "on_time": 3,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 3,
-          "delay_sum": 32,
-          "delay_sample_count": 3
+          "total": 4,
+          "delay_sum": 98,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 3,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 3,
-      "delay_sum": 32,
-      "delay_sample_count": 3
+      "total": 4,
+      "delay_sum": 98,
+      "delay_sample_count": 4
     },
     "11074": {
       "stop_name": "Kildaire Farm Rd at WakeMed Cary (SB)",
       "routes": {
         "5": {
           "route_short_name": "5",
-          "on_time": 3,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 3,
-          "delay_sum": 12,
-          "delay_sample_count": 3
+          "total": 4,
+          "delay_sum": -17,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 3,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 3,
-      "delay_sum": 12,
-      "delay_sample_count": 3
+      "total": 4,
+      "delay_sum": -17,
+      "delay_sample_count": 4
     },
     "1362": {
       "stop_name": "N Harrison Ave at Northwoods Market",
@@ -1335,5 +1335,5 @@
       "delay_sample_count": 2
     }
   },
-  "last_updated": "2026-09-17T10:25:14.336541+00:00"
+  "last_updated": "2026-09-17T10:29:12.505796+00:00"
 }
