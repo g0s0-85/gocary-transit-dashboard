@@ -1,12 +1,12 @@
 {
   "date": "2026-09-19",
   "system": {
-    "on_time": 1746,
+    "on_time": 1751,
     "early": 168,
     "late": 153,
-    "total": 2067,
-    "delay_sum": 134483,
-    "delay_sample_count": 2067
+    "total": 2072,
+    "delay_sum": 134761,
+    "delay_sample_count": 2072
   },
   "routes": {
     "GA1": {
@@ -47,12 +47,12 @@
     },
     "4": {
       "route_short_name": "4",
-      "on_time": 292,
+      "on_time": 297,
       "early": 24,
       "late": 10,
-      "total": 326,
-      "delay_sum": 10206,
-      "delay_sample_count": 326
+      "total": 331,
+      "delay_sum": 10484,
+      "delay_sample_count": 331
     },
     "5": {
       "route_short_name": "5",
@@ -701,83 +701,43 @@
       "routes": {
         "4": {
           "route_short_name": "4",
-          "on_time": 38,
+          "on_time": 39,
           "early": 13,
           "late": 3,
-          "total": 54,
-          "delay_sum": -3529,
-          "delay_sample_count": 54
+          "total": 55,
+          "delay_sum": -3451,
+          "delay_sample_count": 55
         }
       },
-      "on_time": 38,
+      "on_time": 39,
       "early": 13,
       "late": 3,
-      "total": 54,
-      "delay_sum": -3529,
-      "delay_sample_count": 54
+      "total": 55,
+      "delay_sum": -3451,
+      "delay_sample_count": 55
     },
     "11151": {
       "stop_name": "High House Rd at Davis Dr (EB)",
       "routes": {
         "4": {
           "route_short_name": "4",
-          "on_time": 24,
-          "early": 0,
-          "late": 1,
-          "total": 25,
-          "delay_sum": 1587,
-          "delay_sample_count": 25
-        }
-      },
-      "on_time": 24,
-      "early": 0,
-      "late": 1,
-      "total": 25,
-      "delay_sum": 1587,
-      "delay_sample_count": 25
-    },
-    "11022": {
-      "stop_name": "Cary Senior Center at Bond Park",
-      "routes": {
-        "4": {
-          "route_short_name": "4",
           "on_time": 25,
           "early": 0,
-          "late": 0,
-          "total": 25,
-          "delay_sum": 1076,
-          "delay_sample_count": 25
+          "late": 1,
+          "total": 26,
+          "delay_sum": 1620,
+          "delay_sample_count": 26
         }
       },
       "on_time": 25,
       "early": 0,
-      "late": 0,
-      "total": 25,
-      "delay_sum": 1076,
-      "delay_sample_count": 25
-    },
-    "11400": {
-      "stop_name": "High House Rd at NW Maynard Rd (EB)",
-      "routes": {
-        "4": {
-          "route_short_name": "4",
-          "on_time": 24,
-          "early": 0,
-          "late": 1,
-          "total": 25,
-          "delay_sum": 1833,
-          "delay_sample_count": 25
-        }
-      },
-      "on_time": 24,
-      "early": 0,
       "late": 1,
-      "total": 25,
-      "delay_sum": 1833,
-      "delay_sample_count": 25
+      "total": 26,
+      "delay_sum": 1620,
+      "delay_sample_count": 26
     },
-    "11163": {
-      "stop_name": "Highland Village (EB)",
+    "11022": {
+      "stop_name": "Cary Senior Center at Bond Park",
       "routes": {
         "4": {
           "route_short_name": "4",
@@ -785,7 +745,7 @@
           "early": 0,
           "late": 0,
           "total": 26,
-          "delay_sum": 2195,
+          "delay_sum": 1166,
           "delay_sample_count": 26
         }
       },
@@ -793,8 +753,48 @@
       "early": 0,
       "late": 0,
       "total": 26,
-      "delay_sum": 2195,
+      "delay_sum": 1166,
       "delay_sample_count": 26
+    },
+    "11400": {
+      "stop_name": "High House Rd at NW Maynard Rd (EB)",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 25,
+          "early": 0,
+          "late": 1,
+          "total": 26,
+          "delay_sum": 1924,
+          "delay_sample_count": 26
+        }
+      },
+      "on_time": 25,
+      "early": 0,
+      "late": 1,
+      "total": 26,
+      "delay_sum": 1924,
+      "delay_sample_count": 26
+    },
+    "11163": {
+      "stop_name": "Highland Village (EB)",
+      "routes": {
+        "4": {
+          "route_short_name": "4",
+          "on_time": 27,
+          "early": 0,
+          "late": 0,
+          "total": 27,
+          "delay_sum": 2181,
+          "delay_sample_count": 27
+        }
+      },
+      "on_time": 27,
+      "early": 0,
+      "late": 0,
+      "total": 27,
+      "delay_sum": 2181,
+      "delay_sample_count": 27
     },
     "11397": {
       "stop_name": "Highland Village (WB)",
@@ -1335,5 +1335,5 @@
       "delay_sample_count": 16
     }
   },
-  "last_updated": "2026-09-19T16:55:15.514684+00:00"
+  "last_updated": "2026-09-19T16:57:16.918093+00:00"
 }
