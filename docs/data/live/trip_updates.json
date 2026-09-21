@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-21T22:23:11.941835+00:00",
+  "updated_at": "2026-09-21T22:24:17.008300+00:00",
   "trips": [
     {
       "trip_id": "65bfea75-6fbe-4239-b070-bc77a79faa1a",
@@ -222,7 +222,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 123,
       "status": "on_time"
     },
     {
@@ -246,8 +246,8 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 144,
-      "status": "on_time"
+      "delay_seconds": 303,
+      "status": "late"
     },
     {
       "trip_id": "bf77b1b1-6b08-4e24-8220-9e9533377fbd",
@@ -294,7 +294,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 348,
+      "delay_seconds": 331,
       "status": "late"
     },
     {
@@ -302,7 +302,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 3,
       "status": "on_time"
     },
     {
@@ -414,16 +414,16 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 487,
+      "delay_seconds": 509,
       "status": "late"
     },
     {
       "trip_id": "ef6d4f57-bf11-4b26-ae46-f31a139782fa",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 255,
-      "status": "on_time"
+      "next_stop_sequence": 103,
+      "delay_seconds": -409,
+      "status": "early"
     },
     {
       "trip_id": "0391061b-37b8-4877-91fe-975da0734de4",
@@ -480,14 +480,6 @@
       "next_stop_sequence": 0,
       "delay_seconds": 60,
       "status": "on_time"
-    },
-    {
-      "trip_id": "375ed1ad-9ab0-4768-becb-745371bd61b6",
-      "route_id": "2",
-      "route_short_name": "2",
-      "next_stop_sequence": 36,
-      "delay_seconds": -156,
-      "status": "early"
     },
     {
       "trip_id": "a7d6d34c-bd1f-4395-870e-80e91205f47e",
