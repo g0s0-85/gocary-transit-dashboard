@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-26T19:58:14.990039+00:00",
+  "updated_at": "2026-09-26T19:59:12.311287+00:00",
   "trips": [
     {
       "trip_id": "d78ac4f1-b650-4c74-ba98-2b9130b6a055",
@@ -61,6 +61,14 @@
       "trip_id": "8ecca941-a4fa-4e78-87f9-f8dd063ec8c9",
       "route_id": "4",
       "route_short_name": "4",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "df87757d-e72a-41ba-8b01-e3c76e13c727",
+      "route_id": "2",
+      "route_short_name": "2",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -430,7 +438,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 126,
+      "delay_seconds": 113,
       "status": "on_time"
     },
     {
@@ -470,7 +478,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 254,
+      "delay_seconds": 275,
       "status": "on_time"
     },
     {
@@ -558,7 +566,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 12,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -590,7 +598,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 122,
+      "delay_seconds": 136,
       "status": "on_time"
     },
     {
@@ -598,7 +606,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 39,
+      "delay_seconds": 69,
       "status": "on_time"
     },
     {
@@ -645,9 +653,9 @@
       "trip_id": "3eb78b0a-eebd-4108-a1d2-7fb37fe3acce",
       "route_id": "9",
       "route_short_name": "9",
-      "next_stop_sequence": 0,
-      "delay_seconds": 332,
-      "status": "late"
+      "next_stop_sequence": 45,
+      "delay_seconds": -100,
+      "status": "early"
     },
     {
       "trip_id": "eb025261-12ad-43c3-beef-52f2c4872413",
