@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-28T16:50:16.805032+00:00",
+  "updated_at": "2026-09-28T16:51:12.902806+00:00",
   "trips": [
     {
       "trip_id": "9b8f81c0-4889-4448-b8b5-7722e3cd0d26",
@@ -85,6 +85,14 @@
       "trip_id": "52979e61-1476-4705-a6a9-21fb89a353eb",
       "route_id": "6",
       "route_short_name": "6",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "3ae47d04-50b1-41c9-9e62-fff678fab277",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -366,7 +374,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 75,
       "status": "on_time"
     },
     {
@@ -510,7 +518,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 507,
+      "delay_seconds": 561,
       "status": "late"
     },
     {
@@ -518,7 +526,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 3,
       "status": "on_time"
     },
     {
@@ -534,7 +542,7 @@
       "route_id": "9",
       "route_short_name": "9",
       "next_stop_sequence": 0,
-      "delay_seconds": 4,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -630,7 +638,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 38,
+      "delay_seconds": 25,
       "status": "on_time"
     },
     {
@@ -653,9 +661,9 @@
       "trip_id": "cb199ae5-f1f0-4286-b7fb-a9a7c666c134",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 146,
-      "status": "on_time"
+      "next_stop_sequence": 103,
+      "delay_seconds": -594,
+      "status": "early"
     },
     {
       "trip_id": "33fb4521-be9f-49fb-8081-3cff8588a850",
