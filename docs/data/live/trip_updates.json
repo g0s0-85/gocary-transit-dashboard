@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-29T14:50:23.561686+00:00",
+  "updated_at": "2026-09-29T14:51:13.598157+00:00",
   "trips": [
     {
       "trip_id": "4113eff2-e1f1-4829-840c-58a1253ce92c",
@@ -13,6 +13,14 @@
       "trip_id": "f659f7bc-9742-4a79-bfa7-9a393251d7de",
       "route_id": "9",
       "route_short_name": "9",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "548b671c-08ac-4553-b8ed-adec1c52361d",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -278,7 +286,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 90,
       "status": "on_time"
     },
     {
@@ -422,7 +430,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 101,
+      "delay_seconds": 66,
       "status": "on_time"
     },
     {
@@ -430,7 +438,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 8,
       "status": "on_time"
     },
     {
@@ -446,7 +454,7 @@
       "route_id": "9",
       "route_short_name": "9",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 28,
       "status": "on_time"
     },
     {
@@ -534,7 +542,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 138,
+      "delay_seconds": 152,
       "status": "on_time"
     },
     {
@@ -565,9 +573,9 @@
       "trip_id": "dc049713-ceb2-4b1f-bbab-66191c87312e",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 243,
-      "status": "on_time"
+      "next_stop_sequence": 103,
+      "delay_seconds": -560,
+      "status": "early"
     },
     {
       "trip_id": "9715ea75-6fd2-492d-b254-87a9a3c83a2c",
