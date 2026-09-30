@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T13:50:17.898575+00:00",
+  "updated_at": "2026-09-30T13:51:12.910898+00:00",
   "trips": [
     {
       "trip_id": "7b62ac74-fd44-4609-bcf2-b9814fe9e870",
@@ -21,6 +21,14 @@
       "trip_id": "39ab6eb9-afcc-410d-9867-504ffcc92b69",
       "route_id": "4",
       "route_short_name": "4",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "213b10d4-3ed5-411a-8e5f-dff14292132c",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -270,7 +278,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 75,
       "status": "on_time"
     },
     {
@@ -406,7 +414,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 347,
+      "delay_seconds": 357,
       "status": "late"
     },
     {
@@ -486,7 +494,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 1,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -510,7 +518,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 6,
+      "delay_seconds": 15,
       "status": "on_time"
     },
     {
@@ -518,7 +526,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 65,
+      "delay_seconds": 58,
       "status": "on_time"
     },
     {
@@ -541,9 +549,9 @@
       "trip_id": "15a5cb47-1ef3-4e9b-b4f1-458fa5052be7",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 211,
-      "status": "on_time"
+      "next_stop_sequence": 103,
+      "delay_seconds": -558,
+      "status": "early"
     },
     {
       "trip_id": "6cf1fe4e-a737-4d56-b684-da8383cf1774",
