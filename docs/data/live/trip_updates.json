@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-10-03T20:41:10.684944+00:00",
+  "updated_at": "2026-10-03T20:42:13.977779+00:00",
   "trips": [
     {
       "trip_id": "17cb2473-3103-4d7c-a2a4-793b22ba3bfc",
       "route_id": "7",
       "route_short_name": "7",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "23f53abd-849b-43f5-aec7-ae6a66736c63",
+      "route_id": "1",
+      "route_short_name": "1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -282,6 +290,14 @@
       "status": "on_time"
     },
     {
+      "trip_id": "bea0ddf3-e51b-4747-bb46-899bbcb726e7",
+      "route_id": "3",
+      "route_short_name": "3",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
       "trip_id": "a799317a-55b6-4b3f-81de-aecace83f816",
       "route_id": "5",
       "route_short_name": "5",
@@ -374,7 +390,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 207,
+      "delay_seconds": 130,
       "status": "on_time"
     },
     {
@@ -430,7 +446,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 32,
+      "delay_seconds": 31,
       "status": "on_time"
     },
     {
@@ -589,9 +605,9 @@
       "trip_id": "44e03d54-9930-447c-b283-b2735e6a6789",
       "route_id": "5",
       "route_short_name": "5",
-      "next_stop_sequence": 0,
-      "delay_seconds": 23,
-      "status": "on_time"
+      "next_stop_sequence": 30,
+      "delay_seconds": -232,
+      "status": "early"
     },
     {
       "trip_id": "1b9c53d9-ce9b-491a-b2d6-411d8f933c7c",
@@ -613,9 +629,9 @@
       "trip_id": "1e57b360-bf34-4fc8-9472-3f6730438434",
       "route_id": "1",
       "route_short_name": "1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 84,
-      "status": "on_time"
+      "next_stop_sequence": 61,
+      "delay_seconds": -71,
+      "status": "early"
     }
   ]
 }
