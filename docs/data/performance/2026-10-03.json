@@ -1,12 +1,12 @@
 {
   "date": "2026-10-03",
   "system": {
-    "on_time": 200,
+    "on_time": 233,
     "early": 0,
     "late": 0,
-    "total": 200,
-    "delay_sum": 4085,
-    "delay_sample_count": 200
+    "total": 233,
+    "delay_sum": 4282,
+    "delay_sample_count": 233
   },
   "routes": {
     "GA1": {
@@ -71,6 +71,24 @@
       "total": 30,
       "delay_sum": 496,
       "delay_sample_count": 30
+    },
+    "5": {
+      "route_short_name": "5",
+      "on_time": 18,
+      "early": 0,
+      "late": 0,
+      "total": 18,
+      "delay_sum": 98,
+      "delay_sample_count": 18
+    },
+    "3": {
+      "route_short_name": "3",
+      "on_time": 15,
+      "early": 0,
+      "late": 0,
+      "total": 15,
+      "delay_sum": 99,
+      "delay_sample_count": 15
     }
   },
   "stops": {
@@ -319,14 +337,32 @@
           "total": 2,
           "delay_sum": 0,
           "delay_sample_count": 2
+        },
+        "3": {
+          "route_short_name": "3",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 0,
+          "delay_sample_count": 3
+        },
+        "5": {
+          "route_short_name": "5",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 0,
+          "delay_sample_count": 2
         }
       },
-      "on_time": 18,
+      "on_time": 23,
       "early": 0,
       "late": 0,
-      "total": 18,
+      "total": 23,
       "delay_sum": 0,
-      "delay_sample_count": 18
+      "delay_sample_count": 23
     },
     "11209": {
       "stop_name": "NE Maynard Rd at Reedy Creek Rd (EB)",
@@ -484,14 +520,32 @@
           "total": 2,
           "delay_sum": 0,
           "delay_sample_count": 2
+        },
+        "5": {
+          "route_short_name": "5",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 0,
+          "delay_sample_count": 3
+        },
+        "3": {
+          "route_short_name": "3",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 0,
+          "delay_sample_count": 2
         }
       },
-      "on_time": 18,
+      "on_time": 23,
       "early": 0,
       "late": 0,
-      "total": 18,
+      "total": 23,
       "delay_sum": 0,
-      "delay_sample_count": 18
+      "delay_sample_count": 23
     },
     "11700": {
       "stop_name": "High House Rd at Highland Village Dr (WB)",
@@ -942,14 +996,23 @@
           "total": 5,
           "delay_sum": 0,
           "delay_sample_count": 5
+        },
+        "3": {
+          "route_short_name": "3",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5,
+          "delay_sum": 0,
+          "delay_sample_count": 5
         }
       },
-      "on_time": 5,
+      "on_time": 10,
       "early": 0,
       "late": 0,
-      "total": 5,
+      "total": 10,
       "delay_sum": 0,
-      "delay_sample_count": 5
+      "delay_sample_count": 10
     },
     "11437": {
       "stop_name": "Macedonia Lake Dr at Tryon Manor Dr",
@@ -1150,7 +1213,127 @@
       "total": 2,
       "delay_sum": 80,
       "delay_sample_count": 2
+    },
+    "1367": {
+      "stop_name": "Kildaire Farm Rd at Mayfair Plaza",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 6,
+          "delay_sample_count": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3,
+      "delay_sum": 6,
+      "delay_sample_count": 3
+    },
+    "11074": {
+      "stop_name": "Kildaire Farm Rd at WakeMed Cary (SB)",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 3,
+          "delay_sample_count": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3,
+      "delay_sum": 3,
+      "delay_sample_count": 3
+    },
+    "11241": {
+      "stop_name": "Crescentcommons Dr",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5,
+          "delay_sum": 31,
+          "delay_sample_count": 5
+        }
+      },
+      "on_time": 5,
+      "early": 0,
+      "late": 0,
+      "total": 5,
+      "delay_sum": 31,
+      "delay_sample_count": 5
+    },
+    "11095": {
+      "stop_name": "N Harrison Ave at St Charles Pl",
+      "routes": {
+        "3": {
+          "route_short_name": "3",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 39,
+          "delay_sample_count": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3,
+      "delay_sum": 39,
+      "delay_sample_count": 3
+    },
+    "1362": {
+      "stop_name": "N Harrison Ave at Northwoods Market",
+      "routes": {
+        "3": {
+          "route_short_name": "3",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 60,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 60,
+      "delay_sample_count": 2
+    },
+    "11097": {
+      "stop_name": "Kildaire Farm Rd at SE Maynard Rd",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 58,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 58,
+      "delay_sample_count": 2
     }
   },
-  "last_updated": "2026-10-03T10:06:13.076354+00:00"
+  "last_updated": "2026-10-03T10:08:14.084827+00:00"
 }
