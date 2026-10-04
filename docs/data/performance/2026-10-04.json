@@ -1,12 +1,12 @@
 {
   "date": "2026-10-04",
   "system": {
-    "on_time": 1524,
+    "on_time": 1539,
     "early": 153,
     "late": 55,
-    "total": 1732,
-    "delay_sum": 51387,
-    "delay_sample_count": 1732
+    "total": 1747,
+    "delay_sum": 51637,
+    "delay_sample_count": 1747
   },
   "routes": {
     "GA1": {
@@ -74,21 +74,21 @@
     },
     "5": {
       "route_short_name": "5",
-      "on_time": 103,
+      "on_time": 110,
       "early": 6,
       "late": 0,
-      "total": 109,
-      "delay_sum": 6408,
-      "delay_sample_count": 109
+      "total": 116,
+      "delay_sum": 6453,
+      "delay_sample_count": 116
     },
     "3": {
       "route_short_name": "3",
-      "on_time": 72,
+      "on_time": 80,
       "early": 14,
       "late": 1,
-      "total": 87,
-      "delay_sum": -651,
-      "delay_sample_count": 87
+      "total": 95,
+      "delay_sum": -446,
+      "delay_sample_count": 95
     }
   },
   "stops": {
@@ -340,29 +340,29 @@
         },
         "3": {
           "route_short_name": "3",
-          "on_time": 15,
+          "on_time": 16,
           "early": 0,
           "late": 0,
-          "total": 15,
+          "total": 16,
           "delay_sum": 1041,
-          "delay_sample_count": 15
+          "delay_sample_count": 16
         },
         "5": {
           "route_short_name": "5",
-          "on_time": 9,
+          "on_time": 10,
           "early": 6,
           "late": 0,
-          "total": 15,
+          "total": 16,
           "delay_sum": -1158,
-          "delay_sample_count": 15
+          "delay_sample_count": 16
         }
       },
-      "on_time": 93,
+      "on_time": 95,
       "early": 33,
       "late": 2,
-      "total": 128,
+      "total": 130,
       "delay_sum": -8248,
-      "delay_sample_count": 128
+      "delay_sample_count": 130
     },
     "11397": {
       "stop_name": "Highland Village (WB)",
@@ -592,29 +592,29 @@
         },
         "5": {
           "route_short_name": "5",
-          "on_time": 16,
+          "on_time": 17,
           "early": 0,
           "late": 0,
-          "total": 16,
+          "total": 17,
           "delay_sum": 1204,
-          "delay_sample_count": 16
+          "delay_sample_count": 17
         },
         "3": {
           "route_short_name": "3",
-          "on_time": 5,
+          "on_time": 6,
           "early": 8,
           "late": 1,
-          "total": 14,
+          "total": 15,
           "delay_sum": -3086,
-          "delay_sample_count": 14
+          "delay_sample_count": 15
         }
       },
-      "on_time": 88,
+      "on_time": 90,
       "early": 37,
       "late": 4,
-      "total": 129,
+      "total": 131,
       "delay_sum": -12131,
-      "delay_sample_count": 129
+      "delay_sample_count": 131
     },
     "1375": {
       "stop_name": "Walnut St at Cary Commons",
@@ -999,20 +999,20 @@
         },
         "3": {
           "route_short_name": "3",
-          "on_time": 23,
+          "on_time": 26,
           "early": 6,
           "late": 0,
-          "total": 29,
-          "delay_sum": 139,
-          "delay_sample_count": 29
+          "total": 32,
+          "delay_sum": 255,
+          "delay_sample_count": 32
         }
       },
-      "on_time": 48,
+      "on_time": 51,
       "early": 16,
       "late": 2,
-      "total": 66,
-      "delay_sum": -449,
-      "delay_sample_count": 66
+      "total": 69,
+      "delay_sum": -333,
+      "delay_sample_count": 69
     },
     "11753": {
       "stop_name": "SW Cary Pkwy at Laura Duncan Rd",
@@ -1219,31 +1219,71 @@
       "routes": {
         "5": {
           "route_short_name": "5",
-          "on_time": 16,
+          "on_time": 17,
           "early": 0,
           "late": 0,
-          "total": 16,
+          "total": 17,
           "delay_sum": 1447,
-          "delay_sample_count": 16
+          "delay_sample_count": 17
         }
       },
-      "on_time": 16,
+      "on_time": 17,
       "early": 0,
       "late": 0,
-      "total": 16,
+      "total": 17,
       "delay_sum": 1447,
-      "delay_sample_count": 16
+      "delay_sample_count": 17
     },
     "11074": {
       "stop_name": "Kildaire Farm Rd at WakeMed Cary (SB)",
       "routes": {
         "5": {
           "route_short_name": "5",
+          "on_time": 17,
+          "early": 0,
+          "late": 0,
+          "total": 17,
+          "delay_sum": 952,
+          "delay_sample_count": 17
+        }
+      },
+      "on_time": 17,
+      "early": 0,
+      "late": 0,
+      "total": 17,
+      "delay_sum": 952,
+      "delay_sample_count": 17
+    },
+    "11241": {
+      "stop_name": "Crescentcommons Dr",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 33,
+          "early": 0,
+          "late": 0,
+          "total": 33,
+          "delay_sum": 2672,
+          "delay_sample_count": 33
+        }
+      },
+      "on_time": 33,
+      "early": 0,
+      "late": 0,
+      "total": 33,
+      "delay_sum": 2672,
+      "delay_sample_count": 33
+    },
+    "1362": {
+      "stop_name": "N Harrison Ave at Northwoods Market",
+      "routes": {
+        "3": {
+          "route_short_name": "3",
           "on_time": 16,
           "early": 0,
           "late": 0,
           "total": 16,
-          "delay_sum": 952,
+          "delay_sum": 840,
           "delay_sample_count": 16
         }
       },
@@ -1251,89 +1291,49 @@
       "early": 0,
       "late": 0,
       "total": 16,
-      "delay_sum": 952,
+      "delay_sum": 840,
       "delay_sample_count": 16
-    },
-    "11241": {
-      "stop_name": "Crescentcommons Dr",
-      "routes": {
-        "5": {
-          "route_short_name": "5",
-          "on_time": 31,
-          "early": 0,
-          "late": 0,
-          "total": 31,
-          "delay_sum": 2649,
-          "delay_sample_count": 31
-        }
-      },
-      "on_time": 31,
-      "early": 0,
-      "late": 0,
-      "total": 31,
-      "delay_sum": 2649,
-      "delay_sample_count": 31
-    },
-    "1362": {
-      "stop_name": "N Harrison Ave at Northwoods Market",
-      "routes": {
-        "3": {
-          "route_short_name": "3",
-          "on_time": 14,
-          "early": 0,
-          "late": 0,
-          "total": 14,
-          "delay_sum": 758,
-          "delay_sample_count": 14
-        }
-      },
-      "on_time": 14,
-      "early": 0,
-      "late": 0,
-      "total": 14,
-      "delay_sum": 758,
-      "delay_sample_count": 14
     },
     "11095": {
       "stop_name": "N Harrison Ave at St Charles Pl",
       "routes": {
         "3": {
           "route_short_name": "3",
-          "on_time": 15,
+          "on_time": 16,
           "early": 0,
           "late": 0,
-          "total": 15,
-          "delay_sum": 497,
-          "delay_sample_count": 15
+          "total": 16,
+          "delay_sum": 504,
+          "delay_sample_count": 16
         }
       },
-      "on_time": 15,
+      "on_time": 16,
       "early": 0,
       "late": 0,
-      "total": 15,
-      "delay_sum": 497,
-      "delay_sample_count": 15
+      "total": 16,
+      "delay_sum": 504,
+      "delay_sample_count": 16
     },
     "11097": {
       "stop_name": "Kildaire Farm Rd at SE Maynard Rd",
       "routes": {
         "5": {
           "route_short_name": "5",
-          "on_time": 15,
+          "on_time": 16,
           "early": 0,
           "late": 0,
-          "total": 15,
-          "delay_sum": 1314,
-          "delay_sample_count": 15
+          "total": 16,
+          "delay_sum": 1336,
+          "delay_sample_count": 16
         }
       },
-      "on_time": 15,
+      "on_time": 16,
       "early": 0,
       "late": 0,
-      "total": 15,
-      "delay_sum": 1314,
-      "delay_sample_count": 15
+      "total": 16,
+      "delay_sum": 1336,
+      "delay_sample_count": 16
     }
   },
-  "last_updated": "2026-10-04T22:50:15.473246+00:00"
+  "last_updated": "2026-10-04T22:53:11.683947+00:00"
 }
