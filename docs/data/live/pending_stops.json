@@ -39,7 +39,7 @@
     "trip_id": "54a178f9-5535-4d65-bc29-79ce39e2d212",
     "stop_sequence": 48,
     "stop_id": "11452",
-    "delay": 0
+    "delay": 5
   },
   "54a178f9-5535-4d65-bc29-79ce39e2d212:59": {
     "route_id": "1",
@@ -67,14 +67,14 @@
     "trip_id": "11c17fef-5163-4802-94a0-6839944f9d99",
     "stop_sequence": 60,
     "stop_id": "16021",
-    "delay": 73
+    "delay": 69
   },
   "11c17fef-5163-4802-94a0-6839944f9d99:115": {
     "route_id": "GA1",
     "trip_id": "11c17fef-5163-4802-94a0-6839944f9d99",
     "stop_sequence": 115,
     "stop_id": "16031",
-    "delay": 127
+    "delay": 125
   },
   "41b98133-62e7-41fe-87f1-e699f2381e58:0": {
     "route_id": "1",
@@ -158,14 +158,14 @@
     "trip_id": "9eceede8-e419-47e5-81e1-702bbeadb42c",
     "stop_sequence": 0,
     "stop_id": "16031",
-    "delay": 127
+    "delay": 125
   },
   "9eceede8-e419-47e5-81e1-702bbeadb42c:37": {
     "route_id": "GA1",
     "trip_id": "9eceede8-e419-47e5-81e1-702bbeadb42c",
     "stop_sequence": 37,
     "stop_id": "16045",
-    "delay": 9
+    "delay": 7
   },
   "9eceede8-e419-47e5-81e1-702bbeadb42c:44": {
     "route_id": "GA1",
@@ -242,7 +242,7 @@
     "trip_id": "56a65980-4196-4d2a-9568-6111ad4712c2",
     "stop_sequence": 11,
     "stop_id": "11209",
-    "delay": 4
+    "delay": 17
   },
   "56a65980-4196-4d2a-9568-6111ad4712c2:25": {
     "route_id": "2",
@@ -335,40 +335,26 @@
     "stop_id": "11440",
     "delay": 90
   },
-  "c9a27842-d70f-4f33-9078-d99c8f4ed363:0": {
-    "route_id": "3",
-    "trip_id": "c9a27842-d70f-4f33-9078-d99c8f4ed363",
-    "stop_sequence": 0,
-    "stop_id": "11142",
-    "delay": 1
-  },
-  "c9a27842-d70f-4f33-9078-d99c8f4ed363:16": {
-    "route_id": "3",
-    "trip_id": "c9a27842-d70f-4f33-9078-d99c8f4ed363",
-    "stop_sequence": 16,
-    "stop_id": "1362",
-    "delay": 4
-  },
   "c9a27842-d70f-4f33-9078-d99c8f4ed363:21": {
     "route_id": "3",
     "trip_id": "c9a27842-d70f-4f33-9078-d99c8f4ed363",
     "stop_sequence": 21,
     "stop_id": "1398",
-    "delay": 1
+    "delay": -474
   },
   "ec08e8bc-6568-4aac-84f1-2f0fe6d29d24:0": {
     "route_id": "5",
     "trip_id": "ec08e8bc-6568-4aac-84f1-2f0fe6d29d24",
     "stop_sequence": 0,
     "stop_id": "1398",
-    "delay": 1
+    "delay": 0
   },
   "ec08e8bc-6568-4aac-84f1-2f0fe6d29d24:12": {
     "route_id": "5",
     "trip_id": "ec08e8bc-6568-4aac-84f1-2f0fe6d29d24",
     "stop_sequence": 12,
     "stop_id": "1367",
-    "delay": 63
+    "delay": 62
   },
   "ec08e8bc-6568-4aac-84f1-2f0fe6d29d24:25": {
     "route_id": "5",
@@ -389,14 +375,14 @@
     "trip_id": "f3dc3165-5381-4b12-89e4-8df74bf09ad7",
     "stop_sequence": 0,
     "stop_id": "11241",
-    "delay": 0
+    "delay": 14
   },
   "f3dc3165-5381-4b12-89e4-8df74bf09ad7:20": {
     "route_id": "5",
     "trip_id": "f3dc3165-5381-4b12-89e4-8df74bf09ad7",
     "stop_sequence": 20,
     "stop_id": "11097",
-    "delay": 35
+    "delay": 0
   },
   "f3dc3165-5381-4b12-89e4-8df74bf09ad7:30": {
     "route_id": "5",
@@ -571,7 +557,7 @@
     "trip_id": "d0842dc5-cbed-4f77-b840-c5635b58e6dc",
     "stop_sequence": 21,
     "stop_id": "11401",
-    "delay": 19
+    "delay": 3
   },
   "d0842dc5-cbed-4f77-b840-c5635b58e6dc:35": {
     "route_id": "4",
@@ -614,5 +600,33 @@
     "stop_sequence": 21,
     "stop_id": "1398",
     "delay": 0
+  },
+  "f8ba1510-2172-468c-92b7-b8099a10d6e8:0": {
+    "route_id": "5",
+    "trip_id": "f8ba1510-2172-468c-92b7-b8099a10d6e8",
+    "stop_sequence": 0,
+    "stop_id": "1398",
+    "delay": 0
+  },
+  "f8ba1510-2172-468c-92b7-b8099a10d6e8:12": {
+    "route_id": "5",
+    "trip_id": "f8ba1510-2172-468c-92b7-b8099a10d6e8",
+    "stop_sequence": 12,
+    "stop_id": "1367",
+    "delay": 45
+  },
+  "f8ba1510-2172-468c-92b7-b8099a10d6e8:25": {
+    "route_id": "5",
+    "trip_id": "f8ba1510-2172-468c-92b7-b8099a10d6e8",
+    "stop_sequence": 25,
+    "stop_id": "11074",
+    "delay": 0
+  },
+  "f8ba1510-2172-468c-92b7-b8099a10d6e8:34": {
+    "route_id": "5",
+    "trip_id": "f8ba1510-2172-468c-92b7-b8099a10d6e8",
+    "stop_sequence": 34,
+    "stop_id": "11241",
+    "delay": 3
   }
 }
