@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-08T11:57:14.516573+00:00",
+  "updated_at": "2026-10-08T11:58:15.267132+00:00",
   "trips": [
     {
       "trip_id": "0d74c768-0b3a-4cfe-8aeb-1397c7b3524a",
@@ -69,6 +69,14 @@
       "trip_id": "b720209b-b9cf-421e-b68a-6b5147335c73",
       "route_id": "9",
       "route_short_name": "9",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "da3fd84e-d4b6-4c66-a0dc-9a882502d1f0",
+      "route_id": "2",
+      "route_short_name": "2",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -438,7 +446,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 21,
       "status": "on_time"
     },
     {
@@ -478,7 +486,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 206,
+      "delay_seconds": 249,
       "status": "on_time"
     },
     {
@@ -534,7 +542,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 655,
+      "delay_seconds": 671,
       "status": "late"
     },
     {
@@ -582,7 +590,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 42,
       "status": "on_time"
     },
     {
@@ -590,7 +598,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 103,
+      "delay_seconds": 148,
       "status": "on_time"
     },
     {
@@ -637,9 +645,9 @@
       "trip_id": "129f47c4-c609-450d-abcc-28f0c8c0ab06",
       "route_id": "9",
       "route_short_name": "9",
-      "next_stop_sequence": 0,
-      "delay_seconds": 359,
-      "status": "late"
+      "next_stop_sequence": 45,
+      "delay_seconds": -123,
+      "status": "early"
     },
     {
       "trip_id": "461a99e8-d157-470c-b345-1a658a2c3cec",
