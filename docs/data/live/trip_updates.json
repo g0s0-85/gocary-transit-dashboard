@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-11T12:55:14.543473+00:00",
+  "updated_at": "2026-10-11T12:56:12.522163+00:00",
   "trips": [
     {
       "trip_id": "728d4f76-c705-4725-81a9-8d11c25a2af9",
@@ -37,6 +37,14 @@
       "trip_id": "e3b5895d-f7d0-4a2f-a9e4-dca7c32b0d22",
       "route_id": "2",
       "route_short_name": "2",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "610e50f5-72bd-4919-90af-f7ca0a908219",
+      "route_id": "7",
+      "route_short_name": "7",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -317,9 +325,9 @@
       "trip_id": "cccdca76-7962-4a2b-a6be-b09edc5f8bec",
       "route_id": "1",
       "route_short_name": "1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 19,
-      "status": "on_time"
+      "next_stop_sequence": 59,
+      "delay_seconds": -273,
+      "status": "early"
     },
     {
       "trip_id": "7a61b59f-464c-4c1e-8a20-2338f2bc387f",
