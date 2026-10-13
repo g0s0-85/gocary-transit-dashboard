@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T18:54:29.189534+00:00",
+  "updated_at": "2026-10-13T18:55:14.542837+00:00",
   "trips": [
     {
       "trip_id": "8bd0b412-02e6-48bb-b46c-1a8c6eef4718",
@@ -53,6 +53,14 @@
       "trip_id": "92532044-ba13-418b-8201-15417c2dfd3c",
       "route_id": "4",
       "route_short_name": "4",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "fe69553f-1203-4fc9-8ec7-00d6f3002d98",
+      "route_id": "2",
+      "route_short_name": "2",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -454,7 +462,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 2,
       "status": "on_time"
     },
     {
@@ -478,7 +486,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 205,
+      "delay_seconds": 247,
       "status": "on_time"
     },
     {
@@ -526,7 +534,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 102,
+      "delay_seconds": 96,
       "status": "on_time"
     },
     {
@@ -590,7 +598,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 47,
+      "delay_seconds": 101,
       "status": "on_time"
     },
     {
@@ -598,7 +606,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 92,
+      "delay_seconds": 89,
       "status": "on_time"
     },
     {
@@ -637,9 +645,9 @@
       "trip_id": "2fb4d2a2-0f8c-49a2-b836-120ddd17e253",
       "route_id": "9",
       "route_short_name": "9",
-      "next_stop_sequence": 0,
-      "delay_seconds": 183,
-      "status": "on_time"
+      "next_stop_sequence": 45,
+      "delay_seconds": -300,
+      "status": "early"
     },
     {
       "trip_id": "fa892635-f68b-40b6-8b71-5b4a10143145",
