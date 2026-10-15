@@ -34,18 +34,18 @@ from google.transit import gtfs_realtime_pb2
 VEHICLE_POSITIONS_URL = "https://www.gocarylive.org/GTFS/Realtime/GTFS_VehiclePositions.pb"
 TRIP_UPDATES_URL = "https://www.gocarylive.org/GTFS/Realtime/GTFS_TripUpdates.pb"
 SERVICE_ALERTS_URL = "https://www.gocarylive.org/GTFS/Realtime/GTFS_ServiceAlerts.pb"
-# GoCary hosts this static feed themselves, dated 2026-01-23 as of this
-# writing -- switched from the Trillium-mirrored copy
-# (data.trilliumtransit.com/gtfs/cary-transit-nc-us/), which was dated
-# 2023-12-18 and consequently missing routes "2"/"9" and at least 12 stops
-# that already had real RT activity (e.g. stop_code 11700, 101, 1913).
-# Confirmed this feed's route_id already equals the short display code
-# (e.g. route_id "2" -> route_short_name "2"), matching what GoCary's RT
-# feed uses directly, and stop_id/stop_code are identical throughout --
-# fixes both the stale-route and missing-stop problems in one swap, no
-# other code changes needed since the column names line up with what's
-# already parsed below.
-STATIC_GTFS_URL = "https://www.gocarylive.org/GTFS/google_transit.zip"
+# GoCary's static feed, at the URL their own developer-resources listing
+# gives (https://gocary.org/_GTFS, a redirect to a WordPress upload that
+# GoCary replaces when they publish a new feed -- so this stays correct
+# across uploads). Found 2026-10-15 after Google/Transit app showed a
+# detour this dashboard didn't: gocarylive.org/GTFS/google_transit.zip, which
+# this used to read, had last been modified 2026-01-23, while this URL had
+# been updated the day before (a short-term "NC State Fair" feed).
+# History: first the Trillium mirror (2023-12-18; missing routes 2/9 and
+# stops with live activity), then gocarylive.org (Jan 2026), now this.
+# route_id equals the short display code the RT feed uses, and
+# stop_id == stop_code, so the parsing below is unchanged.
+STATIC_GTFS_URL = "https://gocary.org/_GTFS"
 
 SERVICE_TZ = ZoneInfo("America/New_York")
 
@@ -69,7 +69,13 @@ ROUTE_SHAPES_FILE = DATA_DIR / "route_shapes.json"
 STATUS_FILE = DATA_DIR / "status.json"
 PENDING_FILE = LIVE_DIR / "pending_stops.json"
 
+# Safety net: rebuild from the feed at least this often even if we can't tell
+# whether it changed (e.g. the server stops sending Last-Modified).
 ROUTES_MAX_AGE_S = 7 * 24 * 3600
+# How often to ask whether GoCary has published a newer static feed. Detours
+# and special-event feeds can appear (and expire) within days, so a weekly
+# refresh would leave the maps showing the wrong routing for most of one.
+STATIC_CHECK_INTERVAL_S = 3600
 
 
 def now_iso():
@@ -149,24 +155,64 @@ def build_route_shapes(zf, routes):
     return out
 
 
+def _age_s(iso_ts):
+    return time.time() - datetime.fromisoformat(iso_ts).timestamp()
+
+
+def static_feed_changed(existing_routes):
+    """True if GoCary's published static feed differs from the one
+    existing_routes (routes.json) was built from, judged by its
+    Last-Modified header (a HEAD request, so no download unless something
+    actually changed).
+    - Key never recorded (file predates this tracking): True, so one rebuild
+      starts tracking it.
+    - Recorded as empty (server sends no Last-Modified): False; we can't
+      detect changes, so only the weekly rebuild applies -- otherwise
+      "unknown" would read as "changed" and re-download every interval.
+    - Check itself fails: False; keep what we have and retry next interval
+      rather than treating a flaky server as a new feed."""
+    if "_source_last_modified" not in existing_routes:
+        return True
+    known_last_modified = existing_routes["_source_last_modified"]
+    if not known_last_modified:
+        return False
+    try:
+        head = requests.head(STATIC_GTFS_URL, timeout=20, allow_redirects=True)
+        head.raise_for_status()
+    except Exception as exc:
+        print(f"Warning: couldn't check the static feed for changes ({exc}); keeping current copy")
+        return False
+    current = head.headers.get("Last-Modified")
+    return bool(current) and current != known_last_modified
+
+
 def ensure_static_gtfs():
     """Refresh docs/data/routes.json, stops.json, trip_last_stops.json, and
-    route_shapes.json from GoCary's static GTFS if any of them is missing or
-    routes.json is older than a week. This metadata barely ever changes, so
-    it doesn't need to run every poll -- and if the refresh fails we just
-    keep whatever we already had rather than failing the whole run. (Any
-    file missing triggers a refresh so that adding a new derived file here
-    doesn't require manually deleting the cached ones to roll it out.)"""
+    route_shapes.json from GoCary's static GTFS.
+
+    Checked at most once per STATIC_CHECK_INTERVAL_S: a cheap Last-Modified
+    probe decides whether GoCary has published something new, and only then
+    is the feed downloaded and rebuilt (also rebuilt if it's been a week
+    regardless, or if any derived file is missing -- so adding a new derived
+    file here doesn't require manually deleting the cached ones). If a
+    refresh fails we keep whatever we already had rather than failing the
+    whole run, and note the attempt so a blocked or flaky source gets
+    retried hourly instead of every poll."""
     existing_routes = load_json(ROUTES_FILE, None)
     existing_stops = load_json(STOPS_FILE, None)
     existing_trip_last_stops = load_json(TRIP_LAST_STOPS_FILE, None)
     all_cached = all(p.exists() for p in (ROUTES_FILE, STOPS_FILE, TRIP_LAST_STOPS_FILE, ROUTE_SHAPES_FILE))
     if existing_routes is not None and all_cached:
         fetched_at = existing_routes.get("_fetched_at")
-        if fetched_at:
-            age = time.time() - datetime.fromisoformat(fetched_at).timestamp()
-            if age < ROUTES_MAX_AGE_S:
-                return existing_routes, (existing_stops or {}), (existing_trip_last_stops or {})
+        checked_at = existing_routes.get("_checked_at") or fetched_at
+        if fetched_at and checked_at and _age_s(fetched_at) < ROUTES_MAX_AGE_S:
+            cached = (existing_routes, (existing_stops or {}), (existing_trip_last_stops or {}))
+            if _age_s(checked_at) < STATIC_CHECK_INTERVAL_S:
+                return cached
+            if not static_feed_changed(existing_routes):
+                existing_routes["_checked_at"] = now_iso()
+                save_json(ROUTES_FILE, existing_routes)
+                return cached
 
     try:
         resp = requests.get(STATIC_GTFS_URL, timeout=60)
@@ -174,7 +220,11 @@ def ensure_static_gtfs():
         zf = zipfile.ZipFile(io.BytesIO(resp.content))
 
         fetched_at = now_iso()
-        routes = {"_fetched_at": fetched_at}
+        routes = {
+            "_fetched_at": fetched_at,
+            "_checked_at": fetched_at,
+            "_source_last_modified": resp.headers.get("Last-Modified"),
+        }
         with zf.open("routes.txt") as f:
             reader = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig"))
             for row in reader:
@@ -184,7 +234,14 @@ def ensure_static_gtfs():
                     "color": row.get("route_color") or "2563eb",
                 }
 
-        stops = {"_fetched_at": fetched_at}
+        # Start from the stops we already know and let the new feed overwrite
+        # them, rather than replacing the list: a short-term feed (the 2026
+        # State Fair one) can drop stops that still have rollup history (stop
+        # 101 did), and a stop missing from stops.json silently loses its dot
+        # on the adherence map. Cost: a genuinely retired stop lingers in
+        # stops.json (only visible under "show all stops").
+        stops = {k: v for k, v in (existing_stops or {}).items() if k != "_fetched_at"}
+        stops["_fetched_at"] = fetched_at
         with zf.open("stops.txt") as f:
             reader = csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig"))
             for row in reader:
@@ -206,8 +263,13 @@ def ensure_static_gtfs():
         # process_trip_updates can exclude a trip's final stop from the
         # on-time rollup -- matching TripSpark's own OTP methodology
         # ("Is Last Stop in Trip? Equal to 0"), confirmed directly from
-        # their emailed report filters. Confirmed trip_id format (a UUID)
-        # matches between this static feed and the RT feed's TripUpdate.
+        # their emailed report filters.
+        # KNOWN LIMITATION (verified 2026-10-15): this does nothing today.
+        # Only the *format* of trip_id (a UUID) was ever checked against the
+        # RT feed, never the values -- and 0 of 80 live RT trip_ids appear in
+        # either published static feed (nor do the two static feeds share any
+        # with each other). The lookup fails open, so nothing is wrongly
+        # dropped, but nothing is excluded either. Needs a different join key.
         trip_last_stops = {"_fetched_at": fetched_at}
         max_seq_by_trip = {}
         with zf.open("stop_times.txt") as f:
@@ -236,6 +298,11 @@ def ensure_static_gtfs():
         return routes, stops, trip_last_stops
     except Exception as exc:
         print(f"Warning: failed to refresh static GTFS files ({exc}); keeping existing copy")
+        if existing_routes is not None:
+            # Record the attempt so a blocked or flaky source is retried at
+            # the next interval, not on every one-minute poll.
+            existing_routes["_checked_at"] = now_iso()
+            save_json(ROUTES_FILE, existing_routes)
         return (
             existing_routes or {"_fetched_at": None},
             existing_stops or {"_fetched_at": None},

@@ -25,29 +25,38 @@ GitHub Actions poller commits JSON under `docs/data/`, and a static
     shared). This file *is* the schedule-adherence history — see "On
     historical data" below.
   - `docs/data/routes.json` / `docs/data/stops.json` — route id → short
-    name/color and stop id → name/lat/lon, refreshed weekly from GoCary's
-    own static GTFS feed (`gocarylive.org/GTFS/google_transit.zip` — only
-    needed for display; delay data comes straight from the RT feed).
-    Switched here from the Trillium-mirrored copy after finding it was
-    dated 2023-12-18 and missing routes "2"/"9" plus at least 12 stops
-    that already had live activity; GoCary's own feed (dated 2026-01-23
-    as of this writing) has all of them, and conveniently its `route_id`
-    already matches the short display code the RT feed uses, fixing a
-    second, quieter bug where route names/colors never resolved for
-    those two routes either.
+    name/color and stop id → name/lat/lon, built from GoCary's static GTFS
+    feed at **`https://gocary.org/_GTFS`** (the URL GoCary's own
+    developer-resources listing gives; it redirects to whichever zip GoCary
+    last uploaded, so it stays correct across uploads). Only needed for
+    display; delay data comes straight from the RT feed. The poller asks
+    hourly (a `Last-Modified` HEAD request) whether GoCary published a new
+    file and rebuilds only then — plus a weekly safety rebuild — so a
+    detour or special-event feed shows up within the hour. `stops.json` is
+    *merged* across feeds rather than replaced, so a stop dropped by a
+    short-term feed keeps its map dot for the history that references it.
+    Source history: Trillium mirror (2023-12-18; missing routes 2/9 and
+    stops with live activity) → `gocarylive.org/GTFS/google_transit.zip`
+    (last modified 2026-01-23; missed the Oct 2026 detour that Google and
+    Transit app already showed) → `gocary.org/_GTFS`. This feed's
+    `route_id` equals the short display code the RT feed uses, and
+    `stop_id == stop_code`.
   - `docs/data/trip_last_stops.json` — trip id → highest stop_sequence in
     that trip's static pattern, from the same static feed and refreshed on
-    the same schedule as routes.json/stops.json. Used only to exclude a
-    trip's final stop from the on-time rollup — see "On matching TripSpark's
-    own OTP numbers" below.
+    the same schedule as routes.json/stops.json. Meant to exclude a trip's
+    final stop from the on-time rollup — **but currently has no effect**; see
+    "On matching TripSpark's own OTP numbers" below.
   - `docs/data/route_shapes.json` — each route's drawn alignment (de-duplicated
     `shapes.txt` polylines grouped by route via `trips.txt`, with the route's
     name and color), from the same static feed and refresh schedule. Powers
     the route lines on both maps. Note GoCary's `shape_pt_sequence` values
     aren't contiguous or in file order, so points are sorted per shape before
-    drawing. These are the *published schedule's* alignments — the static feed
-    is currently past its own `feed_end_date` (2026-08-31) and its version
-    label mentions a GoApex detour, so a line can lag a current detour.
+    drawing. These are the *published schedule's* alignments — GTFS-RT carries
+    no route geometry at all (verified: the feeds only contain trip updates,
+    vehicle positions, and alerts), so a line is only as current as the last
+    static feed GoCary uploaded; a detour appears once a feed describing it
+    is published. (This is why the maps once showed the retired Downtown Loop
+    and Route 2's old alignment: they were read from a January file.)
     If building shapes ever fails, an empty file with an `error` field is
     written instead so the poller doesn't re-download the feed every minute.
   - `docs/data/status.json` — last poll time, error (if any), poll count.
@@ -86,12 +95,22 @@ GitHub Actions poller commits JSON under `docs/data/`, and a static
   runs a few points below GoCary's official TripSpark "Yesterday
   Departure-OTP" report (e.g. 81.2% vs. 87.2% on 2026-09-04). Two things
   contribute:
-  1. **Fixed here** — TripSpark's report filters explicitly exclude a
-     trip's final stop (`Is Last Stop in Trip? Equal to 0`), since a bus
-     doesn't meaningfully "depart" from where its trip ends. We used to
-     count it anyway (falling back to arrival delay when a final stop has
-     no departure). `trip_last_stops.json` now lets `process_trip_updates`
-     drop it, same as they do.
+  1. **Attempted, but not working yet** — TripSpark's report filters
+     explicitly exclude a trip's final stop (`Is Last Stop in Trip? Equal to
+     0`), since a bus doesn't meaningfully "depart" from where its trip
+     ends. We count it anyway (falling back to arrival delay when a final
+     stop has no departure). `process_trip_updates` has code to drop it
+     using `trip_last_stops.json`, which maps trip_id → last stop_sequence
+     — but that join never matches: the live RT feed's `trip_id`s appear in
+     neither published static feed (0 of 80 live trips found in the January
+     file or the Oct 14 one; the two static files share none with each other
+     either). An early version of this note claimed the IDs matched; that
+     was only ever checked by *format* (both are UUIDs), never by value. The
+     lookup fails open, so nothing is wrongly dropped — and nothing is
+     excluded, so `eol_stops_excluded` in status.json stays 0. Making it
+     work needs a different join key (e.g. route + direction + scheduled
+     start time) or trip IDs that line up between TripSpark's RT and static
+     outputs.
   2. **Not fixed, and can't be from the public feed alone** — our daily
      sample size runs 2-3x TripSpark's for the same day, and the ratio
      varies by route (1.78x-3.47x checked on 2026-09-04), which rules out
@@ -101,9 +120,9 @@ GitHub Actions poller commits JSON under `docs/data/`, and a static
      this down exactly would need TripSpark's authoritative timepoint list
      per route (via `FRWebAPI`/`StreetsWebServiceV2` direct access, not
      the public RT feed) rather than inferring it from what gets published.
-     Like the average-delay and last-stop fixes above, item 1's effect
-     only applies to stops finalized after it shipped (2026-09-08) — days
-     before that keep whatever their original counts were.
+     (Any fix here would only apply to stops finalized after it ships —
+     past days keep whatever their original counts were, since the
+     per-event stop_sequence isn't retained once rolled up.)
 
 - **`.github/workflows/poll-transit.yml`** — runs the script and commits
   `docs/data` if anything changed. Only triggered by `workflow_dispatch`
