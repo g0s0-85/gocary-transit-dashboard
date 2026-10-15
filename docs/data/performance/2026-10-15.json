@@ -1,12 +1,12 @@
 {
   "date": "2026-10-15",
   "system": {
-    "on_time": 77,
+    "on_time": 81,
     "early": 4,
-    "late": 108,
-    "total": 189,
-    "delay_sum": 524702,
-    "delay_sample_count": 189
+    "late": 111,
+    "total": 196,
+    "delay_sum": 527132,
+    "delay_sample_count": 196
   },
   "routes": {
     "GA1": {
@@ -62,6 +62,15 @@
       "total": 3,
       "delay_sum": 847,
       "delay_sample_count": 3
+    },
+    "2": {
+      "route_short_name": "2",
+      "on_time": 4,
+      "early": 0,
+      "late": 3,
+      "total": 7,
+      "delay_sum": 2430,
+      "delay_sample_count": 7
     }
   },
   "stops": {
@@ -292,14 +301,23 @@
           "total": 1,
           "delay_sum": 119,
           "delay_sample_count": 1
+        },
+        "2": {
+          "route_short_name": "2",
+          "on_time": 0,
+          "early": 0,
+          "late": 1,
+          "total": 1,
+          "delay_sum": 394,
+          "delay_sample_count": 1
         }
       },
       "on_time": 8,
       "early": 1,
-      "late": 5,
-      "total": 14,
-      "delay_sum": 23255,
-      "delay_sample_count": 14
+      "late": 6,
+      "total": 15,
+      "delay_sum": 23649,
+      "delay_sample_count": 15
     },
     "1398": {
       "stop_name": "Cary Depot South Platform",
@@ -965,7 +983,107 @@
       "total": 1,
       "delay_sum": 345,
       "delay_sample_count": 1
+    },
+    "8203": {
+      "stop_name": "8203",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 1,
+          "early": 0,
+          "late": 1,
+          "total": 2,
+          "delay_sum": 944,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 1,
+      "total": 2,
+      "delay_sum": 944,
+      "delay_sample_count": 2
+    },
+    "11655": {
+      "stop_name": "Corporate Center Dr at Play Golf Wy (SB)",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 0,
+          "early": 0,
+          "late": 1,
+          "total": 1,
+          "delay_sum": 895,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 0,
+      "early": 0,
+      "late": 1,
+      "total": 1,
+      "delay_sum": 895,
+      "delay_sample_count": 1
+    },
+    "11112": {
+      "stop_name": "NE Maynard Rd at Reedy Creek Rd (WB)",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 36,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 36,
+      "delay_sample_count": 1
+    },
+    "11209": {
+      "stop_name": "NE Maynard Rd at Reedy Creek Rd (EB)",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 144,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 144,
+      "delay_sample_count": 1
+    },
+    "11605": {
+      "stop_name": "Corporate Center Dr at Play Golf Way (NB)",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 17,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 17,
+      "delay_sample_count": 1
     }
   },
-  "last_updated": "2026-10-15T14:17:15.683986+00:00"
+  "last_updated": "2026-10-15T14:19:12.150402+00:00"
 }
