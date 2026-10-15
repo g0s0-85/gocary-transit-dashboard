@@ -284,11 +284,15 @@ function initAdherenceMap() {
 }
 
 // Route alignments from GoCary's static GTFS (shapes.txt), prepared by the
-// poller into docs/data/route_shapes.json. Static for days at a time, so it's
-// cached in the browser for a day -- one fewer call against the Contents
-// API's 60/hour unauthenticated budget on every repeat visit.
-const ROUTE_SHAPES_CACHE_KEY = 'gocary-route-shapes';
-const ROUTE_SHAPES_TTL_MS = 24 * 3600 * 1000;
+// poller into docs/data/route_shapes.json. The poller checks for a newly
+// published feed hourly (detours and special-event feeds come and go within
+// days), so the browser copy must not outlive that by much: cached for an
+// hour, and re-checked hourly in a tab left open. (It was 24h at first,
+// which would have kept showing a retired route or old detour for a day.)
+// The key is versioned so copies cached under the old 24h rule are dropped.
+const ROUTE_SHAPES_CACHE_KEY = 'gocary-route-shapes-v2';
+const ROUTE_SHAPES_TTL_MS = 3600 * 1000;
+try { localStorage.removeItem('gocary-route-shapes'); } catch {}
 let routeShapes = null;
 const routeLayers = { live: null, adherence: null };
 
@@ -785,6 +789,7 @@ document.querySelector('main').addEventListener('click', e => {
   await Promise.all([loadPerfForDate(today), loadTrend()]);
   setInterval(refreshVehicles, VEHICLE_REFRESH_MS);
   setInterval(refreshStatus, 300000);
+  setInterval(async () => { await loadRouteShapes(); applyRouteLines(); renderRouteKeys(); }, ROUTE_SHAPES_TTL_MS);
   setInterval(updateVehicleRefreshNote, 1000);
 })();
 </script>
