@@ -52,6 +52,10 @@
   .dot.early { background: var(--early); }
   .dot.late { background: var(--late); }
   .dot.unknown { background: var(--unknown); }
+  /* Bus markers are divIcons; a custom className replaces Leaflet's default
+     white box/border so only the SVG shows. */
+  .veh-icon { background: none; border: 0; }
+  .veh-icon svg { display: block; filter: drop-shadow(0 1px 1px rgba(0,0,0,.4)); }
 
   .route-key { display: flex; gap: 6px 14px; font-size: 12px; color: var(--muted); margin: 8px 2px 0; flex-wrap: wrap; }
   .route-key span { display: inline-flex; align-items: center; gap: 5px; }
@@ -104,6 +108,7 @@
     <span><i class="dot early"></i>early (&gt;1 min)</span>
     <span><i class="dot late"></i>late (&gt;5 min)</span>
     <span><i class="dot unknown"></i>no live data</span>
+    <span><span id="legend-arrow"></span>pointer = direction of travel</span>
     <span style="margin-left:auto"><label><input type="checkbox" id="toggle-routes-live" checked> show routes</label></span>
   </div>
   <div class="route-key" id="route-key-live"></div>
@@ -434,15 +439,45 @@ function renderAdherenceMap(days) {
     `based on the last ${days.length} available service day${days.length === 1 ? '' : 's'}`;
 }
 
+// A bus is the same status-colored dot as before, plus a pointer showing its
+// heading. The SVG is drawn pointing north (up) and rotated by `bearing`
+// (GTFS-RT bearing: degrees clockwise from true north), around the dot's
+// center. The dot is drawn last so its white outline sits over the
+// pointer's base and the two read as one shape. `size` scales it so the
+// legend can show the same glyph.
+function vehicleSvg(color, bearing, size) {
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 36 36" aria-hidden="true">` +
+    `<g transform="rotate(${Number(bearing)} 18 18)">` +
+    `<path d="M18 0.5 L25.5 13.5 L10.5 13.5 Z" fill="${color}" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/>` +
+    `</g>` +
+    `<circle cx="18" cy="18" r="7" fill="${color}" stroke="#fff" stroke-width="2"/>` +
+    `</svg>`;
+}
+
 function renderVehicles(vehiclesData) {
   markersLayer.clearLayers();
   const vehicles = vehiclesData?.vehicles || [];
   for (const v of vehicles) {
     if (!v.lat || !v.lon) continue;
     const color = STATUS_COLOR[v.status] || STATUS_COLOR.unknown;
-    const marker = L.circleMarker([v.lat, v.lon], {
-      radius: 7, color: '#fff', weight: 2, fillColor: color, fillOpacity: 1,
-    });
+    const bearing = Number(v.bearing);
+    // `!= null` rather than truthiness: 0 is a real heading (due north).
+    // A bus reporting no heading keeps the plain dot rather than a
+    // misleading arrow.
+    const marker = (v.bearing != null && Number.isFinite(bearing))
+      ? L.marker([v.lat, v.lon], {
+          icon: L.divIcon({
+            className: 'veh-icon',
+            html: vehicleSvg(color, bearing, 36),
+            iconSize: [36, 36],
+            iconAnchor: [18, 18],
+            popupAnchor: [0, -14],
+          }),
+          title: `Route ${v.route_short_name} · Vehicle ${v.vehicle_id}`,
+        })
+      : L.circleMarker([v.lat, v.lon], {
+          radius: 7, color: '#fff', weight: 2, fillColor: color, fillOpacity: 1,
+        });
     const delayTxt = v.delay_seconds == null ? 'no prediction' :
       (v.delay_seconds >= 0 ? `${Math.round(v.delay_seconds / 60)} min late` : `${Math.round(-v.delay_seconds / 60)} min early`);
     marker.bindPopup(`<b>Route ${esc(v.route_short_name)}</b><br>Vehicle ${esc(v.vehicle_id)}<br>${esc(delayTxt)}`);
@@ -712,6 +747,7 @@ document.querySelector('main').addEventListener('click', e => {
 (async () => {
   initMap();
   initAdherenceMap();
+  document.getElementById('legend-arrow').innerHTML = vehicleSvg('#6b7280', 45, 20);
   document.getElementById('stop-filter').addEventListener('input', renderStopTable);
   document.getElementById('toggle-all-stops').addEventListener('change', e => {
     showAllStops = e.target.checked;
