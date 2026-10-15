@@ -2,21 +2,30 @@
   "date": "2026-10-15",
   "system": {
     "on_time": 0,
-    "early": 0,
+    "early": 2,
     "late": 22,
-    "total": 22,
-    "delay_sum": 96376,
-    "delay_sample_count": 22
+    "total": 24,
+    "delay_sum": 96135,
+    "delay_sample_count": 24
   },
   "routes": {
     "GA1": {
       "route_short_name": "GA1",
       "on_time": 0,
-      "early": 0,
+      "early": 1,
       "late": 22,
-      "total": 22,
-      "delay_sum": 96376,
-      "delay_sample_count": 22
+      "total": 23,
+      "delay_sum": 96230,
+      "delay_sample_count": 23
+    },
+    "6": {
+      "route_short_name": "6",
+      "on_time": 0,
+      "early": 1,
+      "late": 0,
+      "total": 1,
+      "delay_sum": -95,
+      "delay_sample_count": 1
     }
   },
   "stops": {
@@ -146,19 +155,19 @@
         "GA1": {
           "route_short_name": "GA1",
           "on_time": 0,
-          "early": 0,
+          "early": 1,
           "late": 4,
-          "total": 4,
-          "delay_sum": 16965,
-          "delay_sample_count": 4
+          "total": 5,
+          "delay_sum": 16819,
+          "delay_sample_count": 5
         }
       },
       "on_time": 0,
-      "early": 0,
+      "early": 1,
       "late": 4,
-      "total": 4,
-      "delay_sum": 16965,
-      "delay_sample_count": 4
+      "total": 5,
+      "delay_sum": 16819,
+      "delay_sample_count": 5
     },
     "16093": {
       "stop_name": "Apex Senior Center Main Entrance ",
@@ -199,7 +208,27 @@
       "total": 2,
       "delay_sum": 9642,
       "delay_sample_count": 2
+    },
+    "11440": {
+      "stop_name": "Cary Depot North Platform",
+      "routes": {
+        "6": {
+          "route_short_name": "6",
+          "on_time": 0,
+          "early": 1,
+          "late": 0,
+          "total": 1,
+          "delay_sum": -95,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 0,
+      "early": 1,
+      "late": 0,
+      "total": 1,
+      "delay_sum": -95,
+      "delay_sample_count": 1
     }
   },
-  "last_updated": "2026-10-15T13:58:12.892807+00:00"
+  "last_updated": "2026-10-15T14:00:32.476934+00:00"
 }
