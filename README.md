@@ -40,6 +40,16 @@ GitHub Actions poller commits JSON under `docs/data/`, and a static
     the same schedule as routes.json/stops.json. Used only to exclude a
     trip's final stop from the on-time rollup — see "On matching TripSpark's
     own OTP numbers" below.
+  - `docs/data/route_shapes.json` — each route's drawn alignment (de-duplicated
+    `shapes.txt` polylines grouped by route via `trips.txt`, with the route's
+    name and color), from the same static feed and refresh schedule. Powers
+    the route lines on both maps. Note GoCary's `shape_pt_sequence` values
+    aren't contiguous or in file order, so points are sorted per shape before
+    drawing. These are the *published schedule's* alignments — the static feed
+    is currently past its own `feed_end_date` (2026-08-31) and its version
+    label mentions a GoApex detour, so a line can lag a current detour.
+    If building shapes ever fails, an empty file with an `error` field is
+    written instead so the poller doesn't re-download the feed every minute.
   - `docs/data/status.json` — last poll time, error (if any), poll count.
 
   **On dedup:** TripUpdates repeats the same upcoming stop's predicted delay

@@ -65,6 +65,7 @@ PERF_DIR = DATA_DIR / "performance"
 ROUTES_FILE = DATA_DIR / "routes.json"
 STOPS_FILE = DATA_DIR / "stops.json"
 TRIP_LAST_STOPS_FILE = DATA_DIR / "trip_last_stops.json"
+ROUTE_SHAPES_FILE = DATA_DIR / "route_shapes.json"
 STATUS_FILE = DATA_DIR / "status.json"
 PENDING_FILE = LIVE_DIR / "pending_stops.json"
 
@@ -85,9 +86,12 @@ def load_json(path, default):
     return default
 
 
-def save_json(path, data):
+def save_json(path, data, compact=False):
     path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(data, indent=2), encoding="utf-8")
+    # compact=True for coordinate-heavy files, where indent=2 would put every
+    # lat and lon on its own line and balloon the file ~5x for no benefit.
+    text = json.dumps(data, separators=(",", ":")) if compact else json.dumps(data, indent=2)
+    path.write_text(text, encoding="utf-8")
 
 
 def fetch_feed(url):
@@ -98,17 +102,66 @@ def fetch_feed(url):
     return feed
 
 
+def build_route_shapes(zf, routes):
+    """route_id -> {short_name, long_name, color, shapes: [[[lat, lon], ...]]}
+    for drawing each route's alignment on the dashboard maps.
+
+    trips.txt says which shape_ids each route's trips follow (a route has
+    several -- directions and pattern variants, 4-6 each in GoCary's feed);
+    shapes.txt holds the points. shape_pt_sequence is NOT contiguous or in
+    file order in GoCary's feed (first rows are sequence 9, then 26, ...),
+    so points must be sorted by it before drawing or the line zigzags.
+    Coordinates rounded to 5 decimals (~1 m) to keep the file small."""
+    shape_routes = {}
+    with zf.open("trips.txt") as f:
+        for row in csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig")):
+            if row.get("shape_id"):
+                shape_routes.setdefault(row["shape_id"], set()).add(row["route_id"])
+
+    points_by_shape = {}
+    with zf.open("shapes.txt") as f:
+        for row in csv.DictReader(io.TextIOWrapper(f, encoding="utf-8-sig")):
+            shape_id = row["shape_id"]
+            if shape_id not in shape_routes:
+                continue
+            points_by_shape.setdefault(shape_id, []).append(
+                (int(row["shape_pt_sequence"]), float(row["shape_pt_lat"]), float(row["shape_pt_lon"]))
+            )
+
+    out = {}
+    for shape_id in sorted(points_by_shape):
+        line = []
+        for _, lat, lon in sorted(points_by_shape[shape_id]):
+            point = [round(lat, 5), round(lon, 5)]
+            if not line or line[-1] != point:
+                line.append(point)
+        for route_id in sorted(shape_routes[shape_id]):
+            meta = routes.get(route_id, {})
+            entry = out.setdefault(route_id, {
+                "short_name": meta.get("short_name", route_id),
+                "long_name": meta.get("long_name", ""),
+                "color": meta.get("color", "2563eb"),
+                "shapes": [],
+            })
+            # Several shape_ids can trace the same path; don't draw it twice.
+            if line not in entry["shapes"]:
+                entry["shapes"].append(line)
+    return out
+
+
 def ensure_static_gtfs():
-    """Refresh docs/data/routes.json, docs/data/stops.json, and
-    docs/data/trip_last_stops.json from GoCary's static GTFS if routes.json
-    is missing or older than a week. Route/stop/trip-pattern metadata barely
-    ever changes, so this doesn't need to run every poll -- and if the
-    refresh fails we just keep whatever we already had rather than failing
-    the whole run."""
+    """Refresh docs/data/routes.json, stops.json, trip_last_stops.json, and
+    route_shapes.json from GoCary's static GTFS if any of them is missing or
+    routes.json is older than a week. This metadata barely ever changes, so
+    it doesn't need to run every poll -- and if the refresh fails we just
+    keep whatever we already had rather than failing the whole run. (Any
+    file missing triggers a refresh so that adding a new derived file here
+    doesn't require manually deleting the cached ones to roll it out.)"""
     existing_routes = load_json(ROUTES_FILE, None)
     existing_stops = load_json(STOPS_FILE, None)
     existing_trip_last_stops = load_json(TRIP_LAST_STOPS_FILE, None)
-    if existing_routes is not None:
+    all_cached = all(p.exists() for p in (ROUTES_FILE, STOPS_FILE, TRIP_LAST_STOPS_FILE, ROUTE_SHAPES_FILE))
+    if existing_routes is not None and all_cached:
         fetched_at = existing_routes.get("_fetched_at")
         if fetched_at:
             age = time.time() - datetime.fromisoformat(fetched_at).timestamp()
@@ -166,12 +219,23 @@ def ensure_static_gtfs():
                     max_seq_by_trip[trip_id] = seq
         trip_last_stops.update(max_seq_by_trip)
 
+        # Isolated so a problem drawing routes can never block the data the
+        # OTP rollup actually depends on. On failure an empty marker file is
+        # still written (with the error) -- otherwise its absence would make
+        # every poll re-download and re-parse the whole feed trying again.
+        try:
+            route_shapes = {"_fetched_at": fetched_at, "routes": build_route_shapes(zf, routes)}
+        except Exception as exc:
+            print(f"Warning: failed to build route shapes ({exc})")
+            route_shapes = {"_fetched_at": fetched_at, "error": str(exc), "routes": {}}
+
         save_json(ROUTES_FILE, routes)
         save_json(STOPS_FILE, stops)
         save_json(TRIP_LAST_STOPS_FILE, trip_last_stops)
+        save_json(ROUTE_SHAPES_FILE, route_shapes, compact=True)
         return routes, stops, trip_last_stops
     except Exception as exc:
-        print(f"Warning: failed to refresh routes.json/stops.json/trip_last_stops.json ({exc}); keeping existing copy")
+        print(f"Warning: failed to refresh static GTFS files ({exc}); keeping existing copy")
         return (
             existing_routes or {"_fetched_at": None},
             existing_stops or {"_fetched_at": None},

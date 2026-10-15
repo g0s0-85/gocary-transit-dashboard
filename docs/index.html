@@ -53,6 +53,11 @@
   .dot.late { background: var(--late); }
   .dot.unknown { background: var(--unknown); }
 
+  .route-key { display: flex; gap: 6px 14px; font-size: 12px; color: var(--muted); margin: 8px 2px 0; flex-wrap: wrap; }
+  .route-key span { display: inline-flex; align-items: center; gap: 5px; }
+  .route-key .swatch { width: 14px; height: 4px; border-radius: 2px; display: inline-block; }
+  .route-key .route-note { flex-basis: 100%; }
+
   table { border-collapse: collapse; width: 100%; font-size: 13px; }
   th, td { text-align: left; padding: 8px 12px; border-bottom: 1px solid var(--border); }
   th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.03em; }
@@ -99,7 +104,9 @@
     <span><i class="dot early"></i>early (&gt;1 min)</span>
     <span><i class="dot late"></i>late (&gt;5 min)</span>
     <span><i class="dot unknown"></i>no live data</span>
+    <span style="margin-left:auto"><label><input type="checkbox" id="toggle-routes-live" checked> show routes</label></span>
   </div>
+  <div class="route-key" id="route-key-live"></div>
 
   <h2>Stop schedule adherence (rolling average)</h2>
   <div id="adherence-map" class="card"></div>
@@ -108,8 +115,10 @@
     <span><i class="dot early"></i>trending early</span>
     <span><i class="dot late"></i>trending late</span>
     <span><i class="dot unknown"></i>not enough data yet</span>
-    <span style="margin-left:auto"><label><input type="checkbox" id="toggle-all-stops"> show all stops</label></span>
+    <span style="margin-left:auto"><label><input type="checkbox" id="toggle-routes-adherence" checked> show routes</label></span>
+    <span><label><input type="checkbox" id="toggle-all-stops"> show all stops</label></span>
   </div>
+  <div class="route-key" id="route-key-adherence"></div>
   <p style="font-size:12px; color:var(--muted); margin:6px 2px 0;" id="adherence-window-note"></p>
   <p style="font-size:12px; color:var(--muted); margin:6px 2px 0;">
     Each colored stop's shade is based on its on-time / early / late counts across every visit in
@@ -235,7 +244,17 @@ function initMap() {
     attribution: '&copy; OpenStreetMap contributors',
     maxZoom: 19,
   }).addTo(map);
+  createRoutePane(map);
   markersLayer = L.layerGroup().addTo(map);
+}
+
+// Route lines load asynchronously, after markers may already exist. Leaflet
+// draws vector layers in the order they're added, so a plain polyline added
+// late would land on top of the markers and swallow their clicks. A custom
+// pane sitting between the tiles (200) and the default overlay pane (400)
+// keeps lines underneath no matter when they arrive.
+function createRoutePane(m) {
+  m.createPane('routes').style.zIndex = 350;
 }
 
 let stopsById = {};
@@ -255,7 +274,72 @@ function initAdherenceMap() {
     attribution: '&copy; OpenStreetMap contributors',
     maxZoom: 19,
   }).addTo(adherenceMap);
+  createRoutePane(adherenceMap);
   adherenceLayer = L.layerGroup().addTo(adherenceMap);
+}
+
+// Route alignments from GoCary's static GTFS (shapes.txt), prepared by the
+// poller into docs/data/route_shapes.json. Static for days at a time, so it's
+// cached in the browser for a day -- one fewer call against the Contents
+// API's 60/hour unauthenticated budget on every repeat visit.
+const ROUTE_SHAPES_CACHE_KEY = 'gocary-route-shapes';
+const ROUTE_SHAPES_TTL_MS = 24 * 3600 * 1000;
+let routeShapes = null;
+const routeLayers = { live: null, adherence: null };
+
+async function loadRouteShapes() {
+  let cached = null;
+  try { cached = JSON.parse(localStorage.getItem(ROUTE_SHAPES_CACHE_KEY)); } catch {}
+  if (cached?.data?.routes && Date.now() - cached.savedAt < ROUTE_SHAPES_TTL_MS) {
+    routeShapes = cached.data;
+    return;
+  }
+  const data = await fetchJson('docs/data/route_shapes.json', 'data/route_shapes.json');
+  if (data?.routes && Object.keys(data.routes).length) {
+    routeShapes = data;
+    try { localStorage.setItem(ROUTE_SHAPES_CACHE_KEY, JSON.stringify({ savedAt: Date.now(), data })); } catch {}
+  } else if (cached?.data?.routes) {
+    routeShapes = cached.data; // a stale copy beats no routes at all
+  }
+}
+
+function safeColor(hex) {
+  return /^[0-9a-fA-F]{6}$/.test(hex || '') ? hex : '2563eb';
+}
+
+function applyRouteLines() {
+  if (!routeShapes) return;
+  const targets = [
+    { slot: 'live', target: map, toggleId: 'toggle-routes-live' },
+    { slot: 'adherence', target: adherenceMap, toggleId: 'toggle-routes-adherence' },
+  ];
+  for (const { slot, target, toggleId } of targets) {
+    if (routeLayers[slot]) target.removeLayer(routeLayers[slot]);
+    // A Leaflet layer can only belong to one map, so each map gets its own set.
+    const group = L.layerGroup();
+    for (const r of Object.values(routeShapes.routes)) {
+      const label = `Route ${r.short_name}${r.long_name ? ' · ' + r.long_name : ''}`;
+      for (const line of r.shapes) {
+        L.polyline(line, { pane: 'routes', color: '#' + safeColor(r.color), weight: 3, opacity: 0.7 })
+          .bindTooltip(esc(label), { sticky: true })
+          .addTo(group);
+      }
+    }
+    routeLayers[slot] = group;
+    if (document.getElementById(toggleId).checked) group.addTo(target);
+  }
+}
+
+function renderRouteKeys() {
+  if (!routeShapes) return;
+  const entries = Object.values(routeShapes.routes)
+    .sort((a, b) => compareValues(a.short_name, b.short_name));
+  const html = entries.map(r =>
+    `<span><i class="swatch" style="background:#${safeColor(r.color)}"></i>${esc(r.short_name)}${r.long_name ? ' ' + esc(r.long_name) : ''}</span>`
+  ).join('') +
+    `<span class="route-note">Route lines come from GoCary's published static schedule, so they may not reflect a current detour.</span>`;
+  document.getElementById('route-key-live').innerHTML = html;
+  document.getElementById('route-key-adherence').innerHTML = html;
 }
 
 const STATUS_COLOR = { on_time: '#1a7f37', early: '#2563eb', late: '#c62828', unknown: '#9ca3af' };
@@ -646,7 +730,21 @@ document.querySelector('main').addEventListener('click', e => {
     loadPerfForDate(today);
   });
 
-  await Promise.all([refreshVehicles(), refreshStatus(), loadStops(), loadAvailableDates()]);
+  for (const [toggleId, slot, getMap] of [
+    ['toggle-routes-live', 'live', () => map],
+    ['toggle-routes-adherence', 'adherence', () => adherenceMap],
+  ]) {
+    document.getElementById(toggleId).addEventListener('change', e => {
+      const group = routeLayers[slot];
+      if (!group) return;
+      if (e.target.checked) getMap().addLayer(group);
+      else getMap().removeLayer(group);
+    });
+  }
+
+  await Promise.all([refreshVehicles(), refreshStatus(), loadStops(), loadAvailableDates(), loadRouteShapes()]);
+  applyRouteLines();
+  renderRouteKeys();
   if (availableDates.length) dateInput.min = availableDates[0];
   await Promise.all([loadPerfForDate(today), loadTrend()]);
   setInterval(refreshVehicles, VEHICLE_REFRESH_MS);
