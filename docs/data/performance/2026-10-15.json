@@ -1,22 +1,22 @@
 {
   "date": "2026-10-15",
   "system": {
-    "on_time": 114,
+    "on_time": 136,
     "early": 4,
-    "late": 115,
-    "total": 233,
-    "delay_sum": 530910,
-    "delay_sample_count": 233
+    "late": 129,
+    "total": 269,
+    "delay_sum": 544189,
+    "delay_sample_count": 269
   },
   "routes": {
     "GA1": {
       "route_short_name": "GA1",
-      "on_time": 3,
+      "on_time": 5,
       "early": 1,
-      "late": 40,
-      "total": 44,
-      "delay_sum": 198706,
-      "delay_sample_count": 44
+      "late": 42,
+      "total": 48,
+      "delay_sum": 199919,
+      "delay_sample_count": 48
     },
     "6": {
       "route_short_name": "6",
@@ -29,12 +29,12 @@
     },
     "4": {
       "route_short_name": "4",
-      "on_time": 29,
+      "on_time": 34,
       "early": 0,
-      "late": 30,
-      "total": 59,
-      "delay_sum": 139899,
-      "delay_sample_count": 59
+      "late": 35,
+      "total": 69,
+      "delay_sum": 145630,
+      "delay_sample_count": 69
     },
     "7": {
       "route_short_name": "7",
@@ -56,12 +56,12 @@
     },
     "5": {
       "route_short_name": "5",
-      "on_time": 1,
+      "on_time": 9,
       "early": 0,
-      "late": 2,
-      "total": 3,
-      "delay_sum": 847,
-      "delay_sample_count": 3
+      "late": 4,
+      "total": 13,
+      "delay_sum": 2329,
+      "delay_sample_count": 13
     },
     "2": {
       "route_short_name": "2",
@@ -71,6 +71,24 @@
       "total": 7,
       "delay_sum": 2430,
       "delay_sample_count": 7
+    },
+    "3": {
+      "route_short_name": "3",
+      "on_time": 6,
+      "early": 0,
+      "late": 0,
+      "total": 6,
+      "delay_sum": 28,
+      "delay_sample_count": 6
+    },
+    "9": {
+      "route_short_name": "9",
+      "on_time": 1,
+      "early": 0,
+      "late": 5,
+      "total": 6,
+      "delay_sum": 4825,
+      "delay_sample_count": 6
     }
   },
   "stops": {
@@ -79,20 +97,20 @@
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 0,
+          "on_time": 1,
           "early": 0,
           "late": 8,
-          "total": 8,
-          "delay_sum": 39532,
-          "delay_sample_count": 8
+          "total": 9,
+          "delay_sum": 39689,
+          "delay_sample_count": 9
         }
       },
-      "on_time": 0,
+      "on_time": 1,
       "early": 0,
       "late": 8,
-      "total": 8,
-      "delay_sum": 39532,
-      "delay_sample_count": 8
+      "total": 9,
+      "delay_sum": 39689,
+      "delay_sample_count": 9
     },
     "16045": {
       "stop_name": "Beaver Creek Commons Dr at Lowe's (EB)",
@@ -201,18 +219,27 @@
           "route_short_name": "GA1",
           "on_time": 0,
           "early": 1,
-          "late": 7,
-          "total": 8,
-          "delay_sum": 36297,
-          "delay_sample_count": 8
+          "late": 8,
+          "total": 9,
+          "delay_sum": 36798,
+          "delay_sample_count": 9
+        },
+        "9": {
+          "route_short_name": "9",
+          "on_time": 0,
+          "early": 0,
+          "late": 1,
+          "total": 1,
+          "delay_sum": 836,
+          "delay_sample_count": 1
         }
       },
       "on_time": 0,
       "early": 1,
-      "late": 7,
-      "total": 8,
-      "delay_sum": 36297,
-      "delay_sample_count": 8
+      "late": 9,
+      "total": 10,
+      "delay_sum": 37634,
+      "delay_sample_count": 10
     },
     "16093": {
       "stop_name": "Apex Senior Center Main Entrance ",
@@ -221,38 +248,38 @@
           "route_short_name": "GA1",
           "on_time": 0,
           "early": 0,
-          "late": 4,
-          "total": 4,
-          "delay_sum": 22857,
-          "delay_sample_count": 4
+          "late": 5,
+          "total": 5,
+          "delay_sum": 23273,
+          "delay_sample_count": 5
         }
       },
       "on_time": 0,
       "early": 0,
-      "late": 4,
-      "total": 4,
-      "delay_sum": 22857,
-      "delay_sample_count": 4
+      "late": 5,
+      "total": 5,
+      "delay_sum": 23273,
+      "delay_sample_count": 5
     },
     "16021": {
       "stop_name": "Beaver Crk Comm Dr at Chick-fil-A (WB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 0,
+          "on_time": 1,
           "early": 0,
           "late": 4,
-          "total": 4,
-          "delay_sum": 22635,
-          "delay_sample_count": 4
+          "total": 5,
+          "delay_sum": 22774,
+          "delay_sample_count": 5
         }
       },
-      "on_time": 0,
+      "on_time": 1,
       "early": 0,
       "late": 4,
-      "total": 4,
-      "delay_sum": 22635,
-      "delay_sample_count": 4
+      "total": 5,
+      "delay_sum": 22774,
+      "delay_sample_count": 5
     },
     "11440": {
       "stop_name": "Cary Depot North Platform",
@@ -270,10 +297,10 @@
           "route_short_name": "4",
           "on_time": 3,
           "early": 0,
-          "late": 2,
-          "total": 5,
-          "delay_sum": 8561,
-          "delay_sample_count": 5
+          "late": 3,
+          "total": 6,
+          "delay_sum": 9787,
+          "delay_sample_count": 6
         },
         "7": {
           "route_short_name": "7",
@@ -295,12 +322,12 @@
         },
         "5": {
           "route_short_name": "5",
-          "on_time": 1,
+          "on_time": 2,
           "early": 0,
           "late": 0,
-          "total": 1,
-          "delay_sum": 119,
-          "delay_sample_count": 1
+          "total": 2,
+          "delay_sum": 193,
+          "delay_sample_count": 2
         },
         "2": {
           "route_short_name": "2",
@@ -310,14 +337,23 @@
           "total": 1,
           "delay_sum": 394,
           "delay_sample_count": 1
+        },
+        "3": {
+          "route_short_name": "3",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 0,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 11,
+      "on_time": 13,
       "early": 1,
-      "late": 6,
-      "total": 18,
-      "delay_sum": 23744,
-      "delay_sample_count": 18
+      "late": 7,
+      "total": 21,
+      "delay_sum": 25044,
+      "delay_sample_count": 21
     },
     "1398": {
       "stop_name": "Cary Depot South Platform",
@@ -357,14 +393,41 @@
           "total": 4,
           "delay_sum": 6605,
           "delay_sample_count": 4
+        },
+        "5": {
+          "route_short_name": "5",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 231,
+          "delay_sample_count": 2
+        },
+        "3": {
+          "route_short_name": "3",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 0,
+          "delay_sample_count": 1
+        },
+        "9": {
+          "route_short_name": "9",
+          "on_time": 0,
+          "early": 0,
+          "late": 1,
+          "total": 1,
+          "delay_sum": 1108,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 9,
+      "on_time": 12,
       "early": 1,
-      "late": 9,
-      "total": 19,
-      "delay_sum": 37382,
-      "delay_sample_count": 19
+      "late": 10,
+      "total": 23,
+      "delay_sum": 38721,
+      "delay_sample_count": 23
     },
     "1375": {
       "stop_name": "Walnut St at Cary Commons",
@@ -442,98 +505,98 @@
           "route_short_name": "4",
           "on_time": 4,
           "early": 0,
-          "late": 5,
-          "total": 9,
-          "delay_sum": 22969,
-          "delay_sample_count": 9
+          "late": 6,
+          "total": 10,
+          "delay_sum": 23303,
+          "delay_sample_count": 10
         }
       },
       "on_time": 4,
       "early": 0,
-      "late": 5,
-      "total": 9,
-      "delay_sum": 22969,
-      "delay_sample_count": 9
+      "late": 6,
+      "total": 10,
+      "delay_sum": 23303,
+      "delay_sample_count": 10
     },
     "11151": {
       "stop_name": "High House Rd at Davis Dr (EB)",
       "routes": {
         "4": {
           "route_short_name": "4",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
           "late": 3,
-          "total": 5,
-          "delay_sum": 15392,
-          "delay_sample_count": 5
+          "total": 6,
+          "delay_sum": 15620,
+          "delay_sample_count": 6
         }
       },
-      "on_time": 2,
+      "on_time": 3,
       "early": 0,
       "late": 3,
-      "total": 5,
-      "delay_sum": 15392,
-      "delay_sample_count": 5
+      "total": 6,
+      "delay_sum": 15620,
+      "delay_sample_count": 6
     },
     "11022": {
       "stop_name": "Cary Senior Center at Bond Park",
       "routes": {
         "4": {
           "route_short_name": "4",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
           "late": 3,
-          "total": 5,
-          "delay_sum": 15004,
-          "delay_sample_count": 5
+          "total": 6,
+          "delay_sum": 15123,
+          "delay_sample_count": 6
         }
       },
-      "on_time": 2,
+      "on_time": 3,
       "early": 0,
       "late": 3,
-      "total": 5,
-      "delay_sum": 15004,
-      "delay_sample_count": 5
+      "total": 6,
+      "delay_sum": 15123,
+      "delay_sample_count": 6
     },
     "11400": {
       "stop_name": "High House Rd at NW Maynard Rd (EB)",
       "routes": {
         "4": {
           "route_short_name": "4",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
           "late": 3,
-          "total": 5,
-          "delay_sum": 15213,
-          "delay_sample_count": 5
+          "total": 6,
+          "delay_sum": 15322,
+          "delay_sample_count": 6
         }
       },
-      "on_time": 2,
+      "on_time": 3,
       "early": 0,
       "late": 3,
-      "total": 5,
-      "delay_sum": 15213,
-      "delay_sample_count": 5
+      "total": 6,
+      "delay_sum": 15322,
+      "delay_sample_count": 6
     },
     "11163": {
       "stop_name": "Highland Village (EB)",
       "routes": {
         "4": {
           "route_short_name": "4",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
           "late": 3,
-          "total": 5,
-          "delay_sum": 15042,
-          "delay_sample_count": 5
+          "total": 6,
+          "delay_sum": 15062,
+          "delay_sample_count": 6
         }
       },
-      "on_time": 2,
+      "on_time": 3,
       "early": 0,
       "late": 3,
-      "total": 5,
-      "delay_sum": 15042,
-      "delay_sample_count": 5
+      "total": 6,
+      "delay_sum": 15062,
+      "delay_sample_count": 6
     },
     "11397": {
       "stop_name": "Highland Village (WB)",
@@ -542,18 +605,18 @@
           "route_short_name": "4",
           "on_time": 3,
           "early": 0,
-          "late": 2,
-          "total": 5,
-          "delay_sum": 8591,
-          "delay_sample_count": 5
+          "late": 3,
+          "total": 6,
+          "delay_sum": 9812,
+          "delay_sample_count": 6
         }
       },
       "on_time": 3,
       "early": 0,
-      "late": 2,
-      "total": 5,
-      "delay_sum": 8591,
-      "delay_sample_count": 5
+      "late": 3,
+      "total": 6,
+      "delay_sum": 9812,
+      "delay_sample_count": 6
     },
     "11401": {
       "stop_name": "High House Rd at Maynard Crossing",
@@ -562,18 +625,18 @@
           "route_short_name": "4",
           "on_time": 3,
           "early": 0,
-          "late": 2,
-          "total": 5,
-          "delay_sum": 8642,
-          "delay_sample_count": 5
+          "late": 3,
+          "total": 6,
+          "delay_sum": 9883,
+          "delay_sample_count": 6
         }
       },
       "on_time": 3,
       "early": 0,
-      "late": 2,
-      "total": 5,
-      "delay_sum": 8642,
-      "delay_sample_count": 5
+      "late": 3,
+      "total": 6,
+      "delay_sum": 9883,
+      "delay_sample_count": 6
     },
     "11150": {
       "stop_name": "High House Rd at Davis Dr (WB)",
@@ -582,38 +645,38 @@
           "route_short_name": "4",
           "on_time": 3,
           "early": 0,
-          "late": 2,
-          "total": 5,
-          "delay_sum": 8561,
-          "delay_sample_count": 5
+          "late": 3,
+          "total": 6,
+          "delay_sum": 9769,
+          "delay_sample_count": 6
         }
       },
       "on_time": 3,
       "early": 0,
-      "late": 2,
-      "total": 5,
-      "delay_sum": 8561,
-      "delay_sample_count": 5
+      "late": 3,
+      "total": 6,
+      "delay_sum": 9769,
+      "delay_sample_count": 6
     },
     "1441": {
       "stop_name": "NC 55 at High House Rd",
       "routes": {
         "4": {
           "route_short_name": "4",
-          "on_time": 3,
+          "on_time": 4,
           "early": 0,
           "late": 2,
-          "total": 5,
-          "delay_sum": 8286,
-          "delay_sample_count": 5
+          "total": 6,
+          "delay_sum": 8311,
+          "delay_sample_count": 6
         }
       },
-      "on_time": 3,
+      "on_time": 4,
       "early": 0,
       "late": 2,
-      "total": 5,
-      "delay_sum": 8286,
-      "delay_sample_count": 5
+      "total": 6,
+      "delay_sum": 8311,
+      "delay_sample_count": 6
     },
     "1380": {
       "stop_name": "Buck Jones Rd at Nottingham Dr (WB)",
@@ -735,14 +798,23 @@
           "total": 8,
           "delay_sum": 16596,
           "delay_sample_count": 8
+        },
+        "3": {
+          "route_short_name": "3",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 0,
+          "delay_sample_count": 2
         }
       },
-      "on_time": 5,
+      "on_time": 7,
       "early": 1,
       "late": 2,
-      "total": 8,
+      "total": 10,
       "delay_sum": 16596,
-      "delay_sample_count": 8
+      "delay_sample_count": 10
     },
     "11437": {
       "stop_name": "Macedonia Lake Dr at Tryon Manor Dr",
@@ -949,20 +1021,20 @@
       "routes": {
         "5": {
           "route_short_name": "5",
-          "on_time": 0,
+          "on_time": 1,
           "early": 0,
-          "late": 1,
-          "total": 1,
-          "delay_sum": 383,
-          "delay_sample_count": 1
+          "late": 2,
+          "total": 3,
+          "delay_sum": 743,
+          "delay_sample_count": 3
         }
       },
-      "on_time": 0,
+      "on_time": 1,
       "early": 0,
-      "late": 1,
-      "total": 1,
-      "delay_sum": 383,
-      "delay_sample_count": 1
+      "late": 2,
+      "total": 3,
+      "delay_sum": 743,
+      "delay_sample_count": 3
     },
     "11097": {
       "stop_name": "Kildaire Farm Rd at SE Maynard Rd",
@@ -971,18 +1043,18 @@
           "route_short_name": "5",
           "on_time": 0,
           "early": 0,
-          "late": 1,
-          "total": 1,
-          "delay_sum": 345,
-          "delay_sample_count": 1
+          "late": 2,
+          "total": 2,
+          "delay_sum": 656,
+          "delay_sample_count": 2
         }
       },
       "on_time": 0,
       "early": 0,
-      "late": 1,
-      "total": 1,
-      "delay_sum": 345,
-      "delay_sample_count": 1
+      "late": 2,
+      "total": 2,
+      "delay_sum": 656,
+      "delay_sample_count": 2
     },
     "8203": {
       "stop_name": "8203",
@@ -1083,7 +1155,167 @@
       "total": 1,
       "delay_sum": 17,
       "delay_sample_count": 1
+    },
+    "1367": {
+      "stop_name": "Kildaire Farm Rd at Mayfair Plaza",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 319,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 319,
+      "delay_sample_count": 2
+    },
+    "11074": {
+      "stop_name": "Kildaire Farm Rd at WakeMed Cary (SB)",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 187,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 187,
+      "delay_sample_count": 2
+    },
+    "1362": {
+      "stop_name": "N Harrison Ave at Northwoods Market",
+      "routes": {
+        "3": {
+          "route_short_name": "3",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 28,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 28,
+      "delay_sample_count": 1
+    },
+    "11095": {
+      "stop_name": "N Harrison Ave at St Charles Pl",
+      "routes": {
+        "3": {
+          "route_short_name": "3",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 0,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 0,
+      "delay_sample_count": 1
+    },
+    "11753": {
+      "stop_name": "SW Cary Pkwy at Laura Duncan Rd",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 0,
+          "early": 0,
+          "late": 1,
+          "total": 1,
+          "delay_sum": 742,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 0,
+      "early": 0,
+      "late": 1,
+      "total": 1,
+      "delay_sum": 742,
+      "delay_sample_count": 1
+    },
+    "11393": {
+      "stop_name": "High House Rd at Highland Village Dr (EB)",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 9,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 9,
+      "delay_sample_count": 1
+    },
+    "11700": {
+      "stop_name": "High House Rd at Highland Village Dr (WB)",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 0,
+          "early": 0,
+          "late": 1,
+          "total": 1,
+          "delay_sum": 1063,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 0,
+      "early": 0,
+      "late": 1,
+      "total": 1,
+      "delay_sum": 1063,
+      "delay_sample_count": 1
+    },
+    "11704": {
+      "stop_name": "Old Apex Rd at SW Cary Pkwy",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 0,
+          "early": 0,
+          "late": 1,
+          "total": 1,
+          "delay_sum": 1067,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 0,
+      "early": 0,
+      "late": 1,
+      "total": 1,
+      "delay_sum": 1067,
+      "delay_sample_count": 1
     }
   },
-  "last_updated": "2026-10-15T14:21:16.874196+00:00"
+  "last_updated": "2026-10-15T14:25:06.559283+00:00"
 }
