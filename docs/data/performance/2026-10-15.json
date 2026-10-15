@@ -1,12 +1,12 @@
 {
   "date": "2026-10-15",
   "system": {
-    "on_time": 136,
+    "on_time": 151,
     "early": 4,
     "late": 135,
-    "total": 275,
-    "delay_sum": 591676,
-    "delay_sample_count": 275
+    "total": 290,
+    "delay_sum": 592100,
+    "delay_sample_count": 290
   },
   "routes": {
     "GA1": {
@@ -56,12 +56,12 @@
     },
     "5": {
       "route_short_name": "5",
-      "on_time": 9,
+      "on_time": 16,
       "early": 0,
       "late": 7,
-      "total": 16,
-      "delay_sum": 27533,
-      "delay_sample_count": 16
+      "total": 23,
+      "delay_sum": 27632,
+      "delay_sample_count": 23
     },
     "2": {
       "route_short_name": "2",
@@ -74,12 +74,12 @@
     },
     "3": {
       "route_short_name": "3",
-      "on_time": 6,
+      "on_time": 14,
       "early": 0,
       "late": 3,
-      "total": 9,
-      "delay_sum": 22311,
-      "delay_sample_count": 9
+      "total": 17,
+      "delay_sum": 22636,
+      "delay_sample_count": 17
     },
     "9": {
       "route_short_name": "9",
@@ -322,12 +322,12 @@
         },
         "5": {
           "route_short_name": "5",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
           "late": 1,
-          "total": 3,
+          "total": 4,
           "delay_sum": 8413,
-          "delay_sample_count": 3
+          "delay_sample_count": 4
         },
         "2": {
           "route_short_name": "2",
@@ -340,20 +340,20 @@
         },
         "3": {
           "route_short_name": "3",
-          "on_time": 1,
+          "on_time": 3,
           "early": 0,
           "late": 1,
-          "total": 2,
-          "delay_sum": 7501,
-          "delay_sample_count": 2
+          "total": 4,
+          "delay_sum": 7680,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 13,
+      "on_time": 16,
       "early": 1,
       "late": 9,
-      "total": 23,
-      "delay_sum": 40765,
-      "delay_sample_count": 23
+      "total": 26,
+      "delay_sum": 40944,
+      "delay_sample_count": 26
     },
     "1398": {
       "stop_name": "Cary Depot South Platform",
@@ -396,12 +396,12 @@
         },
         "5": {
           "route_short_name": "5",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
           "late": 0,
-          "total": 2,
+          "total": 3,
           "delay_sum": 231,
-          "delay_sample_count": 2
+          "delay_sample_count": 3
         },
         "3": {
           "route_short_name": "3",
@@ -422,12 +422,12 @@
           "delay_sample_count": 1
         }
       },
-      "on_time": 12,
+      "on_time": 13,
       "early": 1,
       "late": 10,
-      "total": 23,
+      "total": 24,
       "delay_sum": 38721,
-      "delay_sample_count": 23
+      "delay_sample_count": 24
     },
     "1375": {
       "stop_name": "Walnut St at Cary Commons",
@@ -801,20 +801,20 @@
         },
         "3": {
           "route_short_name": "3",
-          "on_time": 2,
+          "on_time": 5,
           "early": 0,
           "late": 1,
-          "total": 3,
-          "delay_sum": 7338,
-          "delay_sample_count": 3
+          "total": 6,
+          "delay_sum": 7372,
+          "delay_sample_count": 6
         }
       },
-      "on_time": 7,
+      "on_time": 10,
       "early": 1,
       "late": 3,
-      "total": 11,
-      "delay_sum": 23934,
-      "delay_sample_count": 11
+      "total": 14,
+      "delay_sum": 23968,
+      "delay_sample_count": 14
     },
     "11437": {
       "stop_name": "Macedonia Lake Dr at Tryon Manor Dr",
@@ -1021,11 +1021,31 @@
       "routes": {
         "5": {
           "route_short_name": "5",
+          "on_time": 3,
+          "early": 0,
+          "late": 3,
+          "total": 6,
+          "delay_sum": 9296,
+          "delay_sample_count": 6
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 3,
+      "total": 6,
+      "delay_sum": 9296,
+      "delay_sample_count": 6
+    },
+    "11097": {
+      "stop_name": "Kildaire Farm Rd at SE Maynard Rd",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
           "on_time": 1,
           "early": 0,
           "late": 3,
           "total": 4,
-          "delay_sum": 9264,
+          "delay_sum": 9148,
           "delay_sample_count": 4
         }
       },
@@ -1033,28 +1053,8 @@
       "early": 0,
       "late": 3,
       "total": 4,
-      "delay_sum": 9264,
+      "delay_sum": 9148,
       "delay_sample_count": 4
-    },
-    "11097": {
-      "stop_name": "Kildaire Farm Rd at SE Maynard Rd",
-      "routes": {
-        "5": {
-          "route_short_name": "5",
-          "on_time": 0,
-          "early": 0,
-          "late": 3,
-          "total": 3,
-          "delay_sum": 9119,
-          "delay_sample_count": 3
-        }
-      },
-      "on_time": 0,
-      "early": 0,
-      "late": 3,
-      "total": 3,
-      "delay_sum": 9119,
-      "delay_sample_count": 3
     },
     "8203": {
       "stop_name": "8203",
@@ -1161,31 +1161,51 @@
       "routes": {
         "5": {
           "route_short_name": "5",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
           "late": 0,
-          "total": 2,
-          "delay_sum": 319,
-          "delay_sample_count": 2
+          "total": 3,
+          "delay_sum": 357,
+          "delay_sample_count": 3
         }
       },
-      "on_time": 2,
+      "on_time": 3,
       "early": 0,
       "late": 0,
-      "total": 2,
-      "delay_sum": 319,
-      "delay_sample_count": 2
+      "total": 3,
+      "delay_sum": 357,
+      "delay_sample_count": 3
     },
     "11074": {
       "stop_name": "Kildaire Farm Rd at WakeMed Cary (SB)",
       "routes": {
         "5": {
           "route_short_name": "5",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 187,
+          "delay_sample_count": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3,
+      "delay_sum": 187,
+      "delay_sample_count": 3
+    },
+    "1362": {
+      "stop_name": "N Harrison Ave at Northwoods Market",
+      "routes": {
+        "3": {
+          "route_short_name": "3",
           "on_time": 2,
           "early": 0,
           "late": 0,
           "total": 2,
-          "delay_sum": 187,
+          "delay_sum": 28,
           "delay_sample_count": 2
         }
       },
@@ -1193,48 +1213,28 @@
       "early": 0,
       "late": 0,
       "total": 2,
-      "delay_sum": 187,
-      "delay_sample_count": 2
-    },
-    "1362": {
-      "stop_name": "N Harrison Ave at Northwoods Market",
-      "routes": {
-        "3": {
-          "route_short_name": "3",
-          "on_time": 1,
-          "early": 0,
-          "late": 0,
-          "total": 1,
-          "delay_sum": 28,
-          "delay_sample_count": 1
-        }
-      },
-      "on_time": 1,
-      "early": 0,
-      "late": 0,
-      "total": 1,
       "delay_sum": 28,
-      "delay_sample_count": 1
+      "delay_sample_count": 2
     },
     "11095": {
       "stop_name": "N Harrison Ave at St Charles Pl",
       "routes": {
         "3": {
           "route_short_name": "3",
-          "on_time": 1,
+          "on_time": 3,
           "early": 0,
           "late": 1,
-          "total": 2,
-          "delay_sum": 7444,
-          "delay_sample_count": 2
+          "total": 4,
+          "delay_sum": 7556,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 1,
+      "on_time": 3,
       "early": 0,
       "late": 1,
-      "total": 2,
-      "delay_sum": 7444,
-      "delay_sample_count": 2
+      "total": 4,
+      "delay_sum": 7556,
+      "delay_sample_count": 4
     },
     "11753": {
       "stop_name": "SW Cary Pkwy at Laura Duncan Rd",
@@ -1317,5 +1317,5 @@
       "delay_sample_count": 1
     }
   },
-  "last_updated": "2026-10-15T14:26:13.704853+00:00"
+  "last_updated": "2026-10-15T14:29:13.633781+00:00"
 }
