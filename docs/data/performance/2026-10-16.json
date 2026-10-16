@@ -1,12 +1,12 @@
 {
   "date": "2026-10-16",
   "system": {
-    "on_time": 40,
+    "on_time": 55,
     "early": 0,
     "late": 0,
-    "total": 40,
-    "delay_sum": 1102,
-    "delay_sample_count": 40
+    "total": 55,
+    "delay_sum": 1301,
+    "delay_sample_count": 55
   },
   "routes": {
     "GA1": {
@@ -35,6 +35,15 @@
       "total": 10,
       "delay_sum": 279,
       "delay_sample_count": 10
+    },
+    "2": {
+      "route_short_name": "2",
+      "on_time": 15,
+      "early": 0,
+      "late": 0,
+      "total": 15,
+      "delay_sum": 199,
+      "delay_sample_count": 15
     }
   },
   "stops": {
@@ -389,14 +398,23 @@
           "total": 1,
           "delay_sum": 0,
           "delay_sample_count": 1
+        },
+        "2": {
+          "route_short_name": "2",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 0,
+          "delay_sample_count": 3
         }
       },
-      "on_time": 1,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 1,
+      "total": 4,
       "delay_sum": 0,
-      "delay_sample_count": 1
+      "delay_sample_count": 4
     },
     "11397": {
       "stop_name": "Highland Village (WB)",
@@ -537,7 +555,107 @@
       "total": 1,
       "delay_sum": 0,
       "delay_sample_count": 1
+    },
+    "11209": {
+      "stop_name": "NE Maynard Rd at Reedy Creek Rd (EB)",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 0,
+          "delay_sample_count": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3,
+      "delay_sum": 0,
+      "delay_sample_count": 3
+    },
+    "11605": {
+      "stop_name": "Corporate Center Dr at Play Golf Way (NB)",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 199,
+          "delay_sample_count": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3,
+      "delay_sum": 199,
+      "delay_sample_count": 3
+    },
+    "8203": {
+      "stop_name": "Edwards Mill Rd at Corinthian Way",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 0,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 0,
+      "delay_sample_count": 2
+    },
+    "11655": {
+      "stop_name": "Corporate Center Dr at Play Golf Wy (SB)",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 0,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 0,
+      "delay_sample_count": 2
+    },
+    "11112": {
+      "stop_name": "NE Maynard Rd at Reedy Creek Rd (WB)",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 0,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 0,
+      "delay_sample_count": 2
     }
   },
-  "last_updated": "2026-10-16T09:45:16.989766+00:00"
+  "last_updated": "2026-10-16T09:49:20.134339+00:00"
 }
