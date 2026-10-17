@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T12:19:11.351024+00:00",
+  "updated_at": "2026-10-17T12:20:16.073555+00:00",
   "trips": [
     {
       "trip_id": "000a08fb-8b07-4b9f-be88-9e1ff7c27c36",
@@ -21,6 +21,14 @@
       "trip_id": "0cf06856-3ae0-4965-8ecf-1f688d6928fb",
       "route_id": "6",
       "route_short_name": "6",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "4ae3f8f7-421f-4474-8269-3658bbb01fa4",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -334,7 +342,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 66,
       "status": "on_time"
     },
     {
@@ -438,7 +446,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 28,
+      "delay_seconds": 32,
       "status": "on_time"
     },
     {
@@ -486,7 +494,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 176,
+      "delay_seconds": 179,
       "status": "on_time"
     },
     {
@@ -518,7 +526,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 2,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -558,7 +566,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 78,
+      "delay_seconds": 58,
       "status": "on_time"
     },
     {
@@ -621,9 +629,9 @@
       "trip_id": "765d0a25-c453-49a7-bbcd-cc350235df2f",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 183,
-      "status": "on_time"
+      "next_stop_sequence": 103,
+      "delay_seconds": -615,
+      "status": "early"
     },
     {
       "trip_id": "bd36f923-afa6-414c-8f2a-e2f48bde8e47",
