@@ -1,8 +1,16 @@
 {
-  "updated_at": "2026-10-17T13:48:14.346119+00:00",
+  "updated_at": "2026-10-17T13:49:11.422590+00:00",
   "trips": [
     {
       "trip_id": "34a975ec-df20-479c-8e46-07b5e2f35490",
+      "route_id": "2",
+      "route_short_name": "2",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "ee5d768f-29e5-4d89-9767-f502392914b3",
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
@@ -294,7 +302,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 33,
       "status": "on_time"
     },
     {
@@ -390,7 +398,7 @@
       "route_id": "4",
       "route_short_name": "4",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 24,
       "status": "on_time"
     },
     {
@@ -422,7 +430,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 1,
       "status": "on_time"
     },
     {
@@ -430,7 +438,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 2,
       "status": "on_time"
     },
     {
@@ -565,9 +573,9 @@
       "trip_id": "76cde99a-571a-4246-848e-1357317d0ed5",
       "route_id": "2",
       "route_short_name": "2",
-      "next_stop_sequence": 0,
-      "delay_seconds": 36,
-      "status": "on_time"
+      "next_stop_sequence": 42,
+      "delay_seconds": -659,
+      "status": "early"
     },
     {
       "trip_id": "52cdef8b-dc8c-48df-a7ae-51258dbe321a",
@@ -599,14 +607,6 @@
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
       "delay_seconds": 192,
-      "status": "on_time"
-    },
-    {
-      "trip_id": "e09c4bbb-5165-41b5-bb8d-ab98d77b8601",
-      "route_id": "2",
-      "route_short_name": "2",
-      "next_stop_sequence": 34,
-      "delay_seconds": -53,
       "status": "on_time"
     }
   ]
