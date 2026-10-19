@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T12:12:14.914665+00:00",
+  "updated_at": "2026-10-19T12:13:27.585018+00:00",
   "trips": [
     {
       "trip_id": "f50f6e86-0a79-4937-9f3c-00f7f3721b0d",
@@ -10,9 +10,25 @@
       "status": "on_time"
     },
     {
+      "trip_id": "5ad3644e-d698-49ed-9f51-451d5ffe0369",
+      "route_id": "1",
+      "route_short_name": "1",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
       "trip_id": "d0f348d5-78ab-49bd-b0d3-81790dd61d92",
       "route_id": "1",
       "route_short_name": "1",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "87671c49-6885-4790-8b4d-5367dc624389",
+      "route_id": "7",
+      "route_short_name": "7",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -358,7 +374,7 @@
       "route_id": "9",
       "route_short_name": "9",
       "next_stop_sequence": 0,
-      "delay_seconds": 4,
+      "delay_seconds": 64,
       "status": "on_time"
     },
     {
@@ -398,7 +414,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 140,
+      "delay_seconds": 82,
       "status": "on_time"
     },
     {
@@ -462,7 +478,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 8,
       "status": "on_time"
     },
     {
@@ -597,9 +613,9 @@
       "trip_id": "ceeff86b-62ab-4e14-91a8-0ef63c1eda31",
       "route_id": "1",
       "route_short_name": "1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 16,
-      "status": "on_time"
+      "next_stop_sequence": 59,
+      "delay_seconds": -167,
+      "status": "early"
     },
     {
       "trip_id": "091eaee7-bb93-483a-8137-c1bc8b21d308",
@@ -608,14 +624,6 @@
       "next_stop_sequence": 64,
       "delay_seconds": -612,
       "status": "early"
-    },
-    {
-      "trip_id": "0a8807da-a8dd-4af9-b08e-f122ab653123",
-      "route_id": "1",
-      "route_short_name": "1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 66,
-      "status": "on_time"
     }
   ]
 }
