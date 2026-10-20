@@ -1,12 +1,12 @@
 {
   "date": "2026-10-20",
   "system": {
-    "on_time": 36,
+    "on_time": 51,
     "early": 0,
     "late": 0,
-    "total": 36,
-    "delay_sum": 841,
-    "delay_sample_count": 36
+    "total": 51,
+    "delay_sum": 923,
+    "delay_sample_count": 51
   },
   "routes": {
     "GA1": {
@@ -26,6 +26,15 @@
       "total": 15,
       "delay_sum": 193,
       "delay_sample_count": 15
+    },
+    "9": {
+      "route_short_name": "9",
+      "on_time": 15,
+      "early": 0,
+      "late": 0,
+      "total": 15,
+      "delay_sum": 82,
+      "delay_sample_count": 15
     }
   },
   "stops": {
@@ -40,14 +49,23 @@
           "total": 3,
           "delay_sum": 0,
           "delay_sample_count": 3
+        },
+        "9": {
+          "route_short_name": "9",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 0,
+          "delay_sample_count": 2
         }
       },
-      "on_time": 3,
+      "on_time": 5,
       "early": 0,
       "late": 0,
-      "total": 3,
+      "total": 5,
       "delay_sum": 0,
-      "delay_sample_count": 3
+      "delay_sample_count": 5
     },
     "16093": {
       "stop_name": "Apex Senior Center Main Entrance ",
@@ -328,7 +346,107 @@
       "total": 2,
       "delay_sum": 0,
       "delay_sample_count": 2
+    },
+    "1398": {
+      "stop_name": "Cary Depot South Platform",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 0,
+          "delay_sample_count": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3,
+      "delay_sum": 0,
+      "delay_sample_count": 3
+    },
+    "11700": {
+      "stop_name": "High House Rd at Highland Village Dr (WB)",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 19,
+          "delay_sample_count": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3,
+      "delay_sum": 19,
+      "delay_sample_count": 3
+    },
+    "11704": {
+      "stop_name": "Old Apex Rd at SW Cary Pkwy",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 3,
+          "early": 0,
+          "late": 0,
+          "total": 3,
+          "delay_sum": 48,
+          "delay_sample_count": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3,
+      "delay_sum": 48,
+      "delay_sample_count": 3
+    },
+    "11753": {
+      "stop_name": "SW Cary Pkwy at Laura Duncan Rd",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 0,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 0,
+      "delay_sample_count": 2
+    },
+    "11393": {
+      "stop_name": "High House Rd at Highland Village Dr (EB)",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 15,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 15,
+      "delay_sample_count": 2
     }
   },
-  "last_updated": "2026-10-20T09:47:10.894557+00:00"
+  "last_updated": "2026-10-20T09:52:12.069365+00:00"
 }
