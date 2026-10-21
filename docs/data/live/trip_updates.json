@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21T13:50:18.393477+00:00",
+  "updated_at": "2026-10-21T13:51:16.557731+00:00",
   "trips": [
     {
       "trip_id": "8f695bbd-300e-4efb-8b5b-9f67e94e9efc",
@@ -13,6 +13,14 @@
       "trip_id": "b07c8395-9dbb-4ffd-9631-79de5b294d06",
       "route_id": "4",
       "route_short_name": "4",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "32127aa6-8b11-466d-b9ab-8408915c960c",
+      "route_id": "2",
+      "route_short_name": "2",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -422,7 +430,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 265,
+      "delay_seconds": 275,
       "status": "on_time"
     },
     {
@@ -462,7 +470,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 154,
+      "delay_seconds": 131,
       "status": "on_time"
     },
     {
@@ -510,7 +518,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 12,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -534,8 +542,8 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 271,
-      "status": "on_time"
+      "delay_seconds": 331,
+      "status": "late"
     },
     {
       "trip_id": "1740b390-f8e0-42b0-ae56-6312ad825b5c",
@@ -565,9 +573,9 @@
       "trip_id": "32257288-2674-4139-b4e8-095d6a22c847",
       "route_id": "2",
       "route_short_name": "2",
-      "next_stop_sequence": 0,
-      "delay_seconds": 310,
-      "status": "late"
+      "next_stop_sequence": 42,
+      "delay_seconds": -545,
+      "status": "early"
     },
     {
       "trip_id": "6b175157-2c37-48d6-a842-dd3e110aadac",
@@ -630,7 +638,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 308,
+      "delay_seconds": 368,
       "status": "late"
     },
     {
