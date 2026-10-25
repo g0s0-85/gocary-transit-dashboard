@@ -550,7 +550,7 @@
     "trip_id": "a5649f95-7c7d-4274-8d06-e2ee638c0c70",
     "stop_sequence": 20,
     "stop_id": "11097",
-    "delay": 74
+    "delay": 120
   },
   "a5649f95-7c7d-4274-8d06-e2ee638c0c70:30": {
     "route_id": "5",
@@ -802,7 +802,7 @@
     "trip_id": "223d7171-c509-4102-8a85-7e17f2e93db0",
     "stop_sequence": 0,
     "stop_id": "11142",
-    "delay": 0
+    "delay": 2
   },
   "223d7171-c509-4102-8a85-7e17f2e93db0:22": {
     "route_id": "7",
@@ -831,13 +831,6 @@
     "stop_sequence": 64,
     "stop_id": "1398",
     "delay": 0
-  },
-  "fc6cd5aa-9633-4022-aaf3-94617cdb6b92:60": {
-    "route_id": "7",
-    "trip_id": "fc6cd5aa-9633-4022-aaf3-94617cdb6b92",
-    "stop_sequence": 60,
-    "stop_id": "11142",
-    "delay": -309
   },
   "7e687fbc-d8f0-4e84-9b7b-4ba43afbcbd6:0": {
     "route_id": "3",
@@ -1014,20 +1007,6 @@
     "stop_id": "11142",
     "delay": 0
   },
-  "3811e4a3-36bb-4ddd-a280-9e2ff5cf9b37:0": {
-    "route_id": "GA1",
-    "trip_id": "3811e4a3-36bb-4ddd-a280-9e2ff5cf9b37",
-    "stop_sequence": 0,
-    "stop_id": "1452",
-    "delay": 401
-  },
-  "3811e4a3-36bb-4ddd-a280-9e2ff5cf9b37:11": {
-    "route_id": "GA1",
-    "trip_id": "3811e4a3-36bb-4ddd-a280-9e2ff5cf9b37",
-    "stop_sequence": 11,
-    "stop_id": "16093",
-    "delay": 285
-  },
   "66f99ec5-dd11-4e34-bcb3-841f7d2dbc3e:0": {
     "route_id": "GA1",
     "trip_id": "66f99ec5-dd11-4e34-bcb3-841f7d2dbc3e",
@@ -1110,7 +1089,7 @@
     "trip_id": "662bce55-15e6-4a1c-b14e-295a3227f5a2",
     "stop_sequence": 0,
     "stop_id": "1452",
-    "delay": 0
+    "delay": 17
   },
   "662bce55-15e6-4a1c-b14e-295a3227f5a2:11": {
     "route_id": "GA1",
@@ -1138,21 +1117,21 @@
     "trip_id": "114e4b5a-16c4-4d31-b73f-83d5ef8c0439",
     "stop_sequence": 0,
     "stop_id": "16031",
-    "delay": 159
+    "delay": 177
   },
   "114e4b5a-16c4-4d31-b73f-83d5ef8c0439:29": {
     "route_id": "GA1",
     "trip_id": "114e4b5a-16c4-4d31-b73f-83d5ef8c0439",
     "stop_sequence": 29,
     "stop_id": "16045",
-    "delay": 37
+    "delay": 24
   },
   "114e4b5a-16c4-4d31-b73f-83d5ef8c0439:35": {
     "route_id": "GA1",
     "trip_id": "114e4b5a-16c4-4d31-b73f-83d5ef8c0439",
     "stop_sequence": 35,
     "stop_id": "16049",
-    "delay": 12
+    "delay": 26
   },
   "114e4b5a-16c4-4d31-b73f-83d5ef8c0439:44": {
     "route_id": "GA1",
@@ -1181,20 +1160,6 @@
     "stop_sequence": 85,
     "stop_id": "1452",
     "delay": 17
-  },
-  "3811e4a3-36bb-4ddd-a280-9e2ff5cf9b37:75": {
-    "route_id": "GA1",
-    "trip_id": "3811e4a3-36bb-4ddd-a280-9e2ff5cf9b37",
-    "stop_sequence": 75,
-    "stop_id": "16021",
-    "delay": 182
-  },
-  "3811e4a3-36bb-4ddd-a280-9e2ff5cf9b37:130": {
-    "route_id": "GA1",
-    "trip_id": "3811e4a3-36bb-4ddd-a280-9e2ff5cf9b37",
-    "stop_sequence": 130,
-    "stop_id": "16031",
-    "delay": 159
   },
   "2cd8985c-9f80-4576-81ba-e5d0c1f7caf6:0": {
     "route_id": "7",
@@ -1356,5 +1321,54 @@
     "stop_sequence": 44,
     "stop_id": "1398",
     "delay": 0
+  },
+  "8cad657c-3c08-4a9d-89fa-21440acbc73b:0": {
+    "route_id": "GA1",
+    "trip_id": "8cad657c-3c08-4a9d-89fa-21440acbc73b",
+    "stop_sequence": 0,
+    "stop_id": "16031",
+    "delay": 0
+  },
+  "8cad657c-3c08-4a9d-89fa-21440acbc73b:29": {
+    "route_id": "GA1",
+    "trip_id": "8cad657c-3c08-4a9d-89fa-21440acbc73b",
+    "stop_sequence": 29,
+    "stop_id": "16045",
+    "delay": 80
+  },
+  "8cad657c-3c08-4a9d-89fa-21440acbc73b:35": {
+    "route_id": "GA1",
+    "trip_id": "8cad657c-3c08-4a9d-89fa-21440acbc73b",
+    "stop_sequence": 35,
+    "stop_id": "16049",
+    "delay": 48
+  },
+  "8cad657c-3c08-4a9d-89fa-21440acbc73b:44": {
+    "route_id": "GA1",
+    "trip_id": "8cad657c-3c08-4a9d-89fa-21440acbc73b",
+    "stop_sequence": 44,
+    "stop_id": "16061",
+    "delay": 22
+  },
+  "8cad657c-3c08-4a9d-89fa-21440acbc73b:65": {
+    "route_id": "GA1",
+    "trip_id": "8cad657c-3c08-4a9d-89fa-21440acbc73b",
+    "stop_sequence": 65,
+    "stop_id": "16077",
+    "delay": 52
+  },
+  "8cad657c-3c08-4a9d-89fa-21440acbc73b:76": {
+    "route_id": "GA1",
+    "trip_id": "8cad657c-3c08-4a9d-89fa-21440acbc73b",
+    "stop_sequence": 76,
+    "stop_id": "16085",
+    "delay": 65
+  },
+  "8cad657c-3c08-4a9d-89fa-21440acbc73b:85": {
+    "route_id": "GA1",
+    "trip_id": "8cad657c-3c08-4a9d-89fa-21440acbc73b",
+    "stop_sequence": 85,
+    "stop_id": "1452",
+    "delay": 65
   }
 }
