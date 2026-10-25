@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-10-25T19:51:11.990958+00:00",
+  "updated_at": "2026-10-25T19:52:13.721128+00:00",
   "trips": [
     {
       "trip_id": "f34f911e-2b2d-47d2-8f66-b52804384bdc",
       "route_id": "9",
       "route_short_name": "9",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "063f72c2-18d6-49e4-aa3a-0bb041775063",
+      "route_id": "4",
+      "route_short_name": "4",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -146,6 +154,14 @@
       "status": "on_time"
     },
     {
+      "trip_id": "b18ec121-762e-4b7c-bb58-e0c286590818",
+      "route_id": "5",
+      "route_short_name": "5",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
       "trip_id": "b00f9439-e4ec-4676-9094-525eaa97bbd2",
       "route_id": "2",
       "route_short_name": "2",
@@ -246,7 +262,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 23,
       "status": "on_time"
     },
     {
@@ -262,7 +278,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 80,
+      "delay_seconds": 132,
       "status": "on_time"
     },
     {
@@ -333,9 +349,9 @@
       "trip_id": "8b03e59c-cf8c-4fbc-8821-5af16465bc4d",
       "route_id": "6",
       "route_short_name": "6",
-      "next_stop_sequence": 0,
-      "delay_seconds": 228,
-      "status": "on_time"
+      "next_stop_sequence": 47,
+      "delay_seconds": -511,
+      "status": "early"
     },
     {
       "trip_id": "d1abee62-7e98-422b-8935-d717d01aaf98",
@@ -349,9 +365,9 @@
       "trip_id": "f4ba49ff-d5e5-4672-bb5c-f8f0d8ac196a",
       "route_id": "3",
       "route_short_name": "3",
-      "next_stop_sequence": 0,
-      "delay_seconds": 48,
-      "status": "on_time"
+      "next_stop_sequence": 21,
+      "delay_seconds": -529,
+      "status": "early"
     }
   ]
 }
