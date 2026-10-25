@@ -2,11 +2,11 @@
   "date": "2026-10-25",
   "system": {
     "on_time": 250,
-    "early": 5,
+    "early": 6,
     "late": 7,
-    "total": 262,
-    "delay_sum": 12475,
-    "delay_sample_count": 262
+    "total": 263,
+    "delay_sum": 12378,
+    "delay_sample_count": 263
   },
   "routes": {
     "GA1": {
@@ -84,11 +84,11 @@
     "3": {
       "route_short_name": "3",
       "on_time": 14,
-      "early": 0,
+      "early": 1,
       "late": 0,
-      "total": 14,
-      "delay_sum": 70,
-      "delay_sample_count": 14
+      "total": 15,
+      "delay_sum": -27,
+      "delay_sample_count": 15
     }
   },
   "stops": {
@@ -922,19 +922,19 @@
         "3": {
           "route_short_name": "3",
           "on_time": 4,
-          "early": 0,
+          "early": 1,
           "late": 0,
-          "total": 4,
-          "delay_sum": 0,
-          "delay_sample_count": 4
+          "total": 5,
+          "delay_sum": -97,
+          "delay_sample_count": 5
         }
       },
       "on_time": 9,
-      "early": 1,
+      "early": 2,
       "late": 0,
-      "total": 10,
-      "delay_sum": -281,
-      "delay_sample_count": 10
+      "total": 11,
+      "delay_sum": -378,
+      "delay_sample_count": 11
     },
     "11209": {
       "stop_name": "NE Maynard Rd at Reedy Creek Rd (EB)",
@@ -1317,5 +1317,5 @@
       "delay_sample_count": 3
     }
   },
-  "last_updated": "2026-10-25T11:42:13.649956+00:00"
+  "last_updated": "2026-10-25T11:44:12.290648+00:00"
 }
