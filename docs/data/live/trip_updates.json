@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T14:22:14.030629+00:00",
+  "updated_at": "2026-10-27T14:23:19.461090+00:00",
   "trips": [
     {
       "trip_id": "8330fa77-f249-4728-816d-b6328cd5fac6",
@@ -21,6 +21,14 @@
       "trip_id": "acdf9326-9017-4f97-a62e-550b11d557ee",
       "route_id": "9",
       "route_short_name": "9",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "6aa9be2a-c15b-4d9c-8c48-461d1a36a91c",
+      "route_id": "6",
+      "route_short_name": "6",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -390,7 +398,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 5,
       "status": "on_time"
     },
     {
@@ -430,7 +438,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 54,
+      "delay_seconds": 114,
       "status": "on_time"
     },
     {
@@ -438,7 +446,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 59,
+      "delay_seconds": 88,
       "status": "on_time"
     },
     {
@@ -454,7 +462,7 @@
       "route_id": "6",
       "route_short_name": "6",
       "next_stop_sequence": 0,
-      "delay_seconds": 241,
+      "delay_seconds": 252,
       "status": "on_time"
     },
     {
@@ -470,7 +478,7 @@
       "route_id": "4",
       "route_short_name": "4",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 24,
       "status": "on_time"
     },
     {
@@ -597,9 +605,9 @@
       "trip_id": "446b1534-9312-4c93-812a-e59f580ff635",
       "route_id": "6",
       "route_short_name": "6",
-      "next_stop_sequence": 0,
-      "delay_seconds": 174,
-      "status": "on_time"
+      "next_stop_sequence": 49,
+      "delay_seconds": -423,
+      "status": "early"
     },
     {
       "trip_id": "7615e683-1400-4238-9960-6efb4b41f3d0",
