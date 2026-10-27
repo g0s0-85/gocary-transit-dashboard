@@ -1,12 +1,12 @@
 {
   "date": "2026-10-27",
   "system": {
-    "on_time": 91,
+    "on_time": 113,
     "early": 0,
     "late": 0,
-    "total": 91,
-    "delay_sum": 1938,
-    "delay_sample_count": 91
+    "total": 113,
+    "delay_sum": 2313,
+    "delay_sample_count": 113
   },
   "routes": {
     "9": {
@@ -53,6 +53,24 @@
       "total": 25,
       "delay_sum": 709,
       "delay_sample_count": 25
+    },
+    "7": {
+      "route_short_name": "7",
+      "on_time": 12,
+      "early": 0,
+      "late": 0,
+      "total": 12,
+      "delay_sum": 188,
+      "delay_sample_count": 12
+    },
+    "1": {
+      "route_short_name": "1",
+      "on_time": 10,
+      "early": 0,
+      "late": 0,
+      "total": 10,
+      "delay_sum": 187,
+      "delay_sample_count": 10
     }
   },
   "stops": {
@@ -76,14 +94,23 @@
           "total": 3,
           "delay_sum": 0,
           "delay_sample_count": 3
+        },
+        "1": {
+          "route_short_name": "1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 0,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 6,
+      "on_time": 7,
       "early": 0,
       "late": 0,
-      "total": 6,
+      "total": 7,
       "delay_sum": 0,
-      "delay_sample_count": 6
+      "delay_sample_count": 7
     },
     "11700": {
       "stop_name": "High House Rd at Highland Village Dr (WB)",
@@ -205,14 +232,23 @@
           "total": 3,
           "delay_sum": 0,
           "delay_sample_count": 3
+        },
+        "7": {
+          "route_short_name": "7",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 0,
+          "delay_sample_count": 2
         }
       },
-      "on_time": 6,
+      "on_time": 8,
       "early": 0,
       "late": 0,
-      "total": 6,
+      "total": 8,
       "delay_sum": 0,
-      "delay_sample_count": 6
+      "delay_sample_count": 8
     },
     "11209": {
       "stop_name": "NE Maynard Rd at Reedy Creek Rd (EB)",
@@ -494,14 +530,23 @@
           "total": 3,
           "delay_sum": 87,
           "delay_sample_count": 3
+        },
+        "1": {
+          "route_short_name": "1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 21,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 3,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 3,
-      "delay_sum": 87,
-      "delay_sample_count": 3
+      "total": 4,
+      "delay_sum": 108,
+      "delay_sample_count": 4
     },
     "1379": {
       "stop_name": "Buck Jones Rd at Nottingham Dr (EB)",
@@ -654,14 +699,23 @@
           "total": 2,
           "delay_sum": 21,
           "delay_sample_count": 2
+        },
+        "1": {
+          "route_short_name": "1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 9,
+          "delay_sample_count": 1
         }
       },
-      "on_time": 2,
+      "on_time": 3,
       "early": 0,
       "late": 0,
-      "total": 2,
-      "delay_sum": 21,
-      "delay_sample_count": 2
+      "total": 3,
+      "delay_sum": 30,
+      "delay_sample_count": 3
     },
     "11161": {
       "stop_name": "NC 55 at Walmart",
@@ -762,7 +816,287 @@
       "total": 2,
       "delay_sum": 148,
       "delay_sample_count": 2
+    },
+    "11301": {
+      "stop_name": "James Jackson Ave at Towerview Ct (WB)",
+      "routes": {
+        "7": {
+          "route_short_name": "7",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 0,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 0,
+      "delay_sample_count": 2
+    },
+    "11307": {
+      "stop_name": "Chapel Hill Rd at NW Cary Pkwy",
+      "routes": {
+        "7": {
+          "route_short_name": "7",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 42,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 42,
+      "delay_sample_count": 2
+    },
+    "11320": {
+      "stop_name": "Weston Pkwy at Evans Rd (EB)",
+      "routes": {
+        "7": {
+          "route_short_name": "7",
+          "on_time": 2,
+          "early": 0,
+          "late": 0,
+          "total": 2,
+          "delay_sum": 92,
+          "delay_sample_count": 2
+        }
+      },
+      "on_time": 2,
+      "early": 0,
+      "late": 0,
+      "total": 2,
+      "delay_sum": 92,
+      "delay_sample_count": 2
+    },
+    "11437": {
+      "stop_name": "Macedonia Lake Dr at Tryon Manor Dr",
+      "routes": {
+        "1": {
+          "route_short_name": "1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 0,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 0,
+      "delay_sample_count": 1
+    },
+    "11734": {
+      "stop_name": "Crossroads Plaza (WB)",
+      "routes": {
+        "1": {
+          "route_short_name": "1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 20,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 20,
+      "delay_sample_count": 1
+    },
+    "1913": {
+      "stop_name": "Dillard Dr at Meeting St (EB)",
+      "routes": {
+        "1": {
+          "route_short_name": "1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 0,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 0,
+      "delay_sample_count": 1
+    },
+    "11452": {
+      "stop_name": "E Chatham St at Chatham Square (WB)",
+      "routes": {
+        "1": {
+          "route_short_name": "1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 8,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 8,
+      "delay_sample_count": 1
+    },
+    "11002": {
+      "stop_name": "E Chatham St at Chatham Square (EB)",
+      "routes": {
+        "1": {
+          "route_short_name": "1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 0,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 0,
+      "delay_sample_count": 1
+    },
+    "11034": {
+      "stop_name": "Dillard Dr at Meeting St (WB)",
+      "routes": {
+        "1": {
+          "route_short_name": "1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 72,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 72,
+      "delay_sample_count": 1
+    },
+    "11234": {
+      "stop_name": "Crossroads Plaza (EB)",
+      "routes": {
+        "1": {
+          "route_short_name": "1",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 57,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 57,
+      "delay_sample_count": 1
+    },
+    "11142": {
+      "stop_name": "Harrison Oaks Blvd at N Harrison Ave",
+      "routes": {
+        "7": {
+          "route_short_name": "7",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 0,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 0,
+      "delay_sample_count": 1
+    },
+    "1331": {
+      "stop_name": "Weston Pkwy at Evans Rd (WB)",
+      "routes": {
+        "7": {
+          "route_short_name": "7",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 10,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 10,
+      "delay_sample_count": 1
+    },
+    "11273": {
+      "stop_name": "Chapel Hill Rd at Market Center Dr",
+      "routes": {
+        "7": {
+          "route_short_name": "7",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 23,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 23,
+      "delay_sample_count": 1
+    },
+    "11278": {
+      "stop_name": "James Jackson Ave at Towerview Ct (EB)",
+      "routes": {
+        "7": {
+          "route_short_name": "7",
+          "on_time": 1,
+          "early": 0,
+          "late": 0,
+          "total": 1,
+          "delay_sum": 21,
+          "delay_sample_count": 1
+        }
+      },
+      "on_time": 1,
+      "early": 0,
+      "late": 0,
+      "total": 1,
+      "delay_sum": 21,
+      "delay_sample_count": 1
     }
   },
-  "last_updated": "2026-10-27T09:53:11.030750+00:00"
+  "last_updated": "2026-10-27T10:05:17.538739+00:00"
 }
