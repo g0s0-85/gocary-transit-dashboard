@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T16:55:15.005102+00:00",
+  "updated_at": "2026-10-30T16:56:12.621988+00:00",
   "trips": [
     {
       "trip_id": "705f6b19-8d96-4f17-ba1d-60f609a0279a",
@@ -61,6 +61,14 @@
       "trip_id": "baa22f48-a974-45f9-bcdf-5711e83d93cb",
       "route_id": "2",
       "route_short_name": "2",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "508b795e-ab50-4b4a-bf93-57676de16b7f",
+      "route_id": "6",
+      "route_short_name": "6",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -478,7 +486,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 20,
       "status": "on_time"
     },
     {
@@ -518,7 +526,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 228,
+      "delay_seconds": 262,
       "status": "on_time"
     },
     {
@@ -534,7 +542,7 @@
       "route_id": "4",
       "route_short_name": "4",
       "next_stop_sequence": 0,
-      "delay_seconds": 5,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -630,7 +638,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 46,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -638,7 +646,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 121,
+      "delay_seconds": 147,
       "status": "on_time"
     },
     {
@@ -693,9 +701,9 @@
       "trip_id": "7c3c61e8-5815-4348-b7a3-ab0d4e1682ec",
       "route_id": "4",
       "route_short_name": "4",
-      "next_stop_sequence": 0,
-      "delay_seconds": 177,
-      "status": "on_time"
+      "next_stop_sequence": 61,
+      "delay_seconds": -282,
+      "status": "early"
     },
     {
       "trip_id": "3ad27dd8-0575-486f-8cc1-ed1cf1c0b07e",
