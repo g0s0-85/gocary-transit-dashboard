@@ -1,12 +1,12 @@
 {
   "date": "2026-11-01",
   "system": {
-    "on_time": 200,
+    "on_time": 202,
     "early": 0,
-    "late": 0,
-    "total": 200,
-    "delay_sum": 9016,
-    "delay_sample_count": 200
+    "late": 3,
+    "total": 205,
+    "delay_sum": 11443,
+    "delay_sample_count": 205
   },
   "routes": {
     "GA1": {
@@ -47,12 +47,12 @@
     },
     "1": {
       "route_short_name": "1",
-      "on_time": 25,
+      "on_time": 27,
       "early": 0,
-      "late": 0,
-      "total": 25,
-      "delay_sum": 817,
-      "delay_sample_count": 25
+      "late": 3,
+      "total": 30,
+      "delay_sum": 3244,
+      "delay_sample_count": 30
     },
     "2": {
       "route_short_name": "2",
@@ -306,10 +306,10 @@
           "route_short_name": "1",
           "on_time": 3,
           "early": 0,
-          "late": 0,
-          "total": 3,
-          "delay_sum": 0,
-          "delay_sample_count": 3
+          "late": 1,
+          "total": 4,
+          "delay_sum": 868,
+          "delay_sample_count": 4
         },
         "5": {
           "route_short_name": "5",
@@ -323,10 +323,10 @@
       },
       "on_time": 15,
       "early": 0,
-      "late": 0,
-      "total": 15,
-      "delay_sum": 775,
-      "delay_sample_count": 15
+      "late": 1,
+      "total": 16,
+      "delay_sum": 1643,
+      "delay_sample_count": 16
     },
     "11700": {
       "stop_name": "High House Rd at Highland Village Dr (WB)",
@@ -511,18 +511,18 @@
           "route_short_name": "1",
           "on_time": 3,
           "early": 0,
-          "late": 0,
-          "total": 3,
-          "delay_sum": 127,
-          "delay_sample_count": 3
+          "late": 1,
+          "total": 4,
+          "delay_sum": 827,
+          "delay_sample_count": 4
         }
       },
       "on_time": 7,
       "early": 0,
-      "late": 0,
-      "total": 7,
-      "delay_sum": 357,
-      "delay_sample_count": 7
+      "late": 1,
+      "total": 8,
+      "delay_sum": 1057,
+      "delay_sample_count": 8
     },
     "1379": {
       "stop_name": "Buck Jones Rd at Nottingham Dr (EB)",
@@ -551,58 +551,58 @@
           "route_short_name": "1",
           "on_time": 3,
           "early": 0,
-          "late": 0,
-          "total": 3,
-          "delay_sum": 3,
-          "delay_sample_count": 3
+          "late": 1,
+          "total": 4,
+          "delay_sum": 804,
+          "delay_sample_count": 4
         }
       },
       "on_time": 3,
       "early": 0,
-      "late": 0,
-      "total": 3,
-      "delay_sum": 3,
-      "delay_sample_count": 3
+      "late": 1,
+      "total": 4,
+      "delay_sum": 804,
+      "delay_sample_count": 4
     },
     "11034": {
       "stop_name": "Dillard Dr at Meeting St (WB)",
       "routes": {
         "1": {
           "route_short_name": "1",
-          "on_time": 3,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 3,
-          "delay_sum": 289,
-          "delay_sample_count": 3
+          "total": 4,
+          "delay_sum": 336,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 3,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 3,
-      "delay_sum": 289,
-      "delay_sample_count": 3
+      "total": 4,
+      "delay_sum": 336,
+      "delay_sample_count": 4
     },
     "11234": {
       "stop_name": "Crossroads Plaza (EB)",
       "routes": {
         "1": {
           "route_short_name": "1",
-          "on_time": 3,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 3,
-          "delay_sum": 224,
-          "delay_sample_count": 3
+          "total": 4,
+          "delay_sum": 235,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 3,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 3,
-      "delay_sum": 224,
-      "delay_sample_count": 3
+      "total": 4,
+      "delay_sum": 235,
+      "delay_sample_count": 4
     },
     "11209": {
       "stop_name": "NE Maynard Rd at Reedy Creek Rd (EB)",
@@ -1263,5 +1263,5 @@
       "delay_sample_count": 2
     }
   },
-  "last_updated": "2026-11-01T12:24:17.569657+00:00"
+  "last_updated": "2026-11-01T12:27:15.770859+00:00"
 }
