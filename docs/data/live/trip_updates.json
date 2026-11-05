@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-11-05T11:50:17.868754+00:00",
+  "updated_at": "2026-11-05T11:51:14.215370+00:00",
   "trips": [
+    {
+      "trip_id": "d245abe7-fc08-415f-9e17-44bbc3c3cd28",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
     {
       "trip_id": "75618a5c-f2e9-4130-906c-7b66906d7b91",
       "route_id": "6",
@@ -21,6 +29,14 @@
       "trip_id": "19d0e7f6-a17a-4de3-ae68-c76b2295db43",
       "route_id": "9",
       "route_short_name": "9",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "c8650a9c-2017-4ca5-b5ca-313e62039d94",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -238,7 +254,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 85,
       "status": "on_time"
     },
     {
@@ -366,7 +382,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 50,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -374,7 +390,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 33,
       "status": "on_time"
     },
     {
@@ -493,9 +509,9 @@
       "trip_id": "93f40330-0649-4edb-8227-2ee1fb45f81f",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 353,
-      "status": "late"
+      "next_stop_sequence": 103,
+      "delay_seconds": -564,
+      "status": "early"
     },
     {
       "trip_id": "92fd0509-124c-456b-8fe3-e532b0cbee5b",
@@ -581,8 +597,8 @@
       "trip_id": "534ce0fe-20df-46bb-8ff8-0981849c284e",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 219,
+      "next_stop_sequence": 115,
+      "delay_seconds": -38,
       "status": "on_time"
     }
   ]
