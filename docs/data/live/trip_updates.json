@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T17:57:18.072573+00:00",
+  "updated_at": "2026-11-06T17:58:14.091859+00:00",
   "trips": [
     {
       "trip_id": "705f6b19-8d96-4f17-ba1d-60f609a0279a",
@@ -53,6 +53,14 @@
       "trip_id": "cc5e2e0d-64e3-4207-8074-cb2979413f5a",
       "route_id": "1",
       "route_short_name": "1",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "508b795e-ab50-4b4a-bf93-57676de16b7f",
+      "route_id": "6",
+      "route_short_name": "6",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -354,6 +362,14 @@
       "status": "on_time"
     },
     {
+      "trip_id": "c5ceef6b-d78e-41ed-9b95-1ff595b1bf1a",
+      "route_id": "3",
+      "route_short_name": "3",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
       "trip_id": "d486f38a-d380-4c39-8fc2-3f59f51d1b82",
       "route_id": "1",
       "route_short_name": "1",
@@ -614,7 +630,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 52,
+      "delay_seconds": 81,
       "status": "on_time"
     },
     {
@@ -622,7 +638,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 5,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -669,9 +685,9 @@
       "trip_id": "7c3c61e8-5815-4348-b7a3-ab0d4e1682ec",
       "route_id": "4",
       "route_short_name": "4",
-      "next_stop_sequence": 0,
-      "delay_seconds": 110,
-      "status": "on_time"
+      "next_stop_sequence": 61,
+      "delay_seconds": -155,
+      "status": "early"
     },
     {
       "trip_id": "ae1446a2-6204-4944-bdb2-61d374097099",
@@ -709,8 +725,8 @@
       "trip_id": "7942b984-03a4-4022-a587-9ca3806e8940",
       "route_id": "3",
       "route_short_name": "3",
-      "next_stop_sequence": 0,
-      "delay_seconds": 18,
+      "next_stop_sequence": 23,
+      "delay_seconds": -39,
       "status": "on_time"
     }
   ]
