@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T11:50:22.510136+00:00",
+  "updated_at": "2026-11-07T11:51:14.094355+00:00",
   "trips": [
     {
       "trip_id": "968827f1-9d4f-4e74-85f8-eb2f782805f9",
@@ -13,6 +13,14 @@
       "trip_id": "88b89e31-a190-4a37-966b-c83493c0f698",
       "route_id": "9",
       "route_short_name": "9",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "dd96bb3f-02d2-4819-9845-f41010a815d1",
+      "route_id": "6",
+      "route_short_name": "6",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -390,7 +398,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 5,
       "status": "on_time"
     },
     {
@@ -454,7 +462,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": -31,
       "status": "on_time"
     },
     {
@@ -526,8 +534,8 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 291,
-      "status": "on_time"
+      "delay_seconds": 307,
+      "status": "late"
     },
     {
       "trip_id": "7c1ea3ce-aef4-422d-9763-dd02414f90e4",
@@ -589,9 +597,9 @@
       "trip_id": "54fc426b-49df-4ab2-b536-f4333720f02a",
       "route_id": "6",
       "route_short_name": "6",
-      "next_stop_sequence": 0,
-      "delay_seconds": 44,
-      "status": "on_time"
+      "next_stop_sequence": 49,
+      "delay_seconds": -600,
+      "status": "early"
     },
     {
       "trip_id": "1ab0a4f5-8b6c-4878-8234-9e8fd34b9cbb",
@@ -624,14 +632,6 @@
       "next_stop_sequence": 0,
       "delay_seconds": 7,
       "status": "on_time"
-    },
-    {
-      "trip_id": "809f55a4-a6de-42b5-a030-cb2c045521e0",
-      "route_id": "GA1",
-      "route_short_name": "GA1",
-      "next_stop_sequence": 115,
-      "delay_seconds": -101,
-      "status": "early"
     }
   ]
 }
