@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T22:36:14.131243+00:00",
+  "updated_at": "2026-11-07T22:37:11.445345+00:00",
   "trips": [
     {
       "trip_id": "da7fadb2-543f-40a8-b196-d7b5db92fdf9",
@@ -346,6 +346,14 @@
       "status": "on_time"
     },
     {
+      "trip_id": "904b5224-2450-4705-b267-9154230b5d4b",
+      "route_id": "3",
+      "route_short_name": "3",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
       "trip_id": "797c8630-0e95-4b90-8aac-4abd8dfc0462",
       "route_id": "2",
       "route_short_name": "2",
@@ -366,7 +374,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 190,
+      "delay_seconds": 189,
       "status": "on_time"
     },
     {
@@ -478,7 +486,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 30,
       "status": "on_time"
     },
     {
@@ -517,9 +525,9 @@
       "trip_id": "61cb2c63-2489-4805-9829-dec6aa21574c",
       "route_id": "7",
       "route_short_name": "7",
-      "next_stop_sequence": 0,
-      "delay_seconds": 317,
-      "status": "late"
+      "next_stop_sequence": 64,
+      "delay_seconds": -513,
+      "status": "early"
     },
     {
       "trip_id": "bcf39c70-a186-4900-bed2-03e75bd84314",
@@ -534,8 +542,8 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
-      "status": "on_time"
+      "delay_seconds": 1130,
+      "status": "late"
     },
     {
       "trip_id": "4912ed92-06ff-40c7-abff-b58f00cde869",
@@ -558,15 +566,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 1346,
-      "status": "late"
-    },
-    {
-      "trip_id": "a43d58a0-050e-45a9-b7dc-ccf58994dca3",
-      "route_id": "5",
-      "route_short_name": "5",
-      "next_stop_sequence": 0,
-      "delay_seconds": 1160,
+      "delay_seconds": 1323,
       "status": "late"
     }
   ]
