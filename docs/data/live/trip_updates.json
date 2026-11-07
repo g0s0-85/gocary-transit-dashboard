@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T15:26:13.386646+00:00",
+  "updated_at": "2026-11-07T15:27:13.245919+00:00",
   "trips": [
     {
       "trip_id": "a42a81ee-4f03-416a-8fba-7c28aeb74d74",
@@ -53,6 +53,14 @@
       "trip_id": "c4c79542-1914-4a53-b532-4e6730fa7b2a",
       "route_id": "GA1",
       "route_short_name": "GA1",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "c9a45baf-9e7f-4d2e-b693-0533714ea620",
+      "route_id": "6",
+      "route_short_name": "6",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -510,7 +518,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 119,
+      "delay_seconds": 179,
       "status": "on_time"
     },
     {
@@ -518,15 +526,15 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 300,
-      "status": "on_time"
+      "delay_seconds": 362,
+      "status": "late"
     },
     {
       "trip_id": "4e3cf2ff-b2be-4ee1-9821-d56662fd2f44",
       "route_id": "6",
       "route_short_name": "6",
       "next_stop_sequence": 0,
-      "delay_seconds": 103,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -574,7 +582,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 23,
+      "delay_seconds": 35,
       "status": "on_time"
     },
     {
@@ -590,7 +598,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 522,
+      "delay_seconds": 399,
       "status": "late"
     },
     {
@@ -653,9 +661,9 @@
       "trip_id": "5ffabed2-6bc8-4841-bd28-956f5d5341bc",
       "route_id": "4",
       "route_short_name": "4",
-      "next_stop_sequence": 0,
-      "delay_seconds": 177,
-      "status": "on_time"
+      "next_stop_sequence": 61,
+      "delay_seconds": -190,
+      "status": "early"
     },
     {
       "trip_id": "d13a89e3-2483-4b33-9b28-4330d1d13854",
