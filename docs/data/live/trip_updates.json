@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-11-07T14:26:13.002161+00:00",
+  "updated_at": "2026-11-07T14:27:11.330111+00:00",
   "trips": [
+    {
+      "trip_id": "8c6d9614-6932-444f-ab2a-7c97d1ec503e",
+      "route_id": "2",
+      "route_short_name": "2",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
     {
       "trip_id": "dc9dd509-1095-4680-b2f1-79d3782fb207",
       "route_id": "4",
@@ -306,6 +314,14 @@
       "status": "on_time"
     },
     {
+      "trip_id": "303ef399-5467-4f4a-80dc-ad4bcaef7046",
+      "route_id": "3",
+      "route_short_name": "3",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
       "trip_id": "6f56e439-a44f-4a01-a5a0-079bf49af936",
       "route_id": "7",
       "route_short_name": "7",
@@ -478,7 +494,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 149,
+      "delay_seconds": 160,
       "status": "on_time"
     },
     {
@@ -510,8 +526,8 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 300,
-      "status": "on_time"
+      "delay_seconds": 361,
+      "status": "late"
     },
     {
       "trip_id": "e5227704-7c89-4b81-9845-f7e95340bfde",
@@ -574,7 +590,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 1,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -693,17 +709,9 @@
       "trip_id": "03b3637e-ec86-4c24-a219-510671ce3941",
       "route_id": "3",
       "route_short_name": "3",
-      "next_stop_sequence": 0,
-      "delay_seconds": 43,
-      "status": "on_time"
-    },
-    {
-      "trip_id": "424449d9-7e40-4b37-b60a-4091eb29469f",
-      "route_id": "2",
-      "route_short_name": "2",
-      "next_stop_sequence": 0,
-      "delay_seconds": 37,
-      "status": "on_time"
+      "next_stop_sequence": 23,
+      "delay_seconds": -65,
+      "status": "early"
     }
   ]
 }
