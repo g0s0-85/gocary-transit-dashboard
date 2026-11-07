@@ -1,12 +1,12 @@
 {
   "date": "2026-11-07",
   "system": {
-    "on_time": 3079,
-    "early": 24,
+    "on_time": 3080,
+    "early": 26,
     "late": 346,
-    "total": 3449,
-    "delay_sum": 416310,
-    "delay_sample_count": 3449
+    "total": 3452,
+    "delay_sum": 416172,
+    "delay_sample_count": 3452
   },
   "routes": {
     "GA1": {
@@ -47,12 +47,12 @@
     },
     "2": {
       "route_short_name": "2",
-      "on_time": 223,
-      "early": 2,
+      "on_time": 224,
+      "early": 4,
       "late": 20,
-      "total": 245,
-      "delay_sum": 23356,
-      "delay_sample_count": 245
+      "total": 248,
+      "delay_sum": 23218,
+      "delay_sample_count": 248
     },
     "7": {
       "route_short_name": "7",
@@ -589,51 +589,11 @@
       "routes": {
         "2": {
           "route_short_name": "2",
-          "on_time": 33,
-          "early": 0,
-          "late": 5,
-          "total": 38,
-          "delay_sum": 3423,
-          "delay_sample_count": 38
-        }
-      },
-      "on_time": 33,
-      "early": 0,
-      "late": 5,
-      "total": 38,
-      "delay_sum": 3423,
-      "delay_sample_count": 38
-    },
-    "11655": {
-      "stop_name": "Corporate Center Dr at Play Golf Wy (SB)",
-      "routes": {
-        "2": {
-          "route_short_name": "2",
-          "on_time": 31,
-          "early": 0,
-          "late": 8,
-          "total": 39,
-          "delay_sum": 7775,
-          "delay_sample_count": 39
-        }
-      },
-      "on_time": 31,
-      "early": 0,
-      "late": 8,
-      "total": 39,
-      "delay_sum": 7775,
-      "delay_sample_count": 39
-    },
-    "11112": {
-      "stop_name": "NE Maynard Rd at Reedy Creek Rd (WB)",
-      "routes": {
-        "2": {
-          "route_short_name": "2",
           "on_time": 34,
           "early": 0,
           "late": 5,
           "total": 39,
-          "delay_sum": 6113,
+          "delay_sum": 3449,
           "delay_sample_count": 39
         }
       },
@@ -641,8 +601,48 @@
       "early": 0,
       "late": 5,
       "total": 39,
-      "delay_sum": 6113,
+      "delay_sum": 3449,
       "delay_sample_count": 39
+    },
+    "11655": {
+      "stop_name": "Corporate Center Dr at Play Golf Wy (SB)",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 31,
+          "early": 1,
+          "late": 8,
+          "total": 40,
+          "delay_sum": 7710,
+          "delay_sample_count": 40
+        }
+      },
+      "on_time": 31,
+      "early": 1,
+      "late": 8,
+      "total": 40,
+      "delay_sum": 7710,
+      "delay_sample_count": 40
+    },
+    "11112": {
+      "stop_name": "NE Maynard Rd at Reedy Creek Rd (WB)",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 34,
+          "early": 1,
+          "late": 5,
+          "total": 40,
+          "delay_sum": 6014,
+          "delay_sample_count": 40
+        }
+      },
+      "on_time": 34,
+      "early": 1,
+      "late": 5,
+      "total": 40,
+      "delay_sum": 6014,
+      "delay_sample_count": 40
     },
     "11161": {
       "stop_name": "NC 55 at Walmart",
@@ -1263,5 +1263,5 @@
       "delay_sample_count": 76
     }
   },
-  "last_updated": "2026-11-07T22:48:13.132581+00:00"
+  "last_updated": "2026-11-07T22:49:14.539662+00:00"
 }
