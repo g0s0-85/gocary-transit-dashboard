@@ -1,40 +1,40 @@
 {
   "date": "2026-11-10",
   "system": {
-    "on_time": 159,
+    "on_time": 191,
     "early": 0,
-    "late": 0,
-    "total": 159,
-    "delay_sum": 2867,
-    "delay_sample_count": 159
+    "late": 2,
+    "total": 193,
+    "delay_sum": 4810,
+    "delay_sample_count": 193
   },
   "routes": {
     "GA1": {
       "route_short_name": "GA1",
+      "on_time": 38,
+      "early": 0,
+      "late": 2,
+      "total": 40,
+      "delay_sum": 2389,
+      "delay_sample_count": 40
+    },
+    "9": {
+      "route_short_name": "9",
       "on_time": 21,
       "early": 0,
       "late": 0,
       "total": 21,
-      "delay_sum": 609,
+      "delay_sum": 104,
       "delay_sample_count": 21
-    },
-    "9": {
-      "route_short_name": "9",
-      "on_time": 15,
-      "early": 0,
-      "late": 0,
-      "total": 15,
-      "delay_sum": 75,
-      "delay_sample_count": 15
     },
     "2": {
       "route_short_name": "2",
-      "on_time": 15,
+      "on_time": 24,
       "early": 0,
       "late": 0,
-      "total": 15,
-      "delay_sum": 209,
-      "delay_sample_count": 15
+      "total": 24,
+      "delay_sum": 343,
+      "delay_sample_count": 24
     },
     "4": {
       "route_short_name": "4",
@@ -97,21 +97,41 @@
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5,
+          "delay_sum": 0,
+          "delay_sample_count": 5
+        },
+        "9": {
+          "route_short_name": "9",
           "on_time": 3,
           "early": 0,
           "late": 0,
           "total": 3,
           "delay_sum": 0,
           "delay_sample_count": 3
-        },
-        "9": {
-          "route_short_name": "9",
-          "on_time": 2,
+        }
+      },
+      "on_time": 8,
+      "early": 0,
+      "late": 0,
+      "total": 8,
+      "delay_sum": 0,
+      "delay_sample_count": 8
+    },
+    "16093": {
+      "stop_name": "Apex Senior Center Main Entrance ",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 5,
           "early": 0,
           "late": 0,
-          "total": 2,
+          "total": 5,
           "delay_sum": 0,
-          "delay_sample_count": 2
+          "delay_sample_count": 5
         }
       },
       "on_time": 5,
@@ -121,177 +141,157 @@
       "delay_sum": 0,
       "delay_sample_count": 5
     },
-    "16093": {
-      "stop_name": "Apex Senior Center Main Entrance ",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 3,
-          "early": 0,
-          "late": 0,
-          "total": 3,
-          "delay_sum": 0,
-          "delay_sample_count": 3
-        }
-      },
-      "on_time": 3,
-      "early": 0,
-      "late": 0,
-      "total": 3,
-      "delay_sum": 0,
-      "delay_sample_count": 3
-    },
     "16021": {
       "stop_name": "Beaver Crk Comm Dr at Chick-fil-A (WB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 3,
+          "on_time": 5,
           "early": 0,
-          "late": 0,
-          "total": 3,
-          "delay_sum": 208,
-          "delay_sample_count": 3
+          "late": 1,
+          "total": 6,
+          "delay_sum": 645,
+          "delay_sample_count": 6
         }
       },
-      "on_time": 3,
+      "on_time": 5,
       "early": 0,
-      "late": 0,
-      "total": 3,
-      "delay_sum": 208,
-      "delay_sample_count": 3
+      "late": 1,
+      "total": 6,
+      "delay_sum": 645,
+      "delay_sample_count": 6
     },
     "16031": {
       "stop_name": "Chapel Ridge Rd at Olive Chapel Professional Park",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
-          "late": 0,
-          "total": 2,
-          "delay_sum": 0,
-          "delay_sample_count": 2
+          "late": 1,
+          "total": 4,
+          "delay_sum": 373,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 2,
+      "on_time": 3,
       "early": 0,
-      "late": 0,
-      "total": 2,
-      "delay_sum": 0,
-      "delay_sample_count": 2
+      "late": 1,
+      "total": 4,
+      "delay_sum": 373,
+      "delay_sample_count": 4
     },
     "16045": {
       "stop_name": "Beaver Creek Commons Dr at Lowe's (EB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 2,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 2,
-          "delay_sum": 140,
-          "delay_sample_count": 2
+          "total": 4,
+          "delay_sum": 444,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 2,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 2,
-      "delay_sum": 140,
-      "delay_sample_count": 2
+      "total": 4,
+      "delay_sum": 444,
+      "delay_sample_count": 4
     },
     "16049": {
       "stop_name": "W Williams St at Healthplex Way (SB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 2,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 2,
-          "delay_sum": 106,
-          "delay_sample_count": 2
+          "total": 4,
+          "delay_sum": 376,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 2,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 2,
-      "delay_sum": 106,
-      "delay_sample_count": 2
+      "total": 4,
+      "delay_sum": 376,
+      "delay_sample_count": 4
     },
     "16061": {
       "stop_name": "E Williams St at S Hughes St (Park and Ride (SB))",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 2,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 2,
-          "delay_sum": 9,
-          "delay_sample_count": 2
+          "total": 4,
+          "delay_sum": 155,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 2,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 2,
-      "delay_sum": 9,
-      "delay_sample_count": 2
+      "total": 4,
+      "delay_sum": 155,
+      "delay_sample_count": 4
     },
     "16077": {
       "stop_name": "Tingen Rd at Peace Haven Pl",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 2,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 2,
-          "delay_sum": 53,
-          "delay_sample_count": 2
+          "total": 4,
+          "delay_sum": 158,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 2,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 2,
-      "delay_sum": 53,
-      "delay_sample_count": 2
+      "total": 4,
+      "delay_sum": 158,
+      "delay_sample_count": 4
     },
     "16085": {
       "stop_name": "E Williams St at S Mason St (Apex MS NB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 2,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 2,
-          "delay_sum": 93,
-          "delay_sample_count": 2
+          "total": 4,
+          "delay_sum": 238,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 2,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 2,
-      "delay_sum": 93,
-      "delay_sample_count": 2
+      "total": 4,
+      "delay_sum": 238,
+      "delay_sample_count": 4
     },
     "1398": {
       "stop_name": "Cary Depot South Platform",
       "routes": {
         "9": {
           "route_short_name": "9",
-          "on_time": 3,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 3,
+          "total": 4,
           "delay_sum": 0,
-          "delay_sample_count": 3
+          "delay_sample_count": 4
         },
         "6": {
           "route_short_name": "6",
@@ -321,43 +321,63 @@
           "delay_sample_count": 3
         }
       },
-      "on_time": 12,
+      "on_time": 13,
       "early": 0,
       "late": 0,
-      "total": 12,
+      "total": 13,
       "delay_sum": 0,
-      "delay_sample_count": 12
+      "delay_sample_count": 13
     },
     "11700": {
       "stop_name": "High House Rd at Highland Village Dr (WB)",
       "routes": {
         "9": {
           "route_short_name": "9",
-          "on_time": 3,
+          "on_time": 4,
           "early": 0,
           "late": 0,
-          "total": 3,
-          "delay_sum": 16,
-          "delay_sample_count": 3
+          "total": 4,
+          "delay_sum": 29,
+          "delay_sample_count": 4
         }
       },
-      "on_time": 3,
+      "on_time": 4,
       "early": 0,
       "late": 0,
-      "total": 3,
-      "delay_sum": 16,
-      "delay_sample_count": 3
+      "total": 4,
+      "delay_sum": 29,
+      "delay_sample_count": 4
     },
     "11704": {
       "stop_name": "Old Apex Rd at SW Cary Pkwy",
       "routes": {
         "9": {
           "route_short_name": "9",
+          "on_time": 4,
+          "early": 0,
+          "late": 0,
+          "total": 4,
+          "delay_sum": 55,
+          "delay_sample_count": 4
+        }
+      },
+      "on_time": 4,
+      "early": 0,
+      "late": 0,
+      "total": 4,
+      "delay_sum": 55,
+      "delay_sample_count": 4
+    },
+    "101": {
+      "stop_name": "Centennial Biomedical Campus (SB)",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
           "on_time": 3,
           "early": 0,
           "late": 0,
           "total": 3,
-          "delay_sum": 41,
+          "delay_sum": 0,
           "delay_sample_count": 3
         }
       },
@@ -365,71 +385,31 @@
       "early": 0,
       "late": 0,
       "total": 3,
-      "delay_sum": 41,
-      "delay_sample_count": 3
-    },
-    "101": {
-      "stop_name": "Centennial Biomedical Campus (SB)",
-      "routes": {
-        "2": {
-          "route_short_name": "2",
-          "on_time": 2,
-          "early": 0,
-          "late": 0,
-          "total": 2,
-          "delay_sum": 0,
-          "delay_sample_count": 2
-        }
-      },
-      "on_time": 2,
-      "early": 0,
-      "late": 0,
-      "total": 2,
       "delay_sum": 0,
-      "delay_sample_count": 2
+      "delay_sample_count": 3
     },
     "11655": {
       "stop_name": "Corporate Center Dr at Play Golf Wy (SB)",
       "routes": {
         "2": {
           "route_short_name": "2",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
           "late": 0,
-          "total": 2,
-          "delay_sum": 15,
-          "delay_sample_count": 2
+          "total": 3,
+          "delay_sum": 27,
+          "delay_sample_count": 3
         }
       },
-      "on_time": 2,
+      "on_time": 3,
       "early": 0,
       "late": 0,
-      "total": 2,
-      "delay_sum": 15,
-      "delay_sample_count": 2
+      "total": 3,
+      "delay_sum": 27,
+      "delay_sample_count": 3
     },
     "11112": {
       "stop_name": "NE Maynard Rd at Reedy Creek Rd (WB)",
-      "routes": {
-        "2": {
-          "route_short_name": "2",
-          "on_time": 2,
-          "early": 0,
-          "late": 0,
-          "total": 2,
-          "delay_sum": 0,
-          "delay_sample_count": 2
-        }
-      },
-      "on_time": 2,
-      "early": 0,
-      "late": 0,
-      "total": 2,
-      "delay_sum": 0,
-      "delay_sample_count": 2
-    },
-    "11440": {
-      "stop_name": "Cary Depot North Platform",
       "routes": {
         "2": {
           "route_short_name": "2",
@@ -439,6 +419,26 @@
           "total": 3,
           "delay_sum": 0,
           "delay_sample_count": 3
+        }
+      },
+      "on_time": 3,
+      "early": 0,
+      "late": 0,
+      "total": 3,
+      "delay_sum": 0,
+      "delay_sample_count": 3
+    },
+    "11440": {
+      "stop_name": "Cary Depot North Platform",
+      "routes": {
+        "2": {
+          "route_short_name": "2",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5,
+          "delay_sum": 0,
+          "delay_sample_count": 5
         },
         "4": {
           "route_short_name": "4",
@@ -468,43 +468,63 @@
           "delay_sample_count": 3
         }
       },
-      "on_time": 12,
+      "on_time": 14,
       "early": 0,
       "late": 0,
-      "total": 12,
+      "total": 14,
       "delay_sum": 0,
-      "delay_sample_count": 12
+      "delay_sample_count": 14
     },
     "11209": {
       "stop_name": "NE Maynard Rd at Reedy Creek Rd (EB)",
       "routes": {
         "2": {
           "route_short_name": "2",
-          "on_time": 3,
+          "on_time": 5,
           "early": 0,
           "late": 0,
-          "total": 3,
+          "total": 5,
           "delay_sum": 0,
-          "delay_sample_count": 3
+          "delay_sample_count": 5
         }
       },
-      "on_time": 3,
+      "on_time": 5,
       "early": 0,
       "late": 0,
-      "total": 3,
+      "total": 5,
       "delay_sum": 0,
-      "delay_sample_count": 3
+      "delay_sample_count": 5
     },
     "11605": {
       "stop_name": "Corporate Center Dr at Play Golf Way (NB)",
       "routes": {
         "2": {
           "route_short_name": "2",
+          "on_time": 5,
+          "early": 0,
+          "late": 0,
+          "total": 5,
+          "delay_sum": 316,
+          "delay_sample_count": 5
+        }
+      },
+      "on_time": 5,
+      "early": 0,
+      "late": 0,
+      "total": 5,
+      "delay_sum": 316,
+      "delay_sample_count": 5
+    },
+    "11753": {
+      "stop_name": "SW Cary Pkwy at Laura Duncan Rd",
+      "routes": {
+        "9": {
+          "route_short_name": "9",
           "on_time": 3,
           "early": 0,
           "late": 0,
           "total": 3,
-          "delay_sum": 194,
+          "delay_sum": 0,
           "delay_sample_count": 3
         }
       },
@@ -512,48 +532,28 @@
       "early": 0,
       "late": 0,
       "total": 3,
-      "delay_sum": 194,
-      "delay_sample_count": 3
-    },
-    "11753": {
-      "stop_name": "SW Cary Pkwy at Laura Duncan Rd",
-      "routes": {
-        "9": {
-          "route_short_name": "9",
-          "on_time": 2,
-          "early": 0,
-          "late": 0,
-          "total": 2,
-          "delay_sum": 0,
-          "delay_sample_count": 2
-        }
-      },
-      "on_time": 2,
-      "early": 0,
-      "late": 0,
-      "total": 2,
       "delay_sum": 0,
-      "delay_sample_count": 2
+      "delay_sample_count": 3
     },
     "11393": {
       "stop_name": "High House Rd at Highland Village Dr (EB)",
       "routes": {
         "9": {
           "route_short_name": "9",
-          "on_time": 2,
+          "on_time": 3,
           "early": 0,
           "late": 0,
-          "total": 2,
-          "delay_sum": 18,
-          "delay_sample_count": 2
+          "total": 3,
+          "delay_sum": 20,
+          "delay_sample_count": 3
         }
       },
-      "on_time": 2,
+      "on_time": 3,
       "early": 0,
       "late": 0,
-      "total": 2,
-      "delay_sum": 18,
-      "delay_sample_count": 2
+      "total": 3,
+      "delay_sum": 20,
+      "delay_sample_count": 3
     },
     "11397": {
       "stop_name": "Highland Village (WB)",
@@ -1263,5 +1263,5 @@
       "delay_sample_count": 2
     }
   },
-  "last_updated": "2026-11-10T11:08:13.367901+00:00"
+  "last_updated": "2026-11-10T11:12:13.931436+00:00"
 }
