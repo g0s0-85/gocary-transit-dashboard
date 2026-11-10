@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T14:25:14.197672+00:00",
+  "updated_at": "2026-11-10T14:26:18.127259+00:00",
   "trips": [
     {
       "trip_id": "9d83e312-1206-4cd6-ac9f-533c18036df8",
@@ -61,6 +61,14 @@
       "trip_id": "c55e0d93-a7d9-4835-841a-79f4ec3f4ca5",
       "route_id": "6",
       "route_short_name": "6",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "b8af4f89-83f4-4619-825a-810f8d8481f3",
+      "route_id": "2",
+      "route_short_name": "2",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -438,7 +446,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 7,
       "status": "on_time"
     },
     {
@@ -486,7 +494,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 229,
+      "delay_seconds": 289,
       "status": "on_time"
     },
     {
@@ -518,7 +526,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 49,
+      "delay_seconds": 91,
       "status": "on_time"
     },
     {
@@ -574,7 +582,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 29,
+      "delay_seconds": 68,
       "status": "on_time"
     },
     {
@@ -582,7 +590,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 5,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -629,9 +637,9 @@
       "trip_id": "507e0aaa-52c2-44d0-bab5-dc9c3ee7de8f",
       "route_id": "9",
       "route_short_name": "9",
-      "next_stop_sequence": 0,
-      "delay_seconds": 278,
-      "status": "on_time"
+      "next_stop_sequence": 45,
+      "delay_seconds": -306,
+      "status": "early"
     },
     {
       "trip_id": "24e365d4-fc2a-4004-a848-02d36b363dd9",
