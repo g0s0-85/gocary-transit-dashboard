@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T21:57:15.631364+00:00",
+  "updated_at": "2026-11-10T21:58:18.088423+00:00",
   "trips": [
     {
       "trip_id": "e5b842a2-d768-45c7-bb75-d80b5e8d2b89",
@@ -45,6 +45,14 @@
       "trip_id": "a0897c99-8f8e-4b9b-b2b5-46b9f61f3d96",
       "route_id": "4",
       "route_short_name": "4",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "2efaeb23-c2c3-4104-bf20-a45286c97ac7",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -358,7 +366,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 110,
       "status": "on_time"
     },
     {
@@ -454,7 +462,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 467,
+      "delay_seconds": 516,
       "status": "late"
     },
     {
@@ -542,7 +550,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 60,
+      "delay_seconds": 54,
       "status": "on_time"
     },
     {
@@ -558,7 +566,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 263,
+      "delay_seconds": 267,
       "status": "on_time"
     },
     {
@@ -582,7 +590,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 529,
+      "delay_seconds": 557,
       "status": "late"
     },
     {
@@ -629,9 +637,9 @@
       "trip_id": "9b29fe8c-1957-4272-a79d-86c8b88235cd",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 468,
-      "status": "late"
+      "next_stop_sequence": 103,
+      "delay_seconds": -129,
+      "status": "early"
     },
     {
       "trip_id": "b701eeca-dc1c-404d-8899-7ebee2d95748",
