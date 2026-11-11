@@ -1,22 +1,22 @@
 {
   "date": "2026-11-11",
   "system": {
-    "on_time": 2971,
+    "on_time": 2994,
     "early": 14,
     "late": 175,
-    "total": 3160,
-    "delay_sum": 268450,
-    "delay_sample_count": 3160
+    "total": 3183,
+    "delay_sum": 269558,
+    "delay_sample_count": 3183
   },
   "routes": {
     "GA1": {
       "route_short_name": "GA1",
-      "on_time": 413,
+      "on_time": 433,
       "early": 2,
       "late": 36,
-      "total": 451,
-      "delay_sum": 50683,
-      "delay_sample_count": 451
+      "total": 471,
+      "delay_sum": 51280,
+      "delay_sample_count": 471
     },
     "2": {
       "route_short_name": "2",
@@ -83,12 +83,12 @@
     },
     "5": {
       "route_short_name": "5",
-      "on_time": 158,
+      "on_time": 161,
       "early": 0,
       "late": 15,
-      "total": 173,
-      "delay_sum": 20967,
-      "delay_sample_count": 173
+      "total": 176,
+      "delay_sum": 21478,
+      "delay_sample_count": 176
     }
   },
   "stops": {
@@ -97,12 +97,12 @@
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 47,
+          "on_time": 49,
           "early": 0,
           "late": 4,
-          "total": 51,
+          "total": 53,
           "delay_sum": 5660,
-          "delay_sample_count": 51
+          "delay_sample_count": 53
         },
         "9": {
           "route_short_name": "9",
@@ -114,15 +114,75 @@
           "delay_sample_count": 32
         }
       },
-      "on_time": 78,
+      "on_time": 80,
       "early": 0,
       "late": 5,
-      "total": 83,
+      "total": 85,
       "delay_sum": 10146,
-      "delay_sample_count": 83
+      "delay_sample_count": 85
     },
     "16093": {
       "stop_name": "Apex Senior Center Main Entrance ",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 51,
+          "early": 0,
+          "late": 3,
+          "total": 54,
+          "delay_sum": 3214,
+          "delay_sample_count": 54
+        }
+      },
+      "on_time": 51,
+      "early": 0,
+      "late": 3,
+      "total": 54,
+      "delay_sum": 3214,
+      "delay_sample_count": 54
+    },
+    "16021": {
+      "stop_name": "Beaver Crk Comm Dr at Chick-fil-A (WB)",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 54,
+          "early": 1,
+          "late": 4,
+          "total": 59,
+          "delay_sum": 6480,
+          "delay_sample_count": 59
+        }
+      },
+      "on_time": 54,
+      "early": 1,
+      "late": 4,
+      "total": 59,
+      "delay_sum": 6480,
+      "delay_sample_count": 59
+    },
+    "16031": {
+      "stop_name": "Chapel Ridge Rd at Olive Chapel Professional Park",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 39,
+          "early": 0,
+          "late": 11,
+          "total": 50,
+          "delay_sum": 8202,
+          "delay_sample_count": 50
+        }
+      },
+      "on_time": 39,
+      "early": 0,
+      "late": 11,
+      "total": 50,
+      "delay_sum": 8202,
+      "delay_sample_count": 50
+    },
+    "16045": {
+      "stop_name": "Beaver Creek Commons Dr at Lowe's (EB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
@@ -130,7 +190,7 @@
           "early": 0,
           "late": 3,
           "total": 51,
-          "delay_sum": 3214,
+          "delay_sum": 6182,
           "delay_sample_count": 51
         }
       },
@@ -138,148 +198,88 @@
       "early": 0,
       "late": 3,
       "total": 51,
-      "delay_sum": 3214,
+      "delay_sum": 6182,
       "delay_sample_count": 51
-    },
-    "16021": {
-      "stop_name": "Beaver Crk Comm Dr at Chick-fil-A (WB)",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 51,
-          "early": 1,
-          "late": 4,
-          "total": 56,
-          "delay_sum": 6266,
-          "delay_sample_count": 56
-        }
-      },
-      "on_time": 51,
-      "early": 1,
-      "late": 4,
-      "total": 56,
-      "delay_sum": 6266,
-      "delay_sample_count": 56
-    },
-    "16031": {
-      "stop_name": "Chapel Ridge Rd at Olive Chapel Professional Park",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 37,
-          "early": 0,
-          "late": 11,
-          "total": 48,
-          "delay_sum": 7987,
-          "delay_sample_count": 48
-        }
-      },
-      "on_time": 37,
-      "early": 0,
-      "late": 11,
-      "total": 48,
-      "delay_sum": 7987,
-      "delay_sample_count": 48
-    },
-    "16045": {
-      "stop_name": "Beaver Creek Commons Dr at Lowe's (EB)",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 46,
-          "early": 0,
-          "late": 3,
-          "total": 49,
-          "delay_sum": 6142,
-          "delay_sample_count": 49
-        }
-      },
-      "on_time": 46,
-      "early": 0,
-      "late": 3,
-      "total": 49,
-      "delay_sum": 6142,
-      "delay_sample_count": 49
     },
     "16049": {
       "stop_name": "W Williams St at Healthplex Way (SB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 46,
+          "on_time": 48,
           "early": 0,
           "late": 3,
-          "total": 49,
-          "delay_sum": 6288,
-          "delay_sample_count": 49
+          "total": 51,
+          "delay_sum": 6305,
+          "delay_sample_count": 51
         }
       },
-      "on_time": 46,
+      "on_time": 48,
       "early": 0,
       "late": 3,
-      "total": 49,
-      "delay_sum": 6288,
-      "delay_sample_count": 49
+      "total": 51,
+      "delay_sum": 6305,
+      "delay_sample_count": 51
     },
     "16061": {
       "stop_name": "E Williams St at S Hughes St (Park and Ride (SB))",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 45,
+          "on_time": 47,
           "early": 1,
           "late": 3,
-          "total": 49,
-          "delay_sum": 5258,
-          "delay_sample_count": 49
+          "total": 51,
+          "delay_sum": 5274,
+          "delay_sample_count": 51
         }
       },
-      "on_time": 45,
+      "on_time": 47,
       "early": 1,
       "late": 3,
-      "total": 49,
-      "delay_sum": 5258,
-      "delay_sample_count": 49
+      "total": 51,
+      "delay_sum": 5274,
+      "delay_sample_count": 51
     },
     "16077": {
       "stop_name": "Tingen Rd at Peace Haven Pl",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 47,
+          "on_time": 49,
           "early": 0,
           "late": 2,
-          "total": 49,
-          "delay_sum": 4097,
-          "delay_sample_count": 49
+          "total": 51,
+          "delay_sum": 4125,
+          "delay_sample_count": 51
         }
       },
-      "on_time": 47,
+      "on_time": 49,
       "early": 0,
       "late": 2,
-      "total": 49,
-      "delay_sum": 4097,
-      "delay_sample_count": 49
+      "total": 51,
+      "delay_sum": 4125,
+      "delay_sample_count": 51
     },
     "16085": {
       "stop_name": "E Williams St at S Mason St (Apex MS NB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 46,
+          "on_time": 48,
           "early": 0,
           "late": 3,
-          "total": 49,
-          "delay_sum": 5771,
-          "delay_sample_count": 49
+          "total": 51,
+          "delay_sum": 5838,
+          "delay_sample_count": 51
         }
       },
-      "on_time": 46,
+      "on_time": 48,
       "early": 0,
       "late": 3,
-      "total": 49,
-      "delay_sum": 5771,
-      "delay_sample_count": 49
+      "total": 51,
+      "delay_sum": 5838,
+      "delay_sample_count": 51
     },
     "11440": {
       "stop_name": "Cary Depot North Platform",
@@ -440,20 +440,20 @@
         },
         "5": {
           "route_short_name": "5",
-          "on_time": 35,
+          "on_time": 36,
           "early": 0,
           "late": 0,
-          "total": 35,
-          "delay_sum": 1616,
-          "delay_sample_count": 35
+          "total": 36,
+          "delay_sum": 1761,
+          "delay_sample_count": 36
         }
       },
-      "on_time": 183,
+      "on_time": 184,
       "early": 0,
       "late": 2,
-      "total": 185,
-      "delay_sum": 8575,
-      "delay_sample_count": 185
+      "total": 186,
+      "delay_sum": 8720,
+      "delay_sample_count": 186
     },
     "11700": {
       "stop_name": "High House Rd at Highland Village Dr (WB)",
@@ -1167,40 +1167,40 @@
       "routes": {
         "5": {
           "route_short_name": "5",
-          "on_time": 35,
+          "on_time": 36,
           "early": 0,
           "late": 0,
-          "total": 35,
-          "delay_sum": 3615,
-          "delay_sample_count": 35
+          "total": 36,
+          "delay_sum": 3833,
+          "delay_sample_count": 36
         }
       },
-      "on_time": 35,
+      "on_time": 36,
       "early": 0,
       "late": 0,
-      "total": 35,
-      "delay_sum": 3615,
-      "delay_sample_count": 35
+      "total": 36,
+      "delay_sum": 3833,
+      "delay_sample_count": 36
     },
     "11074": {
       "stop_name": "Kildaire Farm Rd at WakeMed Cary (SB)",
       "routes": {
         "5": {
           "route_short_name": "5",
-          "on_time": 33,
+          "on_time": 34,
           "early": 0,
           "late": 2,
-          "total": 35,
-          "delay_sum": 3941,
-          "delay_sample_count": 35
+          "total": 36,
+          "delay_sum": 4089,
+          "delay_sample_count": 36
         }
       },
-      "on_time": 33,
+      "on_time": 34,
       "early": 0,
       "late": 2,
-      "total": 35,
-      "delay_sum": 3941,
-      "delay_sample_count": 35
+      "total": 36,
+      "delay_sum": 4089,
+      "delay_sample_count": 36
     },
     "11241": {
       "stop_name": "Crescentcommons Dr",
@@ -1263,5 +1263,5 @@
       "delay_sample_count": 34
     }
   },
-  "last_updated": "2026-11-11T22:59:12.025192+00:00"
+  "last_updated": "2026-11-11T23:01:14.245389+00:00"
 }
