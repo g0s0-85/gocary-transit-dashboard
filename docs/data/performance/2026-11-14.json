@@ -1,22 +1,22 @@
 {
   "date": "2026-11-14",
   "system": {
-    "on_time": 1974,
+    "on_time": 1980,
     "early": 18,
     "late": 159,
-    "total": 2151,
-    "delay_sum": 236312,
-    "delay_sample_count": 2151
+    "total": 2157,
+    "delay_sum": 236805,
+    "delay_sample_count": 2157
   },
   "routes": {
     "GA1": {
       "route_short_name": "GA1",
-      "on_time": 291,
+      "on_time": 297,
       "early": 3,
       "late": 44,
-      "total": 338,
-      "delay_sum": 72394,
-      "delay_sample_count": 338
+      "total": 344,
+      "delay_sum": 72887,
+      "delay_sample_count": 344
     },
     "6": {
       "route_short_name": "6",
@@ -166,103 +166,43 @@
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 27,
+          "on_time": 28,
           "early": 0,
           "late": 9,
-          "total": 36,
-          "delay_sum": 9431,
-          "delay_sample_count": 36
+          "total": 37,
+          "delay_sum": 9500,
+          "delay_sample_count": 37
         }
       },
-      "on_time": 27,
+      "on_time": 28,
       "early": 0,
       "late": 9,
-      "total": 36,
-      "delay_sum": 9431,
-      "delay_sample_count": 36
+      "total": 37,
+      "delay_sum": 9500,
+      "delay_sample_count": 37
     },
     "16045": {
       "stop_name": "Beaver Creek Commons Dr at Lowe's (EB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 32,
+          "on_time": 33,
           "early": 0,
           "late": 4,
-          "total": 36,
-          "delay_sum": 7914,
-          "delay_sample_count": 36
+          "total": 37,
+          "delay_sum": 8032,
+          "delay_sample_count": 37
         }
       },
-      "on_time": 32,
+      "on_time": 33,
       "early": 0,
       "late": 4,
-      "total": 36,
-      "delay_sum": 7914,
-      "delay_sample_count": 36
+      "total": 37,
+      "delay_sum": 8032,
+      "delay_sample_count": 37
     },
     "16049": {
       "stop_name": "W Williams St at Healthplex Way (SB)",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 31,
-          "early": 0,
-          "late": 5,
-          "total": 36,
-          "delay_sum": 7614,
-          "delay_sample_count": 36
-        }
-      },
-      "on_time": 31,
-      "early": 0,
-      "late": 5,
-      "total": 36,
-      "delay_sum": 7614,
-      "delay_sample_count": 36
-    },
-    "16061": {
-      "stop_name": "E Williams St at S Hughes St (Park and Ride (SB))",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 31,
-          "early": 2,
-          "late": 3,
-          "total": 36,
-          "delay_sum": 6347,
-          "delay_sample_count": 36
-        }
-      },
-      "on_time": 31,
-      "early": 2,
-      "late": 3,
-      "total": 36,
-      "delay_sum": 6347,
-      "delay_sample_count": 36
-    },
-    "16077": {
-      "stop_name": "Tingen Rd at Peace Haven Pl",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 34,
-          "early": 0,
-          "late": 2,
-          "total": 36,
-          "delay_sum": 6619,
-          "delay_sample_count": 36
-        }
-      },
-      "on_time": 34,
-      "early": 0,
-      "late": 2,
-      "total": 36,
-      "delay_sum": 6619,
-      "delay_sample_count": 36
-    },
-    "16085": {
-      "stop_name": "E Williams St at S Mason St (Apex MS NB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
@@ -270,7 +210,7 @@
           "early": 0,
           "late": 5,
           "total": 37,
-          "delay_sum": 8117,
+          "delay_sum": 7730,
           "delay_sample_count": 37
         }
       },
@@ -278,8 +218,68 @@
       "early": 0,
       "late": 5,
       "total": 37,
-      "delay_sum": 8117,
+      "delay_sum": 7730,
       "delay_sample_count": 37
+    },
+    "16061": {
+      "stop_name": "E Williams St at S Hughes St (Park and Ride (SB))",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 32,
+          "early": 2,
+          "late": 3,
+          "total": 37,
+          "delay_sum": 6492,
+          "delay_sample_count": 37
+        }
+      },
+      "on_time": 32,
+      "early": 2,
+      "late": 3,
+      "total": 37,
+      "delay_sum": 6492,
+      "delay_sample_count": 37
+    },
+    "16077": {
+      "stop_name": "Tingen Rd at Peace Haven Pl",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 35,
+          "early": 0,
+          "late": 2,
+          "total": 37,
+          "delay_sum": 6631,
+          "delay_sample_count": 37
+        }
+      },
+      "on_time": 35,
+      "early": 0,
+      "late": 2,
+      "total": 37,
+      "delay_sum": 6631,
+      "delay_sample_count": 37
+    },
+    "16085": {
+      "stop_name": "E Williams St at S Mason St (Apex MS NB)",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 33,
+          "early": 0,
+          "late": 5,
+          "total": 38,
+          "delay_sum": 8150,
+          "delay_sample_count": 38
+        }
+      },
+      "on_time": 33,
+      "early": 0,
+      "late": 5,
+      "total": 38,
+      "delay_sum": 8150,
+      "delay_sample_count": 38
     },
     "1398": {
       "stop_name": "Cary Depot South Platform",
@@ -1263,5 +1263,5 @@
       "delay_sample_count": 32
     }
   },
-  "last_updated": "2026-11-14T21:50:18.601729+00:00"
+  "last_updated": "2026-11-14T21:51:18.305401+00:00"
 }
