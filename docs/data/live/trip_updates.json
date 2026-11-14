@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-14T19:58:12.389822+00:00",
+  "updated_at": "2026-11-14T19:59:22.420560+00:00",
   "trips": [
     {
       "trip_id": "5b6930b0-3192-442f-969a-acd1d9f06417",
@@ -77,6 +77,14 @@
       "trip_id": "fc9c15a1-0366-4f38-9e5c-e1c5b2938866",
       "route_id": "2",
       "route_short_name": "2",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "cf0bcbf2-1823-4e0d-bb80-ad8c86c81437",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -366,7 +374,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 79,
       "status": "on_time"
     },
     {
@@ -422,7 +430,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 145,
+      "delay_seconds": 155,
       "status": "on_time"
     },
     {
@@ -454,7 +462,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 60,
+      "delay_seconds": 74,
       "status": "on_time"
     },
     {
@@ -550,7 +558,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 207,
+      "delay_seconds": 198,
       "status": "on_time"
     },
     {
@@ -574,7 +582,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 59,
+      "delay_seconds": 68,
       "status": "on_time"
     },
     {
@@ -637,9 +645,9 @@
       "trip_id": "9bd00742-c97e-4165-a825-88751690d9bc",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 557,
-      "status": "late"
+      "next_stop_sequence": 103,
+      "delay_seconds": -70,
+      "status": "early"
     },
     {
       "trip_id": "4fd82cb3-d9ce-4fda-9775-98ab858c0aac",
