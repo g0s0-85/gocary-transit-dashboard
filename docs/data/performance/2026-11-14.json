@@ -1,31 +1,31 @@
 {
   "date": "2026-11-14",
   "system": {
-    "on_time": 2017,
+    "on_time": 2025,
     "early": 22,
-    "late": 172,
-    "total": 2211,
-    "delay_sum": 248494,
-    "delay_sample_count": 2211
+    "late": 173,
+    "total": 2220,
+    "delay_sum": 249414,
+    "delay_sample_count": 2220
   },
   "routes": {
     "GA1": {
       "route_short_name": "GA1",
-      "on_time": 300,
+      "on_time": 305,
       "early": 3,
-      "late": 44,
-      "total": 347,
-      "delay_sum": 73189,
-      "delay_sample_count": 347
+      "late": 45,
+      "total": 353,
+      "delay_sum": 73935,
+      "delay_sample_count": 353
     },
     "6": {
       "route_short_name": "6",
-      "on_time": 179,
+      "on_time": 182,
       "early": 0,
       "late": 6,
-      "total": 185,
-      "delay_sum": 10897,
-      "delay_sample_count": 185
+      "total": 188,
+      "delay_sum": 11071,
+      "delay_sample_count": 188
     },
     "4": {
       "route_short_name": "4",
@@ -168,101 +168,41 @@
           "route_short_name": "GA1",
           "on_time": 28,
           "early": 0,
-          "late": 9,
-          "total": 37,
-          "delay_sum": 9500,
-          "delay_sample_count": 37
+          "late": 10,
+          "total": 38,
+          "delay_sum": 9803,
+          "delay_sample_count": 38
         }
       },
       "on_time": 28,
       "early": 0,
-      "late": 9,
-      "total": 37,
-      "delay_sum": 9500,
-      "delay_sample_count": 37
+      "late": 10,
+      "total": 38,
+      "delay_sum": 9803,
+      "delay_sample_count": 38
     },
     "16045": {
       "stop_name": "Beaver Creek Commons Dr at Lowe's (EB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
-          "on_time": 33,
+          "on_time": 34,
           "early": 0,
           "late": 4,
-          "total": 37,
-          "delay_sum": 8032,
-          "delay_sample_count": 37
+          "total": 38,
+          "delay_sum": 8115,
+          "delay_sample_count": 38
         }
       },
-      "on_time": 33,
+      "on_time": 34,
       "early": 0,
       "late": 4,
-      "total": 37,
-      "delay_sum": 8032,
-      "delay_sample_count": 37
+      "total": 38,
+      "delay_sum": 8115,
+      "delay_sample_count": 38
     },
     "16049": {
       "stop_name": "W Williams St at Healthplex Way (SB)",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 32,
-          "early": 0,
-          "late": 5,
-          "total": 37,
-          "delay_sum": 7730,
-          "delay_sample_count": 37
-        }
-      },
-      "on_time": 32,
-      "early": 0,
-      "late": 5,
-      "total": 37,
-      "delay_sum": 7730,
-      "delay_sample_count": 37
-    },
-    "16061": {
-      "stop_name": "E Williams St at S Hughes St (Park and Ride (SB))",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 32,
-          "early": 2,
-          "late": 3,
-          "total": 37,
-          "delay_sum": 6492,
-          "delay_sample_count": 37
-        }
-      },
-      "on_time": 32,
-      "early": 2,
-      "late": 3,
-      "total": 37,
-      "delay_sum": 6492,
-      "delay_sample_count": 37
-    },
-    "16077": {
-      "stop_name": "Tingen Rd at Peace Haven Pl",
-      "routes": {
-        "GA1": {
-          "route_short_name": "GA1",
-          "on_time": 35,
-          "early": 0,
-          "late": 2,
-          "total": 37,
-          "delay_sum": 6631,
-          "delay_sample_count": 37
-        }
-      },
-      "on_time": 35,
-      "early": 0,
-      "late": 2,
-      "total": 37,
-      "delay_sum": 6631,
-      "delay_sample_count": 37
-    },
-    "16085": {
-      "stop_name": "E Williams St at S Mason St (Apex MS NB)",
       "routes": {
         "GA1": {
           "route_short_name": "GA1",
@@ -270,7 +210,7 @@
           "early": 0,
           "late": 5,
           "total": 38,
-          "delay_sum": 8150,
+          "delay_sum": 7850,
           "delay_sample_count": 38
         }
       },
@@ -278,20 +218,80 @@
       "early": 0,
       "late": 5,
       "total": 38,
-      "delay_sum": 8150,
+      "delay_sum": 7850,
       "delay_sample_count": 38
+    },
+    "16061": {
+      "stop_name": "E Williams St at S Hughes St (Park and Ride (SB))",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 33,
+          "early": 2,
+          "late": 3,
+          "total": 38,
+          "delay_sum": 6554,
+          "delay_sample_count": 38
+        }
+      },
+      "on_time": 33,
+      "early": 2,
+      "late": 3,
+      "total": 38,
+      "delay_sum": 6554,
+      "delay_sample_count": 38
+    },
+    "16077": {
+      "stop_name": "Tingen Rd at Peace Haven Pl",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 36,
+          "early": 0,
+          "late": 2,
+          "total": 38,
+          "delay_sum": 6700,
+          "delay_sample_count": 38
+        }
+      },
+      "on_time": 36,
+      "early": 0,
+      "late": 2,
+      "total": 38,
+      "delay_sum": 6700,
+      "delay_sample_count": 38
+    },
+    "16085": {
+      "stop_name": "E Williams St at S Mason St (Apex MS NB)",
+      "routes": {
+        "GA1": {
+          "route_short_name": "GA1",
+          "on_time": 34,
+          "early": 0,
+          "late": 5,
+          "total": 39,
+          "delay_sum": 8259,
+          "delay_sample_count": 39
+        }
+      },
+      "on_time": 34,
+      "early": 0,
+      "late": 5,
+      "total": 39,
+      "delay_sum": 8259,
+      "delay_sample_count": 39
     },
     "1398": {
       "stop_name": "Cary Depot South Platform",
       "routes": {
         "6": {
           "route_short_name": "6",
-          "on_time": 33,
+          "on_time": 34,
           "early": 0,
           "late": 2,
-          "total": 35,
-          "delay_sum": 2733,
-          "delay_sample_count": 35
+          "total": 36,
+          "delay_sum": 2824,
+          "delay_sample_count": 36
         },
         "9": {
           "route_short_name": "9",
@@ -321,24 +321,24 @@
           "delay_sample_count": 35
         }
       },
-      "on_time": 137,
+      "on_time": 138,
       "early": 0,
       "late": 7,
-      "total": 144,
-      "delay_sum": 12967,
-      "delay_sample_count": 144
+      "total": 145,
+      "delay_sum": 13058,
+      "delay_sample_count": 145
     },
     "1375": {
       "stop_name": "Walnut St at Cary Commons",
       "routes": {
         "6": {
           "route_short_name": "6",
-          "on_time": 33,
+          "on_time": 34,
           "early": 0,
           "late": 2,
-          "total": 35,
-          "delay_sum": 2656,
-          "delay_sample_count": 35
+          "total": 36,
+          "delay_sum": 2664,
+          "delay_sample_count": 36
         },
         "1": {
           "route_short_name": "1",
@@ -350,32 +350,32 @@
           "delay_sample_count": 35
         }
       },
-      "on_time": 66,
+      "on_time": 67,
       "early": 0,
       "late": 4,
-      "total": 70,
-      "delay_sum": 5379,
-      "delay_sample_count": 70
+      "total": 71,
+      "delay_sum": 5387,
+      "delay_sample_count": 71
     },
     "1379": {
       "stop_name": "Buck Jones Rd at Nottingham Dr (EB)",
       "routes": {
         "6": {
           "route_short_name": "6",
-          "on_time": 33,
+          "on_time": 34,
           "early": 0,
           "late": 2,
-          "total": 35,
-          "delay_sum": 2853,
-          "delay_sample_count": 35
+          "total": 36,
+          "delay_sum": 2928,
+          "delay_sample_count": 36
         }
       },
-      "on_time": 33,
+      "on_time": 34,
       "early": 0,
       "late": 2,
-      "total": 35,
-      "delay_sum": 2853,
-      "delay_sample_count": 35
+      "total": 36,
+      "delay_sum": 2928,
+      "delay_sample_count": 36
     },
     "11161": {
       "stop_name": "NC 55 at Walmart",
@@ -1263,5 +1263,5 @@
       "delay_sample_count": 33
     }
   },
-  "last_updated": "2026-11-14T22:20:16.591221+00:00"
+  "last_updated": "2026-11-14T22:22:19.635961+00:00"
 }
