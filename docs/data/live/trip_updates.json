@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T20:25:23.494898+00:00",
+  "updated_at": "2026-11-18T20:26:13.146848+00:00",
   "trips": [
     {
       "trip_id": "f71eb7dc-5701-4172-8f40-7a96092cbad5",
@@ -77,6 +77,14 @@
       "trip_id": "86d89994-b05d-4ff3-b78c-63575a116c2a",
       "route_id": "6",
       "route_short_name": "6",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "9481ae87-9482-4801-825f-2987c87d8545",
+      "route_id": "2",
+      "route_short_name": "2",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -502,7 +510,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 64,
+      "delay_seconds": 123,
       "status": "on_time"
     },
     {
@@ -550,7 +558,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 306,
+      "delay_seconds": 332,
       "status": "late"
     },
     {
@@ -574,7 +582,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 1,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -606,7 +614,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 41,
+      "delay_seconds": 20,
       "status": "on_time"
     },
     {
@@ -614,7 +622,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 38,
+      "delay_seconds": 71,
       "status": "on_time"
     },
     {
@@ -653,9 +661,9 @@
       "trip_id": "bc99f40c-7736-44b8-8a03-e27c142db10d",
       "route_id": "9",
       "route_short_name": "9",
-      "next_stop_sequence": 0,
-      "delay_seconds": 349,
-      "status": "late"
+      "next_stop_sequence": 45,
+      "delay_seconds": -255,
+      "status": "early"
     },
     {
       "trip_id": "b1b16854-bcdd-4bdb-84bb-7eb390cf2e21",
