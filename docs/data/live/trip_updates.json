@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T15:22:13.667630+00:00",
+  "updated_at": "2026-11-18T15:23:15.794136+00:00",
   "trips": [
     {
       "trip_id": "38987108-9dc9-4560-b44b-eedb9acd0003",
@@ -29,6 +29,14 @@
       "trip_id": "19a5d9bb-9820-45a5-bdcb-15acbe36d622",
       "route_id": "2",
       "route_short_name": "2",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "527f536e-bf2c-4cb6-a2a7-8eac08818c77",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -294,7 +302,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 75,
       "status": "on_time"
     },
     {
@@ -454,7 +462,7 @@
       "route_id": "9",
       "route_short_name": "9",
       "next_stop_sequence": 0,
-      "delay_seconds": 240,
+      "delay_seconds": 273,
       "status": "on_time"
     },
     {
@@ -494,7 +502,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 279,
+      "delay_seconds": 298,
       "status": "on_time"
     },
     {
@@ -526,7 +534,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 4,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -558,7 +566,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 242,
+      "delay_seconds": 207,
       "status": "on_time"
     },
     {
@@ -605,9 +613,9 @@
       "trip_id": "4106064e-769b-46eb-ab94-c2c44dcef7b9",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 134,
-      "status": "on_time"
+      "next_stop_sequence": 103,
+      "delay_seconds": -470,
+      "status": "early"
     },
     {
       "trip_id": "9fcc5471-e44c-4976-817f-4a75682a28f1",
