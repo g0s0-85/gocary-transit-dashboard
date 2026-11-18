@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T19:53:14.528775+00:00",
+  "updated_at": "2026-11-18T19:54:26.260626+00:00",
   "trips": [
     {
       "trip_id": "49663d45-b0f9-4f5b-b7f4-6c7c40f8dbb9",
@@ -45,6 +45,14 @@
       "trip_id": "9380fc8f-077f-4f4b-a5e4-b947173d611e",
       "route_id": "4",
       "route_short_name": "4",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "b79119f8-372f-446a-bdb0-04b046e31b63",
+      "route_id": "6",
+      "route_short_name": "6",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -454,7 +462,7 @@
       "route_id": "7",
       "route_short_name": "7",
       "next_stop_sequence": 0,
-      "delay_seconds": 60,
+      "delay_seconds": 59,
       "status": "on_time"
     },
     {
@@ -462,7 +470,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 3,
       "status": "on_time"
     },
     {
@@ -510,8 +518,8 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 332,
-      "status": "late"
+      "delay_seconds": 290,
+      "status": "on_time"
     },
     {
       "trip_id": "e7099b8c-2d96-4ff8-ae89-7d58ff0a5d48",
@@ -637,9 +645,9 @@
       "trip_id": "a5f0f5e8-5ed4-4e36-ad79-641f3e75bb6c",
       "route_id": "4",
       "route_short_name": "4",
-      "next_stop_sequence": 0,
-      "delay_seconds": 45,
-      "status": "on_time"
+      "next_stop_sequence": 61,
+      "delay_seconds": -379,
+      "status": "early"
     },
     {
       "trip_id": "c468e7e0-0a9a-43ee-8063-339177b7bd65",
@@ -680,14 +688,6 @@
       "next_stop_sequence": 0,
       "delay_seconds": 46,
       "status": "on_time"
-    },
-    {
-      "trip_id": "d718181c-b80d-4323-9980-eb4461f85544",
-      "route_id": "2",
-      "route_short_name": "2",
-      "next_stop_sequence": 36,
-      "delay_seconds": -120,
-      "status": "early"
     },
     {
       "trip_id": "a70b0b14-62d1-4f77-b462-e030463adcfe",
