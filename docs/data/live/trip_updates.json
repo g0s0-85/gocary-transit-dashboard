@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T16:54:14.592094+00:00",
+  "updated_at": "2026-11-18T16:55:15.002510+00:00",
   "trips": [
     {
       "trip_id": "2d6fd0c8-ce60-4f29-9daa-186b9df102f5",
@@ -29,6 +29,14 @@
       "trip_id": "b6ca05db-138c-4f6f-ad36-edd301d85d60",
       "route_id": "2",
       "route_short_name": "2",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "7aabfe3f-baca-4a2d-b378-24ca0633848e",
+      "route_id": "4",
+      "route_short_name": "4",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -446,7 +454,7 @@
       "route_id": "1",
       "route_short_name": "1",
       "next_stop_sequence": 0,
-      "delay_seconds": 55,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -486,7 +494,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 256,
+      "delay_seconds": 258,
       "status": "on_time"
     },
     {
@@ -510,7 +518,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 13,
       "status": "on_time"
     },
     {
@@ -566,7 +574,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 40,
       "status": "on_time"
     },
     {
@@ -582,7 +590,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 36,
+      "delay_seconds": 49,
       "status": "on_time"
     },
     {
@@ -645,9 +653,9 @@
       "trip_id": "741fe108-e1e0-4fda-b5fe-b6289ba730b9",
       "route_id": "4",
       "route_short_name": "4",
-      "next_stop_sequence": 0,
-      "delay_seconds": 22,
-      "status": "on_time"
+      "next_stop_sequence": 49,
+      "delay_seconds": -350,
+      "status": "early"
     },
     {
       "trip_id": "183c0cc5-b4fb-46b1-a027-ff9e2fd5f87f",
