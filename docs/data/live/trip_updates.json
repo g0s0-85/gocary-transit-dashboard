@@ -1,6 +1,14 @@
 {
-  "updated_at": "2026-11-21T20:57:12.407966+00:00",
+  "updated_at": "2026-11-21T20:58:13.824924+00:00",
   "trips": [
+    {
+      "trip_id": "cb97abb5-034c-4d73-b4f6-c9dd2edebf66",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
     {
       "trip_id": "7085f54b-9ed8-4d88-9a30-6c664e72c7a1",
       "route_id": "2",
@@ -37,6 +45,14 @@
       "trip_id": "7b848307-b7c4-4c8f-9e10-32669a6cb1cb",
       "route_id": "9",
       "route_short_name": "9",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "797c8630-0e95-4b90-8aac-4abd8dfc0462",
+      "route_id": "2",
+      "route_short_name": "2",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -374,7 +390,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 370,
+      "delay_seconds": 399,
       "status": "late"
     },
     {
@@ -478,7 +494,7 @@
       "route_id": "3",
       "route_short_name": "3",
       "next_stop_sequence": 0,
-      "delay_seconds": 239,
+      "delay_seconds": 237,
       "status": "on_time"
     },
     {
@@ -525,9 +541,9 @@
       "trip_id": "84f76bae-48e1-4ecd-bf85-a8f2d660fe66",
       "route_id": "9",
       "route_short_name": "9",
-      "next_stop_sequence": 0,
-      "delay_seconds": 378,
-      "status": "late"
+      "next_stop_sequence": 45,
+      "delay_seconds": -170,
+      "status": "early"
     },
     {
       "trip_id": "f816d511-cd96-4c73-ae8d-e20be1cab317",
@@ -559,14 +575,6 @@
       "route_short_name": "5",
       "next_stop_sequence": 0,
       "delay_seconds": 50,
-      "status": "on_time"
-    },
-    {
-      "trip_id": "3ba911e5-cb6f-4288-a392-fb346088ff7c",
-      "route_id": "GA1",
-      "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 288,
       "status": "on_time"
     }
   ]
