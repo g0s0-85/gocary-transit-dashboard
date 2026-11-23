@@ -1,10 +1,18 @@
 {
-  "updated_at": "2026-11-23T12:23:13.724607+00:00",
+  "updated_at": "2026-11-23T12:24:14.901203+00:00",
   "trips": [
     {
       "trip_id": "0c946172-6367-41db-b292-8fd03ccfe6ef",
       "route_id": "GA1",
       "route_short_name": "GA1",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "4e8e4a85-a630-48a3-a4a0-f9c9a9361489",
+      "route_id": "2",
+      "route_short_name": "2",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -53,6 +61,14 @@
       "trip_id": "a75e4f7b-5c51-4f4f-8a5d-750610e53490",
       "route_id": "4",
       "route_short_name": "4",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "a58e668c-cbfd-4113-817d-fc9a50777b98",
+      "route_id": "2",
+      "route_short_name": "2",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -478,7 +494,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 2,
       "status": "on_time"
     },
     {
@@ -590,7 +606,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 129,
+      "delay_seconds": 151,
       "status": "on_time"
     },
     {
@@ -661,9 +677,9 @@
       "trip_id": "e9af27fa-ac8e-4513-9b53-0c55c0cf67d1",
       "route_id": "9",
       "route_short_name": "9",
-      "next_stop_sequence": 0,
-      "delay_seconds": 160,
-      "status": "on_time"
+      "next_stop_sequence": 45,
+      "delay_seconds": -373,
+      "status": "early"
     },
     {
       "trip_id": "0da72d23-36f5-43c7-87d8-736c905acf55",
@@ -687,14 +703,6 @@
       "route_short_name": "3",
       "next_stop_sequence": 0,
       "delay_seconds": 25,
-      "status": "on_time"
-    },
-    {
-      "trip_id": "e8f6ca6e-ac26-4e4d-a800-8bb214d5e7bd",
-      "route_id": "2",
-      "route_short_name": "2",
-      "next_stop_sequence": 0,
-      "delay_seconds": 178,
       "status": "on_time"
     }
   ]
