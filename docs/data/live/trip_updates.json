@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T12:23:13.722537+00:00",
+  "updated_at": "2026-11-24T12:24:12.412719+00:00",
   "trips": [
     {
       "trip_id": "a75e4f7b-5c51-4f4f-8a5d-750610e53490",
@@ -37,6 +37,14 @@
       "trip_id": "46a2c6bc-959e-49f8-9ea3-ad3674deb78f",
       "route_id": "6",
       "route_short_name": "6",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "21ef9a69-2e77-4ec2-a5d0-45b277879a76",
+      "route_id": "GA1",
+      "route_short_name": "GA1",
       "next_stop_sequence": 0,
       "delay_seconds": 0,
       "status": "on_time"
@@ -278,7 +286,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 0,
+      "delay_seconds": 80,
       "status": "on_time"
     },
     {
@@ -414,7 +422,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 236,
+      "delay_seconds": 257,
       "status": "on_time"
     },
     {
@@ -422,7 +430,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 166,
+      "delay_seconds": 145,
       "status": "on_time"
     },
     {
@@ -502,7 +510,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 63,
+      "delay_seconds": 0,
       "status": "on_time"
     },
     {
@@ -534,7 +542,7 @@
       "route_id": "5",
       "route_short_name": "5",
       "next_stop_sequence": 0,
-      "delay_seconds": 437,
+      "delay_seconds": 454,
       "status": "late"
     },
     {
@@ -557,9 +565,9 @@
       "trip_id": "a13f2c2c-e129-4adb-b34f-8c860957caa6",
       "route_id": "GA1",
       "route_short_name": "GA1",
-      "next_stop_sequence": 0,
-      "delay_seconds": 645,
-      "status": "late"
+      "next_stop_sequence": 103,
+      "delay_seconds": -417,
+      "status": "early"
     },
     {
       "trip_id": "f4495b68-88ee-424a-9bba-fd997e07ed1e",
