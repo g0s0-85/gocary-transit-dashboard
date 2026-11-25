@@ -1,6 +1,22 @@
 {
-  "updated_at": "2026-11-25T20:05:19.551766+00:00",
+  "updated_at": "2026-11-25T20:06:13.622531+00:00",
   "trips": [
+    {
+      "trip_id": "c6fefbe7-8aca-4d36-a3c1-aeb2da4ec3bf",
+      "route_id": "7",
+      "route_short_name": "7",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
+    {
+      "trip_id": "11ed1b2d-b000-488e-8c2a-9e8f6fdbed92",
+      "route_id": "1",
+      "route_short_name": "1",
+      "next_stop_sequence": 0,
+      "delay_seconds": 0,
+      "status": "on_time"
+    },
     {
       "trip_id": "552564e8-7ad0-4876-a1ce-f25fb74141c9",
       "route_id": "GA1",
@@ -334,7 +350,7 @@
       "route_id": "GA1",
       "route_short_name": "GA1",
       "next_stop_sequence": 0,
-      "delay_seconds": 268,
+      "delay_seconds": 293,
       "status": "on_time"
     },
     {
@@ -342,7 +358,7 @@
       "route_id": "2",
       "route_short_name": "2",
       "next_stop_sequence": 0,
-      "delay_seconds": 34,
+      "delay_seconds": 50,
       "status": "on_time"
     },
     {
@@ -518,8 +534,8 @@
       "route_id": "9",
       "route_short_name": "9",
       "next_stop_sequence": 0,
-      "delay_seconds": 283,
-      "status": "on_time"
+      "delay_seconds": 302,
+      "status": "late"
     },
     {
       "trip_id": "4b05ef6c-0222-46b4-ac19-b77ff34e0f8e",
@@ -565,9 +581,9 @@
       "trip_id": "9f598ca1-2a06-4309-977b-abd639586e04",
       "route_id": "7",
       "route_short_name": "7",
-      "next_stop_sequence": 0,
-      "delay_seconds": 118,
-      "status": "on_time"
+      "next_stop_sequence": 64,
+      "delay_seconds": -585,
+      "status": "early"
     },
     {
       "trip_id": "4e4cbafd-8bfd-4483-b8d7-34f254ccbfd4",
@@ -597,9 +613,9 @@
       "trip_id": "cdf8fb0f-804f-4eab-ba46-07a51f6258f9",
       "route_id": "7",
       "route_short_name": "7",
-      "next_stop_sequence": 0,
-      "delay_seconds": 140,
-      "status": "on_time"
+      "next_stop_sequence": 60,
+      "delay_seconds": -257,
+      "status": "early"
     }
   ]
 }
