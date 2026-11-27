@@ -1,12 +1,12 @@
 {
   "date": "2026-11-27",
   "system": {
-    "on_time": 750,
+    "on_time": 761,
     "early": 7,
     "late": 53,
-    "total": 810,
-    "delay_sum": 67426,
-    "delay_sample_count": 810
+    "total": 821,
+    "delay_sum": 67595,
+    "delay_sample_count": 821
   },
   "routes": {
     "GA1": {
@@ -74,21 +74,21 @@
     },
     "3": {
       "route_short_name": "3",
-      "on_time": 44,
+      "on_time": 48,
       "early": 0,
       "late": 2,
-      "total": 46,
-      "delay_sum": 1770,
-      "delay_sample_count": 46
+      "total": 50,
+      "delay_sum": 1795,
+      "delay_sample_count": 50
     },
     "5": {
       "route_short_name": "5",
-      "on_time": 55,
+      "on_time": 62,
       "early": 1,
       "late": 0,
-      "total": 56,
-      "delay_sum": 1454,
-      "delay_sample_count": 56
+      "total": 63,
+      "delay_sum": 1598,
+      "delay_sample_count": 63
     }
   },
   "stops": {
@@ -313,20 +313,20 @@
         },
         "5": {
           "route_short_name": "5",
-          "on_time": 12,
+          "on_time": 13,
           "early": 0,
           "late": 0,
-          "total": 12,
+          "total": 13,
           "delay_sum": 456,
-          "delay_sample_count": 12
+          "delay_sample_count": 13
         }
       },
-      "on_time": 52,
+      "on_time": 53,
       "early": 0,
       "late": 2,
-      "total": 54,
+      "total": 55,
       "delay_sum": 3363,
-      "delay_sample_count": 54
+      "delay_sample_count": 55
     },
     "11700": {
       "stop_name": "High House Rd at Highland Village Dr (WB)",
@@ -449,20 +449,20 @@
         },
         "3": {
           "route_short_name": "3",
-          "on_time": 11,
+          "on_time": 12,
           "early": 0,
           "late": 1,
-          "total": 12,
+          "total": 13,
           "delay_sum": 694,
-          "delay_sample_count": 12
+          "delay_sample_count": 13
         }
       },
-      "on_time": 53,
+      "on_time": 54,
       "early": 0,
       "late": 3,
-      "total": 56,
+      "total": 57,
       "delay_sum": 4061,
-      "delay_sample_count": 56
+      "delay_sample_count": 57
     },
     "11397": {
       "stop_name": "Highland Village (WB)",
@@ -927,20 +927,20 @@
         },
         "3": {
           "route_short_name": "3",
-          "on_time": 10,
+          "on_time": 11,
           "early": 0,
           "late": 1,
-          "total": 11,
+          "total": 12,
           "delay_sum": 538,
-          "delay_sample_count": 11
+          "delay_sample_count": 12
         }
       },
-      "on_time": 19,
+      "on_time": 20,
       "early": 0,
       "late": 3,
-      "total": 22,
+      "total": 23,
       "delay_sum": 1890,
-      "delay_sample_count": 22
+      "delay_sample_count": 23
     },
     "1331": {
       "stop_name": "Weston Pkwy at Evans Rd (WB)",
@@ -1147,71 +1147,31 @@
       "routes": {
         "3": {
           "route_short_name": "3",
-          "on_time": 12,
+          "on_time": 13,
           "early": 0,
           "late": 0,
-          "total": 12,
+          "total": 13,
           "delay_sum": 394,
-          "delay_sample_count": 12
+          "delay_sample_count": 13
         }
       },
-      "on_time": 12,
+      "on_time": 13,
       "early": 0,
       "late": 0,
-      "total": 12,
+      "total": 13,
       "delay_sum": 394,
-      "delay_sample_count": 12
+      "delay_sample_count": 13
     },
     "11241": {
       "stop_name": "Crescentcommons Dr",
       "routes": {
         "5": {
           "route_short_name": "5",
-          "on_time": 10,
-          "early": 0,
-          "late": 0,
-          "total": 10,
-          "delay_sum": 141,
-          "delay_sample_count": 10
-        }
-      },
-      "on_time": 10,
-      "early": 0,
-      "late": 0,
-      "total": 10,
-      "delay_sum": 141,
-      "delay_sample_count": 10
-    },
-    "11097": {
-      "stop_name": "Kildaire Farm Rd at SE Maynard Rd",
-      "routes": {
-        "5": {
-          "route_short_name": "5",
-          "on_time": 10,
-          "early": 0,
-          "late": 0,
-          "total": 10,
-          "delay_sum": 314,
-          "delay_sample_count": 10
-        }
-      },
-      "on_time": 10,
-      "early": 0,
-      "late": 0,
-      "total": 10,
-      "delay_sum": 314,
-      "delay_sample_count": 10
-    },
-    "1367": {
-      "stop_name": "Kildaire Farm Rd at Mayfair Plaza",
-      "routes": {
-        "5": {
-          "route_short_name": "5",
           "on_time": 12,
           "early": 0,
           "late": 0,
           "total": 12,
-          "delay_sum": 625,
+          "delay_sum": 164,
           "delay_sample_count": 12
         }
       },
@@ -1219,49 +1179,89 @@
       "early": 0,
       "late": 0,
       "total": 12,
-      "delay_sum": 625,
+      "delay_sum": 164,
       "delay_sample_count": 12
+    },
+    "11097": {
+      "stop_name": "Kildaire Farm Rd at SE Maynard Rd",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 12,
+          "early": 0,
+          "late": 0,
+          "total": 12,
+          "delay_sum": 399,
+          "delay_sample_count": 12
+        }
+      },
+      "on_time": 12,
+      "early": 0,
+      "late": 0,
+      "total": 12,
+      "delay_sum": 399,
+      "delay_sample_count": 12
+    },
+    "1367": {
+      "stop_name": "Kildaire Farm Rd at Mayfair Plaza",
+      "routes": {
+        "5": {
+          "route_short_name": "5",
+          "on_time": 13,
+          "early": 0,
+          "late": 0,
+          "total": 13,
+          "delay_sum": 661,
+          "delay_sample_count": 13
+        }
+      },
+      "on_time": 13,
+      "early": 0,
+      "late": 0,
+      "total": 13,
+      "delay_sum": 661,
+      "delay_sample_count": 13
     },
     "11074": {
       "stop_name": "Kildaire Farm Rd at WakeMed Cary (SB)",
       "routes": {
         "5": {
           "route_short_name": "5",
-          "on_time": 11,
+          "on_time": 12,
           "early": 1,
           "late": 0,
-          "total": 12,
+          "total": 13,
           "delay_sum": -82,
-          "delay_sample_count": 12
+          "delay_sample_count": 13
         }
       },
-      "on_time": 11,
+      "on_time": 12,
       "early": 1,
       "late": 0,
-      "total": 12,
+      "total": 13,
       "delay_sum": -82,
-      "delay_sample_count": 12
+      "delay_sample_count": 13
     },
     "1362": {
       "stop_name": "N Harrison Ave at Northwoods Market",
       "routes": {
         "3": {
           "route_short_name": "3",
-          "on_time": 11,
+          "on_time": 12,
           "early": 0,
           "late": 0,
-          "total": 11,
-          "delay_sum": 144,
-          "delay_sample_count": 11
+          "total": 12,
+          "delay_sum": 169,
+          "delay_sample_count": 12
         }
       },
-      "on_time": 11,
+      "on_time": 12,
       "early": 0,
       "late": 0,
-      "total": 11,
-      "delay_sum": 144,
-      "delay_sample_count": 11
+      "total": 12,
+      "delay_sum": 169,
+      "delay_sample_count": 12
     }
   },
-  "last_updated": "2026-11-27T15:11:24.106303+00:00"
+  "last_updated": "2026-11-27T15:13:15.087100+00:00"
 }
